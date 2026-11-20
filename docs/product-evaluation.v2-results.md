@@ -66,15 +66,22 @@ Em cada método, as três respostas Q6 reconheceram a insuficiência das avalia�
 
 ## Tempos, tokens e falhas
 
+### Geração em inglês
+
 | Medição principal | Tradicional | Temático |
-|---|---:|---:|---:|
-| Geração em inglês: mediana com verificações | 5.92 s | 5.46 s |
-| Geração em inglês: mínimo–máximo | 3.98–7.79 s | 3.49–7.51 s |
-| Entrada em inglês: tokens somados | 26775 | 27118 |
-| Saída em inglês: tokens somados | 7345 | 6846 |
-| Tradução: mediana com verificações | 8.48 s | 8.01 s |
-| Tradução: tokens de entrada | 8752 | 8356 |
-| Tradução: tokens de saída | 7511 | 6963 |
+|---|---:|---:|
+| Tempo mediano, com verificações | 5,92 s | 5,46 s |
+| Tempo mínimo–máximo | 3,98–7,79 s | 3,49–7,51 s |
+| Total de tokens de entrada | 26.775 | 27.118 |
+| Total de tokens de saída | 7.345 | 6.846 |
+
+### Tradução para português
+
+| Medição principal | Tradicional | Temático |
+|---|---:|---:|
+| Tempo mediano, com verificações | 8,48 s | 8,01 s |
+| Total de tokens de entrada | 8.752 | 8.356 |
+| Total de tokens de saída | 7.511 | 6.963 |
 
 Cada coluna principal contém 18 tentativas. As 60 gerações em inglês (36 principais e 24 diagnósticas) e as 36 traduções passaram no formato, sem erros de execução ou cortes pelo limite de tokens. Isso não certifica fidelidade semântica nem equivalência das traduções.
 
