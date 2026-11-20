@@ -1,126 +1,215 @@
-"""Demonstration boundary tests, without models or private consumer data."""
-import importlib.util
+"""v2 demo boundaries: synthetic sources and model replies, no private artifacts or network."""
+import copy
+import json
 from pathlib import Path
+from types import SimpleNamespace
+
+import numpy as np
 import pytest
-
-spec = importlib.util.spec_from_file_location('demo_server', Path(__file__).resolve().parents[1] / 'scripts/serve_demo.py')
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
+from product_review_insights import demo_v2 as ui, generation
 
 
-def test_demo_validation_and_evidence_boundary(monkeypatch):
-    demo = module.Demo()
-    calls = []
-    class FakeRetriever:
-        def __init__(self, path):
-            calls.append(path)
-        def search(self, question, thematic=False):
-            calls.append((question, thematic))
-            return [{'text': 'included'}, {'text': 'excluded'}]
-    def fake_generate(question, hits, config):
-        return {'answer': 'Finding [E1]', 'evidence': [{'citation_id': 'E1', 'text': hits[0]['text'], 'product_id': 'example'}], 'ollama': {}, 'structured_validation': {'valid': True}}
-    monkeypatch.setattr(module, 'Retriever', FakeRetriever)
-    monkeypatch.setattr(module, 'generate', fake_generate)
-    for bad in [{}, {'question': ' ', 'cohort': 'compact_mascaras', 'method': 'traditional'}, {'question': 'test', 'cohort': '../../', 'method': 'traditional'}]:
-        with pytest.raises(ValueError):
-            demo.answer(bad)
-    result = demo.answer({'question': 'test', 'cohort': 'compact_mascaras', 'method': 'thematic'})
-    assert calls[-1] == ('test', True)
-    assert [x['text'] for x in result['evidence']] == ['included']
-    assert result['demo_only'] and result['format_valid']
+@pytest.fixture
+def demo(monkeypatch):
+    config=json.loads((ui.ROOT/'configs/product-evaluation.v2.approved-not-frozen.json').read_text())
+    questions=json.loads((ui.ROOT/config['questions']['path']).read_text())
+    d=ui.Demo(config=config,questions=questions)
+    queries=[];calls=[];pid=config['products'][0]['product_id']
+    docs=[{'id':f'r{i}:0','review_id':f'r{i}','product_id':pid,'text':f'Synthetic source {i}'} for i in range(3)]
+    docs.append({**docs[0],'id':'r0:1','text':'Second chunk of same synthetic review'})
+    class Model:
+        def encode(self,texts,**kwargs):
+            queries.append(texts)
+            return np.ones((len(texts),2),dtype='float32')
+    class Index:
+        ntotal=4
+        def search(self,vectors,k):
+            return np.ones((len(vectors),k)),np.tile(np.arange(k),(len(vectors),1))
+    retriever=SimpleNamespace(model=Model(),index=Index(),documents=docs,clusters=np.array([0,1,1,0]))
+    monkeypatch.setattr(d,'retriever',lambda selected: retriever)
+    monkeypatch.setattr(ui,'verify_runtime',lambda config: calls.append('runtime'))
+    structured={'groups':{'G1':[{'citations':['E1'],'observation':'A reviewer reports a problem.','proposal':'Investigate the design.','uncertainty':'Cause unknown.'}]},'limits':'Limited evidence.'}
+    def api(path,payload=None,**kwargs):
+        calls.append(copy.deepcopy(payload))
+        if payload['options']['num_predict']==1:
+            return {'prompt_eval_count':128,'eval_count':1}
+        system=payload['messages'][0]['content']
+        if system==ui.PLANNER_SYSTEM:
+            raw=json.dumps({'question_en':'What design issues are reported?', 'aspects':[f'English design aspect {i}' for i in range(5)]})
+        elif system==generation.STRUCTURED_SYSTEM:
+            raw=json.dumps(structured)
+        else:
+            texts=json.loads(payload['messages'][1]['content'])['textos']
+            raw=json.dumps({k:'Tradução '+str(i) for i,k in enumerate(texts)})
+        return {'message':{'content':raw},'prompt_eval_count':128,'eval_count':30,'done_reason':'stop'}
+    monkeypatch.setattr(generation,'api',api)
+    request={'product_id':pid,'method':'traditional','question_id':'Q1','question':questions['products'][0]['questions'][0]['question_pt']}
+    return d,request,queries,calls,structured,retriever
 
 
-def test_generation_failure_releases_demo_lock(monkeypatch):
-    demo = module.Demo()
-    class Broken:
-        def search(self, *args, **kwargs):
-            raise RuntimeError('offline')
-    demo.retrievers['compact_mascaras'] = Broken()
-    with pytest.raises(RuntimeError):
-        demo.answer({'question': 'test', 'cohort': 'compact_mascaras', 'method': 'traditional'})
-    assert not demo.lock.locked()
+def test_catalog_contains_only_three_v2_products(demo):
+    d,*_=demo
+    assert len(d.options()['products'])==3
+    assert {p['id'] for p in d.options()['products']}=={'B00R1TAN7I','B012Q9NGE4','B01557EHW4'}
+    assert all(len(p['questions'])==6 for p in d.options()['products'])
+    assert 'cohorts' not in d.options()
 
 
-def test_portuguese_demo_keeps_sources_and_frozen_prompt(monkeypatch):
-    from product_review_insights.generation import STRUCTURED_SYSTEM
-    hits = [{'text': 'Original English evidence', 'product_id': 'B08TCBP8HV'}]
-    config = module.Demo().freeze['config']
-    original = dict(config)
-    def fake_api(path, payload):
-        assert 'Brazilian Portuguese' in payload['messages'][0]['content']
-        assert 'Original English evidence' in payload['messages'][1]['content']
-        assert 'Essence Lash Princess' not in payload['messages'][1]['content']
-        return {'message': {'content': '{"groups":{"G1":[{"observation":"Relato de dificuldade.","proposal":"Rever o aplicador.","uncertainty":"Verificar o uso.","citations":["E1"]}]},"limits":"Amostra limitada."}'}, 'done_reason': 'stop'}
-    monkeypatch.setattr(module, 'api', fake_api)
-    result = module.generate('Que melhorias investigar?', hits, config)
-    assert 'Melhoria proposta: Rever o aplicador.' in result['answer']
-    assert 'Incerteza: Verificar o uso.' in result['answer']
-    assert 'Limites das evidências: Amostra limitada.' in result['answer']
-    assert '[E1]' in result['answer']
-    assert 'Máscara de cílios · Essence Lash Princess — G1 (B08TCBP8HV)' in result['answer']
-    assert result['evidence'][0]['text'] == hits[0]['text']
-    assert config == original
-    assert 'Use concise English sentences.' in STRUCTURED_SYSTEM
+@pytest.mark.parametrize('method',['traditional','thematic'])
+def test_predefined_uses_exact_aspects_english_generation_then_translation(demo,method):
+    d,request,queries,calls,structured,_=demo;request['method']=method;before=copy.deepcopy(structured)
+    result=d.answer(request)
+    saved=d.qmap[request['product_id']][0]
+    assert queries==[[a['retrieval_query'] for a in saved['aspects']]]
+    actual=[p for p in calls if isinstance(p,dict) and p['options']['num_predict']!=1]
+    assert len(actual)==2 and actual[0]['messages'][0]['content']==generation.STRUCTURED_SYSTEM
+    assert json.loads(actual[0]['messages'][1]['content'])['question']==saved['generation_question_en']
+    assert 'Traduza os textos' in actual[1]['messages'][0]['content']
+    assert structured==before
+    assert result['query_mode']=='predefined' and result['presentation_language']=='pt-BR'
+    assert 'A reviewer reports a problem.' in result['english_answer']
+    assert result['products'][0]['findings'][0]['citations']==['E1']
+    assert result['evidence'][0]['text'].startswith('Synthetic source')
+    assert result['cited_scope']=={'reviews':1,'products':1}
+    assert len(result['evidence'])==3 # Same-review chunks deduplicated before generation.
+    assert not d.lock.locked()
 
 
-def test_product_labels_cover_study_without_merging_families():
-    import json
-    scope = json.loads((module.ROOT / 'configs/study-scope.json').read_text())
-    ids = {f['parent_asin'] for c in scope['cohorts'] for f in c['families']}
-    assert set(module.PRODUCT_LABELS) == ids
-    assert len(set(module.PRODUCT_LABELS.values())) == 15
-    assert 'Essence Lash Princess' in module.product_label('B08TCBP8HV')
-    assert module.product_label('unknown') == 'Família de produto não identificada'
+def test_free_question_plans_five_aspects_without_using_benchmark_question(demo):
+    d,r,queries,calls,*_=demo;r.update(question_id='',question='Como melhorar o desenho?')
+    result=d.answer(r)
+    assert result['query_mode']=='free'
+    assert queries==[[f'English design aspect {i}' for i in range(5)]]
+    actual=[p for p in calls if isinstance(p,dict) and p['options']['num_predict']!=1]
+    assert len(actual)==3 and actual[0]['messages'][0]['content']==ui.PLANNER_SYSTEM
+    assert json.loads(actual[1]['messages'][1]['content'])['question']=='What design issues are reported?'
 
 
-def test_demo_groups_findings_without_rewriting_them(monkeypatch):
-    demo = module.Demo()
-    findings = [{'observation': 'Relato original.', 'proposal': 'Sugestão original.', 'uncertainty': 'Verificar.', 'citations': ['E1']}]
-    demo.retrievers['compact_mascaras'] = type('RetrieverStub', (), {'search': lambda *a, **k: []})()
-    monkeypatch.setattr(module, 'generate', lambda *args: {
-        'answer': 'Original', 'evidence': [{'citation_id': 'E1', 'group_alias': 'G1', 'product_id': 'B08TCBP8HV', 'text': 'Source'}],
-        'structured': {'groups': {'G1': findings, 'G2': []}, 'limits': 'Amostra limitada.'},
-        'ollama': {}, 'structured_validation': {'valid': True}})
-    result = demo.answer({'question': 'test', 'cohort': 'compact_mascaras', 'method': 'traditional'})
-    assert len(result['products']) == 1
-    assert result['products'][0]['findings'] == findings
-    assert result['products'][0]['name'] == module.product_label('B08TCBP8HV')
-    assert result['limits'] == 'Amostra limitada.'
+@pytest.mark.parametrize('patch',[{'product_id':'foreign'},{'question':' '},{'question_id':'Q9'},{'question':'Edited preset'},{'method':'invalid'}])
+def test_rejects_bad_input_before_model_calls(demo,patch):
+    d,r,_,calls,*_=demo;r.update(patch)
+    with pytest.raises(ValueError):d.answer(r)
+    assert not calls and not d.lock.locked()
 
 
-def test_cited_scope_counts_unique_reviews_and_only_cited_products():
-    result = {'structured': {'groups': {'G1': [{'citations': ['E1', 'E2', 'E1']}]}},
-              'evidence': [{'citation_id': 'E1', 'review_id': 'review-a', 'product_id': 'product-a'},
-                           {'citation_id': 'E2', 'id': 'review-a:1', 'product_id': 'product-a'},
-                           {'citation_id': 'E3', 'review_id': 'review-b', 'product_id': 'product-b'}]}
-    assert module.cited_scope(result) == {'reviews': 1, 'products': 1}
-    result['structured']['groups']['G2'] = [{'citations': ['E3']}]
-    assert module.cited_scope(result) == {'reviews': 2, 'products': 2}
-    assert module.cited_scope({'evidence': []}) is None
-    assert module.cited_scope({'structured': {'groups': {}}, 'evidence': []}) == {'reviews': 0, 'products': 0}
+def test_rejects_foreign_product_context(demo):
+    d,r,_,calls,_,retriever=demo;retriever.documents[0]['product_id']='foreign'
+    with pytest.raises(ValueError):d.answer(r)
+    assert calls==['runtime'] and not d.lock.locked()
 
 
-def test_product_search_restricts_candidates_before_ranking():
-    import faiss
-    import numpy as np
-    from types import SimpleNamespace
-    vectors = np.array([[1., 0.], [.9, .1], [.8, .2], [.7, .3]], dtype='float32')
-    index = faiss.IndexFlatIP(2)
-    index.add(vectors)
-    r = SimpleNamespace(index=index, documents=[{'product_id': p, 'id': str(i)} for i,p in enumerate(['other','other','target','target'])],
-        clusters=np.array([0,1,0,1]), config={'candidate_pool': 2, 'top_k': 2},
-        model=SimpleNamespace(encode=lambda *a, **k: np.array([[1.,0.]], dtype='float32')))
-    searcher = module.ProductSearch(r, 'target')
-    for thematic in [False, True]:
-        hits = searcher.search('question', thematic)
-        assert [h['id'] for h in hits] == ['2','3']
-        assert {h['product_id'] for h in hits} == {'target'}
-    assert index.ntotal == 4
-    with pytest.raises(ValueError): module.ProductSearch(r,'missing')
+def test_translation_failure_keeps_original_and_releases_lock(demo,monkeypatch):
+    d,r,*_=demo;base=generation.api
+    def broken(path,payload=None,**kw):
+        if payload and 'Traduza os textos' in payload['messages'][0]['content'] and payload['options']['num_predict']!=1:
+            raise RuntimeError('Translation unavailable')
+        return base(path,payload,**kw)
+    monkeypatch.setattr(generation,'api',broken)
+    result=d.answer(r)
+    assert result['translation_failed'] and result['presentation_language']=='en'
+    assert result['answer']==result['english_answer']
+    assert result['products'][0]['findings'][0]['observation']=='A reviewer reports a problem.'
+    assert generation.api is broken and not d.lock.locked()
 
 
-def test_demo_rejects_product_from_another_cohort_before_search():
-    demo = module.Demo()
-    with pytest.raises(ValueError, match='pertencente'):
-        demo.answer({'question':'test','cohort':'compact_mascaras','method':'traditional','product_id':'B012Q9NGE4'})
-    assert demo.retrievers == {} and not demo.lock.locked()
+def test_invalid_english_is_visible_without_translation(demo,monkeypatch):
+    d,r,_,calls,*_=demo;base=generation.api
+    def malformed(path,payload=None,**kw):
+        out=base(path,payload,**kw)
+        if payload['options']['num_predict']!=1:out['message']['content']='Malformed original'
+        return out
+    monkeypatch.setattr(generation,'api',malformed)
+    result=d.answer(r)
+    assert not result['format_valid'] and result['answer']=='Malformed original'
+    assert not result['products'] and result['cited_scope'] is None
+    assert len([p for p in calls if isinstance(p,dict) and p['options']['num_predict']!=1])==1
+
+
+def test_busy_request_does_not_release_another_requests_lock(demo):
+    d,r,*_=demo;assert d.lock.acquire(False)
+    try:
+        with pytest.raises(ValueError,match='andamento'):d.answer(r)
+        assert d.lock.locked()
+    finally:d.lock.release()
+
+
+def test_model_failure_restores_transport_and_lock(demo,monkeypatch):
+    d,r,*_=demo
+    def broken(*a,**k):raise RuntimeError('offline')
+    monkeypatch.setattr(generation,'api',broken)
+    with pytest.raises(RuntimeError):d.answer(r)
+    assert generation.api is broken and not d.lock.locked()
+
+
+def test_model_budget_is_checked_before_full_generation(demo,monkeypatch):
+    d,r,*_=demo
+    def too_big(*a,**kw):return {'prompt_eval_count':10000,'eval_count':1}
+    monkeypatch.setattr(generation,'api',too_big)
+    with pytest.raises(ValueError,match='exceeds context'):d.answer(r)
+    assert not d.lock.locked()
+
+
+def test_scope_counts_reviews_not_chunks():
+    structured={'groups':{'G1':[{'citations':['E1','E2']}]}}
+    evidence=[{'citation_id':f'E{i}','review_id':'same','product_id':'one'} for i in [1,2]]
+    assert ui.cited_scope(structured,evidence)=={'reviews':1,'products':1}
+    assert ui.cited_scope(None,evidence) is None
+
+
+def test_free_planner_rejects_duplicate_aspects(demo,monkeypatch):
+    d,r,*_=demo;r.update(question_id='',question='Outra pergunta')
+    base=generation.api
+    def duplicated(path,payload=None,**kw):
+        out=base(path,payload,**kw)
+        if payload['options']['num_predict']!=1 and payload['messages'][0]['content']==ui.PLANNER_SYSTEM:
+            out['message']['content']=json.dumps({'question_en':'Question?', 'aspects':['same']*5})
+        return out
+    monkeypatch.setattr(generation,'api',duplicated)
+    with pytest.raises(ValueError,match='repetidas'):d.answer(r)
+    assert not d.lock.locked()
+
+
+def test_configuration_tamper_is_rejected_before_artifact_loading(tmp_path):
+    folder=tmp_path/'configs';folder.mkdir();(folder/'settings.json').write_text('{}')
+    (folder/'evaluation-freeze.v2.json').write_text(json.dumps({'status':'frozen_user_authorized','configuration':'configs/settings.json','configuration_sha256':'incorrect'}))
+    with pytest.raises(ValueError,match='diferente'):ui.load_demo_configuration(tmp_path)
+
+
+def test_legacy_prompt_export_keeps_archived_pilots_reproducible():
+    import hashlib
+    ui.helpers() # Adds the scripts path, without model calls.
+    import serve_demo
+    assert hashlib.sha256(serve_demo.DEMO_SYSTEM.encode()).hexdigest()=='b5304c6ce2a7d9660ae0a383eaf8803ab833938c8a41d2da14c7c49a70963f5a'
+
+
+def test_runtime_identity_failure_releases_lock(demo,monkeypatch):
+    d,r,*_=demo
+    def mismatch(*args):raise ValueError('Active runtime/model differs')
+    monkeypatch.setattr(ui,'verify_runtime',mismatch)
+    with pytest.raises(ValueError,match='differs'):d.answer(r)
+    assert not d.lock.locked()
+
+
+@pytest.mark.parametrize('error,status',[(ui.DemoInputError('Escolha um produto.'),400),(ValueError('runtime mismatch'),503),(RuntimeError('offline'),503)])
+def test_http_separates_user_errors_from_backend_failures(error,status):
+    import io
+    ui.helpers()
+    from serve_demo import make_handler
+    def answer(request):raise error
+    handler=make_handler(SimpleNamespace(answer=answer))
+    replies=[];body=b'{"question":"test"}'
+    request=SimpleNamespace(path='/api/ask',headers={'Host':'127.0.0.1:8501','Content-Length':str(len(body))},
+        server=SimpleNamespace(server_port=8501),rfile=io.BytesIO(body),reply=lambda code,data:replies.append((code,data)))
+    handler.do_POST(request)
+    assert replies[0][0]==status
+    if status==503:assert 'runtime mismatch' not in replies[0][1]['error']
+
+
+def test_http_rejects_foreign_origin_without_model_calls():
+    ui.helpers()
+    from serve_demo import make_handler
+    replies=[]
+    request=SimpleNamespace(path='/api/ask',headers={'Host':'127.0.0.1:8501','Origin':'https://foreign.example'},
+        server=SimpleNamespace(server_port=8501),reply=lambda code,data:replies.append(code))
+    make_handler(SimpleNamespace()).do_POST(request)
+    assert replies==[403]

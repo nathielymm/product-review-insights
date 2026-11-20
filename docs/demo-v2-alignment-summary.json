@@ -1,0 +1,31 @@
+{
+  "schema": "demo_v2_alignment_validation",
+  "status": "implemented_and_locally_verified",
+  "unit_tests_passed": 135,
+  "demo_tests": 24,
+  "predefined_contexts_matching_frozen": 36,
+  "offline_context_check_generator_calls": 0,
+  "browser_live_smoke_queries_performed_by_assistant": 3,
+  "browser_checks": [
+    "predefined_traditional",
+    "predefined_thematic",
+    "free_question",
+    "cited_source_opened",
+    "original_English_opened"
+  ],
+  "source_of_questions": "frozen_v2_for_predefined;separate_local_planner_for_free",
+  "original_English_generation_reused": true,
+  "presentation_translation_only": true,
+  "historical_prompt_export_unchanged": true,
+  "frozen_inputs_preserved": 73,
+  "earlier_registered_files_preserved": 77,
+  "primary_metrics_sha256": "e965487d87320b361b2252a7255f8a23a510e00dec1488261dbed1d5a9b03f05",
+  "live_demo_queries_added_to_experiments": false,
+  "independent_semantic_validation": false,
+  "known_limitations": [
+    "Automatic translation can have lexical inaccuracies.",
+    "Free-query aspect planning is demonstrative, not evaluated in frozen results.",
+    "Clean-environment installation and full reconstruction from a new Parquet are not certified."
+  ],
+  "no_remote_creation_or_push": true
+}

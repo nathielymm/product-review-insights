@@ -16,7 +16,9 @@ Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial
 - [Inspeção separada das diferenças diagnósticas](docs/product-evaluation.v2-diagnostic-inspection.md)
 - [Anotação e revisão humana parcial](docs/product-evaluation.v2-annotation-review.md)
 - [Implementação e verificações técnicas](docs/product-evaluation.v2-implementation.md)
-- [Interface demonstrativa local: como executar](docs/local-demo.md)
+- [Interface por produto: como executar](docs/local-demo.md)
+- [Reprodução local da v2](docs/reproduction.md)
+- [Verificação da interface v2](docs/demo-v2-alignment.md)
 - [Auditoria dos dados](docs/data-audit.json)
 - [Progresso por entregas e histórico preservado](docs/development-history.md)
 

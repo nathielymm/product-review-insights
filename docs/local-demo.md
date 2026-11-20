@@ -1,51 +1,45 @@
-# Demonstração local
+# Interface local — avaliação por produto v2
 
-A interface contém pergunta, seleção de método, resposta e fontes, com escolha entre os três conjuntos principais. Ela reutiliza a recuperação e a geração existentes, sem escrever corpora, índices, respostas experimentais ou métricas. As consultas não são experimentos adicionais do TCC.
+A interface usa os três produtos da v2: escova GranNaturals (613 avaliações), shampoo Pure Body Naturals Argan (473) e máscara Bold Lash (123). A consulta ocorre em um índice individual, com quatro agrupamentos internos ao produto, sem consulta conjunta a famílias ou reconstrução de índices.
 
-## Executar
+## Iniciar
 
-Na raiz do repositório, com o ambiente local já preparado:
-
-```sh
-ollama serve
-```
-
-Neste computador, o runtime usado nos experimentos está guardado no projeto. Se `ollama` não estiver no PATH, inicie-o da raiz do repositório com:
+Na raiz do repositório, use o ambiente do projeto e o Ollama local com o modelo e runtime registrados na configuração v2. Neste computador:
 
 ```sh
 OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NO_CLOUD=1 OLLAMA_MODELS="$PWD/artifacts/ollama-models" artifacts/ollama-runtime/Ollama.app/Contents/Resources/ollama serve
 ```
 
-Se o Ollama já estiver aberto, use o serviço existente. O modelo `gemma3:4b` precisa estar disponível localmente. Em outro terminal:
+Se esse serviço já estiver ativo, utilize-o. Em outro terminal:
 
 ```sh
-.venv/bin/python scripts/serve_demo.py
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python scripts/serve_demo.py
 ```
 
-Abra http://127.0.0.1:8501. Para outra porta, use `--port 8502`. Encerre com Ctrl+C. A interface usa somente a biblioteca padrão do Python e o ambiente existente; não requer instalação de Streamlit ou alteração de dependências.
+Abra http://127.0.0.1:8501. Outra porta pode ser escolhida com `--port 8503`; encerre com Ctrl+C. O servidor só escuta em loopback. Não há instalação de Streamlit ou nova dependência de interface.
 
-Os três índices principais declarados em configs/evaluation-freeze.v1.json, incluindo seus encoders locais, precisam existir. A distribuição de código não inclui esses artefatos privados. O serviço escuta apenas em 127.0.0.1 e consulta o Ollama local em 127.0.0.1:11434; não há envio a serviços de nuvem. Não disponibilizar esse servidor diretamente na rede.
+O código público não inclui dados, índices ou modelos. Além do código e das configurações versionadas, a demonstração requer os três diretórios de índice em `artifacts/product-evaluation-v2/review-candidate/`, com `metadata.json`, `index.faiss`, `chunks.jsonl`, `clusters.npy` e os snapshots `encoder/`, bem como o Gemma no Ollama local. Configuração, perguntas, código reutilizado e metadados são conferidos contra a v2; o Retriever valida os arquivos do índice e encoder ao carregá-los. O modelo ativo deve corresponder ao digest e à versão de runtime registrados. Não são necessárias anotações semânticas privadas para usar a interface.
 
-## Uso e limites
+Se o ledger de sondagens prévias em `results/product-evaluation-v2/technical-checks/runtime-token-probes.private.jsonl` estiver disponível, ele é lido e verificado pelo hash. Sem ele, o orçamento é conferido por sondagens técnicas em memória. O aplicativo não escreve no ledger congelado nem em outros arquivos de resultados.
 
-Selecione o conjunto e o método, escreva a pergunta e clique em “Consultar avaliações”. As respostas da demonstração são geradas em português brasileiro com um contrato de idioma próprio da interface; os comentários originais permanecem em inglês. O prompt e as respostas em inglês dos experimentos congelados não foram alterados. Referências como [E1] abrem os trechos efetivamente incluídos no contexto, com identificador da família. Os textos são apresentados como texto, sem executar HTML recebido do modelo ou das fontes.
+## Perguntas e métodos
 
-O tempo exibido inclui o carregamento do índice/modelo quando necessário e não é comparável diretamente às latências congeladas. Formato inválido e cortes são sinalizados, preservando o texto recebido. Falhas mostram uma mensagem e não geram respostas fictícias ou novas tentativas automáticas. Uma consulta é processada por vez; repetir a pergunta é uma nova consulta demonstrativa.
+Escolha um produto, um método e uma das seis perguntas do estudo, ou escreva outra pergunta. Ao trocar o produto, a pergunta é limpa e as opções são atualizadas. Editar um exemplo o transforma em pergunta livre.
 
-Não há gravação de histórico ou logs de perguntas pela aplicação. Pergunta e resultado ficam na memória do navegador/servidor durante o processamento; o Ollama mantém o modelo carregado conforme a configuração existente. As fontes do corpus são privadas e devem ser revisadas antes de qualquer compartilhamento. Citações identificáveis não garantem fidelidade semântica. A aplicação apoia exploração de hipóteses, sem validação comercial ou clínica.
+Nas perguntas avaliadas, o servidor reutiliza exatamente o equivalente inglês, as cinco consultas por aspectos, RRF com constante 60, até 16 candidatos por aspecto, deduplicação por avaliação e limite de 80 candidatos. O tradicional seleciona as primeiras oito avaliações do ranking comum; o temático seleciona representantes dos grupos locais e completa pelo mesmo ranking. O mesmo `prepare_attempt` da execução v2 compõe o contexto.
 
-## Identificação de produtos
+Na pergunta livre, uma chamada local de planejamento traduz a pergunta para inglês e propõe cinco consultas por aspectos. Essa entrada passa pelo mesmo algoritmo de fusão/seleção, mas é um caminho demonstrativo adicional: perguntas e aspectos não foram predefinidos ou pontuados no experimento. O planejador pode interpretar incorretamente a intenção; seus resultados não ampliam a grade experimental.
 
-Resposta e fontes mostram nome descritivo e tipo de produto, mantendo grupo e código como referência secundária. demo/product-labels.json deriva das famílias descritivas já registradas em configs/diversity-candidates.draft.json; não é um catálogo oficial ou confirmação de SKU, versão ou fórmula. Nomes ausentes recebem identificação genérica e mantêm o código, sem inventar marca. Esses rótulos são apenas apresentação e não entram na recuperação ou no prompt.
+## Geração e apresentação
 
-## Leitura das respostas
+A resposta usa a função original de geração em inglês e seus parâmetros congelados. Uma segunda etapa traduz somente observações, propostas, incertezas e limites para português. Fontes, identidades e citações permanecem iguais, e o inglês é conferido para detectar alteração durante a tradução. “Ver original em inglês” permite consultá-lo.
 
-Respostas estruturadas válidas aparecem em cartões por produto. Cada achado mantém relato, referências, proposta e incerteza nos campos originais, com destaque visual para sugestões e pontos a verificar. O título “Relatos e problemas” também pode conter experiências positivas; a interface não infere uma nova classificação. Limites gerais aparecem ao final. Saídas inválidas continuam visíveis como texto original com aviso, sem reparo ou descarte.
+A resposta aparece em cartões com relatos, sugestões e pontos a verificar. As referências abrem as fontes efetivamente incluídas no contexto, apresentadas em inglês. A quantidade de avaliações considera somente as citadas, deduplicadas por avaliação; não mede representatividade ou cobertura de todo o corpus. Os textos são inseridos como texto, sem executar HTML recebido.
 
-A resposta mostra a quantidade de avaliações únicas citadas e de produtos correspondentes. Vários trechos da mesma avaliação contam uma vez. Fontes incluídas no contexto, mas não citadas, não entram nessa contagem. O resumo fica indisponível quando a estrutura ou a identidade das avaliações não permite contagem confiável; não representa prevalência ou cobertura do corpus.
+Se a tradução falhar, a interface informa isso e mostra o original em inglês. Se o inglês vier fora do formato, o texto recebido continua visível, sem reparo ou nova geração automática. Cortes de inglês ou tradução são sinalizados. Não há histórico persistido de perguntas ou respostas. A aplicação permite uma consulta por vez, sem substituir resultados do TCC.
 
-## Consulta por produto
+O orçamento de tokens é verificado pelo transporte da v2: entradas novas podem exigir sondagem técnica de um token, separada da resposta. O tempo na página inclui carga, planejamento quando necessário, sondagens, geração e tradução; não deve ser comparado diretamente às medianas experimentais de geração inglesa.
 
-O seletor Produto permite consultar todos os produtos do conjunto ou uma família específica. As opções são atualizadas quando o conjunto muda. A API valida que a família pertence ao conjunto escolhido. Na consulta individual, somente os vetores dos trechos dessa família entram em um índice temporário em memória; a busca e a seleção de candidatos acontecem dentro desse recorte, antes da escolha dos oito trechos. Não se filtra apenas o resultado final da busca geral. Os dois métodos estão disponíveis.
+## Reprodução e verificações
 
-Os vetores e agrupamentos existentes são reutilizados sem nova indexação em disco ou reagrupamento. O método temático diversifica os grupos existentes dentro da família, sem garantir oito temas distintos. Modelo, orçamento de contexto e limite de geração são os mesmos da demonstração anterior. A consulta individual é uma extensão de uso da interface, sem avaliação científica própria ou comprovação de maior profundidade; resultados e métricas congelados permanecem separados.
+Consulte [reprodução da v2](reproduction.md) e [resultados congelados](product-evaluation.v2-results.md). Os testes usam fontes/modelos simulados para verificar limites, inglês, tradução, citações e isolamento. A integração offline também conferiu os 36 contextos das perguntas avaliadas contra os registrados, sem gerar novas respostas. Consultas ao vivo são verificações demonstrativas separadas, não novas métricas de qualidade.

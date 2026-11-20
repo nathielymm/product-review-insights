@@ -8,24 +8,26 @@
 </style>
 <main>
 <header><span class="tag">PRODUCT REVIEW INSIGHTS</span><h1>O que as avaliações revelam?</h1><p>Explore avaliações de consumidores e identifique oportunidades de melhoria em produtos.</p></header>
-<form id="ask"><div class="options"><div><label for="cohort">Conjunto de produtos</label><select id="cohort" required><option value="compact_mascaras">Máscaras de cílios</option><option value="intermediate_hair_disjoint">Cuidados e ferramentas para cabelo</option><option value="varied_disjoint">Produtos de funções variadas</option></select></div><div><label for="method">Método de recuperação</label><select id="method"><option value="traditional">RAG tradicional · similaridade</option><option value="thematic">RAG temático · diversidade de grupos</option></select></div></div>
-<p class="hint">Tradicional: busca comentários semelhantes à pergunta. Temático: inclui comentários de diferentes grupos temáticos.</p><label for="product">Produto</label><select id="product" disabled><option value="">Carregando produtos…</option></select><p class="hint">Escolha um produto para aprofundar a análise ou consulte o conjunto inteiro.</p><label for="question">Sua pergunta</label><textarea id="question" maxlength="2000" required placeholder="Quais problemas de aplicação aparecem nos relatos e que melhorias poderiam ser investigadas?"></textarea><button id="submit" type="submit">Consultar avaliações</button><div id="status" role="status" aria-live="polite"></div></form>
-<div id="result" hidden><section aria-labelledby="answer-title"><h2 id="answer-title">Resposta</h2><p id="context" class="hint"></p><p id="scope" class="hint" hidden></p><p id="warning" class="notice" hidden></p><div id="answer"></div><p id="timing" class="hint"></p></section><section><h2>Fontes</h2><p class="hint">Comentários originais em inglês. Clique nas referências da resposta ou abra os trechos abaixo.</p><div id="sources"></div></section></div>
+<form id="ask"><div class="options"><div><label for="product">Produto</label><select id="product" required disabled><option value="">Carregando produtos…</option></select></div><div><label for="method">Método de recuperação</label><select id="method"><option value="traditional">RAG tradicional · similaridade</option><option value="thematic">RAG temático · diversidade de temas</option></select></div></div>
+<p class="hint">As avaliações e os temas são analisados dentro do produto escolhido.</p><label for="example">Perguntas do estudo</label><select id="example" disabled><option value="">Escrever outra pergunta</option></select><label for="question">Sua pergunta</label><textarea id="question" maxlength="2000" required placeholder="Quais problemas aparecem nos relatos e que melhorias poderiam ser investigadas?"></textarea><button id="submit" type="submit" disabled>Consultar avaliações</button><div id="status" role="status" aria-live="polite"></div></form>
+<div id="result" hidden><section aria-labelledby="answer-title"><h2 id="answer-title">Resposta</h2><p id="context" class="hint"></p><p id="scope" class="hint" hidden></p><p id="warning" class="notice" hidden></p><div id="answer"></div><details id="original"><summary>Ver original em inglês</summary><p id="english"></p></details><p id="timing" class="hint"></p></section><section><h2>Fontes</h2><p class="hint">Comentários originais em inglês. Clique nas referências da resposta ou abra os trechos abaixo.</p><div id="sources"></div></section></div>
 
 </main>
 <script>
 const $=id=>document.getElementById(id);
-let catalog={};
-function updateProducts(){const select=$('product');select.replaceChildren();const all=document.createElement('option');all.value='';all.textContent='Todos os produtos do conjunto';select.append(all);for(const p of catalog[$('cohort').value]||[]){const option=document.createElement('option');option.value=p.id;option.textContent=p.name;select.append(option);}select.disabled=false;}
-$('cohort').addEventListener('change',updateProducts);
-fetch('/api/options').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{catalog=data.products;updateProducts();}).catch(()=>{$('product').replaceChildren(new Option('Não foi possível carregar os produtos',''));$('status').textContent='Atualize a página para carregar os produtos.';});
+let catalog=[];
+function updateQuestions(){$('result').hidden=true;$('status').textContent='';const select=$('example');select.replaceChildren(new Option('Escrever outra pergunta',''));const p=catalog.find(p=>p.id===$('product').value);for(const q of p?.questions||[])select.append(new Option(q.text,q.id));select.disabled=false;$('question').value='';}
+$('product').addEventListener('change',updateQuestions);
+$('example').addEventListener('change',()=>{const q=catalog.find(p=>p.id===$('product').value)?.questions.find(q=>q.id===$('example').value);$('question').value=q?.text||'';});
+$('question').addEventListener('input',()=>{$('example').value='';});
+fetch('/api/options').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{catalog=data.products;$('product').replaceChildren();for(const p of catalog)$('product').append(new Option(p.name+' · '+p.reviews+' avaliações',p.id));$('product').disabled=false;updateQuestions();$('submit').disabled=false;}).catch(()=>{$('status').textContent='Não foi possível carregar os produtos. Confira os índices locais da v2.';});
 $('ask').addEventListener('submit',async event=>{
  event.preventDefault();if(!$('question').value.trim()){ $('status').textContent='Escreva uma pergunta.';return; }
  $('submit').disabled=true;$('result').hidden=true;$('status').textContent='Consultando avaliações…';
- const cohort=$('cohort').value,method=$('method').value,question=$('question').value,product_id=$('product').value;
- const caption=$('cohort').selectedOptions[0].text+' · '+$('product').selectedOptions[0].text+' · '+$('method').selectedOptions[0].text;
+ const method=$('method').value,question=$('question').value,product_id=$('product').value,question_id=$('example').value;
+ const caption=$('product').selectedOptions[0].text+' · '+$('method').selectedOptions[0].text;
  try{
- const response=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,cohort,method,product_id})});
+ const response=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,question_id,method,product_id})});
  const data=await response.json();if(!response.ok)throw new Error(data.error);
  $('context').textContent=caption+' — '+question;
  $('scope').hidden=!data.cited_scope;
@@ -36,7 +38,7 @@ $('ask').addEventListener('submit',async event=>{
  if(!data.evidence.length)$('sources').textContent='Nenhuma fonte encontrada.';
  $('answer').replaceChildren();$('answer').className='';
  const cite=(parent,id)=>{if(!ids.has(id))return;const link=document.createElement('a');link.href='#source-'+id;link.textContent='['+id+']';link.onclick=()=>{$('source-'+id).open=true;};parent.append(link);};
- const block=(parent,label,text,kind)=>{if(!text)return;const box=document.createElement('div');box.className='finding-block '+kind;const title=document.createElement('span');title.className='finding-label';title.textContent=label;const body=document.createElement('p');body.textContent=text;box.append(title,body);parent.append(box);};
+ const block=(parent,label,text,kind)=>{if(!text||/^(none|nenhum|nenhuma)$/i.test(text.trim()))return;const box=document.createElement('div');box.className='finding-block '+kind;const title=document.createElement('span');title.className='finding-label';title.textContent=label;const body=document.createElement('p');body.textContent=text;box.append(title,body);parent.append(box);};
  if(data.products?.length){
   for(const product of data.products){
    const card=document.createElement('article');card.className='product-card';const title=document.createElement('h3');title.textContent=product.name;const code=document.createElement('p');code.className='product-code';code.textContent=product.group+' · '+product.product_id;card.append(title,code);
@@ -47,7 +49,8 @@ $('ask').addEventListener('submit',async event=>{
  }else{
   $('answer').className='answer';for(const part of data.answer.split(/(\[E\d+\])/g)){const id=part.slice(1,-1);if(/^\[E\d+\]$/.test(part)&&ids.has(id))cite($('answer'),id);else $('answer').append(document.createTextNode(part));}
  }
- $('warning').hidden=!(data.cut||data.format_valid===false);$('warning').textContent=data.cut?'A resposta atingiu o limite de geração e pode estar incompleta.':'A resposta veio fora do formato esperado.';
+ $('english').textContent=data.english_answer||'';
+ $('warning').hidden=!(data.cut||data.format_valid===false||data.translation_failed);$('warning').textContent=[data.cut?'A resposta atingiu o limite de geração e pode estar incompleta.':'',data.format_valid===false?'O original em inglês veio fora do formato esperado.':'',data.translation_failed?'A tradução não ficou disponível. Exibindo o original em inglês.':''].filter(Boolean).join(' ');
  $('timing').textContent='Tempo de resposta: '+data.seconds.toFixed(1)+' s';$('result').hidden=false;$('status').textContent='Consulta concluída.';
  }catch(error){$('status').textContent=error.message||'Não foi possível concluir a consulta.';}finally{$('submit').disabled=false;}
 });
