@@ -1,0 +1,138 @@
+{
+  "schema": "original_english_product_pilot_v6_aggregates",
+  "role": "development_only",
+  "product_id": "B019GBG0IE",
+  "answers": 4,
+  "generation_calls": 4,
+  "translation_calls": 4,
+  "spec_sha256": "8763bd8423739498a334da0f7bba25ba32061856436a5a71c88a3695fa9052fa",
+  "runs_sha256": "8ce3afc0167727813c6af7d32708bca5ed36fb03304a76ea4f8d03143da4c218",
+  "baseline_runs_sha256": "4174958cf6c8a42b7f91056a98d2344d27b9f93fb9cee6324cbd191933ea7773",
+  "original_generation_code_sha256": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "index_metadata_sha256": "30b0cff901900bc021646104853a50da6ffa4cc3e9a0d8e0dc680d975f194593",
+  "outcomes": [
+    {
+      "question_id": "P01",
+      "method": "traditional",
+      "context_matches_round_5": true,
+      "included_reviews": 8,
+      "cited_unique_reviews": 8,
+      "english_findings": 1,
+      "english_valid": true,
+      "english_cut": false,
+      "generation_error": false,
+      "translation_attempted": true,
+      "translation_valid": true,
+      "translation_cut": false,
+      "translation_error": false,
+      "translation_structure_and_citations_preserved": true,
+      "retrieval_seconds": 0.16180662499391474,
+      "generation_seconds": 3.1879668750043493,
+      "translation_seconds": 2.3112901670101564,
+      "total_seconds": 5.6613093329942785,
+      "generation_tokens": {
+        "prompt_eval_count": 1682,
+        "eval_count": 186
+      },
+      "translation_tokens": {
+        "prompt_eval_count": 290,
+        "eval_count": 181
+      },
+      "previous_generation_source_calls": 8,
+      "previous_total_seconds": 10.611663666990353
+    },
+    {
+      "question_id": "P01",
+      "method": "thematic",
+      "context_matches_round_5": true,
+      "included_reviews": 8,
+      "cited_unique_reviews": 8,
+      "english_findings": 3,
+      "english_valid": true,
+      "english_cut": false,
+      "generation_error": false,
+      "translation_attempted": true,
+      "translation_valid": true,
+      "translation_cut": false,
+      "translation_error": false,
+      "translation_structure_and_citations_preserved": true,
+      "retrieval_seconds": 0.010121291998075321,
+      "generation_seconds": 4.511593665985856,
+      "translation_seconds": 3.04273945800378,
+      "total_seconds": 7.564688957994804,
+      "generation_tokens": {
+        "prompt_eval_count": 1731,
+        "eval_count": 297
+      },
+      "translation_tokens": {
+        "prompt_eval_count": 341,
+        "eval_count": 241
+      },
+      "previous_generation_source_calls": 8,
+      "previous_total_seconds": 10.923383790999651
+    },
+    {
+      "question_id": "P02",
+      "method": "traditional",
+      "context_matches_round_5": true,
+      "included_reviews": 8,
+      "cited_unique_reviews": 8,
+      "english_findings": 2,
+      "english_valid": true,
+      "english_cut": false,
+      "generation_error": false,
+      "translation_attempted": true,
+      "translation_valid": true,
+      "translation_cut": false,
+      "translation_error": false,
+      "translation_structure_and_citations_preserved": true,
+      "retrieval_seconds": 0.010845040989806876,
+      "generation_seconds": 4.152099208993604,
+      "translation_seconds": 3.6952706660085823,
+      "total_seconds": 7.858427291008411,
+      "generation_tokens": {
+        "prompt_eval_count": 1266,
+        "eval_count": 293
+      },
+      "translation_tokens": {
+        "prompt_eval_count": 388,
+        "eval_count": 297
+      },
+      "previous_generation_source_calls": 8,
+      "previous_total_seconds": 14.975648167019244
+    },
+    {
+      "question_id": "P02",
+      "method": "thematic",
+      "context_matches_round_5": true,
+      "included_reviews": 8,
+      "cited_unique_reviews": 8,
+      "english_findings": 4,
+      "english_valid": true,
+      "english_cut": false,
+      "generation_error": false,
+      "translation_attempted": true,
+      "translation_valid": true,
+      "translation_cut": false,
+      "translation_error": false,
+      "translation_structure_and_citations_preserved": true,
+      "retrieval_seconds": 0.007293833012226969,
+      "generation_seconds": 7.607934708008543,
+      "translation_seconds": 8.345204874989577,
+      "total_seconds": 15.960723458003486,
+      "generation_tokens": {
+        "prompt_eval_count": 1266,
+        "eval_count": 575
+      },
+      "translation_tokens": {
+        "prompt_eval_count": 648,
+        "eval_count": 658
+      },
+      "previous_generation_source_calls": 8,
+      "previous_total_seconds": 14.927177333011059
+    }
+  ],
+  "restoration_scope": "Original English function/prompt/schema/options, not original multi-product corpus or entire retrieval design. Aspect retrieval and product-local groups retained.",
+  "interpretation": "Translation syntax and citation preservation are not linguistic or semantic fidelity. English and translation reviewed separately by assistant after labels, no independent score or winner. Translation has its own output budget/cost. Earlier rounds preserved."
+}

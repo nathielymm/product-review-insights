@@ -1,0 +1,180 @@
+{
+  "schema": "source_isolated_product_pilot_v4_aggregates",
+  "role": "development_only",
+  "product_id": "B019GBG0IE",
+  "answers": 4,
+  "source_calls": 32,
+  "repetitions_per_combination": 1,
+  "spec_sha256": "30554eb619a242136db1ae885ed16b9713609063abb384ac0b58c7a1cdead20c",
+  "runs_sha256": "ddcdd2190aff7ab78addf9b1b29a6e689af209a56578325f611a00fd7ba1c631",
+  "baseline_runs_sha256": "60c064ad3d8101dd317b4c0909b6a2d9a2d520bfdf2f7353271d0a8c84368c1b",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "index_metadata_sha256": "30b0cff901900bc021646104853a50da6ffa4cc3e9a0d8e0dc680d975f194593",
+  "outcomes": [
+    {
+      "question_id": "P01",
+      "method": "traditional",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "context_matches_round_3": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 9.053450291976333,
+      "previous_total_seconds": 5.245031457976438,
+      "new_prompt_tokens": 4933,
+      "previous_prompt_tokens": 1672,
+      "new_output_tokens": 503,
+      "previous_output_tokens": 348,
+      "previous_findings": 6,
+      "nonempty_suspicion_fields_not_validated": 3,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      }
+    },
+    {
+      "question_id": "P01",
+      "method": "thematic",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "context_matches_round_3": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 9.182573041995056,
+      "previous_total_seconds": 5.466059208003571,
+      "new_prompt_tokens": 4962,
+      "previous_prompt_tokens": 1701,
+      "new_output_tokens": 518,
+      "previous_output_tokens": 378,
+      "previous_findings": 6,
+      "nonempty_suspicion_fields_not_validated": 1,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      }
+    },
+    {
+      "question_id": "P02",
+      "method": "traditional",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "context_matches_round_3": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 10.956524416978937,
+      "previous_total_seconds": 7.1046613750222605,
+      "new_prompt_tokens": 4610,
+      "previous_prompt_tokens": 1272,
+      "new_output_tokens": 632,
+      "previous_output_tokens": 520,
+      "previous_findings": 6,
+      "nonempty_suspicion_fields_not_validated": 0,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      }
+    },
+    {
+      "question_id": "P02",
+      "method": "thematic",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "context_matches_round_3": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 11.49427266701241,
+      "previous_total_seconds": 6.793030124972574,
+      "new_prompt_tokens": 4610,
+      "previous_prompt_tokens": 1272,
+      "new_output_tokens": 632,
+      "previous_output_tokens": 499,
+      "previous_findings": 6,
+      "nonempty_suspicion_fields_not_validated": 0,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      }
+    }
+  ],
+  "common_review_output_comparison": [
+    {
+      "question_id": "P01",
+      "common_reviews": 6,
+      "identical_raw_outputs_for_common_reviews": 6
+    },
+    {
+      "question_id": "P02",
+      "common_reviews": 8,
+      "identical_raw_outputs_for_common_reviews": 8
+    }
+  ],
+  "interpretation": "Mechanical source isolation/binding is not entailment. One model call per source changes input cost, latency and synthesis; findings cap 8 vs prior 6. Same total planned output cap, not same workload. No independent semantic score, causal attribution or winner."
+}

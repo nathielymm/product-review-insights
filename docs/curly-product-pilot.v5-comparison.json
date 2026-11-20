@@ -1,0 +1,210 @@
+{
+  "schema": "product_attribution_pilot_v5_aggregates",
+  "role": "development_only",
+  "product_id": "B019GBG0IE",
+  "answers": 4,
+  "source_calls": 32,
+  "repetitions_per_combination": 1,
+  "spec_sha256": "f361ac00ce23681e09cd0584fbf4dd22b334ba4938ee5c97748cc759560d79e0",
+  "runs_sha256": "4174958cf6c8a42b7f91056a98d2344d27b9f93fb9cee6324cbd191933ea7773",
+  "baseline_runs_sha256": "ddcdd2190aff7ab78addf9b1b29a6e689af209a56578325f611a00fd7ba1c631",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "index_metadata_sha256": "30b0cff901900bc021646104853a50da6ffa4cc3e9a0d8e0dc680d975f194593",
+  "outcomes": [
+    {
+      "question_id": "P01",
+      "method": "traditional",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 10.611663666990353,
+      "previous_total_seconds": 9.053450291976333,
+      "new_prompt_tokens": 6253,
+      "previous_prompt_tokens": 4933,
+      "new_output_tokens": 562,
+      "previous_output_tokens": 503,
+      "previous_findings": 8,
+      "nonempty_suspicion_fields_not_validated": 2,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      },
+      "context_matches_round_4": true,
+      "previous_source_calls": 8,
+      "declared_attribution_labels_not_validated": {
+        "produto_atual": 8
+      },
+      "current_reports_at_char_cap": 0,
+      "previous_reports_at_160_chars": 4,
+      "max_current_report_length": 168
+    },
+    {
+      "question_id": "P01",
+      "method": "thematic",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 10.923383790999651,
+      "previous_total_seconds": 9.182573041995056,
+      "new_prompt_tokens": 6282,
+      "previous_prompt_tokens": 4962,
+      "new_output_tokens": 593,
+      "previous_output_tokens": 518,
+      "previous_findings": 8,
+      "nonempty_suspicion_fields_not_validated": 2,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      },
+      "context_matches_round_4": true,
+      "previous_source_calls": 8,
+      "declared_attribution_labels_not_validated": {
+        "produto_atual": 8
+      },
+      "current_reports_at_char_cap": 0,
+      "previous_reports_at_160_chars": 5,
+      "max_current_report_length": 174
+    },
+    {
+      "question_id": "P02",
+      "method": "traditional",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 14.975648167019244,
+      "previous_total_seconds": 10.956524416978937,
+      "new_prompt_tokens": 5930,
+      "previous_prompt_tokens": 4610,
+      "new_output_tokens": 973,
+      "previous_output_tokens": 632,
+      "previous_findings": 8,
+      "nonempty_suspicion_fields_not_validated": 5,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      },
+      "context_matches_round_4": true,
+      "previous_source_calls": 8,
+      "declared_attribution_labels_not_validated": {
+        "produto_atual": 8
+      },
+      "current_reports_at_char_cap": 0,
+      "previous_reports_at_160_chars": 0,
+      "max_current_report_length": 147
+    },
+    {
+      "question_id": "P02",
+      "method": "thematic",
+      "included_reviews": 8,
+      "new_findings": 8,
+      "cited_unique_reviews": 8,
+      "source_calls": 8,
+      "valid_source_calls": 8,
+      "empty_source_calls": 0,
+      "cut_source_calls": 0,
+      "error_source_calls": 0,
+      "answer_contract_valid": true,
+      "source_binding_verified": true,
+      "planned_answer_output_token_cap": 1536,
+      "source_output_token_caps": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "new_total_seconds": 14.927177333011059,
+      "previous_total_seconds": 11.49427266701241,
+      "new_prompt_tokens": 5930,
+      "previous_prompt_tokens": 4610,
+      "new_output_tokens": 973,
+      "previous_output_tokens": 632,
+      "previous_findings": 8,
+      "nonempty_suspicion_fields_not_validated": 5,
+      "resources_missing": {
+        "prompt_eval_count": 0,
+        "eval_count": 0
+      },
+      "context_matches_round_4": true,
+      "previous_source_calls": 8,
+      "declared_attribution_labels_not_validated": {
+        "produto_atual": 8
+      },
+      "current_reports_at_char_cap": 0,
+      "previous_reports_at_160_chars": 0,
+      "max_current_report_length": 147
+    }
+  ],
+  "common_review_output_comparison": [
+    {
+      "question_id": "P01",
+      "common_reviews": 6,
+      "identical_raw_outputs_for_common_reviews": 6
+    },
+    {
+      "question_id": "P02",
+      "common_reviews": 8,
+      "identical_raw_outputs_for_common_reviews": 8
+    }
+  ],
+  "interpretation": "Same source-isolated retrieval and 32 calls/shared output caps as round 4. Character bounds and prompt/schema attribution changed. Declared attribution labels and valid JSON are not semantic proof. Unblinded assistant review only; no winner or independent quality score.",
+  "baseline_round": 4,
+  "current_round": 5
+}

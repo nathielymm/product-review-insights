@@ -28,6 +28,18 @@ Os agrupamentos temáticos precisam ser recalculados dentro de cada produto, em 
 
 ## Desenvolvimento e orçamento
 
+Sexta rodada em [curly-product-pilot.v6-comparison.md](curly-product-pilot.v6-comparison.md): restaurou diretamente a geração original em inglês, com tradução independente para apresentação. Índice local e recuperação por aspectos foram mantidos; inglês, fontes e citações foram preservados. A revisão distinguiu falhas da geração de falhas introduzidas na tradução; o fluxo ainda não é configuração final aprovada.
+
+Quinta rodada em [curly-product-pilot.v5-comparison.md](curly-product-pilot.v5-comparison.md): a margem de caracteres maior melhorou a completude observada, mas a instrução e o rótulo de referente não resolveram identidade e condições. Permaneceram inversões e suspeitas não sustentadas. Continua sendo desenvolvimento, sem configuração final aprovada.
+
+Quarta rodada em [curly-product-pilot.v4-comparison.md](curly-product-pilot.v4-comparison.md): análise isolada de uma fonte por chamada, com fonte atribuída pelo sistema. Houve correções pontuais, mas persistiram erros semânticos e surgiram frases incompletas; o custo de entrada aumentou. A arquitetura continua em desenvolvimento, sem promoção automática à interface ou avaliação final.
+
+Terceira rodada preservada em [curly-product-pilot.v3-comparison.md](curly-product-pilot.v3-comparison.md): a geração simplificada em português e a apresentação das fontes pelo sistema resolveram idioma/formato nas quatro tentativas, mas ainda houve falhas semânticas. A recuperação coincidiu com a rodada 2. A configuração permanece de desenvolvimento, sem aprovação de qualidade final.
+
+Segunda rodada exploratória preservada em [curly-product-pilot.v2-comparison.md](curly-product-pilot.v2-comparison.md): busca por aspectos ampliou a presença de grupos na primeira pergunta, mas o contrato com trechos literais rejeitou as quatro novas saídas. Não é configuração final aprovada e não altera o recorte ou as regras congeladas anteriores.
+
+Piloto autorizado e executado: Curly Co. foi designado como produto de desenvolvimento, com duas perguntas e quatro tentativas. Ver [relatório do piloto](curly-product-pilot.v1.md). Ele não deve entrar depois como caso final independente após orientar ajustes. Os quatro grupos e o orçamento de oito trechos deste teste são exploratórios, sem seleção final de configuração.
+
 Revisar a identidade das cinco famílias de desenvolvimento já separadas da avaliação e delimitá-las como produtos antes do piloto individual. Aplicar o mesmo critério de permitir versões do mesmo produto. Não ajustar usando as respostas finais dos candidatos de avaliação. O desenvolvimento anterior também já foi inspecionado; não se trata de validação independente.
 
 Executar em fases pequenas: verificar relevância/atribuição e agrupamentos locais; testar orçamentos de 8, 12 e 16 trechos dentro da janela real do modelo; verificar síntese e fidelidade. Oito é a referência operacional anterior, não uma quantidade comprovadamente suficiente. O número final e os limites de entrada/saída serão comuns aos métodos, definidos por capacidade e critérios de desenvolvimento antes da avaliação. Mais trechos não significam mais avaliações únicas nem maior profundidade. Registrar o que efetivamente coube no contexto.

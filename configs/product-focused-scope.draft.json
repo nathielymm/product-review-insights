@@ -176,7 +176,8 @@
       "eligible_reviews": 804,
       "status": "candidate_not_final_benchmark",
       "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
-      "attribution_note": "Manter diferenças de encaixe, secadores usados e durabilidade; não inferir versão por resultado distinto."
+      "attribution_note": "Manter diferenças de encaixe, secadores usados e durabilidade; não inferir versão por resultado distinto.",
+      "study_role": "development_pilot_not_held_out_final_evaluation"
     },
     {
       "product_case_id": "B000FEIOHW",

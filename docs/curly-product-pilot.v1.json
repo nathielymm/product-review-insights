@@ -1,0 +1,128 @@
+{
+  "schema": "individual_product_pilot_aggregates_v1",
+  "role": "development_not_final_evaluation",
+  "product_id": "B019GBG0IE",
+  "reviews": 804,
+  "chunks": 805,
+  "cluster_counts": [
+    251,
+    191,
+    182,
+    181
+  ],
+  "clusters_exploratory_not_validated": true,
+  "attempts": 4,
+  "repetitions": 1,
+  "questions": [
+    {
+      "id": "P01",
+      "question": "Quais problemas específicos são relatados, em quais condições e que experiências divergentes aparecem?",
+      "retrieval_query": "What specific problems with this hair diffuser are reported, under what usage conditions, and what contrasting experiences are described?"
+    },
+    {
+      "id": "P02",
+      "question": "Que melhorias poderiam ser investigadas a partir desses problemas, quais qualidades deveriam ser preservadas e o que precisaria ser validado?",
+      "retrieval_query": "What hair diffuser improvements could be investigated from reported problems, which valued qualities should be preserved, and what needs validation?"
+    }
+  ],
+  "spec_sha256": "1ab1241ab1fa6679b9a60cee5d65c9f6e0514c2f79468e138e80bf91c34b04f2",
+  "corpus_sha256": "b5edbb5e4dcb7b4dac3b034eedf429aabb868210595626a60664897fe5f8a47a",
+  "index_metadata_sha256": "30b0cff901900bc021646104853a50da6ffa4cc3e9a0d8e0dc680d975f194593",
+  "runs_sha256": "3679b3b7540e86179514823a872af15f9c79cf5bbd2f68cba9b301124d19ceea",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "runtime": {
+    "version": "0.40.11"
+  },
+  "retrieval_diagnostics": {
+    "P01": {
+      "candidate_clusters": {
+        "1": 59,
+        "0": 21
+      },
+      "shared_passages": 8
+    },
+    "P02": {
+      "candidate_clusters": {
+        "1": 60,
+        "0": 20
+      },
+      "shared_passages": 7
+    }
+  },
+  "outcomes": [
+    {
+      "question_id": "P01",
+      "method": "traditional",
+      "included_reviews": 8,
+      "cited_reviews": 7,
+      "clusters_in_context": {
+        "1": 7,
+        "0": 1
+      },
+      "findings": 3,
+      "format_valid": true,
+      "generation_error": false,
+      "cut": false,
+      "total_seconds": 7.295868249988416,
+      "retrieval_seconds": 0.0074911249976139516,
+      "prompt_tokens": 1388,
+      "output_tokens": 461
+    },
+    {
+      "question_id": "P01",
+      "method": "thematic",
+      "included_reviews": 8,
+      "cited_reviews": 8,
+      "clusters_in_context": {
+        "1": 7,
+        "0": 1
+      },
+      "findings": 3,
+      "format_valid": true,
+      "generation_error": false,
+      "cut": false,
+      "total_seconds": 7.09634874999756,
+      "retrieval_seconds": 0.005254749994492158,
+      "prompt_tokens": 1388,
+      "output_tokens": 527
+    },
+    {
+      "question_id": "P02",
+      "method": "traditional",
+      "included_reviews": 8,
+      "cited_reviews": 8,
+      "clusters_in_context": {
+        "1": 8
+      },
+      "findings": 2,
+      "format_valid": true,
+      "generation_error": false,
+      "cut": false,
+      "total_seconds": 5.738081291987328,
+      "retrieval_seconds": 0.004772582993609831,
+      "prompt_tokens": 1529,
+      "output_tokens": 395
+    },
+    {
+      "question_id": "P02",
+      "method": "thematic",
+      "included_reviews": 8,
+      "cited_reviews": 5,
+      "clusters_in_context": {
+        "1": 7,
+        "0": 1
+      },
+      "findings": 1,
+      "format_valid": true,
+      "generation_error": false,
+      "cut": false,
+      "total_seconds": 4.418337583018001,
+      "retrieval_seconds": 0.0038207500183489174,
+      "prompt_tokens": 1411,
+      "output_tokens": 269
+    }
+  ],
+  "quality_review": "Assistant qualitative source check after method labels were visible. No independent human scoring, exhaustive reference, depth rate or superiority test.",
+  "resource_policy": "Wall time and Ollama tokens only; first call includes model loading; fixed order; no process/memory monitoring.",
+  "frozen_experiments_changed": false
+}
