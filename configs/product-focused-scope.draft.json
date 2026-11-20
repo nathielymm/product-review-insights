@@ -1,0 +1,204 @@
+{
+  "schema": "product_focused_scope_draft_v2",
+  "status": "methodology_corrected_candidates_reviewed_not_experiment_frozen",
+  "unit": "One explicitly mapped product line or kit per analysis; never an arbitrary category or multi-product routine.",
+  "formula_changes_allowed": true,
+  "variant_changes_allowed": true,
+  "topics_within_product": true,
+  "selection_rule": "Do not exclude for formula, applicator, packaging, size or version changes; preserve attribution and uncertainty. Separate functionally different products.",
+  "products": [
+    {
+      "product_case_id": "B0B7L451Z9",
+      "label": "Máscara de cílios · Essence I Love Extreme",
+      "parent_asin": "B0B7L451Z9",
+      "allowed_item_asins": [
+        "B012XYSK1G",
+        "B09V1C22T3"
+      ],
+      "eligible_reviews": 145,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Os dois itens da família podem compor o caso da linha I Love Extreme; manter códigos e não adivinhar qual variante pertence a cada filho."
+    },
+    {
+      "product_case_id": "B08TCBP8HV",
+      "label": "Máscara de cílios · Essence Lash Princess",
+      "parent_asin": "B08TCBP8HV",
+      "allowed_item_asins": [
+        "B08TCBP8HV"
+      ],
+      "eligible_reviews": 119,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter a linha Lash Princess representada nos dados, incluindo coleção/variante quando explícita; não atribuir tudo à Snow White ou à waterproof."
+    },
+    {
+      "product_case_id": "B01557EHW4",
+      "label": "Máscara de cílios · Bold Lash",
+      "parent_asin": "B01557EHW4",
+      "allowed_item_asins": [
+        "B01557EHW4"
+      ],
+      "eligible_reviews": 123,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Mudanças relatadas de fórmula e aplicador são mantidas, distinguindo compra anterior e atual quando explícito."
+    },
+    {
+      "product_case_id": "B0BC3MQD29",
+      "label": "Máscara de cílios · Too Faced Better Than Sex",
+      "parent_asin": "B0BC3MQD29",
+      "allowed_item_asins": [
+        "B01HFMB6EE",
+        "B01J4KYUJI",
+        "B078919VBD"
+      ],
+      "eligible_reviews": 91,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Os três itens podem compor o caso Better Than Sex; manter tamanho, formulação e waterproof/regular quando explicitamente relatados."
+    },
+    {
+      "product_case_id": "B07M5HB65T",
+      "label": "Máscara de cílios · Lash Ease Fiber",
+      "parent_asin": "B07M5HB65T",
+      "allowed_item_asins": [
+        "B07M5HB65T"
+      ],
+      "eligible_reviews": 69,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter relatos e comparações de desempenho; não impor constância de fórmula."
+    },
+    {
+      "product_case_id": "B0CDNZ7F2V",
+      "label": "Shampoo · Okay Castor",
+      "parent_asin": "B0CDNZ7F2V",
+      "allowed_item_asins": [
+        "B00DPNKDR4"
+      ],
+      "eligible_reviews": 103,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter relatos de consistência e possíveis mudanças; não afirmar diluição ou culpa do vendedor sem evidência."
+    },
+    {
+      "product_case_id": "B01DD1NOZU",
+      "label": "Condicionador leave-in · Carol’s Daughter Almond",
+      "parent_asin": "B01DD1NOZU",
+      "allowed_item_asins": [
+        "B01DD1NOZU"
+      ],
+      "eligible_reviews": 174,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Usar o item leave-in B01DD1NOZU. O item B01D6O4Y12 fica separado até esclarecer sua identidade funcional."
+    },
+    {
+      "product_case_id": "B0BV1FPZY6",
+      "label": "Máscara capilar · Sauce Guacamole",
+      "parent_asin": "B0BV1FPZY6",
+      "allowed_item_asins": [
+        "B07K7VD98J"
+      ],
+      "eligible_reviews": 352,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter amostra/sachê e embalagem maior da máscara Guacamole; distinguir contexto de embalagem e aplicação."
+    },
+    {
+      "product_case_id": "B01M1IEADO",
+      "label": "Secador com difusor · Warmlife",
+      "parent_asin": "B01M1IEADO",
+      "allowed_item_asins": [
+        "B01M1IEADO"
+      ],
+      "eligible_reviews": 104,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Conflitos de potência e cor no catálogo não excluem o produto; não escolher arbitrariamente uma especificação como verdade."
+    },
+    {
+      "product_case_id": "B00R1TAN7I",
+      "label": "Escova de cabelo · GranNaturals",
+      "parent_asin": "B00R1TAN7I",
+      "allowed_item_asins": [
+        "B00R1TAN7I"
+      ],
+      "eligible_reviews": 613,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Diferenças de rigidez e relatos de compras anteriores permanecem como experiências do produto, sem comprovar redesenho."
+    },
+    {
+      "product_case_id": "B012Q9NGE4",
+      "label": "Shampoo de argan · Pure Body Naturals",
+      "parent_asin": "B012Q9NGE4",
+      "allowed_item_asins": [
+        "B012Q9NGE4"
+      ],
+      "eligible_reviews": 473,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Reformulações, tamanho e embalagem relatados são aspectos de interesse; não excluem o produto nem comprovam causalidade."
+    },
+    {
+      "product_case_id": "B08BZNW9NK",
+      "label": "Kit de cílios magnéticos · Veshely",
+      "parent_asin": "B08BZNW9NK",
+      "allowed_item_asins": [
+        "B08BZNW9NK"
+      ],
+      "eligible_reviews": 128,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "A unidade é o kit de cílios; distinguir delineador, aplicador, estilos e experiências com outros produtos."
+    },
+    {
+      "product_case_id": "B01LBESKBO",
+      "label": "Conjunto de esmaltes · Cosmetic Art 30",
+      "parent_asin": "B01LBESKBO",
+      "allowed_item_asins": [
+        "B01LBESKBO"
+      ],
+      "eligible_reviews": 89,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "A unidade é o kit de esmaltes, não uma cor ou fórmula única. Acabamentos e componentes devem ser atribuídos quando identificáveis."
+    },
+    {
+      "product_case_id": "B019GBG0IE",
+      "label": "Difusor dobrável · Curly Co",
+      "parent_asin": "B019GBG0IE",
+      "allowed_item_asins": [
+        "B019GBG0IE"
+      ],
+      "eligible_reviews": 804,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter diferenças de encaixe, secadores usados e durabilidade; não inferir versão por resultado distinto."
+    },
+    {
+      "product_case_id": "B000FEIOHW",
+      "label": "Escova dental a pilha · Sonicare HX3351",
+      "parent_asin": "B000FEIOHW",
+      "allowed_item_asins": [
+        "B000FEIOHW"
+      ],
+      "eligible_reviews": 397,
+      "status": "candidate_not_final_benchmark",
+      "identity_basis": "Existing parent linkage, functional review and local parent metadata; not exact SKU certification.",
+      "attribution_note": "Manter Sonicare HX3351 e mudanças relatadas; atribuir separadamente comparações com outros modelos recarregáveis."
+    }
+  ],
+  "pending_identity": [
+    {
+      "parent_asin": "B01DD1NOZU",
+      "item_asin": "B01D6O4Y12",
+      "eligible_reviews": 59,
+      "reason": "Functional identity unresolved: rinse-out conditioner and shampoo mentions; no item-level catalog. Not excluded for formula changes."
+    }
+  ],
+  "eligible_candidate_reviews": 3784,
+  "frozen_experiments_changed": false
+}

@@ -101,3 +101,15 @@ Foi adicionado um resumo de avaliações únicas e produtos efetivamente citados
 ## Consulta individual por família na interface
 
 Foi adicionado um seletor por produto com opções vinculadas ao conjunto. A busca individual restringe os vetores candidatos antes do ranking, utilizando um índice somente em memória e os agrupamentos existentes. Permanecem a consulta geral, os dois métodos e o orçamento de oito trechos. A suíte passou com 65 testes, incluindo exclusão de outras famílias antes do ranking e rejeição de seleção incompatível. Duas consultas reais, uma por método, retornaram oito fontes exclusivamente da família selecionada e formato válido. A extensão não altera experimentos nem estabelece ganho de profundidade sem avaliação adicional.
+
+## Proposta de metodologia v2 por família
+
+Foi preparada docs/methodology-v2-proposal.md para alinhamento: comparação pareada dentro de uma família, agrupamentos locais, desenvolvimento separado e avaliação de profundidade por aspectos, condições e contrastes sustentados. A grade proposta de 540 tentativas depende de piloto e novo congelamento. A v1 e sua discussão permanecem preservadas; não há geração ou resultado v2 nesta entrega.
+
+## Auditoria de identidade e rascunhos por item
+
+Foram auditadas as 15 famílias existentes por códigos de item e metadados locais: 19 ASINs nas 3.843 avaliações elegíveis, com três famílias de múltiplos itens. A inspeção de relatos encontrou ambiguidades de versão mesmo sob um único código. Foram preparados 19 casos privados em destinos novos com linhagem preservada e sem certificação de homogeneidade ou novos agrupamentos. Cinco candidatos receberam prioridade de revisão, sem fixar recorte final. Relatórios públicos contêm apenas agregados; a suíte passou com 66 testes. Ver docs/product-identity-audit.v1.md.
+
+## Critério de produto sem exclusão por reformulação
+
+A metodologia foi corrigida para permitir versões, mudanças de fórmula/aplicador, tamanhos e kits do mesmo produto, com atribuição e incerteza preservadas. A revisão inclui novamente todos os 15 candidatos; o mapeamento em configs/product-focused-scope.draft.json cobre 3.784 avaliações sem sobreposição. Outras 59 avaliações do item B01D6O4Y12 ficam preservadas por identidade funcional pendente, não por reformulação. A quantidade final de produtos e a grade experimental permanecem abertas ao piloto. Contagens e hashes anteriores foram conferidos; não houve geração, alteração dos corpora antigos ou ativação do novo mapeamento. Ver docs/product-scope-revised.md.

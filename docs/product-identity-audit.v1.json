@@ -1,0 +1,395 @@
+{
+  "schema": "product_identity_audit_v1",
+  "source_sha256": "b40ae565f1073e0b4960e2f424fe0c82f3d270b7c4d00bc9272ddd6a8b7411d7",
+  "metadata_sha256": "14815cf1312a0d847364866e6876c8c73738993469067242870774c372c04387",
+  "corpora_sha256": {
+    "data/processed/study-v2-qa-final/main/compact_mascaras/corpus.jsonl": "3f079922dd194865cb06d4b8223b00b11f1b508d397108364a804675b1b9d08e",
+    "data/processed/study-v2-qa-final/main/intermediate_hair_disjoint/corpus.jsonl": "e15550526500d4e78980c2c7ea8d01b6985b07a8580ee5be07b63a24d317d258",
+    "data/processed/study-v2-qa-final/main/varied_disjoint/corpus.jsonl": "b0bcf34d0a0353fff9bb74d223b086562a68fd6704c666ca63380a43c474dfcc"
+  },
+  "parents": 15,
+  "items": [
+    {
+      "parent_asin": "B000FEIOHW",
+      "item_asin": "B000FEIOHW",
+      "eligible_exact_item_reviews": 397,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 502,
+      "raw_year_range": [
+        2006,
+        2018
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 12,
+        "waterproof_variant": 7,
+        "size_or_bundle": 1,
+        "multiple_products_or_comparison": 15
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B00R1TAN7I",
+      "item_asin": "B00R1TAN7I",
+      "eligible_exact_item_reviews": 613,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 1372,
+      "raw_year_range": [
+        2015,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 20,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 3
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B012Q9NGE4",
+      "item_asin": "B012Q9NGE4",
+      "eligible_exact_item_reviews": 473,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 861,
+      "raw_year_range": [
+        2015,
+        2021
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 5,
+        "waterproof_variant": 0,
+        "size_or_bundle": 3,
+        "multiple_products_or_comparison": 25
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B01557EHW4",
+      "item_asin": "B01557EHW4",
+      "eligible_exact_item_reviews": 123,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 212,
+      "raw_year_range": [
+        2015,
+        2021
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 3,
+        "waterproof_variant": 8,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 10
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B019GBG0IE",
+      "item_asin": "B019GBG0IE",
+      "eligible_exact_item_reviews": 804,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 1328,
+      "raw_year_range": [
+        2016,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 4,
+        "waterproof_variant": 0,
+        "size_or_bundle": 18,
+        "multiple_products_or_comparison": 5
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B01DD1NOZU",
+      "item_asin": "B01D6O4Y12",
+      "eligible_exact_item_reviews": 59,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 113,
+      "raw_year_range": [
+        2016,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 0
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B01DD1NOZU",
+      "item_asin": "B01DD1NOZU",
+      "eligible_exact_item_reviews": 174,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 335,
+      "raw_year_range": [
+        2016,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 2
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B01LBESKBO",
+      "item_asin": "B01LBESKBO",
+      "eligible_exact_item_reviews": 89,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 191,
+      "raw_year_range": [
+        2016,
+        2020
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 3,
+        "multiple_products_or_comparison": 0
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B01M1IEADO",
+      "item_asin": "B01M1IEADO",
+      "eligible_exact_item_reviews": 104,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 226,
+      "raw_year_range": [
+        2016,
+        2021
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 0
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B07M5HB65T",
+      "item_asin": "B07M5HB65T",
+      "eligible_exact_item_reviews": 69,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 184,
+      "raw_year_range": [
+        2019,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 4
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B08BZNW9NK",
+      "item_asin": "B08BZNW9NK",
+      "eligible_exact_item_reviews": 128,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 304,
+      "raw_year_range": [
+        2020,
+        2022
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 1,
+        "size_or_bundle": 1,
+        "multiple_products_or_comparison": 2
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B08TCBP8HV",
+      "item_asin": "B08TCBP8HV",
+      "eligible_exact_item_reviews": 119,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 267,
+      "raw_year_range": [
+        2021,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 8,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 5
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0B7L451Z9",
+      "item_asin": "B012XYSK1G",
+      "eligible_exact_item_reviews": 141,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 284,
+      "raw_year_range": [
+        2018,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 1,
+        "waterproof_variant": 47,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 7
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0B7L451Z9",
+      "item_asin": "B09V1C22T3",
+      "eligible_exact_item_reviews": 4,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 17,
+      "raw_year_range": [
+        2023,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 2,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 0
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0BC3MQD29",
+      "item_asin": "B01HFMB6EE",
+      "eligible_exact_item_reviews": 2,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 2,
+      "raw_year_range": [
+        2017,
+        2020
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 0
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0BC3MQD29",
+      "item_asin": "B01J4KYUJI",
+      "eligible_exact_item_reviews": 87,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 189,
+      "raw_year_range": [
+        2016,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 1,
+        "waterproof_variant": 28,
+        "size_or_bundle": 11,
+        "multiple_products_or_comparison": 2
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0BC3MQD29",
+      "item_asin": "B078919VBD",
+      "eligible_exact_item_reviews": 2,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 11,
+      "raw_year_range": [
+        2019,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 1,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 1
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0BV1FPZY6",
+      "item_asin": "B07K7VD98J",
+      "eligible_exact_item_reviews": 352,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 603,
+      "raw_year_range": [
+        2018,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 0,
+        "waterproof_variant": 0,
+        "size_or_bundle": 19,
+        "multiple_products_or_comparison": 2
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    },
+    {
+      "parent_asin": "B0CDNZ7F2V",
+      "item_asin": "B00DPNKDR4",
+      "eligible_exact_item_reviews": 103,
+      "ambiguous_lineage_reviews": 0,
+      "raw_occurrences_not_deduplicated": 283,
+      "raw_year_range": [
+        2015,
+        2023
+      ],
+      "parent_metadata_records": 1,
+      "screening_flag_counts": {
+        "version_or_formula_change": 2,
+        "waterproof_variant": 0,
+        "size_or_bundle": 0,
+        "multiple_products_or_comparison": 4
+      },
+      "metadata_granularity": "parent_only_not_historical_item_version",
+      "item_shared_across_audited_parents": false
+    }
+  ],
+  "eligible_reviews": 3843,
+  "interpretation": "Exact item ASIN separates observed catalog identities, not historical formula/version. Parent metadata cannot label child variants or all past reviews. Lexical flags may refer to comparisons; no automatic exclusion or homogeneity certification."
+}
