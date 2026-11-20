@@ -1,0 +1,19 @@
+{
+  "status_at_preparation": "ready_for_primary_generation",
+  "freeze": "configs/evaluation-freeze.v1.json",
+  "freeze_sha256": "9bba08d3b7e48f5d3f664a8d1dfaa4f9fe586f8ca4c95ea90c5d15334c616690",
+  "summary": "docs/evaluation-freeze-summary.json",
+  "resource_policy": "times_and_tokens_only_no_process_or_memory_monitoring",
+  "final_inputs_technically_frozen": true,
+  "answers_generated_by_preparation": 0,
+  "current_status": "primary_annotation_and_metrics_complete_sensitivity_pending",
+  "primary_generation_summary": "docs/primary-generation-summary.json",
+  "primary_attempts_generated": 252,
+  "quality_annotations_completed": 102,
+  "human_audit_progress": "docs/human-audit-progress.json",
+  "human_qualitative_sample_approvals": 18,
+  "formal_control_criteria_assessed": 3,
+  "primary_results": "docs/primary-evaluation-results.v1.json",
+  "primary_results_report": "docs/primary-evaluation-results.v1.md",
+  "frozen_scoring_rules_changed": false
+}

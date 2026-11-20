@@ -1,0 +1,12 @@
+{
+  "status": "operational_development_selection_complete_semantic_limits_documented",
+  "configuration": "configs/experiment.development-selected.json",
+  "development_index": "artifacts/development-selection/selected",
+  "selected_probe": "results/development-generation/v6-k8-grouped",
+  "summary": "docs/development-parameter-selection.json",
+  "tested_model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "generation_code_sha256": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+  "tested_generation_code_sha256": "1abe9d15aa3575f97ec604484bed61197664fb477baaf07ce51357b084789d34",
+  "post_probe_source_change": "Trailing whitespace only; normalized source equality verified",
+  "final_experiment_inputs_frozen": false
+}

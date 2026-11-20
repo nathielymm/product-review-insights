@@ -1,3 +1,5 @@
+> Integração concluída e regras registradas no congelamento técnico v1: ver docs/evaluation-freeze.md. Mantêm-se os limites da referência auditada e a necessidade de anotação das respostas.
+
 # Rubrica e preparação da pontuação
 
 As interpretações dos três pacotes foram aprovadas. Esta etapa decompõe os pontos em unidades comparáveis e define uma rubrica operacional; não registra respostas de modelos, resultados de qualidade ou congelamento final do experimento. A referência continua auditada, não exaustiva e sem anotação independente.

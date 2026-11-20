@@ -1,3 +1,5 @@
+> Estado atual: avaliação integrada e congelamento técnico v1 em docs/evaluation-freeze.md. O custo será descrito por tempos e tokens; memória está fora do escopo.
+
 > Atualização: revisão direcionada concluída; versão atual com 3.843 avaliações em configs/corpus-current.json. Ver docs/final-corpus-qa.md. As 3.846 abaixo descrevem o snapshot anterior à revisão.
 
 # Protocolo experimental atual
@@ -38,7 +40,7 @@ Passaram 30 testes automatizados. Um índice real de desenvolvimento com 625 ava
 
 Revisar qualidade e versões; fechar as perguntas e referências por conjunto; ajustar parâmetros somente no desenvolvimento e congelar configurações e hashes. A referência de cada subconjunto deve corresponder às evidências que ele contém: distinguir disponibilidade de evidência de cobertura da resposta condicionada a essa disponibilidade. Não reutilizar automaticamente o denominador temático do corpus completo.
 
-Avaliar cobertura temática, sustentação de afirmações nas evidências, abstenção, latência e recursos locais, com orçamento de contexto e geração comparável entre métodos. Registrar tempos de preparação/indexação separadamente da consulta, hardware, memória e digest do modelo. Não há resultados finais de cobertura, fidelidade ou superioridade.
+Avaliar cobertura temática, sustentação de afirmações nas evidências, abstenção, latência e recursos locais, com orçamento de contexto e geração comparável entre métodos. Registrar tempos de preparação/indexação separadamente da consulta, hardware, contagem de tokens e digest do modelo, sem coleta de memória ou listagem de processos. Não há resultados finais de cobertura, fidelidade ou superioridade.
 
 Um conjunto por condição permite três estudos de caso, sem isolar causalmente o efeito da variedade. Os dez temas amplos observados nos três conjuntos não demonstram uma ordem crescente de diversidade temática.
 

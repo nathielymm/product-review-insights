@@ -1,0 +1,116 @@
+{
+  "status": "mechanical_probe_passed_semantic_review_pending",
+  "development_reviews": 625,
+  "queries": 3,
+  "responses": 6,
+  "config": {
+    "seed": 42,
+    "embedding_model": "artifacts/study-v1/development-check/encoder",
+    "clusters": 6,
+    "top_k": 8,
+    "candidate_pool": 80,
+    "context_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": 1536,
+    "temperature": 0,
+    "ollama_model": "gemma3:4b",
+    "structured_output": true,
+    "configuration_role": "development-selected candidate; generation verification and final evaluation freeze pending"
+  },
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "ollama_version": {
+    "version": "0.40.11"
+  },
+  "mechanical_checks": [
+    {
+      "query_id": "DS05",
+      "method": "thematic",
+      "failed_checks": []
+    },
+    {
+      "query_id": "DS05",
+      "method": "traditional",
+      "failed_checks": []
+    },
+    {
+      "query_id": "DS01",
+      "method": "traditional",
+      "failed_checks": []
+    },
+    {
+      "query_id": "DS01",
+      "method": "thematic",
+      "failed_checks": []
+    },
+    {
+      "query_id": "DS06",
+      "method": "thematic",
+      "failed_checks": []
+    },
+    {
+      "query_id": "DS06",
+      "method": "traditional",
+      "failed_checks": []
+    }
+  ],
+  "rows": [
+    {
+      "query_id": "DS05",
+      "method": "thematic",
+      "seconds": 6.87131295799918,
+      "prompt_tokens": 1353,
+      "output_tokens": 437,
+      "done_reason": "stop"
+    },
+    {
+      "query_id": "DS05",
+      "method": "traditional",
+      "seconds": 7.266429542010883,
+      "prompt_tokens": 1392,
+      "output_tokens": 468,
+      "done_reason": "stop"
+    },
+    {
+      "query_id": "DS01",
+      "method": "traditional",
+      "seconds": 6.6565275419998216,
+      "prompt_tokens": 1486,
+      "output_tokens": 428,
+      "done_reason": "stop"
+    },
+    {
+      "query_id": "DS01",
+      "method": "thematic",
+      "seconds": 7.688678917009383,
+      "prompt_tokens": 1455,
+      "output_tokens": 488,
+      "done_reason": "stop"
+    },
+    {
+      "query_id": "DS06",
+      "method": "thematic",
+      "seconds": 7.601704166998388,
+      "prompt_tokens": 1250,
+      "output_tokens": 497,
+      "done_reason": "stop"
+    },
+    {
+      "query_id": "DS06",
+      "method": "traditional",
+      "seconds": 7.583759417000692,
+      "prompt_tokens": 1240,
+      "output_tokens": 499,
+      "done_reason": "stop"
+    }
+  ],
+  "evaluation_corpora_used": false,
+  "final_rag_quality_metrics_computed": false,
+  "semantic_review_complete": false,
+  "input_fingerprints": {
+    "corpus_sha256": "0c7e2aa84c450fd0e51e49965e98d364c3e900b1c3cd1da30bc2d342ad2f82fb",
+    "index_metadata_sha256": "7e859082c66920c1a3ea22c045d87b091c3acfed7cef2e48376e30f4fb4398af",
+    "plan_sha256": "bb90118d3374dd1c91f3e4d8ddb80ffbe421497ebb1610a0987190be0979f9d2",
+    "probe_code_sha256": "b6ce07b46e629481e0bc5c6b5a99e8af335b5b7877152db245ef42509f7335a7",
+    "generation_code_sha256": "1abe9d15aa3575f97ec604484bed61197664fb477baaf07ce51357b084789d34"
+  }
+}

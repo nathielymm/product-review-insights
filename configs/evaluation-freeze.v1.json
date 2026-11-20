@@ -1,0 +1,989 @@
+{
+  "schema": "evaluation_freeze_v1",
+  "status": "inputs_technically_frozen_no_final_answers_generated",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "ollama_version": "0.40.11",
+  "config": {
+    "seed": 42,
+    "embedding_model": "artifacts/study-v1/development-check/encoder",
+    "clusters": 6,
+    "top_k": 8,
+    "candidate_pool": 80,
+    "context_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": 1536,
+    "temperature": 0,
+    "ollama_model": "gemma3:4b",
+    "structured_output": true,
+    "configuration_role": "frozen_evaluation_v1"
+  },
+  "questions_file": "results/evaluation-freeze/v1/questions.json",
+  "registry_file": "results/evaluation-freeze/v1/registry.private.json",
+  "registry_sha256": "3063244eb2d87206600d93daef3ee723af2f5a881a7b14e85f83a4e582e64380",
+  "cases": {
+    "main/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "primary"
+      },
+      "corpus": "data/processed/study-v2-qa-final/main/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "3f079922dd194865cb06d4b8223b00b11f1b508d397108364a804675b1b9d08e",
+      "reviews": 547,
+      "repetitions": 3,
+      "index": "artifacts/evaluation-v1/compact_mascaras",
+      "eligible_unit_counts": {
+        "Q01": 12,
+        "Q02": 6,
+        "Q03": 7,
+        "Q04": 6,
+        "Q05": 6,
+        "Q06": 10,
+        "Q07": 5,
+        "Q08": 6,
+        "Q11": 6
+      },
+      "index_metadata_sha256": "0f0f2a89747cf59226afb5b49e9868e7cd2d65f24a953773ef405a3ec19365ad"
+    },
+    "main/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "primary"
+      },
+      "corpus": "data/processed/study-v2-qa-final/main/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "e15550526500d4e78980c2c7ea8d01b6985b07a8580ee5be07b63a24d317d258",
+      "reviews": 1405,
+      "repetitions": 3,
+      "index": "artifacts/evaluation-v1/intermediate_hair_disjoint",
+      "eligible_unit_counts": {
+        "Q01": 5,
+        "Q02": 8,
+        "Q03": 5,
+        "Q04": 4,
+        "Q05": 5,
+        "Q06": 10,
+        "Q07": 2,
+        "Q08": 5,
+        "Q11": 8
+      },
+      "index_metadata_sha256": "eb85aa9a6f7a2ed66b159a79f7b45cb65b669a8e65d1536817288536d7bb6f14"
+    },
+    "main/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "primary"
+      },
+      "corpus": "data/processed/study-v2-qa-final/main/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "b0bcf34d0a0353fff9bb74d223b086562a68fd6704c666ca63380a43c474dfcc",
+      "reviews": 1891,
+      "repetitions": 3,
+      "index": "artifacts/evaluation-v1/varied_disjoint",
+      "eligible_unit_counts": {
+        "Q01": 6,
+        "Q02": 6,
+        "Q03": 7,
+        "Q04": 8,
+        "Q05": 8,
+        "Q06": 10,
+        "Q07": 4,
+        "Q08": 8,
+        "Q11": 6
+      },
+      "index_metadata_sha256": "2b4cc3b6411330d844533a752eba0b570097b4616eadebbdeaa038863b2e18e9"
+    },
+    "sensitivity/n20/seed11/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed11/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "d5179840d5d5f8ab4c231f771e4a970f9b974143def2095b4d3b99943b250bb3",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 3,
+        "Q02": 0,
+        "Q03": 0,
+        "Q04": 0,
+        "Q05": 5,
+        "Q06": 2,
+        "Q07": 0,
+        "Q08": 0,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n20/seed11/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed11/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "2d10956e67e036463d15187fd58db6bc0dddc5257dc2b733681ff89b4e1b042e",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 1,
+        "Q03": 0,
+        "Q04": 1,
+        "Q05": 0,
+        "Q06": 2,
+        "Q07": 0,
+        "Q08": 0,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n20/seed11/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed11/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "7284f8747e28404209b4d10ea258f148927e8eb806add923f9197ed637a7bcbb",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 0,
+        "Q03": 0,
+        "Q04": 0,
+        "Q05": 0,
+        "Q06": 0,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n20/seed23/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed23/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "b253a8c04291d250fd2e9f2f1ec244865c06c87bd0a86c9ee61f73ac0883a782",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 0,
+        "Q03": 0,
+        "Q04": 0,
+        "Q05": 2,
+        "Q06": 3,
+        "Q07": 1,
+        "Q08": 0,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n20/seed23/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed23/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "14a95402fb95690fb1fbbd1f7766e5eb95897fa6dab3779f28420f9752e46c64",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 0,
+        "Q02": 0,
+        "Q03": 2,
+        "Q04": 0,
+        "Q05": 1,
+        "Q06": 0,
+        "Q07": 0,
+        "Q08": 0,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n20/seed23/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed23/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "e1c7e9cc81b273c83a2f4691b56eabf34c1ee6a4d8c1e8344fe8c98cd5e16356",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 0,
+        "Q03": 0,
+        "Q04": 0,
+        "Q05": 0,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 2,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n20/seed37/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed37/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "61d5f8716d95b128f215c6053484dbaf37def61a3eb71261510a6298bd19bd69",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 3,
+        "Q02": 2,
+        "Q03": 2,
+        "Q04": 2,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 1,
+        "Q08": 1,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n20/seed37/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed37/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "3008273549986dd524ca256eed7a717a20554ecb83794ad06093bde1cab7448b",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 1,
+        "Q03": 1,
+        "Q04": 0,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 0,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n20/seed37/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 20,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n20/seed37/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "7f762c33ad9dabd648f1c29b4c5a01a10cf381389369254cbb3fb25b32af8f69",
+      "reviews": 100,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 0,
+        "Q02": 0,
+        "Q03": 3,
+        "Q04": 0,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 2,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n40/seed11/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed11/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "c6de3396410eb4dd6fc1b72289307665c2850b7b2afbe409055e0f3b60854a96",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 6,
+        "Q02": 0,
+        "Q03": 2,
+        "Q04": 1,
+        "Q05": 6,
+        "Q06": 3,
+        "Q07": 0,
+        "Q08": 5,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n40/seed11/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed11/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "971265c9bfb3585aa7aec45a4d5f6bd07ad1e7cfda1650c8acf573b535eee1d4",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 1,
+        "Q03": 1,
+        "Q04": 1,
+        "Q05": 0,
+        "Q06": 3,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n40/seed11/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed11/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "1e8c854a860726c5e9d3040eabd46ec6fbd818a54d932d841416a0ce52a21e22",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 2,
+        "Q03": 2,
+        "Q04": 1,
+        "Q05": 2,
+        "Q06": 3,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n40/seed23/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed23/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "399297102344e0ac6065c5695cc62a9114e8a0fb03f48aeafa3325df8a7e007b",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 5,
+        "Q02": 1,
+        "Q03": 2,
+        "Q04": 3,
+        "Q05": 3,
+        "Q06": 4,
+        "Q07": 2,
+        "Q08": 1,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n40/seed23/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed23/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "d41a5516583a181a3d7e4f1cbb6bfdfafefcb7c20c0806193fe5a6bf6a0d1636",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 1,
+        "Q03": 2,
+        "Q04": 1,
+        "Q05": 1,
+        "Q06": 0,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n40/seed23/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed23/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "0f0d1c5b2c2b96affb00bf7faa9a4476547fadf71ef6e08e5ce544659d244b62",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 1,
+        "Q03": 1,
+        "Q04": 0,
+        "Q05": 1,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 2,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n40/seed37/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed37/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "3ab3519201ed1e7b0cdebb58699b4c115e97b5e1ff296643497addd793283595",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 6,
+        "Q02": 4,
+        "Q03": 4,
+        "Q04": 4,
+        "Q05": 3,
+        "Q06": 8,
+        "Q07": 3,
+        "Q08": 2,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n40/seed37/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed37/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "22da2bea2fc514c8a5c59ac5f48cd6ea7385c5db8f264a1cde6a60347d3fb310",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 1,
+        "Q03": 1,
+        "Q04": 0,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 0,
+        "Q11": 3
+      }
+    },
+    "sensitivity/n40/seed37/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 40,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n40/seed37/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "321c86ee1fec879943eed72b3f89fe95508f410701c38466d42b5477452234cf",
+      "reviews": 200,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 2,
+        "Q03": 3,
+        "Q04": 1,
+        "Q05": 3,
+        "Q06": 1,
+        "Q07": 1,
+        "Q08": 3,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n60/seed11/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed11/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "844bb2c2dd5cf2ff1f69ba8cfdc4953276e87449d69bf9d3de02290e6be20db3",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 9,
+        "Q02": 3,
+        "Q03": 4,
+        "Q04": 3,
+        "Q05": 6,
+        "Q06": 6,
+        "Q07": 1,
+        "Q08": 5,
+        "Q11": 5
+      }
+    },
+    "sensitivity/n60/seed11/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed11/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "7d6e7a4c90b5476e4ba9a35f9a378723779c703e3c18d23e7399c6e04bfe1330",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 1,
+        "Q02": 2,
+        "Q03": 1,
+        "Q04": 1,
+        "Q05": 1,
+        "Q06": 3,
+        "Q07": 0,
+        "Q08": 2,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n60/seed11/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 11
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed11/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "28c8754fca42a884e379acfe8110a981921a31e38abd5b92d651dbd5a35334c1",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 3,
+        "Q02": 2,
+        "Q03": 2,
+        "Q04": 4,
+        "Q05": 3,
+        "Q06": 3,
+        "Q07": 1,
+        "Q08": 2,
+        "Q11": 1
+      }
+    },
+    "sensitivity/n60/seed23/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed23/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "b26687c15e6bd77be2bb67d2b28e2466d16dc1e8eec3b8d32bd6e4518bab232f",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 6,
+        "Q02": 4,
+        "Q03": 6,
+        "Q04": 5,
+        "Q05": 3,
+        "Q06": 9,
+        "Q07": 3,
+        "Q08": 2,
+        "Q11": 4
+      }
+    },
+    "sensitivity/n60/seed23/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed23/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "81a7d4b36b61f62478d3e44cdf10efbd2fe3d0fd2f4142da70020288a513f103",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 2,
+        "Q03": 3,
+        "Q04": 1,
+        "Q05": 1,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n60/seed23/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 23
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed23/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "9a718018528eaa310922ed23861eacb482b0644cd1417a348261f24543a0d656",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 2,
+        "Q02": 3,
+        "Q03": 1,
+        "Q04": 2,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 1,
+        "Q08": 2,
+        "Q11": 0
+      }
+    },
+    "sensitivity/n60/seed37/compact_mascaras": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "compact_mascaras",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed37/compact_mascaras/corpus.jsonl",
+      "corpus_sha256": "8a90ec6859c7acf035e4a83d3510f3dc00f3631b4bd8eb911e4d76265e37a2b7",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 9,
+        "Q02": 6,
+        "Q03": 4,
+        "Q04": 5,
+        "Q05": 4,
+        "Q06": 8,
+        "Q07": 4,
+        "Q08": 4,
+        "Q11": 2
+      }
+    },
+    "sensitivity/n60/seed37/intermediate_hair_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "intermediate_hair_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed37/intermediate_hair_disjoint/corpus.jsonl",
+      "corpus_sha256": "1f05e12441c4e72f76937787b93f795f35ea78eebc477e1dd60381a86d86c5f0",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 3,
+        "Q02": 1,
+        "Q03": 2,
+        "Q04": 1,
+        "Q05": 2,
+        "Q06": 1,
+        "Q07": 0,
+        "Q08": 1,
+        "Q11": 4
+      }
+    },
+    "sensitivity/n60/seed37/varied_disjoint": {
+      "study": {
+        "scope_id": "study_v1_full_primary_qa_v2",
+        "cohort_id": "varied_disjoint",
+        "split": "evaluation",
+        "analysis_kind": "sensitivity",
+        "reviews_per_family": 60,
+        "seed": 37
+      },
+      "corpus": "data/processed/study-v2-qa-final/sensitivity/n60/seed37/varied_disjoint/corpus.jsonl",
+      "corpus_sha256": "38af9ca1d34527efefd52677f8de9a2ec60b26718ee20cbca7eaa2e8a1c0fb5e",
+      "reviews": 300,
+      "repetitions": 1,
+      "index": null,
+      "eligible_unit_counts": {
+        "Q01": 3,
+        "Q02": 3,
+        "Q03": 3,
+        "Q04": 3,
+        "Q05": 4,
+        "Q06": 3,
+        "Q07": 2,
+        "Q08": 3,
+        "Q11": 1
+      }
+    }
+  },
+  "source_files_sha256": {
+    "src/product_review_insights/__init__.py": "e4d280dd40bd70ab8e999e1790468a2584d3a4278d09863e14a4fb07fd7f9579",
+    "src/product_review_insights/catalog.py": "995674bcf8d5bde24c28d56a3c9c738076097c31e8c18c818e81fd5cf62d115e",
+    "src/product_review_insights/cli.py": "4b011df085f006c6a2d2ee273ff2cf31bb6d97c0d45a4846500ed00a45645bbd",
+    "src/product_review_insights/data.py": "3caed7bc5d0eecfaa4807f41ba6f1544312864eb2fbb1044e1862d273a2ed8e6",
+    "src/product_review_insights/diversity.py": "fefeae3aa22fc42cbc8b70f4b37a2f4aafcc285574075761bf642fca98c43b57",
+    "src/product_review_insights/experiments.py": "216e59806a588625598c561414b9b80c713ffebe520302c810cd37277d54addb",
+    "src/product_review_insights/frozen_evaluation.py": "683a46a15612ff56c6f8e459097392217fcab6bb33ad6272a9841ac0eadb284b",
+    "src/product_review_insights/generation.py": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+    "src/product_review_insights/retrieval.py": "a2c30db085e1b8ab5ae365880786db06ff9103229b01c36d8152981dfb3fc05b",
+    "src/product_review_insights/scoring.py": "fb31be4cc69ef67a2fe16da897b9c686cad2a4ab303bd6547af15480aca22553",
+    "src/product_review_insights/study.py": "b4b70b8f868f9589ce51d19d3be06862d3d4bd7049659288b3d504e4bab6686e"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "machine": "arm64",
+    "packages": {
+      "annotated-doc": "0.0.5",
+      "anyio": "4.15.1",
+      "click": "8.5.0",
+      "cloudpickle": "3.1.2",
+      "faiss-cpu": "1.15.1",
+      "filelock": "4.2.4",
+      "fsspec": "2026.9.0",
+      "h11": "0.16.0",
+      "hf-xet": "1.7.0",
+      "httpcore2": "2.16.0",
+      "httpx2": "2.16.0",
+      "huggingface_hub": "2.3.0",
+      "idna": "3.20",
+      "iniconfig": "2.3.1",
+      "Jinja2": "3.1.6",
+      "joblib": "1.6.0",
+      "langdetect": "1.0.9",
+      "markdown-it-py": "4.2.0",
+      "MarkupSafe": "3.0.4",
+      "mdurl": "0.1.2",
+      "mpmath": "1.3.0",
+      "narwhals": "2.27.1",
+      "networkx": "3.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pluggy": "1.7.0",
+      "psutil": "7.2.2",
+      "pyarrow": "26.0.0",
+      "Pygments": "2.21.0",
+      "pytest": "9.1.1",
+      "PyYAML": "6.0.3",
+      "regex": "2026.9.29",
+      "rich": "15.0.0",
+      "safetensors": "0.8.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "sentence-transformers": "6.2.0",
+      "setuptools": "84.2.1",
+      "shellingham": "1.5.4",
+      "six": "1.17.0",
+      "sympy": "1.14.0",
+      "threadpoolctl": "3.7.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.14.1",
+      "tqdm": "4.70.1",
+      "transformers": "5.20.2",
+      "truststore": "0.10.5",
+      "typer": "0.27.3",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "files_sha256": {
+    "requirements.lock.txt": "ac831b483340d806254fee82d0d15d44ccb0c54b0b4b932b4663b3e7614574ea",
+    "results/evaluation-freeze/v1/questions.json": "91bb51759bd004678c6a2e1ef853bfb7dcf5ba9908e09bfbbc6cbb9ace30b778",
+    "artifacts/study-v1/development-check/encoder/1_Pooling/config.json": "4fef0a7e8c8ee36e74c0fad89bab60ade72324442d43f559ea219bb7c2580710",
+    "artifacts/study-v1/development-check/encoder/2_Normalize/config.json": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524",
+    "artifacts/study-v1/development-check/encoder/README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+    "artifacts/study-v1/development-check/encoder/config.json": "4211b854bf56ed77810b39844dc7aeac9a25495cfa62772cac3fedbcc25ab57e",
+    "artifacts/study-v1/development-check/encoder/config_sentence_transformers.json": "2d78529e4343fa25587c60de56278156ac587e4b7325f1a156ed907f2e209cea",
+    "artifacts/study-v1/development-check/encoder/model.safetensors": "1377e9af0ca0b016a9f2aa584d6fc71ab3ea6804fae21ef9fb1416e2944057ac",
+    "artifacts/study-v1/development-check/encoder/modules.json": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd",
+    "artifacts/study-v1/development-check/encoder/sentence_bert_config.json": "3084164002c0bca01b0259c5327123803fce32e660a57feb93184ffead186fc8",
+    "artifacts/study-v1/development-check/encoder/tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+    "artifacts/study-v1/development-check/encoder/tokenizer_config.json": "24704d136ee624ddb2a21a991c0d251422d5488762a16dfe287f133f39095fdd",
+    "data/processed/study-v2-qa-final/main/compact_mascaras/corpus.jsonl": "3f079922dd194865cb06d4b8223b00b11f1b508d397108364a804675b1b9d08e",
+    "data/processed/study-v2-qa-final/main/compact_mascaras/manifest.json": "a7fdb3c9a00623a8672ad4b42b3b9a76ee24708082ea8c633c95d4643df605d1",
+    "artifacts/evaluation-v1/compact_mascaras/metadata.json": "0f0f2a89747cf59226afb5b49e9868e7cd2d65f24a953773ef405a3ec19365ad",
+    "data/processed/study-v2-qa-final/main/intermediate_hair_disjoint/corpus.jsonl": "e15550526500d4e78980c2c7ea8d01b6985b07a8580ee5be07b63a24d317d258",
+    "data/processed/study-v2-qa-final/main/intermediate_hair_disjoint/manifest.json": "79d9c73d79283d2305d7b4c959b724713f80f8d52b13729bad4cd4ba7d665d63",
+    "artifacts/evaluation-v1/intermediate_hair_disjoint/metadata.json": "eb85aa9a6f7a2ed66b159a79f7b45cb65b669a8e65d1536817288536d7bb6f14",
+    "data/processed/study-v2-qa-final/main/varied_disjoint/corpus.jsonl": "b0bcf34d0a0353fff9bb74d223b086562a68fd6704c666ca63380a43c474dfcc",
+    "data/processed/study-v2-qa-final/main/varied_disjoint/manifest.json": "f84a97dc6112fa2c20a4765b870bbb500ca586a2bd68dcafab5cfc4d1c6eaf8b",
+    "artifacts/evaluation-v1/varied_disjoint/metadata.json": "2b4cc3b6411330d844533a752eba0b570097b4616eadebbdeaa038863b2e18e9",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/compact_mascaras/corpus.jsonl": "d5179840d5d5f8ab4c231f771e4a970f9b974143def2095b4d3b99943b250bb3",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/compact_mascaras/manifest.json": "4069da994ed84a653ff3360c0e53f355eb8e9a60da9162206b759a30da6596c5",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/intermediate_hair_disjoint/corpus.jsonl": "2d10956e67e036463d15187fd58db6bc0dddc5257dc2b733681ff89b4e1b042e",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/intermediate_hair_disjoint/manifest.json": "1eec44f51c11941c48c1f8a9e845cd770a70c5b66019edf6ca57e72f3abbb225",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/varied_disjoint/corpus.jsonl": "7284f8747e28404209b4d10ea258f148927e8eb806add923f9197ed637a7bcbb",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed11/varied_disjoint/manifest.json": "4e4332d10690a4ad9d77ff2b39dded544ae1674d4a33d5d139337f217e5879d1",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/compact_mascaras/corpus.jsonl": "b253a8c04291d250fd2e9f2f1ec244865c06c87bd0a86c9ee61f73ac0883a782",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/compact_mascaras/manifest.json": "a23cc9e6b85e9d38f01d82adf98f76a3f8cdecb794b025d083389ea51a370596",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/intermediate_hair_disjoint/corpus.jsonl": "14a95402fb95690fb1fbbd1f7766e5eb95897fa6dab3779f28420f9752e46c64",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/intermediate_hair_disjoint/manifest.json": "4b78c2421a27ecf2cc6b541bff75e3907a07bf3f98c42d26370025bc8658cf6f",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/varied_disjoint/corpus.jsonl": "e1c7e9cc81b273c83a2f4691b56eabf34c1ee6a4d8c1e8344fe8c98cd5e16356",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed23/varied_disjoint/manifest.json": "233e86609eb3b8fb9801bdffdd56d0cb14b6ada970c6a5a298a0402c1c3128e0",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/compact_mascaras/corpus.jsonl": "61d5f8716d95b128f215c6053484dbaf37def61a3eb71261510a6298bd19bd69",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/compact_mascaras/manifest.json": "3e3dea72c3cd0c8d642fd15e6e83dacc3ed9ca0ee1b1f25d2f983aed845d1032",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/intermediate_hair_disjoint/corpus.jsonl": "3008273549986dd524ca256eed7a717a20554ecb83794ad06093bde1cab7448b",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/intermediate_hair_disjoint/manifest.json": "985425031c3319012f108992913f10f7060fa505fe73da075221a939a4860a45",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/varied_disjoint/corpus.jsonl": "7f762c33ad9dabd648f1c29b4c5a01a10cf381389369254cbb3fb25b32af8f69",
+    "data/processed/study-v2-qa-final/sensitivity/n20/seed37/varied_disjoint/manifest.json": "89b58c0ce30dcd0fe5ac508e8980205f862d4dcd8a0ea18e6093a8836238cd11",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/compact_mascaras/corpus.jsonl": "c6de3396410eb4dd6fc1b72289307665c2850b7b2afbe409055e0f3b60854a96",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/compact_mascaras/manifest.json": "77cb245258b5b3835d5084030af01b26e2103b4acf19dd38a929c8144ca82b06",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/intermediate_hair_disjoint/corpus.jsonl": "971265c9bfb3585aa7aec45a4d5f6bd07ad1e7cfda1650c8acf573b535eee1d4",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/intermediate_hair_disjoint/manifest.json": "2e67b3fee58a206a260d2b06d87c2aa64c3d001a21a82d3b31853e3f542b4166",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/varied_disjoint/corpus.jsonl": "1e8c854a860726c5e9d3040eabd46ec6fbd818a54d932d841416a0ce52a21e22",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed11/varied_disjoint/manifest.json": "7c85796f95b8afa1ad7f1200273354a233b9dc1959d35ef561a1ba48034f689d",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/compact_mascaras/corpus.jsonl": "399297102344e0ac6065c5695cc62a9114e8a0fb03f48aeafa3325df8a7e007b",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/compact_mascaras/manifest.json": "b80b52628ddfa3b715d7e8dc10bfa3e1ea3865a26a4daee2e9b64c4a7132cbb7",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/intermediate_hair_disjoint/corpus.jsonl": "d41a5516583a181a3d7e4f1cbb6bfdfafefcb7c20c0806193fe5a6bf6a0d1636",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/intermediate_hair_disjoint/manifest.json": "dfa38584a1a223c23981354c692ac2cfd97345b1364f96452caacfb57854315c",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/varied_disjoint/corpus.jsonl": "0f0d1c5b2c2b96affb00bf7faa9a4476547fadf71ef6e08e5ce544659d244b62",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed23/varied_disjoint/manifest.json": "d5686728c82ca52be3a825900dade2eba93929988b509c49d689533fee325e38",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/compact_mascaras/corpus.jsonl": "3ab3519201ed1e7b0cdebb58699b4c115e97b5e1ff296643497addd793283595",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/compact_mascaras/manifest.json": "aab8c33248fde29a905a580683d7fc83c970a38e739e9920d654d36780fd80ee",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/intermediate_hair_disjoint/corpus.jsonl": "22da2bea2fc514c8a5c59ac5f48cd6ea7385c5db8f264a1cde6a60347d3fb310",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/intermediate_hair_disjoint/manifest.json": "21164276d3adf1fbcb7eb2a0691845a94ea28e20692445d0aa957beb5d290676",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/varied_disjoint/corpus.jsonl": "321c86ee1fec879943eed72b3f89fe95508f410701c38466d42b5477452234cf",
+    "data/processed/study-v2-qa-final/sensitivity/n40/seed37/varied_disjoint/manifest.json": "8b79a6d4346642b6eb0fc584b7d60d5c0b46599a52f295cff9f9f5ef879a5130",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/compact_mascaras/corpus.jsonl": "844bb2c2dd5cf2ff1f69ba8cfdc4953276e87449d69bf9d3de02290e6be20db3",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/compact_mascaras/manifest.json": "92c51acc962e5e69aaa8f54cc9bacb52aa0ae85b7a70b03bfce69ff2de871cd7",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/intermediate_hair_disjoint/corpus.jsonl": "7d6e7a4c90b5476e4ba9a35f9a378723779c703e3c18d23e7399c6e04bfe1330",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/intermediate_hair_disjoint/manifest.json": "3e03313d9e8ffd3360d17b7f29b5d31bd7cb1457bea1a8242c6bdb9adb3d2881",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/varied_disjoint/corpus.jsonl": "28c8754fca42a884e379acfe8110a981921a31e38abd5b92d651dbd5a35334c1",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed11/varied_disjoint/manifest.json": "2e0e577b76e9a5da032baab993749cb7713e2c42c1441bf7be84f93834d13510",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/compact_mascaras/corpus.jsonl": "b26687c15e6bd77be2bb67d2b28e2466d16dc1e8eec3b8d32bd6e4518bab232f",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/compact_mascaras/manifest.json": "6fd37cfe6958362e074e2f08ec875ff49dfbf336029c4362226b86d76e0db27a",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/intermediate_hair_disjoint/corpus.jsonl": "81a7d4b36b61f62478d3e44cdf10efbd2fe3d0fd2f4142da70020288a513f103",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/intermediate_hair_disjoint/manifest.json": "b88f78f0005e0847377c43741b9462adb48843e0eb1e31acdf6894a49c481aa8",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/varied_disjoint/corpus.jsonl": "9a718018528eaa310922ed23861eacb482b0644cd1417a348261f24543a0d656",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed23/varied_disjoint/manifest.json": "2b22d7ef1c879751aff6cbe71b4b1439d9f469c15c74cf2584656ea5800fa370",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/compact_mascaras/corpus.jsonl": "8a90ec6859c7acf035e4a83d3510f3dc00f3631b4bd8eb911e4d76265e37a2b7",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/compact_mascaras/manifest.json": "94fb6c3e06e08eb0605eceaa0e1f1f88a663bb1a6c8e1f6a54bd30cc3ac95d96",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/intermediate_hair_disjoint/corpus.jsonl": "1f05e12441c4e72f76937787b93f795f35ea78eebc477e1dd60381a86d86c5f0",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/intermediate_hair_disjoint/manifest.json": "cc15cbe50ccf9ddc5e31f6760c5303a5e591aa4e77b66b33279bd62ea54e209e",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/varied_disjoint/corpus.jsonl": "38af9ca1d34527efefd52677f8de9a2ec60b26718ee20cbca7eaa2e8a1c0fb5e",
+    "data/processed/study-v2-qa-final/sensitivity/n60/seed37/varied_disjoint/manifest.json": "0dcfdbd6eddb28e078b0b4a459018257ad90c73cf26e7f0ff0720ccaa0e279ba"
+  },
+  "index_encoder_files_sha256": {
+    "1_Pooling/config.json": "4fef0a7e8c8ee36e74c0fad89bab60ade72324442d43f559ea219bb7c2580710",
+    "2_Normalize/config.json": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524",
+    "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+    "config.json": "4211b854bf56ed77810b39844dc7aeac9a25495cfa62772cac3fedbcc25ab57e",
+    "config_sentence_transformers.json": "2d78529e4343fa25587c60de56278156ac587e4b7325f1a156ed907f2e209cea",
+    "model.safetensors": "1377e9af0ca0b016a9f2aa584d6fc71ab3ea6804fae21ef9fb1416e2944057ac",
+    "modules.json": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd",
+    "sentence_bert_config.json": "3084164002c0bca01b0259c5327123803fce32e660a57feb93184ffead186fc8",
+    "tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+    "tokenizer_config.json": "24704d136ee624ddb2a21a991c0d251422d5488762a16dfe287f133f39095fdd"
+  },
+  "reference_type": "audited_non_exhaustive",
+  "reference_units": 179,
+  "reference_interpretations_user_approved": true,
+  "independent_annotation": false,
+  "scoring_authority": "Technical decomposition and rule lock after user authorization to proceed; not a claim of separate human approval of every scoring facet.",
+  "execution_policy": {
+    "primary_repetitions": 3,
+    "sensitivity_repetitions": 1,
+    "methods": [
+      "traditional",
+      "thematic"
+    ],
+    "rationale": "Three main repetitions for operational variability; single secondary pass limits compute. Same seed/settings for both methods. Exact duplicate response/context frames may share annotation, never timing observations.",
+    "primary_planned_responses": 252,
+    "sensitivity_planned_responses": 756,
+    "automatic_retries": 0,
+    "abort_after_consecutive_generation_errors": 3,
+    "resource_measurements": [
+      "wall_clock_times",
+      "ollama_prompt_tokens",
+      "ollama_output_tokens"
+    ],
+    "memory_and_process_monitoring": false
+  },
+  "limitations": [
+    "58 sensitivity question/corpus combinations have no known reference anchors; report unavailable coverage, not automatic failure. Other evidence may exist.",
+    "Reference annotations are human judgments, not lexical matching or model-generated grades.",
+    "Same-seed repetitions are not independent tasks. Three cohorts do not isolate a causal heterogeneity effect.",
+    "No final model answer was generated by the freeze process."
+  ]
+}

@@ -1,0 +1,952 @@
+{
+  "schema": "primary_evaluation_aggregates_v1",
+  "freeze_sha256": "9bba08d3b7e48f5d3f664a8d1dfaa4f9fe586f8ca4c95ea90c5d15334c616690",
+  "annotation_provenance": "Assistant semantic annotation; 18 sampled interpretations and 5 calibration items reviewed by user; not independent human ground truth.",
+  "human_sample_qualitative_approvals": 18,
+  "calibration_qualitative_approvals": 5,
+  "aggregation": "Within question average repetitions, then equal-weight question mean; coverage additionally macro-averaged over eligible reference families by frozen scorer.",
+  "uncertainty": "Frozen paired bootstrap: 2000 resamples of questions, seed 42; repetitions not independent samples; exploratory dependent questions and three case studies.",
+  "resource_policy": "Wall time and Ollama token counts only; no memory/process/CPU monitoring; token counts are not monetary cost.",
+  "sensitivity_executed": false,
+  "cases": [
+    {
+      "cohort": "mascaras",
+      "case_id": "main/compact_mascaras",
+      "attempts": 84,
+      "unique_review_items": 35,
+      "unique_factual_claims": 562,
+      "annotations_sha256": "29188e2c2645b464c649e7519c50bb7d63cd05b12f55fa0eef3854d548c4c798",
+      "run_sha256": "b397842bbe51781800b9fa5bd19698340b67ea6cabc6aa5d8f8f7f8b0807cf97",
+      "complete": true,
+      "generation_failures": 0,
+      "invalid_structured_responses": 3,
+      "eligible_reference_units": 64,
+      "methods": {
+        "traditional": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.20185185185185184,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.25317460317460316,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.4009259259259259,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.13703703703703704,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.16216931216931216,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.2638888888888889,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.7897732688414558,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.01854908630118714,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.7782862178807206,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 0,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 1,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 7.205756562492752,
+            "non_api_error_seconds_median": 7.205756562492752,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.013387250495725311,
+                "max": 0.050392582998028956
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 7.197268999996595,
+                "max": 34.37895149999531
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 61098
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 20135
+              }
+            }
+          },
+          "format_failures": 3
+        },
+        "thematic": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.12222222222222223,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.15211640211640212,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.3194444444444444,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.06666666666666667,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.08624338624338623,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.17592592592592593,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.8474569551167296,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.01020408163265306,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.8474569551167296,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 0,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 1,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 1,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 6.888450645499688,
+            "non_api_error_seconds_median": 6.888450645499688,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.013276042001962196,
+                "max": 0.040386874999967404
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 6.876476437493693,
+                "max": 11.919008791999659
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 60756
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 17231
+              }
+            }
+          },
+          "format_failures": 0
+        }
+      },
+      "paired_comparisons": {
+        "answer_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": -0.07037037037037037,
+          "ci95": [
+            -0.1814814814814815,
+            0.0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "retrieval_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": -0.07962962962962962,
+          "ci95": [
+            -0.19444444444444442,
+            0.02222222222222223
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "faithfulness": {
+          "questions": 14,
+          "mean_delta_thematic_minus_traditional": 0.057683686275273725,
+          "ci95": [
+            -0.011842105263157914,
+            0.1243724771762495
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/linked_to_supported_problem_and_family": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": -0.3333333333333333,
+          "ci95": [
+            -1,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/proposal_distinguished_from_report": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0.3333333333333333,
+          "ci95": [
+            0,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/task_relevant": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/uncertainties_and_validation_explicit": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/epistemic_limit_recognized": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/no_unjustified_guarantee_or_causal_prediction": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        }
+      }
+    },
+    {
+      "cohort": "capilar",
+      "case_id": "main/intermediate_hair_disjoint",
+      "attempts": 84,
+      "unique_review_items": 34,
+      "unique_factual_claims": 531,
+      "annotations_sha256": "17c8bb4ba8f519c4793e579b53fe6f1ce995263d18ea9f7d66c761c388cc5945",
+      "run_sha256": "2d0dc4b2031a6eb6ad681c34649d56a41798fa84ca2c213dbffd54ba7af3c333",
+      "complete": true,
+      "generation_failures": 0,
+      "invalid_structured_responses": 3,
+      "eligible_reference_units": 52,
+      "methods": {
+        "traditional": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.18333333333333332,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.20277777777777778,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.19907407407407407,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.12777777777777777,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.14722222222222223,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.16203703703703703,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.7142095500300796,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.06066611959469102,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.7087351633056929,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 18,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 1,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 8.24324758300645,
+            "non_api_error_seconds_median": 8.24324758300645,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.02058493799995631,
+                "max": 0.0423961250053253
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 8.223096353998699,
+                "max": 15.32706816701102
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 60783
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 16887
+              }
+            }
+          },
+          "format_failures": 0
+        },
+        "thematic": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.21296296296296297,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.2361111111111111,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.2351851851851852,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.1712962962962963,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.18611111111111112,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.19814814814814816,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.8152265789152122,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.03865728109425588,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.8261960145363507,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 18,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 1,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 9.661147958497168,
+            "non_api_error_seconds_median": 9.661147958497168,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.017847896000603214,
+                "max": 0.047306583990575746
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 9.644683625003381,
+                "max": 26.695738207999966
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 63207
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 22927
+              }
+            }
+          },
+          "format_failures": 3
+        }
+      },
+      "paired_comparisons": {
+        "answer_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": 0.04351851851851852,
+          "ci95": [
+            -0.02314814814814815,
+            0.11296296296296296
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "retrieval_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": 0.02962962962962963,
+          "ci95": [
+            0.0,
+            0.07407407407407407
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "faithfulness": {
+          "questions": 14,
+          "mean_delta_thematic_minus_traditional": 0.10101702888513264,
+          "ci95": [
+            0.006375881538973107,
+            0.20999918032481057
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/linked_to_supported_problem_and_family": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0.3333333333333333,
+          "ci95": [
+            0,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/proposal_distinguished_from_report": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/task_relevant": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            -1,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/uncertainties_and_validation_explicit": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0.3333333333333333,
+          "ci95": [
+            0,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/epistemic_limit_recognized": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/no_unjustified_guarantee_or_causal_prediction": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        }
+      }
+    },
+    {
+      "cohort": "variado",
+      "case_id": "main/varied_disjoint",
+      "attempts": 84,
+      "unique_review_items": 33,
+      "unique_factual_claims": 475,
+      "annotations_sha256": "1b25157c29732e52436a03bcfc342a9f154251a05503bb616de36c3688813f9d",
+      "run_sha256": "167ce952ef7b3d733ea2590c534bc1b1c74fb11636e80eb8cf2639bc3420cd64",
+      "complete": true,
+      "generation_failures": 0,
+      "invalid_structured_responses": 6,
+      "eligible_reference_units": 63,
+      "methods": {
+        "traditional": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.09444444444444444,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.09166666666666667,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.12654320987654322,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.03333333333333333,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.025,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.030864197530864196,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.753929487388134,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.0,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.7193457336314479,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 12,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 1,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 0.6666666666666666,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 0.5,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 6.050023270494421,
+            "non_api_error_seconds_median": 6.050023270494421,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.012787895997462329,
+                "max": 0.043389540995121934
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 6.038634145996184,
+                "max": 47.3085124999925
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 69939
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 18479
+              }
+            }
+          },
+          "format_failures": 3
+        },
+        "thematic": {
+          "retrieval_coverage/family_macro_coverage": {
+            "mean": 0.08055555555555556,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_unit_coverage": {
+            "mean": 0.0962962962962963,
+            "questions": 9
+          },
+          "retrieval_coverage/reference_aspect_coverage": {
+            "mean": 0.13580246913580246,
+            "questions": 9
+          },
+          "answer_coverage/family_macro_coverage": {
+            "mean": 0.04722222222222222,
+            "questions": 9
+          },
+          "answer_coverage/reference_unit_coverage": {
+            "mean": 0.06018518518518518,
+            "questions": 9
+          },
+          "answer_coverage/reference_aspect_coverage": {
+            "mean": 0.08333333333333333,
+            "questions": 9
+          },
+          "faithfulness": {
+            "mean": 0.8156911645163525,
+            "questions": 14
+          },
+          "contradiction_rate": {
+            "mean": 0.0011904761904761904,
+            "questions": 14
+          },
+          "citation_support_rate": {
+            "mean": 0.827137753641513,
+            "questions": 14
+          },
+          "claims_without_citation_total_attempt_weighted": 12,
+          "proposal_criteria": {
+            "linked_to_supported_problem_and_family": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "proposal_distinguished_from_report": {
+              "mean": 1,
+              "questions": 3
+            },
+            "task_relevant": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            },
+            "uncertainties_and_validation_explicit": {
+              "mean": 0.3333333333333333,
+              "questions": 3
+            }
+          },
+          "control_criteria": {
+            "epistemic_limit_recognized": {
+              "mean": 1,
+              "questions": 2
+            },
+            "no_unjustified_guarantee_or_causal_prediction": {
+              "mean": 1,
+              "questions": 2
+            }
+          },
+          "operational": {
+            "attempts": 42,
+            "generation_errors": 0,
+            "all_attempts_seconds_median": 7.979249687501579,
+            "non_api_error_seconds_median": 7.979249687501579,
+            "resources": {
+              "retrieval_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 0.01316972899803659,
+                "max": 0.0679841669916641
+              },
+              "generation_seconds": {
+                "observed": 42,
+                "missing": 0,
+                "median": 7.966484853997827,
+                "max": 47.67366591699829
+              },
+              "prompt_eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 68523
+              },
+              "eval_count": {
+                "observed": 42,
+                "missing": 0,
+                "total": 22864
+              }
+            }
+          },
+          "format_failures": 3
+        }
+      },
+      "paired_comparisons": {
+        "answer_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": 0.013888888888888888,
+          "ci95": [
+            -0.022222222222222223,
+            0.05555555555555555
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "retrieval_coverage": {
+          "questions": 9,
+          "mean_delta_thematic_minus_traditional": -0.013888888888888888,
+          "ci95": [
+            -0.08333333333333333,
+            0.041666666666666664
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "faithfulness": {
+          "questions": 14,
+          "mean_delta_thematic_minus_traditional": 0.0617616771282185,
+          "ci95": [
+            -0.053663848682645676,
+            0.19224825404336685
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/linked_to_supported_problem_and_family": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": -0.6666666666666666,
+          "ci95": [
+            -1,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/proposal_distinguished_from_report": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0.3333333333333333,
+          "ci95": [
+            0,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/task_relevant": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "proposal/uncertainties_and_validation_explicit": {
+          "questions": 3,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/epistemic_limit_recognized": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0.5,
+          "ci95": [
+            0,
+            1
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        },
+        "control/no_unjustified_guarantee_or_causal_prediction": {
+          "questions": 2,
+          "mean_delta_thematic_minus_traditional": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "resampling_unit": "question",
+          "iterations": 2000,
+          "seed": 42
+        }
+      }
+    }
+  ],
+  "attempts": 252,
+  "unique_review_items": 102,
+  "unique_factual_claims": 1568
+}

@@ -15,3 +15,5 @@
 - Do not version raw reviews, processed corpora, individual evidence/annotations, personal information, credentials or model files. Keep them under ignored local paths and version aggregate manifests/protocols only.
 - User approval of reference interpretations does not imply exhaustive corpus annotation, independent assessment, frozen scoring denominators or final RAG results.
 - Run checks appropriate to substantive code changes. Documentation-only or approval recording does not require rerunning model experiments.
+
+- Resource evaluation is limited to wall-clock times and Ollama token counts. Do not enumerate system processes, sample RSS or request monitoring permissions unless the user explicitly changes this scope.

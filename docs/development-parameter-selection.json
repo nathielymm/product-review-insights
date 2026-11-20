@@ -1,0 +1,212 @@
+{
+  "status": "operational_development_selection_complete_semantic_limits_documented",
+  "development_reviews": 625,
+  "development_chunks": 627,
+  "configuration": {
+    "seed": 42,
+    "embedding_model": "artifacts/study-v1/development-check/encoder",
+    "clusters": 6,
+    "top_k": 8,
+    "candidate_pool": 80,
+    "context_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": 1536,
+    "temperature": 0,
+    "ollama_model": "gemma3:4b",
+    "structured_output": true,
+    "configuration_role": "development_selected_operational_candidate_final_evaluation_freeze_pending"
+  },
+  "configuration_sha256": "8f0176b1c594dd6eaf55a2fe48eee18c28cd9a4e4317912240aaae1c44c14b7e",
+  "tested_generation_source_sha256": "1abe9d15aa3575f97ec604484bed61197664fb477baaf07ce51357b084789d34",
+  "current_generation_source_sha256": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+  "post_probe_source_change": "Trailing whitespace only; exact normalized source equality verified.",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "ollama_version": {
+    "version": "0.40.11"
+  },
+  "selection_plan": "configs/development-selection-plan.json",
+  "offline_selection": "docs/development-selection-summary.json",
+  "generation_probe": "docs/development-generation-probe-summary.json",
+  "selected_probe_private_path": "results/development-generation/v6-k8-grouped",
+  "development_index": "artifacts/development-selection/selected",
+  "probe_index": "artifacts/development-selection/v4-k8-grouped",
+  "reproduced_config_and_artifacts_match_tested_probe": true,
+  "selected_probe_responses": 6,
+  "selected_probe_mechanical_pass": true,
+  "generation_responses_across_development_iterations": 36,
+  "warmups_excluded_from_response_count": 6,
+  "development_iterations": [
+    {
+      "stage": "v1",
+      "responses": 6,
+      "status": "development_revision_needed",
+      "mechanical_failures": 1,
+      "summary_sha256": "f8aac2fe6622219c315520baf8f79ba1691cab5ff82d9bb1bd72378595946eae"
+    },
+    {
+      "stage": "v2",
+      "responses": 6,
+      "status": "development_revision_needed",
+      "mechanical_failures": 3,
+      "summary_sha256": "3057926a3306e0a4ba9e5f8db6261680fd93697f77e4b4a2f25fb4535110fca0"
+    },
+    {
+      "stage": "v3-structured",
+      "responses": 6,
+      "status": "development_revision_needed",
+      "mechanical_failures": 2,
+      "summary_sha256": "e53b54aaa1ad1753a9c367683e847ad3872b419120217250267b26ff115ed921"
+    },
+    {
+      "stage": "v4-evidence-first",
+      "responses": 6,
+      "status": "development_revision_needed",
+      "mechanical_failures": 4,
+      "summary_sha256": "7436e64d1d7b067b7a6617d20768ee67509725b4eaff7f398f08d11fa2d6fc24"
+    },
+    {
+      "stage": "v5-contract",
+      "responses": 6,
+      "status": "development_revision_needed",
+      "mechanical_failures": 5,
+      "summary_sha256": "356c633c108bb5b00bcd43abb37a5703dd5556e28189771fa57206cc9040e034"
+    },
+    {
+      "stage": "v6-k8-grouped",
+      "responses": 6,
+      "status": "mechanical_probe_passed_semantic_review_pending",
+      "mechanical_failures": 0,
+      "summary_sha256": "145867d16b154eb65ab3a555e0abea724638bdde47faf69935340dc9fc60b525"
+    }
+  ],
+  "packing_replay": {
+    "queries_and_methods": 12,
+    "all_eight_hits_fit": true,
+    "max_chars": 3913,
+    "generation_source_sha256": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80"
+  },
+  "selected_cluster_descriptors": [
+    {
+      "cluster": 0,
+      "chunks": 122,
+      "functional_classes": {
+        "brush_kit": 122
+      },
+      "terms": [
+        "brushes",
+        "soft",
+        "set",
+        "brush",
+        "makeup",
+        "good",
+        "great",
+        "price"
+      ]
+    },
+    {
+      "cluster": 1,
+      "chunks": 211,
+      "functional_classes": {
+        "deodorant": 211
+      },
+      "terms": [
+        "deodorant",
+        "aluminum",
+        "smell",
+        "deodorants",
+        "does",
+        "works",
+        "scent",
+        "day"
+      ]
+    },
+    {
+      "cluster": 2,
+      "chunks": 143,
+      "functional_classes": {
+        "deodorant": 131,
+        "conditioner": 10,
+        "brush_kit": 2
+      },
+      "terms": [
+        "scent",
+        "product",
+        "vanilla",
+        "smell",
+        "like",
+        "works",
+        "lume",
+        "day"
+      ]
+    },
+    {
+      "cluster": 3,
+      "chunks": 34,
+      "functional_classes": {
+        "deodorant": 7,
+        "nail_polish": 27
+      },
+      "terms": [
+        "polish",
+        "nail",
+        "nails",
+        "gel",
+        "coat",
+        "orly",
+        "use",
+        "used"
+      ]
+    },
+    {
+      "cluster": 4,
+      "chunks": 64,
+      "functional_classes": {
+        "conditioner": 61,
+        "deodorant": 3
+      },
+      "terms": [
+        "hair",
+        "conditioner",
+        "shampoo",
+        "product",
+        "biosilk",
+        "soft",
+        "love",
+        "use"
+      ]
+    },
+    {
+      "cluster": 5,
+      "chunks": 53,
+      "functional_classes": {
+        "nail_polish": 47,
+        "deodorant": 2,
+        "brush_kit": 3,
+        "conditioner": 1
+      },
+      "terms": [
+        "color",
+        "polish",
+        "love",
+        "red",
+        "orly",
+        "coats",
+        "bottle",
+        "like"
+      ]
+    }
+  ],
+  "qualitative_review": "All six answers inspected by assistant; residual support, relevance and inference errors documented privately. No exhaustive claim-level score.",
+  "qualitative_examples_count": 3,
+  "semantic_correctness_guaranteed": false,
+  "evaluation_answers_used_for_selection": false,
+  "final_experiment_inputs_frozen": false,
+  "final_quality_metrics_computed": false,
+  "limitations": [
+    "Geometry favors six clusters on this development corpus; groups partly reflect product types, not a validated thematic taxonomy.",
+    "k12 fit the budget but failed development response-format probes; k8 and explicit per-group structured fields were adopted jointly, without isolating effects.",
+    "Citation syntax and group-header identity are constructed/validated by the shared output contract; they are not evidence of semantic faithfulness.",
+    "The format contract is identical for both methods; raw output and invalid attempts are retained; no automatic factual repair.",
+    "Small, adaptively reused development probe is not a final benchmark or statistically independent validation."
+  ]
+}

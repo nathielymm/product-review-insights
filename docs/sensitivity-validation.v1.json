@@ -1,0 +1,18 @@
+{
+  "freeze_sha256": "9bba08d3b7e48f5d3f664a8d1dfaa4f9fe586f8ca4c95ea90c5d15334c616690",
+  "report_sha256": "c9e167cd30ddf491e7892c2a9882e97e93b5d0975841eca6e409b46d6e5f6cd9",
+  "cases": 27,
+  "attempts": 756,
+  "reviewed_unique_items": 756,
+  "factual_claim_units": 11876,
+  "reference_gap_question_cases": 58,
+  "annotations_sealed_before_comparative_export": true,
+  "aggregate_reproduction_byte_identical": true,
+  "tests_passed": 57,
+  "rules_changed": false,
+  "independent_human_sensitivity_review": false,
+  "resource_scope": [
+    "wall_time",
+    "ollama_tokens"
+  ]
+}

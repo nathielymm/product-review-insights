@@ -1,0 +1,19 @@
+{
+  "status": "primary_formal_annotation_and_metrics_complete",
+  "sample_items": 18,
+  "sample_qualitative_approvals": 18,
+  "per_cohort": {
+    "mascaras": 6,
+    "capilar": 6,
+    "variado": 6
+  },
+  "calibration_qualitative_approvals": 5,
+  "controls_with_formal_criteria": 3,
+  "complete_formal_item_scores": 102,
+  "source_packets_unchanged": true,
+  "paired_quality_comparisons": "docs/primary-evaluation-results.v1.json",
+  "review_design": "AI-assisted interpretations with partial human adjudication; not independent annotation",
+  "selection_report": "docs/human-audit-sampling.md",
+  "freeze_changed": false,
+  "formal_annotation_provenance": "assistant; not independently human annotated"
+}

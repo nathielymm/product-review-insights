@@ -40,7 +40,42 @@ def main():
     evaluation.add_argument("runs")
     evaluation.add_argument("--annotations", required=True)
     evaluation.add_argument("--key", required=True)
+    freeze = sub.add_parser("freeze-evaluation")
+    freeze.add_argument("--manifest", default="configs/evaluation-freeze.v1.json")
+    freeze.add_argument("--private-root", default="results/evaluation-freeze/v1")
+    freeze.add_argument("--index-root", default="artifacts/evaluation-v1")
+    frozen_build = sub.add_parser("build-frozen-index")
+    frozen_build.add_argument("--freeze", default="configs/evaluation-freeze.v1.json")
+    frozen_build.add_argument("--case", required=True)
+    frozen_build.add_argument("--output", required=True)
+    frozen_run = sub.add_parser("run-frozen")
+    frozen_run.add_argument("--freeze", default="configs/evaluation-freeze.v1.json")
+    frozen_run.add_argument("--case", required=True)
+    frozen_run.add_argument("--index")
+    frozen_run.add_argument("--output", required=True)
+    study_blind = sub.add_parser("blind-study")
+    study_blind.add_argument("runs")
+    study_blind.add_argument("--freeze", default="configs/evaluation-freeze.v1.json")
+    study_blind.add_argument("--output", required=True)
+    study_score = sub.add_parser("score-study")
+    study_score.add_argument("runs")
+    study_score.add_argument("--freeze", default="configs/evaluation-freeze.v1.json")
+    study_score.add_argument("--review", required=True)
+    study_score.add_argument("--output", required=True)
     args = parser.parse_args()
+    if args.command in {"freeze-evaluation","build-frozen-index","run-frozen","blind-study","score-study"}:
+        from .frozen_evaluation import freeze_evaluation,build_frozen_index,run_frozen,blind_study,score_study
+        if args.command=="freeze-evaluation": result=freeze_evaluation(args.manifest,args.private_root,args.index_root)
+        elif args.command=="build-frozen-index": result=build_frozen_index(args.freeze,args.case,args.output)
+        elif args.command=="run-frozen": result=run_frozen(args.freeze,args.case,args.output,args.index)
+        elif args.command=="blind-study": result=blind_study(args.freeze,args.runs,args.output)
+        else:
+            if Path(args.output).exists(): raise FileExistsError("Use a new score output file")
+            report=score_study(args.freeze,args.runs,args.review)
+            Path(args.output).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+            result={k:report[k] for k in ['case_id','attempts','reviewed_attempts','quality_results_complete','generation_failures']}
+        print(json.dumps(result,indent=2,ensure_ascii=False))
+        return
     if args.command == "prepare":
         from .data import prepare
         result = prepare(args.source, args.output, args.size, args.seed)

@@ -1,5 +1,5 @@
 {
-  "status": "reference_interpretations_approved_scoring_prepared_experiments_pending",
+  "status": "technically_frozen_v1_ready_for_primary_generation",
   "questions": "configs/questions.eval.14.draft.json",
   "question_count": 14,
   "core_question_ids": [
@@ -28,12 +28,15 @@
   "primary_question_cohort_pairs": 42,
   "source_corpus_pointer": "configs/corpus-current.json",
   "generation_language": "English, Portuguese question gloss for user review",
-  "reference_status": "approved_interpretations_decomposed_into_draft_scoring_units",
+  "reference_status": "audited_reference_and_scoring_rules_technically_frozen_v1",
   "independent_reference": false,
   "note": "User approved updating to 12 analysis questions plus 2 extrapolation controls. Exact wording presented for review. Reference units and development-selected parameters remain unfrozen; no final evaluation run.",
   "control_scope": "Q13/Q14 test epistemic extrapolation. They are not validated corpus-absent factual questions and do not establish general abstention ability.",
   "reference_packet_progress": "docs/family-reference-matrix-progress.json",
   "reference_plan": "configs/family-reference-plan.v2.draft.json",
   "reference_revision_note": "All three revised matrices approved. Scoring decomposition, subset reference eligibility and final parameters still require freeze.",
-  "scoring_plan": "configs/scoring-current.draft.json"
+  "scoring_plan": "configs/scoring-current.draft.json",
+  "development_selection": "configs/development-current.json",
+  "evaluation_freeze": "configs/evaluation-current.json",
+  "resource_policy": "wall_clock_times_and_tokens_only_no_memory_monitoring"
 }

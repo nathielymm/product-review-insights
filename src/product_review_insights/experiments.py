@@ -6,17 +6,16 @@ import platform
 import os
 import random
 import statistics
-import threading
 import time
 from pathlib import Path
 
 from .data import digest_file
-from .generation import api, generate, SYSTEM
+from .generation import api, generate, SYSTEM, STRUCTURED_SYSTEM, pack_context, citation_check
 from .retrieval import Retriever
 
 
-def run(index_path, questions_path, destination, repetitions=3, cohort=None):
-    import psutil
+
+def run(index_path, questions_path, destination, repetitions=3, cohort=None, *, expected_model_digest=None, expected_ollama_version=None, evaluation_binding=None, preserve_generation_errors=False):
     if repetitions < 1:
         raise ValueError("repetitions must be positive")
     questions = json.loads(Path(questions_path).read_text())
@@ -27,44 +26,36 @@ def run(index_path, questions_path, destination, repetitions=3, cohort=None):
     index_metadata = json.loads((Path(index_path) / "metadata.json").read_text())
     study_scope = validate_index_scope(index_metadata, cohort, any(q.get("scope_required", False) for q in questions))
     destination = Path(destination)
-    destination.mkdir(parents=True, exist_ok=False)
+    if destination.exists(): raise FileExistsError("Use a new run destination")
     retriever = Retriever(index_path)
     config = retriever.config
     info = api("/api/show", {"model": config["ollama_model"]})
     tags = api("/api/tags")
+    if expected_model_digest:
+        model = next((m for m in tags['models'] if m['name']==config['ollama_model']),None)
+        if not model or model['digest']!=expected_model_digest:
+            raise ValueError('Local model digest differs from frozen model')
+    version=api('/api/version')
+    if expected_ollama_version and version.get('version')!=expected_ollama_version:
+        raise ValueError('Ollama version differs from freeze')
+    destination.mkdir(parents=True, exist_ok=False)
     metadata = {"config": config, "index_metadata": retriever.metadata,
-                "study": study_scope,
+                "study": study_scope, "evaluation_binding": evaluation_binding, "expected_model_digest": expected_model_digest,
                 "questions_sha256": digest_file(questions_path), "repetitions": repetitions,
                 "platform": platform.platform(), "python": platform.python_version(),
                 "thread_environment": {k: os.environ.get(k) for k in ["OMP_NUM_THREADS", "TOKENIZERS_PARALLELISM"]},
                 "requirements_sha256": digest_file("requirements.lock.txt") if Path("requirements.lock.txt").exists() else None,
                 "source_files_sha256": {p.name: digest_file(p) for p in sorted(Path(__file__).parent.glob("*.py"))},
-                "system_prompt": SYSTEM,
+                "system_prompt": STRUCTURED_SYSTEM if config.get("structured_output") else SYSTEM,
                 "status": "running", "questions": ids,
-                "ollama_version": api("/api/version"), "model_info": info, "tags": tags,
-                "memory_note": "RSS sampled every 50ms; Python and accessible Ollama/llama-server processes; not GPU memory",
-                "timing_note": "One warmup excluded; query encoding included in retrieval; ingestion/index separate"}
+                "ollama_version": version, "model_info": info, "tags": tags,
+                "resource_policy": "Wall-clock times and Ollama token counts only. No process enumeration, RSS sampling, GPU-memory or energy measurement.",
+                "timing_note": "One warmup excluded; query encoding included in retrieval; ingestion/index separate. Tokens are workload proxies, not energy or monetary cost."}
     (destination / "metadata.json").write_text(json.dumps(metadata, indent=2))
     rng, rows = random.Random(config["seed"]), []
+    consecutive_generation_errors = 0
     tasks = [(q, repeat) for q in questions for repeat in range(repetitions)]
     rng.shuffle(tasks)
-    stop, observations = threading.Event(), []
-
-    def sample_memory():
-        while not stop.is_set():
-            python_rss = psutil.Process().memory_info().rss
-            ollama_rss = 0
-            for p in psutil.process_iter(["name", "memory_info"]):
-                try:
-                    if any(name in (p.info["name"] or "").lower() for name in ["ollama", "llama-server"]):
-                        ollama_rss += p.info["memory_info"].rss
-                except (psutil.NoSuchProcess, psutil.AccessDenied):
-                    pass
-            observations.append((python_rss, ollama_rss))
-            stop.wait(0.05)
-
-    monitor = threading.Thread(target=sample_memory, daemon=True)
-    monitor.start()
     try:
         retriever.search("consumer review quality")
         generate("Reply briefly with ready.", [{"id": "warmup", "text": "System ready."}], config)
@@ -73,30 +64,42 @@ def run(index_path, questions_path, destination, repetitions=3, cohort=None):
                 methods = ["traditional", "thematic"]
                 rng.shuffle(methods)
                 for method in methods:
-                    begin, cpu = time.perf_counter(), time.process_time()
-                    sample_start = len(observations)
+                    begin = time.perf_counter()
                     hits = retriever.search(question["question"], method == "thematic")
                     retrieval_seconds = time.perf_counter() - begin
-                    result = generate(question["question"], hits, config)
-                    recent = observations[sample_start:]
+                    try:
+                        result = generate(question["question"], hits, config)
+                        consecutive_generation_errors = 0
+                    except Exception as error:
+                        if not preserve_generation_errors: raise
+                        _, included = pack_context(hits, config['context_chars'])
+                        result = {'answer':'','raw_model_output':None,'evidence':included,'ollama':{},
+                                  'citations':citation_check('',set()),
+                                  'structured_validation':{'requested':bool(config.get('structured_output')),'valid':False,'error':'Generation request failed'},
+                                  'generation_error':{'type':type(error).__name__,'message':str(error)}}
+                        consecutive_generation_errors += 1
                     row = {"question_id": question["id"], "question": question["question"],
-                           "study": study_scope,
+                           "study": study_scope, "evaluation_binding": evaluation_binding,
                            "method": method, "repeat": repeat, **result,
                            "retrieval_seconds": retrieval_seconds,
                            "generation_seconds": time.perf_counter() - begin - retrieval_seconds,
-                           "total_seconds": time.perf_counter() - begin,
-                           "python_cpu_seconds": time.process_time() - cpu,
-                           "python_peak_rss_bytes": max((x[0] for x in recent), default=None),
-                           "ollama_peak_rss_bytes": max((x[1] for x in recent), default=None)}
+                           "total_seconds": time.perf_counter() - begin}
                     stream.write(json.dumps(row) + "\n")
                     stream.flush()
                     rows.append(row)
+                    if consecutive_generation_errors >= 3:
+                        raise RuntimeError('Aborting after three consecutive generation errors; attempts preserved')
     finally:
-        stop.set()
-        monitor.join()
         metadata["completed_runs"] = len(rows)
         metadata["expected_runs"] = len(questions) * repetitions * 2
         metadata["status"] = "complete" if len(rows) == metadata["expected_runs"] else "incomplete"
+        if expected_model_digest:
+            try:
+                last_tags=api('/api/tags')
+                last=next((m for m in last_tags['models'] if m['name']==config['ollama_model']),None)
+                if not last or last['digest']!=expected_model_digest: metadata['status']='invalid_model_digest'
+            except Exception:
+                metadata['status']='unverified_model_digest_at_end'
         (destination / "metadata.json").write_text(json.dumps(metadata, indent=2))
     return {"runs": len(rows), "destination": str(destination)}
 

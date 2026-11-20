@@ -129,3 +129,27 @@ A versão atual é indicada por configs/corpus-current.json. Ver docs/final-corp
 ## Preparação da rubrica por unidades
 
 Depois da aprovação dos três pacotes revisados, executar scripts/prepare_scoring_reference.py com --output apontando para um novo diretório. O comando gera unidades e disponibilidade de apoios conhecidos nos subconjuntos, sem respostas de modelos ou notas humanas. Ver docs/scoring-rubric.md e configs/scoring-current.draft.json. O avaliador legado por contagens pertence ao piloto e não substitui esta anotação por unidade.
+
+## Seleção operacional concluída no desenvolvimento
+
+O estado atual está em configs/development-current.json. scripts/select_development_parameters.py compara clusters e contexto apenas no split development, validando corpus e cache. scripts/probe_development_generation.py testa o Ollama local nesse mesmo split e preserva respostas brutas. Usar o plano configs/development-selection-plan.json e destinos novos, conforme docs/development-parameter-selection.md. O servidor e o modelo foram encerrados/descarregados ao concluir este piloto; reiniciá-los com as instruções locais acima antes de novas gerações.
+
+A saída estruturada separa grupos e citações. Seu validador rejeita referências de outra família e JSON inválido, sem corrigir conteúdo factual; o resultado bruto é preservado. O contrato é comum aos dois métodos. A versão atual ainda aguarda congelamento final junto com rubrica e referências elegíveis.
+
+## Avaliação integrada sem monitoramento de processos
+
+O fluxo atual usa run-frozen, blind-study e score-study, conforme docs/evaluation-freeze.md e configs/evaluation-current.json. A coleta de memória, CPU por processo e listagem de processos foi removida; os custos são descritos por tempos e tokens. Não há necessidade de ampliar permissões do sistema para monitoramento. Dados, chaves de revisão e anotações individuais permanecem locais e ignorados pelo Git.
+
+## Métricas da avaliação principal anotada
+
+Com os artefatos privados locais e as fichas anotadas, exporte somente agregados para um destino novo:
+
+```sh
+.venv/bin/python scripts/report_primary_evaluation.py --output results/evaluation-v1/reproducao-agregada.json
+```
+
+O comando valida o congelamento, todos os registros e a conclusão da anotação antes de liberar comparações. Recusa destino existente. O relatório registrado é docs/primary-evaluation-results.v1.json; a discussão está em docs/primary-evaluation-results.v1.md. As notas são do assistente com revisão humana parcial de interpretações, não referência independente. Os resultados dependem das fichas locais; a distribuição de código-fonte não contém dados nem notas individuais.
+
+## Agregados da sensibilidade v1
+
+A grade concluída e seus limites estão em [sensitivity-results.v1.md](sensitivity-results.v1.md). Com os 27 índices, runs e fichas privadas locais completos, execute `.venv/bin/python scripts/report_sensitivity_evaluation.py --output results/sensitivity-v1-execution/nova-reproducao.json`. O destino deve ser novo. O exportador verifica o congelamento e exige todas as anotações antes de comparar métodos. O JSON público contém somente agregados e hashes; os artefatos privados necessários não são distribuídos no código-fonte.
