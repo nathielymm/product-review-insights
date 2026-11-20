@@ -30,7 +30,7 @@ def prepare(source, destination, size=10000, seed=42):
     if not required <= set(parquet.schema_arrow.names):
         raise ValueError(f"Missing fields: {sorted(required - set(parquet.schema_arrow.names))}")
     # Hash priorities yield an order-independent sample without retaining all text.
-    seen, heap = set(), []
+    seen, heap, sampled = {}, [], {}
     counts = {"rows": 0, "empty_text": 0, "invalid_rating": 0, "duplicates": 0}
     ratings = {}
     for batch in parquet.iter_batches(batch_size=8192, columns=sorted(required)):
@@ -47,11 +47,22 @@ def prepare(source, destination, size=10000, seed=42):
             title = redact(" ".join((row["title"] or "").split()))
             # Collapse identical texts within a product; keep cross-product evidence.
             identity = hashlib.sha256((str(row["parent_asin"]) + "\0" + text.casefold()).encode()).hexdigest()
+            rating = int(row["rating"])
             if identity in seen:
                 counts["duplicates"] += 1
+                previous_rating = seen[identity]
+                if rating < previous_rating:
+                    ratings[str(previous_rating)] -= 1
+                    ratings[str(rating)] = ratings.get(str(rating), 0) + 1
+                    seen[identity] = rating
+                # Duplicate records may have different titles or text casing.
+                # Select a canonical representation independent of row order.
+                if identity in sampled:
+                    sampled[identity]["title"] = min(sampled[identity]["title"], title)
+                    sampled[identity]["text"] = min(sampled[identity]["text"], text)
+                    sampled[identity]["rating"] = min(sampled[identity]["rating"], rating)
                 continue
-            seen.add(identity)
-            rating = int(row["rating"])
+            seen[identity] = rating
             ratings[str(rating)] = ratings.get(str(rating), 0) + 1
             document = {"id": identity, "text": text, "title": title,
                         "product_id": row["parent_asin"], "rating": rating}
@@ -59,8 +70,11 @@ def prepare(source, destination, size=10000, seed=42):
             item = (-priority, identity, document)
             if len(heap) < size:
                 heapq.heappush(heap, item)
+                sampled[identity] = document
             elif item[:2] > heap[0][:2]:
-                heapq.heapreplace(heap, item)
+                removed = heapq.heapreplace(heap, item)
+                sampled.pop(removed[1])
+                sampled[identity] = document
     documents = [item[2] for item in sorted(heap, key=lambda x: (-x[0], x[1]))]
     destination.mkdir(parents=True, exist_ok=True)
     corpus = destination / "corpus.jsonl"
@@ -69,6 +83,7 @@ def prepare(source, destination, size=10000, seed=42):
                 "schema": str(parquet.schema_arrow), **counts, "unique_valid": len(seen),
                 "valid_unique_rating_counts": ratings, "sample_size": len(documents), "seed": seed,
                 "corpus_sha256": digest_file(corpus), "sampling": "sha256 priority, product+normalized redacted text dedup",
+                "duplicate_conflicts": "Lexicographic minimum title/text; minimum rating; prevents row-order dependence",
                 "category": "All_Beauty claimed by supplied context; provenance not independently verified",
                 "pii": "user IDs/images omitted; email/URL/phone heuristics applied; manual review still required"}
     (destination / "manifest.json").write_text(json.dumps(manifest, indent=2))
