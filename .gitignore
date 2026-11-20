@@ -12,3 +12,4 @@ results/
 *.npy
 *.safetensors
 .DS_Store
+/AGENTS.md
