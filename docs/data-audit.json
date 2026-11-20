@@ -1,0 +1,22 @@
+{
+  "source_sha256": "b40ae565f1073e0b4960e2f424fe0c82f3d270b7c4d00bc9272ddd6a8b7411d7",
+  "source_bytes": 139089758,
+  "rows": 701528,
+  "empty_text": 720,
+  "invalid_rating": 0,
+  "duplicates": 9445,
+  "unique_valid": 691363,
+  "valid_unique_rating_counts": {
+    "5": 414146,
+    "4": 78312,
+    "1": 100711,
+    "3": 55635,
+    "2": 42559
+  },
+  "sample_size": 10000,
+  "seed": 42,
+  "corpus_sha256": "2a1e85bca67ff1dea70653553cf4f775d9dc55ee0e74205023e20821d85f64ee",
+  "sampling": "sha256 priority, product+normalized redacted text dedup",
+  "category": "All_Beauty claimed by supplied context; provenance not independently verified",
+  "pii": "user IDs/images omitted; email/URL/phone heuristics applied; manual review still required"
+}
