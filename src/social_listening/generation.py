@@ -16,7 +16,9 @@ def api(path, payload=None, timeout=600):
     data = json.dumps(payload).encode() if payload is not None else None
     request = urllib.request.Request(BASE_URL + path, data=data,
                                      headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    # Do not forward consumer text to a proxy configured in the host environment.
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    with opener.open(request, timeout=timeout) as response:
         return json.load(response)
 
 
@@ -48,6 +50,8 @@ def citation_check(answer, evidence_ids):
 
 
 def generate(question, hits, config):
+    if ":cloud" in config.get("ollama_model", "").lower():
+        raise ValueError("Cloud models are excluded from this local experiment")
     context, included = pack_context(hits, config["context_chars"])
     if not included:
         return {"answer": "Insufficient evidence to answer.", "evidence": [], "ollama": {},

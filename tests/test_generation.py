@@ -1,4 +1,5 @@
 import json
+import pytest
 
 from social_listening import generation
 
@@ -31,3 +32,8 @@ def test_generation_uses_local_api_and_same_options(monkeypatch):
 def test_no_evidence_abstains_without_calling_model(monkeypatch):
     monkeypatch.setattr(generation, "api", lambda *a: (_ for _ in ()).throw(AssertionError()))
     assert generation.generate("Question", [], {"context_chars": 100})["evidence"] == []
+
+
+def test_cloud_model_rejected():
+    with pytest.raises(ValueError, match="Cloud models"):
+        generation.generate("Question", [], {"ollama_model": "some-model:cloud"})
