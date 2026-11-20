@@ -10,85 +10,99 @@ Projeto: `product-review-insights`.
 Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial Generativa e LLM da PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/).
 
 - [Código](src/product_review_insights)
-- [Resultados por produto — v2 com revisão humana parcial concluída](docs/product-evaluation.v2-results.md)
-- [Avaliação por produto — v2 congelada e respostas geradas](docs/product-evaluation.v2-generation.md)
-- [Anotação da v2 e revisão humana parcial](docs/product-evaluation.v2-annotation-review.md)
-- [Implementação e verificações da v2](docs/product-evaluation.v2-implementation.md)
+- [Discussão e conclusões completas — análise por produto](docs/discussion-and-conclusions.v2.md)
+- [Resultados e reprodução das métricas](docs/product-evaluation.v2-results.md)
+- [Configuração e geração congeladas](docs/product-evaluation.v2-generation.md)
+- [Inspeção separada das diferenças diagnósticas](docs/product-evaluation.v2-diagnostic-inspection.md)
+- [Anotação e revisão humana parcial](docs/product-evaluation.v2-annotation-review.md)
+- [Implementação e verificações técnicas](docs/product-evaluation.v2-implementation.md)
 - [Interface demonstrativa local: como executar](docs/local-demo.md)
-- [Progresso por entregas](docs/development-history.md)
-- [Critérios e preparação da avaliação](docs/scoring-rubric.md)
-- [Avaliação integrada e congelamento](docs/evaluation-freeze.md)
-- [Geração principal concluída](docs/primary-generation.md)
-- [Revisão humana parcial](docs/human-audit-completion.md)
-- [Métricas principais e limites](docs/primary-evaluation-results.v1.md)
-- [Análise de sensibilidade](docs/sensitivity-results.v1.md)
-- [Discussão e conclusões integradas](docs/discussion-and-conclusions.v1.md)
-- [Seleção no desenvolvimento](docs/development-parameter-selection.md)
-- [Protocolo experimental](docs/protocol.md)
-- [Reprodução local](docs/reproduction.md)
 - [Auditoria dos dados](docs/data-audit.json)
-- [Mapeamento exploratório de categorias](docs/category-map.md)
-- [Candidatos a três condições de variedade](docs/diversity-candidates.md)
-- [Revisão proposta de temas e consistência](docs/theme-consistency-review.md)
-- [Recorte alinhado e corpora preparados](docs/study-preparation.md)
+- [Progresso por entregas e histórico preservado](docs/development-history.md)
 
 ### Resumo
 
-Este trabalho investiga a geração de insights sobre consumidores a partir de avaliações de produtos. Compara recuperação aumentada por geração (RAG) tradicional com recuperação enriquecida por agrupamento temático, utilizando o recorte All_Beauty do Amazon Reviews 2023 e o Gemma 3 4B executado localmente via Ollama. Foram avaliadas cobertura temática, fidelidade às evidências, critérios de propostas e controles, latência e volume de tokens. A avaliação principal reuniu 252 tentativas e a sensibilidade, 756. A seleção temática apresentou maior fidelidade média nos três casos principais, mas os ganhos não se mantiveram de forma estável entre tamanhos e sementes. Não houve vantagem consistente de cobertura. Os achados se limitam a uma referência parcial, anotação assistida por IA com revisão humana parcial das interpretações e execução local; não demonstram superioridade geral de um método.
+Este trabalho investiga a identificação de oportunidades de melhoria em produtos a partir de avaliações de consumidores. Compara RAG tradicional com seleção de evidências enriquecida por agrupamentos temáticos internos a cada produto, usando o arquivo fornecido declarado como Amazon Reviews 2023 All_Beauty, embeddings MiniLM, FAISS e Gemma 3 4B local via Ollama. A avaliação compreendeu 36 respostas principais em três produtos, com referência parcial, anotação assistida e revisão humana das interpretações de 12 respostas. O temático apresentou maior cobertura média de conteúdo (18,75% contra 12,50%), enquanto o tradicional teve maior fidelidade média (85,33% contra 80,95%). Persistiram lacunas em qualificações, contrastes e propostas. Os resultados descrevem a configuração estudada, sem demonstrar superioridade geral, utilidade decisória validada ou impacto comercial.
 
 ### 1. Introdução
 
-Avaliações de consumidores podem apoiar a identificação de elogios, reclamações e oportunidades de melhoria. A recuperação por similaridade pode concentrar o contexto em evidências redundantes. Investiga-se se uma seleção diversificada por temas aumenta a cobertura sem comprometer a fidelidade aos comentários.
+Avaliações de consumidores registram experiências sobre desempenho, aplicação, embalagem e expectativas de valor. Organizar esses relatos pode apoiar hipóteses de melhoria, mas exige preservar a atribuição ao produto, à pessoa e às condições descritas. Este estudo investiga se diversificar a seleção de evidências por agrupamentos temáticos amplia a cobertura sem comprometer a fidelidade, em comparação com a seleção pelo ranking de recuperação.
 
-O conjunto de dados utilizado é declarado como Amazon Reviews 2023, categoria All_Beauty, do McAuley Lab. O arquivo fornecido contém 701.528 registros e esquema compatível com avaliações. A correspondência exata com o arquivo oficial ainda exige verificação de procedência. O recorte de avaliações limita a generalização dos resultados e a inferência de participação de mercado.
+O arquivo Parquet fornecido é declarado como Amazon Reviews 2023, categoria All_Beauty, e contém 701.528 registros. A correspondência exata com o arquivo oficial ainda exige verificação de procedência. O recorte principal utiliza 1.209 avaliações de três produtos, analisados separadamente:
 
-O recorte alinhado contém três estudos de caso com cinco famílias cada: máscaras de cílios (547 avaliações), cuidados e ferramentas para cabelo (1.405) e funções de diferentes áreas (1.891). A análise principal utiliza as 3.843 avaliações elegíveis. A análise secundária usa 20, 40 e 60 avaliações por família, com três sementes. Desenvolvimento utiliza cinco famílias separadas, com 625 avaliações. Ver [recorte e preparação](docs/study-preparation.md).
+| Produto | Avaliações | Trechos indexados |
+|---|---:|---:|
+| Escova GranNaturals | 613 | 613 |
+| Shampoo Pure Body Naturals Argan | 473 | 474 |
+| Máscara de cílios Bold Lash | 123 | 123 |
 
-As famílias operacionais não representam necessariamente versões idênticas. A revisão direcionada foi concluída: 20 comentários foram revisados pela usuária, cobrindo as 15 famílias; três registros exclusivamente sobre uso em animais foram excluídos e uma assinatura residual foi removida. Isso não constitui validação humana completa nem referência final. Ver [revisão dos dados](docs/final-corpus-qa.md) e configs/corpus-current.json. Um conjunto por condição permite estudos de caso e não isola causalmente o efeito da variedade.
+O identificador operacional delimita o produto, sem excluir automaticamente mudanças de fórmula ou apresentação entre compras. Diferenças de versão e referências ambíguas a outros produtos precisam ser preservadas na interpretação. Os três casos foram escolhidos intencionalmente e não representam todos os consumidores ou produtos da categoria.
 
 ### 2. Modelagem
 
-O pipeline realiza leitura local de Parquet, exclusão de texto vazio e notas inválidas, remoção de duplicatas por produto e texto normalizado, redação heurística de emails, URLs e telefones e amostragem determinística por hash. Identificadores de usuários e imagens não são incorporados ao corpus derivado. A redação automática não garante anonimização completa; dados e respostas ficam fora do Git.
+O processamento local realiza limpeza e deduplicação de avaliações, mantendo identidades de produto e fonte. Identificadores de usuários e imagens não entram no corpus derivado; dados, respostas, modelos e anotações individuais permanecem fora do Git. A redação heurística de informações pessoais não garante anonimização completa.
 
-Quando duplicatas divergem em título, capitalização ou nota, usam-se representações canônicas determinísticas (mínimo lexicográfico de título/texto e menor nota). A nota não entra no prompt nem na busca; essa regra, preservada no congelamento, pode afetar sua distribuição descritiva.
+Os textos são segmentados conforme o limite do encoder MiniLM, convertidos em embeddings normalizados de 384 dimensões e indexados em FAISS. MiniBatchKMeans forma quatro agrupamentos exploratórios dentro de cada produto. Eles não constituem uma taxonomia temática independente validada.
 
-As avaliações são segmentadas no limite do encoder MiniLM, convertidas em embeddings normalizados e indexadas em FAISS com similaridade de cosseno. MiniBatchKMeans agrupa os mesmos vetores; termos TF-IDF e exemplos representativos permitem inspecionar os agrupamentos. Os rótulos automáticos não constituem uma taxonomia validada.
+Cada pergunta tem cinco buscas por aspectos em inglês. Seus resultados são combinados por Reciprocal Rank Fusion (RRF), formando um conjunto comum de até 80 candidatos, deduplicados por avaliação. O tradicional escolhe as primeiras oito avaliações desse ranking. O temático escolhe primeiro representantes dos agrupamentos disponíveis nesse mesmo conjunto e completa as vagas pelo ranking comum. Ambos usam o mesmo corpus, encoder, perguntas, gerador e orçamento de contexto. Nenhum método mistura produtos no contexto.
 
-O método tradicional seleciona os primeiros k resultados por similaridade. O temático seleciona primeiro um resultado por grupo dentro do mesmo conjunto de candidatos e completa as vagas por similaridade. Ambos utilizam o mesmo Gemma 3 4B, encoder, corpus, prompt, limite de contexto e parâmetros de geração. O enriquecimento atua na seleção das evidências, sem inserir resumos gerados adicionais.
+O Gemma 3 4B gera a resposta estruturada original em inglês, localmente via Ollama, com temperatura zero, semente 42, janela de 8.192 tokens e limite de 1.536 tokens de saída. O contexto tem limite de 12.000 caracteres serializados. A tradução para português ocorre apenas na apresentação e não altera a base da avaliação semântica ou as citações. As versões de código, entradas e parâmetros foram vinculadas por hashes no manifesto de congelamento.
 
-A seleção operacional no desenvolvimento escolheu seis grupos e até oito trechos, com saída estruturada idêntica nos dois métodos. A configuração selecionada foi congelada tecnicamente em configs/evaluation-freeze.v1.json, junto às perguntas, fontes e regras de pontuação. A avaliação registrou erros de suporte e inferência, além de aspectos omitidos nas respostas. Cada comparação exige índice e corpus específicos do conjunto, verificados por hashes e identidades. As respostas devem citar evidências, atribuir observações às famílias corretas e se abster quando o contexto for insuficiente.
+A grade principal contém seis perguntas específicas por produto: quatro sobre aspectos de uso, uma de priorização de oportunidades e uma de controle sobre vendas. São 36 respostas principais, com uma geração por combinação de produto, pergunta e método. Há ainda 24 repetições diagnósticas de Q1/Q5, excluídas das métricas principais, e 36 traduções de apresentação. Não houve reparo, nova tentativa para selecionar melhor resposta ou descarte de falhas.
+
+A referência parcial contém, por método, 55 alvos de conteúdo, 38 de qualificação e 16 de contraste. A cobertura usa as quatro primeiras perguntas; fidelidade, citações e propostas são avaliadas em Q1–Q5, e controles em Q6. As médias são calculadas dentro do produto e depois entre produtos com pesos iguais. Os métodos ficaram ocultos nas fichas de anotação; a usuária aprovou as interpretações de 12 respostas de uma amostra definida antes dos resultados. Isso não constitui avaliação independente ou revisão integral das afirmações.
 
 ### 3. Resultados
 
-A auditoria inicial encontrou 720 registros sem texto e 9.445 duplicatas segundo a regra adotada, resultando em 691.363 avaliações válidas e únicas. A amostra histórica de 10 mil registros pertence ao piloto global; os corpora do estudo somam 3.843 avaliações principais. A última suíte registrada teve 57 testes aprovados e uma integração real de recuperação no conjunto separado de desenvolvimento. Essas contagens descrevem a preparação dos dados, não a qualidade do RAG.
+As 60 gerações em inglês e 36 traduções passaram no formato, sem erros de chamada ou cortes de tokens. Os agregados foram recalculados e coincidiram com a exportação. Essas verificações confirmam a execução e o cálculo, sem certificar os julgamentos semânticos ou a qualidade dos achados.
 
-A geração principal congelada foi concluída: 252 tentativas nos três conjuntos, sem falhas de chamada. Doze saídas atingiram o limite de geração e ficaram com formato inválido; foram preservadas. As outras 240 passaram pela validação mecânica; a avaliação semântica posterior incluiu todas as tentativas. Foram preparados 102 itens de revisão após agrupar duplicatas exatas, mantendo as 252 tentativas e suas medições. Ver [registro da geração](docs/primary-generation.md).
+| Indicador médio | Tradicional | Temático |
+|---|---:|---:|
+| Conteúdo da referência disponível no contexto | 29,25% | 28,83% |
+| Conteúdo reproduzido com apoio e citação | 12,50% | 18,75% |
+| Qualificações reproduzidas com apoio e citação | 0,00% | 0,00% |
+| Contrastes reproduzidos com apoio e citação | 8,33% | 8,33% |
+| Fidelidade ao contexto | 85,33% | 80,95% |
+| Suporte das próprias citações | 80,84% | 78,83% |
+| Mediana de geração em inglês, com verificações | 5,92 s | 5,46 s |
 
-As interpretações de uma amostra de 18 itens foram revisadas pela usuária, além de cinco itens de calibração, com auxílio do assistente. A anotação formal dos 102 itens únicos foi concluída pelo assistente, com 1.568 unidades de afirmação em contexto e cobertura das unidades de referência. Essa revisão parcial não constitui avaliação independente. As comparações usam as 252 tentativas, incluindo as 12 saídas cortadas; testes de software não são evidência de qualidade dos insights.
+Cobertura é relativa aos alvos completos da referência parcial, não a todos os temas do corpus. Fidelidade e citações são médias por resposta e produto, sem reunir afirmações como observações independentes. Não foi calculada nota global de qualidade.
 
-| Conjunto | Cobertura: tradicional / temático | Fidelidade: tradicional / temático | Mediana de tempo: tradicional / temático |
-|---|---:|---:|---:|
-| Máscaras | 13,7% / 6,7% | 79,0% / 84,7% | 7,21 s / 6,89 s |
-| Capilar | 12,8% / 17,1% | 71,4% / 81,5% | 8,24 s / 9,66 s |
-| Variado | 3,3% / 4,7% | 75,4% / 81,6% | 6,05 s / 7,98 s |
+| Produto | Cobertura: tradicional / temático | Fidelidade: tradicional / temático |
+|---|---:|---:|
+| Escova GranNaturals | 14,58% / 27,08% | 88,91% / 85,15% |
+| Shampoo Pure Body Naturals | 10,42% / 10,42% | 91,26% / 80,93% |
+| Máscara Bold Lash | 12,50% / 18,75% | 75,82% / 76,78% |
 
-Cobertura é a média entre famílias elegíveis da referência parcial, nas nove perguntas factuais; fidelidade é a média de afirmações sustentadas nas 14 perguntas, após média das repetições. As anotações são assistidas por IA, com revisão humana parcial das interpretações. Ver [métricas, intervalos, propostas, controles e reprodução](docs/primary-evaluation-results.v1.md). A sensibilidade foi concluída em 27 cenários (756 tentativas), com 20/40/60 avaliações por família e três sementes. Cobertura e fidelidade variaram entre amostras, sem vantagem consistente do temático; sua mediana de tempo foi maior nos nove grupos. Ver [análise de sensibilidade, falhas e limites](docs/sensitivity-results.v1.md).
+Ambos os métodos apresentaram de uma a duas oportunidades nas três perguntas Q5. Nos controles de vendas, ambos atenderam aos critérios de reconhecer insuficiência de evidência, distinguir hipóteses de previsões e indicar informação adicional nos três produtos. Nenhum controle satisfez simultaneamente os quatro critérios, devido a premissas factuais ou quantidades sem apoio adequado. Ver [critérios de propostas, controles, tokens, tempos e reprodução](docs/product-evaluation.v2-results.md).
 
 #### Discussão dos achados
 
-A cobertura e a fidelidade medem propriedades distintas: uma resposta pode se apoiar corretamente em poucos relatos e ainda omitir aspectos relevantes. Na sensibilidade, a diferença média de cobertura favoreceu o temático em quatro dos nove grupos, o tradicional em quatro e empatou em um. A fidelidade favoreceu o temático em quatro e o tradicional em cinco. Em máscaras com 20 avaliações por família, a recuperação temática ganhou 9,88 pontos percentuais de cobertura, mas a resposta perdeu 0,46 ponto. A diversificação das passagens não garantiu sua incorporação na síntese.
+A seleção temática apresentou maior cobertura média de conteúdo da referência, com 18,75%, contra 12,50% do tradicional. Esse ganho ocorreu na escova e na máscara, com empate no shampoo. A fidelidade média ao contexto, porém, favoreceu o tradicional: 85,33%, contra 80,95%. O suporte pelas próprias citações também foi maior no tradicional, com 80,84%, contra 78,83%. Portanto, abordar mais aspectos não assegurou maior fidelidade, e nenhum método apresentou vantagem uniforme entre produtos e critérios.
 
-Os denominadores elegíveis variam entre subconjuntos, com 58 combinações de pergunta/subconjunto sem apoio conhecido, cuja cobertura permanece indisponível. Assim, comparar tamanhos não isola o efeito do volume. A pertinência das propostas à tarefa atingiu 33,3% em ambos os métodos na sensibilidade, sob critério binário para a resposta inteira; isso indica dificuldade de atender integralmente à pergunta, sem significar ausência de qualquer sugestão útil. Hipóteses de melhoria podem ser formuladas sem dados de vendas, mas não se pode prever impacto comercial ou comprovar segurança a partir desses relatos.
+A referência teve representação limitada nos contextos dos dois métodos: cobertura média de conteúdo de 29,25% no tradicional e 28,83% no temático. Além disso, parte das evidências disponíveis não foi reproduzida corretamente. Nenhum alvo completo de qualificação recebeu crédito nas respostas, e a cobertura de contrastes foi de 8,33% em ambos. Esses valores dizem respeito aos alvos específicos da referência parcial, com exigência de sentido completo e citação adequada; não demonstram ausência de qualquer condição, comparação ou achado útil.
 
-O temático teve maior mediana de tempo nos nove grupos de sensibilidade. Foram mantidos uma falha de chamada, 42 formatos inválidos e 34 cortes, ocorrências que podem se sobrepor. Tempos e tokens descrevem esta execução; não foram medidos memória, CPU, energia ou custo monetário. A discussão completa, incluindo propostas, controles e limitações, está em [Discussão e conclusões](docs/discussion-and-conclusions.v1.md).
+Para identificar oportunidades de melhoria, é necessário preservar quem relatou a experiência, em qual produto e sob quais condições. Uma máscara recebida ressecada não equivale a uma unidade que secou rapidamente durante o uso; mudanças simultâneas de fórmula e aplicador não permitem atribuir isoladamente a piora a uma delas. Essas distinções mostram por que fluência, formato válido e quantidade de fontes não bastam para caracterizar profundidade analítica.
+
+As propostas tiveram atendimento incompleto aos critérios. O vínculo com um problema apoiado e corretamente citado foi de 44,44% no tradicional e 37,78% no temático; a pertinência à pergunta alcançou 48,89% e 35,56%. Nenhum método explicitou satisfatoriamente uma qualidade valorizada a preservar. Listar elogios em outra parte da resposta não estabeleceu essa ligação. Embora ambos tenham apresentado de uma a duas oportunidades nas três perguntas de priorização, isso não comprovou justificativa de prioridade ou viabilidade das mudanças.
+
+Todos os controles reconheceram que as avaliações não permitem prever qual melhoria aumentaria mais as vendas. Entretanto, nenhum passou simultaneamente nos quatro critérios, pois as respostas ainda continham premissas factuais ou quantidades sem apoio adequado. Assim, reconhecer um limite comercial não substitui o uso correto das fontes. A ausência de dados de vendas não impede formular hipóteses de melhoria, mas os relatos não demonstram frequência populacional, causa técnica ou impacto comercial.
+
+As medianas locais de geração foram de 5,92 s no tradicional e 5,46 s no temático, incluindo as verificações do executor. Não houve erros de chamada ou cortes de tokens nas gerações, mas validade operacional não certifica qualidade semântica. Tradução, preparação e diagnósticos têm custos separados. Foram medidos apenas tempos de parede e tokens, sem CPU, memória, energia ou custo monetário. Ordem, carregamento e cache limitam a interpretação das diferenças de tempo.
+
+As conclusões são limitadas a três produtos escolhidos intencionalmente, uma configuração local de modelo e agrupamentos exploratórios. A referência é parcial, e a anotação do assistente teve revisão humana das interpretações de 12 respostas, sem avaliação independente ou concordância entre avaliadores. A equivalência das traduções não foi integralmente certificada. A identidade operacional permite diferentes fórmulas e apresentações do mesmo produto, e há fontes com menções ambíguas a outras marcas. A procedência exata do Parquet em relação ao arquivo oficial declarado permanece a verificar. As seis saídas diagnósticas diferentes foram inspecionadas separadamente pelo assistente: houve alterações de achados, propostas e ressalvas, sem inclusão dessas repetições nas métricas principais. Essas limitações impedem generalizações populacionais ou conclusões causais.
+
+A discussão ampliada, com os custos de tradução e os diagnósticos de estabilidade, está em [Discussão e conclusões completas](docs/discussion-and-conclusions.v2.md).
 
 ### 4. Conclusões
 
-O trabalho implementou uma comparação reproduzível entre recuperação por similaridade e seleção de evidências diversificada por agrupamentos temáticos para investigar oportunidades de melhoria em produtos. Na configuração estudada, o enriquecimento temático não demonstrou ganho consistente de cobertura ou fidelidade. A maior fidelidade média dos casos principais não se manteve de forma estável na sensibilidade. Os resultados não estabelecem superioridade geral de uma arquitetura nem efeito causal da variedade.
+O trabalho implementou uma comparação reproduzível entre RAG tradicional e RAG enriquecido por seleção temática para identificar oportunidades de melhoria em produtos, com avaliações e temas organizados dentro de cada produto. A contribuição reúne recuperação local, geração com fontes rastreáveis e avaliação separada de cobertura, fidelidade, citações, propostas, controles e recursos de execução.
 
-A aplicação pode apoiar a organização de evidências e a formulação de hipóteses, mas sua utilidade para decisões de produto não foi validada com equipes ou resultados comerciais. As propostas precisam manter atribuição à família e ao relato, explicitar incertezas e ser revisadas. A referência é parcial e não independente; a pontuação foi feita pelo assistente, com revisão humana parcial de interpretações principais e sem revisão humana independente da sensibilidade. Perguntas dependentes, tamanhos aninhados, poucas repetições, versões de produtos e execução local limitam as inferências. A procedência exata do arquivo fornecido em relação à fonte oficial declarada também permanece a verificar.
+Na configuração estudada, o temático apresentou maior cobertura média de conteúdo, enquanto o tradicional apresentou maior fidelidade média e maior suporte das próprias citações. Os resultados variaram entre produtos e critérios, sem demonstrar superioridade geral de um método. As lacunas em qualificações, contrastes e preservação explícita de qualidades mostram que diversificar evidências, por si só, não assegura uma análise suficientemente contextualizada para orientar mudanças de produto.
 
-Trabalhos futuros devem priorizar avaliação independente e ampliação da referência, investigar relevância para a pergunta e aproveitamento das evidências pelo gerador e validar hipóteses com especialistas e usuários finais. Novas estratégias devem ser avaliadas em outra versão experimental, preservando o congelamento e os resultados aqui documentados. O texto integrado está preparado para revisão acadêmica; os campos de identificação permanecem em branco.
+O sistema pode apoiar a organização de experiências e a formulação de hipóteses, mas sua utilidade para decisões de produto ainda não foi validada com especialistas, usuários finais ou resultados comerciais. Uma sugestão apoiada em comentários continua sendo uma oportunidade a investigar, sem comprovar a causa de um problema, a eficácia de uma solução ou seu retorno comercial.
+
+Como continuidade, devem ser priorizadas avaliação independente, ampliação da referência e verificação das ambiguidades de identidade nas fontes. Novos experimentos podem investigar recuperação mais alinhada aos aspectos das perguntas e geração que preserve condições, contrastes e vínculos entre achados e fontes. Mudanças devem formar uma nova versão experimental, preservando os resultados congelados. A inspeção separada das seis saídas diagnósticas diferentes foi concluída, sem alterar as métricas principais ou demonstrar estabilidade semântica geral. As conclusões se restringem aos dados, à referência parcial, à anotação assistida com revisão humana parcial e à execução local documentada.
 
 ---
 

@@ -1,0 +1,52 @@
+{
+  "schema": "v2_diagnostic_inspection_aggregate",
+  "status": "six_changed_outputs_inspected_separately",
+  "scheduled_diagnostic_outputs": 24,
+  "identical_to_primary": 18,
+  "changed_outputs_inspected": 6,
+  "distinct_full_comparisons": 3,
+  "comparison_instances_per_pattern": 2,
+  "patterns": [
+    {
+      "pattern": "findings_and_proposals_changed",
+      "outputs": 2,
+      "description_pt": "Mudanças substantivas com detalhes apoiados, remoção de erros locais e novos problemas de atribuição e citação; propostas alteradas continuam hipóteses."
+    },
+    {
+      "pattern": "local_rewording_and_stronger_limits_attribution",
+      "outputs": 2,
+      "description_pt": "Achado de volume parafraseado; ressalva final atribui queixas a tipos de cabelo e técnicas com certeza além do apoio disponível. Erros anteriores de pessoa/parte persistem."
+    },
+    {
+      "pattern": "uncertainty_and_investigation_focus_only",
+      "outputs": 2,
+      "description_pt": "Observações e propostas inalteradas; mudança no foco da investigação e na redação dos limites, sem correção de erros anteriores."
+    }
+  ],
+  "matched_contexts": 6,
+  "matched_model_request_payloads": 6,
+  "identity_by_method": [
+    {
+      "method": "traditional",
+      "identical": 7,
+      "scheduled": 12
+    },
+    {
+      "method": "thematic",
+      "identical": 11,
+      "scheduled": 12
+    }
+  ],
+  "independent_human_annotation": false,
+  "exhaustive_atomic_rescoring": false,
+  "new_quality_metrics_calculated": false,
+  "primary_denominators_changed": false,
+  "primary_annotations_changed": false,
+  "primary_outputs_replaced": false,
+  "new_model_calls": 0,
+  "frozen_inputs_verified": 73,
+  "earlier_registered_files_verified": 77,
+  "primary_metrics_sha256": "e965487d87320b361b2252a7255f8a23a510e00dec1488261dbed1d5a9b03f05",
+  "inspection_artifact_sha256": "6afbbff3e3ee3054e3a6779220d01d45c6a5081295403a8f56cc3767805be599",
+  "limitation": "Descriptive comparison of observed repeats only; no confidence, significance, effect, overall quality gain or general reproducibility claim. Full text and judgments remain local ignored files."
+}
