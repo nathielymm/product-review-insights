@@ -143,3 +143,19 @@ A função generation.generate e seu prompt/contrato inglês originais foram usa
 As quatro respostas da rodada 7 repetiram exatamente o inglês e os contextos da rodada 6. A revisão do assistente cobriu 53 frases e confirmou erros de atribuição, certeza e referente. As 14 auditorias do mesmo modelo foram rejeitadas por rótulos incompatíveis; o alinhamento por embeddings ficou apenas como auxílio à inspeção. Nenhuma referência ou resposta foi corrigida silenciosamente. A auditoria não será promovida; o congelamento final depende da rubrica e da grade experimental, sem exigir ausência total de erros para comparar métodos. Os 74 arquivos anteriores registrados foram preservados. Ver docs/curly-product-pilot.v7-comparison.md.
 
 A suíte final passou com 97 testes, incluindo rejeição de aceitação contraditória e deduplicação de candidatos por avaliação. Agregados reproduzidos byte a byte; importação do encoder adiada para evitar carregá-lo em testes puramente determinísticos.
+
+## Perguntas específicas para avaliação por produto — proposta
+
+A leitura dirigida dos corpora GranNaturals (613 avaliações), Pure Body Naturals (473) e Bold Lash (123) embasou quatro questões específicas por produto, uma síntese de oportunidades e um controle de limites comerciais. As âncoras individuais foram registradas somente em results/; não constituem referência exaustiva ou aprovada. O rascunho mantém 36 respostas principais propostas e distingue aplicação, desempenho, condição da unidade e comparações entre compras. Não houve geração, ativação da configuração ou congelamento. Ver docs/product-questions.v2-review-proposal.md.
+
+## Referência do produto GranNaturals consolidada
+
+Após revisão dos seis blocos, foram consolidados 20 comentários com tradução/interpretação, cinco itens de síntese e um controle de limites comerciais. A ficha tem 26 itens aprovados, com fontes e cadeia de aprovações verificadas; conteúdo individual permanece somente nos arquivos locais ignorados. Uma divergência de tradução entre rascunho e apresentação aprovada foi reconciliada explicitamente, preservando os arquivos anteriores. A referência é parcial e não congela denominadores, rubrica ou experimento. Não houve geração nova. Ver docs/grannaturals-reference-summary.v2.md.
+
+## Referência do shampoo Pure Body Naturals consolidada
+
+Os seis blocos aprovados foram consolidados em uma ficha por produto: 20 comentários com tradução/interpretação, cinco itens de síntese e um controle sobre vendas. Foram conferidos os textos originais, hashes das aprovações e integridade dos 26 itens. A referência da GranNaturals permanece preservada e o registro local aponta para ambas as fichas. Conteúdo individual fica somente em arquivos ignorados; o Git contém apenas protocolo e resumo agregado. A referência é parcial, sem denominadores ou experimento congelados, e não houve geração nova. Ver docs/pure-body-naturals-reference-summary.v2.md.
+
+## Referência da Bold Lash e ciclo dos três produtos consolidados
+
+Os seis blocos da Bold Lash foram consolidados após aprovação: 20 comentários com tradução/interpretação, cinco itens de síntese e um controle de limites comerciais. Foram conferidos textos, vínculos, hashes e igualdade dos 26 itens aprovados. As fichas da GranNaturals e Pure Body Naturals permanecem preservadas. O ciclo contém três referências parciais, 18 casos produto/pergunta e 78 itens administrativos de papéis distintos, sem pendência nos blocos apresentados; isso não estabelece cobertura exaustiva, avaliação independente ou denominadores. Fontes e anotações individuais continuam somente em arquivos locais ignorados. Rubrica quantitativa e protocolo comum ainda precisam ser finalizados antes do congelamento; não houve geração nova. Ver docs/bold-lash-reference-summary.v2.md e docs/product-reference-progress.v2.json.

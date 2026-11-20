@@ -1,0 +1,155 @@
+{
+  "schema": "product_questions_review_draft_v2",
+  "status": "proposal_for_user_review_not_frozen",
+  "role": "question_selection_from_directed_source_inspection_not_exhaustive_annotation",
+  "products": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "eligible_reviews": 613,
+      "corpus_sha256": "b578f733f1bdb29e5c7a063a9a4636cc164f1761e8d6ffeb0abb11a32ab99fb9",
+      "questions": [
+        {
+          "id": "Q1",
+          "aspect": "alcance_cerdas",
+          "text_pt": "Que dificuldades para alcançar as camadas internas do cabelo são relatadas com esta escova? Que ajustes nas cerdas poderiam ser investigados, considerando os tipos de cabelo e as experiências favoráveis descritas?"
+        },
+        {
+          "id": "Q2",
+          "aspect": "estatica_acabamento",
+          "text_pt": "Como os relatos sobre estática, volume e acabamento do cabelo divergem? Que melhorias poderiam ser investigadas preservando os benefícios de brilho e controle da oleosidade mencionados?"
+        },
+        {
+          "id": "Q3",
+          "aspect": "ergonomia",
+          "text_pt": "Que dificuldades de pegada são associadas ao tamanho, à largura e ao formato da escova? Que mudanças ergonômicas poderiam ser investigadas sem presumir que o mesmo tamanho seja inadequado para todas as pessoas?"
+        },
+        {
+          "id": "Q4",
+          "aspect": "odor",
+          "text_pt": "Como o odor da escova afetou a experiência de uso e o que aconteceu nas tentativas de reduzi-lo? Que verificações ou melhorias seriam pertinentes, sem deduzir a composição química pelo cheiro?"
+        },
+        {
+          "id": "Q5",
+          "aspect": "priorizacao",
+          "text_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial."
+        },
+        {
+          "id": "Q6",
+          "aspect": "controle",
+          "text_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões."
+        }
+      ]
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "eligible_reviews": 473,
+      "corpus_sha256": "0093d8bebacd0a69c4bf0f95ecb0d0f4b6b30c623911826e79f49a5531848b2e",
+      "questions": [
+        {
+          "id": "Q1",
+          "aspect": "limpeza_equilibrio",
+          "text_pt": "Em quais experiências o shampoo é descrito como limpando sem ressecar e em quais aparecem ressecamento ou oleosidade após a lavagem? Que melhorias de desempenho ou orientação de uso poderiam ser investigadas, considerando apenas as condições relatadas?"
+        },
+        {
+          "id": "Q2",
+          "aspect": "dosagem_embalagem",
+          "text_pt": "Que dificuldades são relatadas para retirar e dosar o shampoo, incluindo funcionamento da válvula e aproveitamento do conteúdo? Que melhorias na embalagem poderiam ser investigadas sem confundir preferência de dosagem com defeito confirmado?"
+        },
+        {
+          "id": "Q3",
+          "aspect": "consistencia_recompra",
+          "text_pt": "Que diferenças entre compras são relatadas na consistência, quantidade e apresentação do shampoo? Que oportunidades existem para melhorar a consistência da entrega e a comunicação de mudanças, distinguindo observações de suspeitas de diluição ou reformulação?"
+        },
+        {
+          "id": "Q4",
+          "aspect": "fragrancia",
+          "text_pt": "Que aspectos da fragrância agradam e quais dificultam o uso? Que melhorias de produto ou de informação poderiam ser investigadas, preservando as preferências divergentes e sem inferir ingredientes ou segurança pelo cheiro?"
+        },
+        {
+          "id": "Q5",
+          "aspect": "priorizacao",
+          "text_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial."
+        },
+        {
+          "id": "Q6",
+          "aspect": "controle",
+          "text_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões."
+        }
+      ]
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "eligible_reviews": 123,
+      "corpus_sha256": "f77a6a3b3847b3c8c3df8bdb20e39ae2dda9dc400332a6459c20e2c0d56d6537",
+      "questions": [
+        {
+          "id": "Q1",
+          "aspect": "aplicador",
+          "text_pt": "Que dificuldades de aplicação são associadas ao tamanho, ao formato ou à mudança do aplicador? Que ajustes poderiam ser investigados, distinguindo o que é atribuído ao aplicador do que não pode ser separado da fórmula?"
+        },
+        {
+          "id": "Q2",
+          "aspect": "resultado_valor",
+          "text_pt": "Em quais relatos o efeito de alongamento, volume ou definição atende às expectativas e em quais é comparado desfavoravelmente a máscaras mais baratas? Que melhorias de desempenho ou comunicação de valor poderiam ser investigadas?"
+        },
+        {
+          "id": "Q3",
+          "aspect": "duracao_remocao",
+          "text_pt": "Como os relatos sobre duração, manchas ou descamação e facilidade de remoção se contrastam? Que melhorias poderiam ser investigadas para equilibrar permanência e remoção, sem presumir que todas as pessoas usaram a mesma versão ou rotina?"
+        },
+        {
+          "id": "Q4",
+          "aspect": "condicao_unidade",
+          "text_pt": "Que problemas são relatados na condição da máscara ao abrir a embalagem e na sua conservação durante o uso? Que verificações ou melhorias poderiam ser investigadas, distinguindo unidades secas ou vazias, formação de grumos e falhas físicas, sem presumir uma causa comum?"
+        },
+        {
+          "id": "Q5",
+          "aspect": "priorizacao",
+          "text_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial."
+        },
+        {
+          "id": "Q6",
+          "aspect": "controle",
+          "text_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões."
+        }
+      ]
+    }
+  ],
+  "shared_questions": [
+    {
+      "id": "Q5",
+      "text_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial."
+    },
+    {
+      "id": "Q6",
+      "text_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões."
+    }
+  ],
+  "main_generation_proposal": {
+    "repetitions": 1,
+    "methods": [
+      "traditional",
+      "thematic"
+    ],
+    "answers": 36
+  },
+  "additional_stability_proposal": {
+    "question_ids": [
+      "Q1",
+      "Q5"
+    ],
+    "extra_repetitions": 2,
+    "answers": 24,
+    "not_independent_quality_samples": true
+  },
+  "notes": [
+    "No final RAG answers generated for question selection.",
+    "English retrieval equivalents and original-English generation questions still require explicit recording before freeze.",
+    "Common dimensions, product-specific questions; report each product and task separately. No claim of exhaustive coverage or saturation.",
+    "Q5 uses normal RAG retrieval/generation from reviews, not the generated answers of Q1-Q4.",
+    "Reference applicability, evidence strength and validation remain to be constructed."
+  ]
+}

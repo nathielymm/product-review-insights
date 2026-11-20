@@ -1,0 +1,21 @@
+{
+  "status": "reviewed_consolidated_not_experiment_frozen",
+  "product_id": "B00R1TAN7I",
+  "eligible_reviews": 613,
+  "reviewed_questions": 6,
+  "approved_source_interpretations": 20,
+  "approved_synthesis_items": 5,
+  "approved_control_items": 1,
+  "approved_total_items": 26,
+  "pending_items": 0,
+  "reference_exhaustive": false,
+  "independent_human_annotation": false,
+  "scoring_denominators_frozen": false,
+  "experiment_frozen": false,
+  "reference_sha256": "ad02f6f4fe7b6287c043dacaac05a0a67059d1df5d0346691499a9679530d1e4",
+  "presentation_reconciliation_count": 1,
+  "reference_path": "results/product-focused-references/v2-grannaturals-consolidated/reference.private.json",
+  "corpus_sha256": "b578f733f1bdb29e5c7a063a9a4636cc164f1761e8d6ffeb0abb11a32ab99fb9",
+  "final_rag_generations": 0,
+  "scope": "Reviewed partial reference, not exhaustive corpus annotation or approved scoring denominators."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "reviewed_consolidated_not_experiment_frozen",
+  "product_id": "B01557EHW4",
+  "eligible_reviews": 123,
+  "reviewed_questions": 6,
+  "approved_source_interpretations": 20,
+  "approved_synthesis_items": 5,
+  "approved_control_items": 1,
+  "approved_total_items": 26,
+  "pending_items": 0,
+  "reference_exhaustive": false,
+  "independent_human_annotation": false,
+  "scoring_denominators_frozen": false,
+  "experiment_frozen": false,
+  "reference_sha256": "e83792712d683fec25615740d7e2ff2e3817ade53d7d8b10fee12b4109364581",
+  "presentation_reconciliation_count": 0,
+  "reference_path": "results/product-focused-references/v2-bold-lash-consolidated/reference.private.json",
+  "corpus_sha256": "f77a6a3b3847b3c8c3df8bdb20e39ae2dda9dc400332a6459c20e2c0d56d6537",
+  "final_rag_generations": 0,
+  "scope": "Reviewed partial reference, not exhaustive corpus annotation or approved scoring denominators."
+}

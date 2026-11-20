@@ -1,0 +1,21 @@
+{
+  "status": "reviewed_consolidated_not_experiment_frozen",
+  "product_id": "B012Q9NGE4",
+  "eligible_reviews": 473,
+  "reviewed_questions": 6,
+  "approved_source_interpretations": 20,
+  "approved_synthesis_items": 5,
+  "approved_control_items": 1,
+  "approved_total_items": 26,
+  "pending_items": 0,
+  "reference_exhaustive": false,
+  "independent_human_annotation": false,
+  "scoring_denominators_frozen": false,
+  "experiment_frozen": false,
+  "reference_sha256": "36f20848b12430d3cd3b0fc4c8e47675d866be9799960f8c44031e24ed422c78",
+  "presentation_reconciliation_count": 0,
+  "reference_path": "results/product-focused-references/v2-pure-body-naturals-consolidated/reference.private.json",
+  "corpus_sha256": "0093d8bebacd0a69c4bf0f95ecb0d0f4b6b30c623911826e79f49a5531848b2e",
+  "final_rag_generations": 0,
+  "scope": "Reviewed partial reference, not exhaustive corpus annotation or approved scoring denominators."
+}

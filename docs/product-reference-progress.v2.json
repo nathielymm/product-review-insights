@@ -1,0 +1,61 @@
+{
+  "status": "three_product_references_consolidated_not_experiment_frozen",
+  "products": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "GranNaturals",
+      "eligible_reviews": 613,
+      "reviewed_questions": 6,
+      "approved_source_interpretations": 20,
+      "approved_synthesis_items": 5,
+      "approved_control_items": 1,
+      "approved_total_items": 26,
+      "pending_items": 0,
+      "reference_sha256": "ad02f6f4fe7b6287c043dacaac05a0a67059d1df5d0346691499a9679530d1e4",
+      "reference_exhaustive": false,
+      "scoring_denominators_frozen": false
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Pure Body Naturals Argan",
+      "eligible_reviews": 473,
+      "reviewed_questions": 6,
+      "approved_source_interpretations": 20,
+      "approved_synthesis_items": 5,
+      "approved_control_items": 1,
+      "approved_total_items": 26,
+      "pending_items": 0,
+      "reference_sha256": "36f20848b12430d3cd3b0fc4c8e47675d866be9799960f8c44031e24ed422c78",
+      "reference_exhaustive": false,
+      "scoring_denominators_frozen": false
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Bold Lash",
+      "eligible_reviews": 123,
+      "reviewed_questions": 6,
+      "approved_source_interpretations": 20,
+      "approved_synthesis_items": 5,
+      "approved_control_items": 1,
+      "approved_total_items": 26,
+      "pending_items": 0,
+      "reference_sha256": "e83792712d683fec25615740d7e2ff2e3817ade53d7d8b10fee12b4109364581",
+      "reference_exhaustive": false,
+      "scoring_denominators_frozen": false
+    }
+  ],
+  "total_products": 3,
+  "product_question_cases": 18,
+  "eligible_reviews": 1209,
+  "approved_source_interpretations": 60,
+  "approved_synthesis_items": 15,
+  "approved_control_items": 3,
+  "approved_total_items": 78,
+  "pending_presented_items": 0,
+  "reference_exhaustive": false,
+  "independent_human_annotation": false,
+  "scoring_denominators_frozen": false,
+  "experiment_frozen": false,
+  "final_v2_rag_generations": 0,
+  "scope": "Administrative reference-preparation counts only. Items have different roles and are not interchangeable coverage units; reference remains partial and other inspected anchors are not implicitly approved."
+}
