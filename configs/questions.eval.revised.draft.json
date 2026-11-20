@@ -1,0 +1,98 @@
+[
+  {
+    "id": "B01",
+    "question": "What problems with use, performance or sensory experience are reported, and what consequences do they have for product use? Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais problemas de uso, desempenho ou experiência sensorial são relatados, e quais consequências têm para o uso do produto?",
+    "task": "diagnosis",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E01",
+      "E03",
+      "E04",
+      "E08"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B02",
+    "question": "What problems with product packaging or presentation are reported, and how do they affect use or preservation? Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais problemas de embalagem ou apresentação do produto são relatados, e como afetam sua utilização ou conservação?",
+    "task": "packaging",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E02"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B03",
+    "question": "Which characteristics are valued or receive contrasting opinions, and what preferences or usage conditions are explicitly mentioned? Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais características são valorizadas ou recebem opiniões divergentes, e que preferências ou condições de uso são explicitamente mencionadas?",
+    "task": "strengths_and_contrasts",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E06",
+      "E07",
+      "E13"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B04",
+    "question": "Which changes to the product or packaging are explicitly requested by consumers? Do not add your own proposals. Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais mudanças no produto ou na embalagem são explicitamente solicitadas pelos consumidores? Não acrescente propostas próprias.",
+    "task": "explicit_opportunities",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E09"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B05",
+    "question": "What physical or functional product or packaging improvements could be proposed from reported problems? Separate the observed problem, proposal, expected benefit and uncertainties, including valued characteristics that could be affected. Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Que melhorias físicas ou funcionais no produto ou na embalagem podem ser propostas a partir dos problemas relatados? Separe problema observado, proposta, benefício esperado e incertezas, incluindo características valorizadas que poderiam ser afetadas.",
+    "task": "inferred_opportunities",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E10",
+      "E12"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B06",
+    "question": "What improvements to product instructions or information could address reported confusion and differences between expectations and experience? Separate evidence, proposals and information that would still need verification. Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Que melhorias nas instruções ou informações do produto poderiam tratar dúvidas e diferenças entre expectativas e experiência relatada? Separe evidências, propostas e informações que ainda precisariam ser verificadas.",
+    "task": "communication_opportunities",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E05",
+      "E11",
+      "E14"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B07",
+    "question": "Do these reviews establish which product change would increase sales? Explain what the evidence does and does not establish. Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Estas avaliações permitem determinar qual mudança aumentaria as vendas? Explique o que as evidências permitem e não permitem concluir.",
+    "task": "limits_sales",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E15"
+    ],
+    "status": "proposed_pending_user_alignment"
+  },
+  {
+    "id": "B08",
+    "question": "Do these reviews establish that the products are safe for all consumers? Explain the limits of the evidence without medical conclusions. Use only the supplied evidence. Attribute each finding to the relevant product family; do not merge distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about other people or products, and your own hypotheses. If an aspect is unsupported, say so. Do not infer prevalence from retrieved snippets, treat animal outcomes as human outcomes, or treat consumer reports as verified technical or clinical facts.",
+    "question_pt": "Estas avaliações permitem garantir a segurança dos produtos para todos os consumidores? Explique os limites das evidências, sem conclusões médicas.",
+    "task": "limits_safety",
+    "scope_required": true,
+    "replaces_draft_ids": [
+      "E16"
+    ],
+    "status": "proposed_pending_user_alignment"
+  }
+]

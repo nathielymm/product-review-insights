@@ -1,0 +1,51 @@
+# Progresso do projeto por entregas
+
+Este registro organiza o trabalho em marcos verificáveis. Na auditoria do histórico em 15/11/2026, havia 42 commits locais, nenhum remoto configurado e nenhuma alteração pendente. Isso não é uma contagem de entregas: parte da documentação foi registrada em commits pequenos demais, inclusive aprovações individuais. O histórico original foi preservado; a apresentação abaixo agrupa esses registros por resultado técnico.
+
+## Marcos implementados
+
+As datas são as registradas nos commits originais, sem retroagir ou redistribuir trabalho para aparentar outra cronologia. Os intervalos identificam o primeiro e o último commit do grupo, inclusive.
+
+| Marco | Entrega e evidência | Datas registradas | Commits originais |
+|---|---|---|---|
+| 1. Ambiente e auditoria | Projeto Python isolado; leitura do Parquet, regras de validade, deduplicação e corpus determinístico com redação heurística. | 24/10/2026 | 2358bcb → a2f7b1a |
+| 2. Pipeline RAG local | Embeddings, FAISS, agrupamento temático e geração via Ollama local; correções de deduplicação, paralelismo e citações. | 24/10/2026 | 5bfac8e → 4d8566d |
+| 3. Infraestrutura experimental | Execuções pareadas, exportação para anotação com método oculto, registro de configuração/código e documentação acadêmica inicial. | 24/10/2026 | 1bdefa1 → d1bb7c0 |
+| 4. Objetivo e unidade de análise | Perfil inicial dos produtos, perguntas voltadas a melhorias e título coerente com análise de avaliações de produtos. | 24/10–08/11/2026 | a787b55 → 1be27a3 |
+| 5. Mapeamento dos conjuntos | Cruzamento com catálogo, categorias exploratórias e comparação de candidatos compactos, intermediários e variados. | 08/11/2026 | 9eda8cd → 56d2954 |
+| 6. Consistência temática e versões | Inspeção qualitativa rastreável, distinção entre família e versão e proposta dos três estudos de caso. | 08/11/2026 | c1110bc → f21a6b9 |
+| 7. Corpora reproduzíveis | Corpus elegível completo, subconjuntos balanceados, desenvolvimento separado e bloqueio de índices de outro conjunto. | 08/11/2026 | 9c6e2a4 → 61aaefa |
+| 8. Revisão direcionada dos dados | 20 comentários revisados pela usuária; três exclusões por uso exclusivamente animal; uma assinatura removida; snapshot principal com 3.843 avaliações. | 08/11/2026 | 57cb96c → ad1737e |
+| 9. Perguntas de avaliação | Estrutura alinhada de 12 perguntas de análise e duas de controle; referências inicialmente vazias, sem respostas inventadas. | 08/11/2026 | dd7d997 → fad4816 |
+| 10. Referência auditada | Matriz de 14 perguntas × cinco famílias em cada conjunto; lacunas e hipóteses explícitas; três pacotes revisados e aprovados. Aprovações não equivalem a referência exaustiva nem denominadores congelados. | 08–15/11/2026 | f16d1b2 → c7a40af |
+
+A referência foi corrigida para representar cada família em cada pergunta; isso é uma decisão metodológica relevante, mantida no registro. As versões anteriores continuam identificadas como históricas. Não é necessário expor cada rodada da conversa para explicar essa melhoria.
+
+## Estado verificável
+
+- Dados principais: 547 avaliações de máscaras para cílios, 1.405 da rotina capilar e 1.891 de funções variadas; total 3.843. Desenvolvimento separado: 625.
+- Referências: 210 células de pergunta/família nos três pacotes; interpretações aprovadas pela usuária, sem alegação de revisão humana integral ou independente.
+- Última verificação da suíte registrada: 39 testes aprovados. Integração de recuperação realizada no desenvolvimento; isso não mede a qualidade final dos insights.
+- Não há avaliação final de cobertura, fidelidade, latência ou custo computacional que permita concluir superioridade de um método.
+
+Os arquivos atuais são indicados por configs/corpus-current.json, configs/benchmark-plan.draft.json e docs/family-reference-matrix-progress.json. Dados, modelos e referências por registro permanecem fora do Git.
+
+## Rubrica e referências para pontuação
+
+Foram preparadas 179 unidades factuais, critérios separados para propostas/controles e a verificação de apoio conhecido nos 27 corpora de sensibilidade. As 58 combinações de pergunta/subconjunto sem âncoras conhecidas ficam explícitas. Ver docs/scoring-rubric.md. Essa é preparação de avaliação, sem resultados dos RAGs ou congelamento final.
+
+## Próximos marcos
+
+1. Definir unidades, rubrica e denominadores de pontuação; conferir disponibilidade de evidências nas amostras menores.
+2. Selecionar parâmetros apenas no desenvolvimento e congelar entradas/configurações de avaliação.
+3. Executar experimentos pareados e registrar falhas, tempos e recursos efetivamente medidos.
+4. Anotar respostas e analisar resultados com limitações explícitas.
+5. Concluir README e texto acadêmico com resultados reais; revisar conteúdo antes de criar e enviar ao GitHub privado.
+
+Cada marco poderá conter mais de um commit quando houver entregas independentes. Ajustes locais e aprovações relacionadas serão reunidos na entrega correspondente, em vez de gerar um commit por interação.
+
+## Organização futura do Git
+
+A regra de trabalho está em AGENTS.md. Títulos devem explicar entregas, por exemplo: `feat: add evidence-aware scoring units`, `feat: freeze paired evaluation configuration` ou `docs: report measured experimental results`. Esses são exemplos de entregas futuras, não resultados já alcançados.
+
+Ainda não houve reescrita ou squash dos commits existentes. Antes da primeira publicação, uma eventual consolidação poderá usar os marcos acima como proposta de agrupamento, preservando backup local e rastreabilidade dos commits originais. Não usar squash de todo o projeto em um commit único, nem alterar datas para aparentar progresso diferente do realizado.

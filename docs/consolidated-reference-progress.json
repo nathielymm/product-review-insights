@@ -1,0 +1,53 @@
+{
+  "status": "one_packet_user_approved_two_pending",
+  "packets": [
+    {
+      "packet": 1,
+      "cohort_id": "compact_mascaras",
+      "question_cases": 14,
+      "unique_evidence_reviews": 23,
+      "packet_sha256": "77a2c259ac1e8107bd5e6b2304f00ad330aa20a3fe1dc5a3204c0b720640cc6d",
+      "corpus_sha256": "3f079922dd194865cb06d4b8223b00b11f1b508d397108364a804675b1b9d08e",
+      "previous_user_approved_units": 10,
+      "status": "user_approved_consolidated_expectations",
+      "private_file": "results/benchmark-consolidated/packets-v1/compact_mascaras.private.json",
+      "review_document": "docs/reference-packet-1.md",
+      "approval_scope": "The 14 displayed consolidated expectations and interpretation limits for compact_mascaras; not exhaustive human evidence annotation, independent annotation, final scoring-unit approval or frozen denominator."
+    },
+    {
+      "packet": 2,
+      "cohort_id": "intermediate_hair_disjoint",
+      "question_cases": 14,
+      "unique_evidence_reviews": 23,
+      "packet_sha256": "80863757b3cf2f20dda601133ac0f3e1d231a8f2756547d174e5f9ddba2fbbeb",
+      "corpus_sha256": "e15550526500d4e78980c2c7ea8d01b6985b07a8580ee5be07b63a24d317d258",
+      "previous_user_approved_units": 0,
+      "status": "assistant_draft_pending_user_packet_review",
+      "private_file": "results/benchmark-consolidated/packets-v1/intermediate_hair_disjoint.private.json",
+      "review_document": "docs/reference-packet-2.md"
+    },
+    {
+      "packet": 3,
+      "cohort_id": "varied_disjoint",
+      "question_cases": 14,
+      "unique_evidence_reviews": 20,
+      "packet_sha256": "ced288cc13fe9b25d315f6b4251a22d516ff65a1c09625bba87be4f71c506bd1",
+      "corpus_sha256": "b0bcf34d0a0353fff9bb74d223b086562a68fd6704c666ca63380a43c474dfcc",
+      "previous_user_approved_units": 0,
+      "status": "assistant_draft_pending_user_packet_review",
+      "private_file": "results/benchmark-consolidated/packets-v1/varied_disjoint.private.json",
+      "review_document": "docs/reference-packet-3.md"
+    }
+  ],
+  "case_count": 42,
+  "reference_exhaustive": false,
+  "gold_reference_frozen": false,
+  "final_rag_runs": 0,
+  "selection_limitation": "Keyword candidate discovery and targeted assistant inspection; not exhaustive annotation. Family-aspect deduplication and sensitivity evidence availability pending.",
+  "approved_packets": 1,
+  "pending_packets": [
+    2,
+    3
+  ],
+  "superseded_for_current_review_by": "docs/family-reference-matrix-progress.json"
+}

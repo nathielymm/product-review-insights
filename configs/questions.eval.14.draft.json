@@ -1,0 +1,128 @@
+[
+  {
+    "id": "Q01",
+    "question": "What difficulties do consumers report when applying, removing or handling the products, and how do these affect their usage routine? Exclude packaging-specific problems. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais dificuldades os consumidores relatam na aplicação, remoção ou manuseio dos produtos, e como elas afetam a rotina de uso? Exclua problemas específicos da embalagem.",
+    "task": "usability",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q02",
+    "question": "What performance limitations are reported in relation to the products’ function and stated usage conditions? Exclude effect duration, yield and service life. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais limitações de desempenho são relatadas em relação à função dos produtos e às condições de uso mencionadas? Não inclua aqui duração do efeito, rendimento ou vida útil.",
+    "task": "performance",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q03",
+    "question": "What negative experiences related to smell, texture, sensations during use or discomfort are reported? Describe perceptions without diagnosing causes or medical conditions. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais experiências negativas relacionadas a cheiro, textura, sensação durante o uso ou desconforto são relatadas? Descreva as percepções sem diagnosticar causas ou condições médicas.",
+    "task": "sensory_experience",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q04",
+    "question": "What do consumers report about effect duration, yield before the product runs out, runtime between charges or battery replacements, and service life before failure? Distinguish these concepts according to product type and identify missing evidence. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "O que os consumidores relatam sobre duração do efeito, rendimento até o produto acabar, autonomia entre recargas ou trocas de pilhas e vida útil até falhar? Distinga esses conceitos conforme o tipo de produto e indique quando faltarem evidências.",
+    "task": "duration",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q05",
+    "question": "What packaging problems affect product protection, preservation, opening, closing or dispensing? Distinguish the condition received from any cause or responsibility that is not established. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais problemas de embalagem afetam proteção, conservação, abertura, fechamento ou dosagem dos produtos? Separe a condição recebida de uma causa ou responsabilidade que não esteja demonstrada.",
+    "task": "packaging",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q06",
+    "question": "What benefits and characteristics do consumers value in the products and therefore merit consideration when planning improvements? Include repurchase reasons or value for money only when explicitly mentioned. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais benefícios e características os consumidores valorizam nos produtos e que, por isso, merecem ser considerados ao planejar melhorias? Inclua motivos de recompra ou custo-benefício apenas quando explicitamente mencionados.",
+    "task": "valued_benefits",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q07",
+    "question": "Which characteristics receive both praise and criticism within the same product family? What differences in preferences or usage context are explicitly mentioned? Do not assume causes or demographic segments. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais características recebem tanto elogios quanto críticas dentro de uma mesma família de produto? Quais diferenças de preferência ou contexto de uso são explicitamente mencionadas? Não suponha causas nem segmentos demográficos.",
+    "task": "contrasting_experiences",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q08",
+    "question": "Which product or packaging changes are explicitly requested by consumers? Distinguish requests from complaints alone and do not add your own proposals. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais mudanças no produto ou na embalagem são explicitamente solicitadas pelos consumidores? Diferencie pedidos de simples reclamações e não acrescente propostas próprias.",
+    "task": "explicit_requests",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q09",
+    "question": "What physical or functional product or packaging improvements could be proposed from reported problems? For each proposal, separate the observed problem, suggested improvement, expected benefit and what would need verification. Exclude communication-only changes. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Que melhorias físicas ou funcionais no produto ou na embalagem podem ser propostas a partir dos problemas relatados? Para cada proposta, separe problema observado, melhoria sugerida, benefício esperado e o que precisaria ser verificado. Exclua mudanças apenas de comunicação.",
+    "task": "inferred_improvements",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q10",
+    "question": "What tensions between desired characteristics appear in the reviews, and what valued benefits might be affected by changes addressing complaints? Separate explicitly reported relationships from hypothetical trade-offs, without inventing technical constraints. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Que tensões entre características desejadas aparecem nas avaliações, e que benefícios valorizados poderiam ser afetados por mudanças voltadas às reclamações? Separe relações explicitamente relatadas de possíveis compromissos ainda hipotéticos, sem inventar restrições técnicas.",
+    "task": "tradeoffs",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q11",
+    "question": "What differences do consumers report between their expectations or understanding of product descriptions and their actual experience? Treat descriptions or promises as consumer-reported when unavailable for verification. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Quais diferenças os consumidores relatam entre o que esperavam ou entenderam da descrição dos produtos e a experiência recebida? Trate a descrição ou promessa como relatada pelo consumidor quando ela não estiver disponível para verificação.",
+    "task": "expectation_mismatch",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q12",
+    "question": "What improvements to product instructions, descriptions or information could address reported confusion and unmet expectations? Separate evidence of confusion, the proposed information improvement and what would still need verification. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Que melhorias nas instruções, descrições ou informações dos produtos poderiam tratar dúvidas e expectativas não atendidas relatadas pelos consumidores? Separe a evidência da dúvida ou confusão, a proposta de informação e o que ainda precisaria ser verificado.",
+    "task": "information_improvements",
+    "scope_required": true,
+    "evaluation_role": "analysis",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q13",
+    "question": "Do these reviews establish which product change would increase sales? Explain what the evidence supports and what would need verification to substantiate that prediction. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Estas avaliações permitem determinar qual mudança nos produtos aumentaria as vendas? Explique o que as evidências permitem concluir e o que seria necessário verificar para sustentar essa previsão.",
+    "task": "control_sales",
+    "scope_required": true,
+    "evaluation_role": "control",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  },
+  {
+    "id": "Q14",
+    "question": "Do these reviews establish that the products are safe for all consumers? Explain what the reports support and the limits of that conclusion, without diagnoses or medical guarantees. Use only the supplied review evidence. Attribute findings to the relevant product family; do not conflate distinct products or versions. Cite evidence for factual consumer claims. Distinguish direct experience, reports about others or other products, and your own hypotheses. State when evidence is insufficient. Do not infer population prevalence from retrieved snippets, treat animal outcomes as human outcomes, or present consumer reports as verified technical or clinical facts.",
+    "question_pt": "Estas avaliações permitem garantir que os produtos são seguros para todos os consumidores? Explique o que os relatos permitem concluir e os limites dessa conclusão, sem diagnósticos ou garantias médicas.",
+    "task": "control_safety",
+    "scope_required": true,
+    "evaluation_role": "control",
+    "status": "structure_user_aligned_wording_reference_and_parameters_not_frozen"
+  }
+]

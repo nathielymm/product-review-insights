@@ -10,6 +10,8 @@ Projeto: `product-review-insights`.
 Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial Generativa e LLM da PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/).
 
 - [Código](src/product_review_insights)
+- [Progresso por entregas](docs/development-history.md)
+- [Critérios e preparação da avaliação](docs/scoring-rubric.md)
 - [Protocolo experimental](docs/protocol.md)
 - [Reprodução local](docs/reproduction.md)
 - [Auditoria dos dados](docs/data-audit.json)
@@ -46,7 +48,7 @@ Os parâmetros finais serão escolhidos no desenvolvimento e congelados antes da
 
 ### 3. Resultados
 
-A auditoria inicial encontrou 720 registros sem texto e 9.445 duplicatas segundo a regra adotada, resultando em 691.363 avaliações válidas e únicas. A amostra histórica de 10 mil registros pertence ao piloto global; os corpora do estudo somam 3.843 avaliações principais. Passaram 31 testes e uma integração real de recuperação no conjunto separado de desenvolvimento. Essas contagens descrevem a preparação dos dados, não a qualidade do RAG.
+A auditoria inicial encontrou 720 registros sem texto e 9.445 duplicatas segundo a regra adotada, resultando em 691.363 avaliações válidas e únicas. A amostra histórica de 10 mil registros pertence ao piloto global; os corpora do estudo somam 3.843 avaliações principais. A última suíte registrada teve 39 testes aprovados e uma integração real de recuperação no conjunto separado de desenvolvimento. Essas contagens descrevem a preparação dos dados, não a qualidade do RAG.
 
 Não há, por enquanto, resultados de avaliação humana de cobertura ou fidelidade. As métricas permanecerão ausentes até a anotação. Testes de software e testes de integração não serão apresentados como evidência de qualidade dos insights.
 

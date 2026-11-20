@@ -1,0 +1,1567 @@
+{
+  "schema": "family_question_reference_plan_v2",
+  "status": "assistant_revision_pending_user_review",
+  "reference_type": "non_exhaustive_audited_reference",
+  "statuses": {
+    "E": "Evidência direta selecionada e interpretada; não equivale a verdade técnica.",
+    "P": "Somente evidência positiva/contextual pertinente; não confirma problema pedido.",
+    "N": "Evidência insuficiente nesta inspeção; não significa inexistência no corpus.",
+    "H": "Proposta/hipótese do analista apoiada em relatos; não é pedido explícito nem solução única obrigatória.",
+    "C": "Critério de controle de limites; não é constatação empírica sobre o produto."
+  },
+  "family_order": "configs/study-scope.json cohorts[].families order",
+  "cohorts": {
+    "compact_mascaras": {
+      "Q01": [
+        {
+          "status": "E",
+          "note_pt": "Remoção difícil, precisão nos cílios inferiores/cantos e limpeza adicional com cotonete.",
+          "evidence_prefixes": [
+            "0140d62ce5",
+            "500944f47a",
+            "144ca2d00b",
+            "9dda8c3e73"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Dificuldade para separar cílios e remover.",
+          "evidence_prefixes": [
+            "6a1786d93b",
+            "72fa32abeb2f"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Formato da escovinha dificulta uso; secagem atrapalha aplicação com pressa; pessoa adapta aplicação por odor.",
+          "evidence_prefixes": [
+            "26d8122465",
+            "60fa77d81a",
+            "3fcff59fac"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Etapa extra com escovinha limpa e remoção difícil.",
+          "evidence_prefixes": [
+            "1fd4c79bf4",
+            "8f18c3091c0f"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Várias camadas e dificuldade para retirar grumos com pente.",
+          "evidence_prefixes": [
+            "43b6ea9ed7",
+            "39ecf28fa6e2"
+          ]
+        }
+      ],
+      "Q02": [
+        {
+          "status": "E",
+          "note_pt": "Formação de grumos e cílios grudados.",
+          "evidence_prefixes": [
+            "20c569fe8100"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Alongamento percebido, mas cílios grudam.",
+          "evidence_prefixes": [
+            "13d34bceac62"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pouco volume/alongamento percebido.",
+          "evidence_prefixes": [
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Aspecto com muitos grumos.",
+          "evidence_prefixes": [
+            "054596c3cdb5"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Ausência de alongamento percebido.",
+          "evidence_prefixes": [
+            "22deb268be1b"
+          ]
+        }
+      ],
+      "Q03": [
+        {
+          "status": "E",
+          "note_pt": "Irritação relatada no esforço de remoção; outros relatos não apresentam irritação.",
+          "evidence_prefixes": [
+            "379722290432",
+            "500944f47a"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Irritação e desconforto relatados; não atribuir sintomas de outras marcas à atual.",
+          "evidence_prefixes": [
+            "72fa32abeb2f",
+            "deecbb2908ef"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Odor e lacrimejamento associados pela pessoa, sem causa confirmada.",
+          "evidence_prefixes": [
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Coceira relatada com versão mencionada como à prova d’água.",
+          "evidence_prefixes": [
+            "204dd79d6eb6"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cheiro estranho e ardor relatado ao remover.",
+          "evidence_prefixes": [
+            "5672dcbe9f78",
+            "5b65e6258a17"
+          ]
+        }
+      ],
+      "Q04": [
+        {
+          "status": "E",
+          "note_pt": "Perda de produto durante uso no mar; não confundir com dificuldade de remoção posterior.",
+          "evidence_prefixes": [
+            "1da5c9b3201e"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Relato de duração por todo o dia, sem tempo cronometrado.",
+          "evidence_prefixes": [
+            "511484d8cf69"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Relato de mais de oito horas sem esfarelar.",
+          "evidence_prefixes": [
+            "1d12ab6d3da4"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Esfarelamento durante uso e queixa de conteúdo que acaba rápido são aspectos distintos.",
+          "evidence_prefixes": [
+            "1fd4c79bf4",
+            "f16fdd477549"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Esfarelamento relatado; sem duração medida.",
+          "evidence_prefixes": [
+            "22deb268be1b"
+          ]
+        }
+      ],
+      "Q05": [
+        {
+          "status": "E",
+          "note_pt": "Recipiente recebido vazio.",
+          "evidence_prefixes": [
+            "3250567e7baf"
+          ]
+        },
+        {
+          "status": "P",
+          "note_pt": "Somente elogios à aparência do tubo nos cinco candidatos inspecionados; nenhum problema específico de embalagem identificado nessa busca.",
+          "evidence_prefixes": [
+            "13297c3dc2c1",
+            "692011b559d7"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Recipiente vazio e aplicador ausente/quebrado na condição recebida.",
+          "evidence_prefixes": [
+            "038d4729a677"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Tubos recebidos secos: condição recebida, sem comprovar falha de vedação ou tempo de estoque.",
+          "evidence_prefixes": [
+            "21164d8f2c38"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Limitador na boca do tubo cai para dentro, causando excesso no aplicador e desperdício.",
+          "evidence_prefixes": [
+            "a35e859ba8dd"
+          ]
+        }
+      ],
+      "Q06": [
+        {
+          "status": "E",
+          "note_pt": "Volume percebido, facilidade de limpeza e valor.",
+          "evidence_prefixes": [
+            "0c36beef8238"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Alongamento percebido.",
+          "evidence_prefixes": [
+            "0507ed3729f1"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Alongamento/volume percebidos e manutenção durante o uso.",
+          "evidence_prefixes": [
+            "1d12ab6d3da4"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Facilidade de aplicação e acesso aos cantos.",
+          "evidence_prefixes": [
+            "0be19b65971b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Facilidade e alongamento com pouco mais de volume.",
+          "evidence_prefixes": [
+            "1261f5abee69"
+          ]
+        }
+      ],
+      "Q07": [
+        {
+          "status": "E",
+          "note_pt": "Há elogio à ausência de grumos e relato de muitos grumos; não presumir mesma versão ou causa.",
+          "evidence_prefixes": [
+            "15395a1e0039",
+            "20c569fe8100"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Há elogio à ausência de grumos e relato de cílios grudados.",
+          "evidence_prefixes": [
+            "511484d8cf69",
+            "13d34bceac62"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Odor é aceito/preferido por uma pessoa e impede uso de outra.",
+          "evidence_prefixes": [
+            "1d12ab6d3da4",
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "A autora não se adapta à escovinha, enquanto a namorada do filho gosta do produto; transferência é hipótese.",
+          "evidence_prefixes": [
+            "03aabaf20836"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Há relato de ausência de grumos e outro de grumos na segunda camada.",
+          "evidence_prefixes": [
+            "2b00b38c3117",
+            "39ecf28fa6e2"
+          ]
+        }
+      ],
+      "Q08": [
+        {
+          "status": "E",
+          "note_pt": "Desejo explícito de escovinha menor e fórmula um pouco mais úmida.",
+          "evidence_prefixes": [
+            "a5ff567511a2"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Desejo de cerdas mais finas e aplicador menor.",
+          "evidence_prefixes": [
+            "0a7e19764049",
+            "9a31b3e88de3"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Desejo de mais volume.",
+          "evidence_prefixes": [
+            "ec9f65a8ba5c"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Desejo de que o conteúdo não acabe tão rápido.",
+          "evidence_prefixes": [
+            "f16fdd477549"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Nenhum pedido explícito de mudança identificado na inspeção; reclamações e elogios não são pedidos.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q11": [
+        {
+          "status": "E",
+          "note_pt": "Expectativa de volume ligada ao nome do produto, sem checagem externa da promessa.",
+          "evidence_prefixes": [
+            "41316c87a94a"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pessoa esperava resistência a borrões/água e relata manchas abaixo dos olhos.",
+          "evidence_prefixes": [
+            "26d76cadfc1b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Volume/alongamento abaixo do anunciado segundo a pessoa.",
+          "evidence_prefixes": [
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Promessa relatada de resistência à água contrasta com manchas ao final do dia.",
+          "evidence_prefixes": [
+            "71cf6645b3fa"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Resultado abaixo do mostrado na TV segundo a pessoa.",
+          "evidence_prefixes": [
+            "43b6ea9ed7"
+          ]
+        }
+      ],
+      "Q09": [
+        {
+          "status": "H",
+          "note_pt": "Testar precisão do aplicador e separação de cílios.",
+          "evidence_prefixes": [
+            "20c569fe8100"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar cerdas/geometria para aplicação com menos grumos.",
+          "evidence_prefixes": [
+            "13d34bceac62"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar geometria da escovinha preservando benefícios.",
+          "evidence_prefixes": [
+            "26d8122465"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar redução de grumos e etapas adicionais.",
+          "evidence_prefixes": [
+            "054596c3cdb5"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar limitador do tubo para controlar excesso e desperdício.",
+          "evidence_prefixes": [
+            "a35e859ba8dd"
+          ]
+        }
+      ],
+      "Q10": [
+        {
+          "status": "H",
+          "note_pt": "Investigar resistência à água versus remoção, sem afirmar relação técnica necessária.",
+          "evidence_prefixes": [
+            "3c6db0af32ca",
+            "0140d62ce5"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar alongamento com menor formação de grumos; não presumir compromisso inevitável.",
+          "evidence_prefixes": [
+            "0507ed3729f1",
+            "13d34bceac62"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar controle do odor preservando benefícios valorizados; mecanismo e viabilidade desconhecidos.",
+          "evidence_prefixes": [
+            "1d12ab6d3da4",
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar facilidade de remoção e preservação do efeito; versões não são intercambiáveis.",
+          "evidence_prefixes": [
+            "0be19b65971b",
+            "8f18c3091c0f"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar aplicação em camadas sem grumos, preservando alongamento; sem restrição técnica comprovada.",
+          "evidence_prefixes": [
+            "1261f5abee69",
+            "39ecf28fa6e2"
+          ]
+        }
+      ],
+      "Q12": [
+        {
+          "status": "H",
+          "note_pt": "Esclarecer efeito esperado e instruções de uso/remoção a validar.",
+          "evidence_prefixes": [
+            "41316c87a94a"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Esclarecer versão e resistência a borrões/água, sem garantia.",
+          "evidence_prefixes": [
+            "26d76cadfc1b"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Rever demonstração de volume/alongamento e informações verificáveis.",
+          "evidence_prefixes": [
+            "0464f2963e60"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Esclarecer resistência por versão e limites das demonstrações.",
+          "evidence_prefixes": [
+            "71cf6645b3fa"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Rever demonstração de número de camadas e resultado esperado, sem promessa não validada.",
+          "evidence_prefixes": [
+            "43b6ea9ed7"
+          ]
+        }
+      ],
+      "Q13": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q14": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        }
+      ]
+    },
+    "intermediate_hair_disjoint": {
+      "Q01": [
+        {
+          "status": "E",
+          "note_pt": "Relato de cabelo ainda embaraçado após shampoo; distinguir de problema de outro tratamento citado.",
+          "evidence_prefixes": [
+            "0606089d8788",
+            "22d10739c446"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Trechos selecionados descrevem principalmente benefício de desembaraçar ou sensações; sem dificuldade clara de manuseio confirmada.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "P",
+          "note_pt": "Facilidade de pentear após uso; nenhuma dificuldade clara de aplicação/remoção confirmada nos trechos inspecionados.",
+          "evidence_prefixes": [
+            "7bb57edcc036"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Peso exige adaptação e acessório difusor não fica bem preso.",
+          "evidence_prefixes": [
+            "1d067ddb77ed",
+            "3c91b88c4d1d"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cerdas curtas não atravessam cabelo e exigem outra escova para desembaraçar.",
+          "evidence_prefixes": [
+            "0367b59a67ec",
+            "0507c11cf7cf"
+          ]
+        }
+      ],
+      "Q02": [
+        {
+          "status": "E",
+          "note_pt": "Raízes percebidas como oleosas.",
+          "evidence_prefixes": [
+            "16e99cde1e92"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Peso, aparência oleosa e frizz pouco controlado.",
+          "evidence_prefixes": [
+            "4230cc2cb7c7"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Amacia, mas sem vantagem percebida sobre máscaras alternativas.",
+          "evidence_prefixes": [
+            "dc41cdb00fc4"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Fluxo forte associado pela pessoa a frizz em cabelo cacheado.",
+          "evidence_prefixes": [
+            "4819f914c52d"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Não atravessa cabelo fino e não desembaraça suficientemente.",
+          "evidence_prefixes": [
+            "0367b59a67ec",
+            "0507c11cf7cf"
+          ]
+        }
+      ],
+      "Q03": [
+        {
+          "status": "E",
+          "note_pt": "Cheiro considerado ruim e persistente.",
+          "evidence_prefixes": [
+            "54162ff39e0b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Odor e mal-estar associados pela pessoa; sem diagnóstico causal.",
+          "evidence_prefixes": [
+            "241ed3beeccd"
+          ]
+        },
+        {
+          "status": "P",
+          "note_pt": "Cheiro agradável e não muito forte nos trechos selecionados; não usar isso como reclamação.",
+          "evidence_prefixes": [
+            "43b2234c2d27"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Assobio alto e barulho incômodo relatados.",
+          "evidence_prefixes": [
+            "0d68b89aca67",
+            "4819f914c52d"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cheiro comparado a pneus; redução após lavar é relato, não procedimento validado.",
+          "evidence_prefixes": [
+            "1305963920e1"
+          ]
+        }
+      ],
+      "Q04": [
+        {
+          "status": "E",
+          "note_pt": "Conteúdo durou mais de um mês segundo a pessoa; não universalizar consumo.",
+          "evidence_prefixes": [
+            "2e60978cd6f7"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Não há duração/rendimento claramente estabelecido nas evidências selecionadas; dias de uso e tempo de sintomas não medem duração do produto.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Efeito percebido por cerca de três dias; expectativa de pote durar muito não é medição.",
+          "evidence_prefixes": [
+            "7bb57edcc036",
+            "07a54517c940"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Falha entre datas de compra e uso relatadas; sem determinar causa.",
+          "evidence_prefixes": [
+            "161f0f2b2222"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Relatos de unidades durando seis meses e um ano; sem estimar média populacional.",
+          "evidence_prefixes": [
+            "81b10f3a099d"
+          ]
+        }
+      ],
+      "Q05": [
+        {
+          "status": "N",
+          "note_pt": "Nenhum problema específico de embalagem confirmado; tamanho ou consumo do frasco não provam defeito.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Frasco desrosqueado e vazamento na embalagem recebida.",
+          "evidence_prefixes": [
+            "0bbbf43d8251"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Derramamento recebido, sem atribuir causa comprovada ao transporte.",
+          "evidence_prefixes": [
+            "0116037e4d6a"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Caixa recebida muito danificada e conteúdo mal acomodado segundo a pessoa.",
+          "evidence_prefixes": [
+            "2e7aa1f0b256"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cerdas recebidas deformadas em envelope acolchoado.",
+          "evidence_prefixes": [
+            "c80201c2f86a"
+          ]
+        }
+      ],
+      "Q06": [
+        {
+          "status": "E",
+          "note_pt": "Maciez/limpeza e formação de espuma com pouca quantidade.",
+          "evidence_prefixes": [
+            "06f6ebba1aae",
+            "180ab2761baf"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Hidratação/maciez percebidas.",
+          "evidence_prefixes": [
+            "02156e7cc1cf"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Maciez e brilho percebidos.",
+          "evidence_prefixes": [
+            "c7ef3dd84b9e"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Rapidez percebida e baixo peso em um relato.",
+          "evidence_prefixes": [
+            "0f52693ec12f",
+            "0cf42eed69de"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cabo firme e cerdas sem queda observada no período de uso.",
+          "evidence_prefixes": [
+            "04e9f32c9c5d"
+          ]
+        }
+      ],
+      "Q07": [
+        {
+          "status": "N",
+          "note_pt": "Há benefícios e raízes oleosas em relatos diferentes, mas pareamento do mesmo atributo/contexto ainda insuficiente para fixar contraste obrigatório.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Fragrância agrada a uma pessoa e provoca experiência muito negativa em outra.",
+          "evidence_prefixes": [
+            "00b5558fc322",
+            "241ed3beeccd"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Dois relatos reconhecem maciez; não superar concorrentes não contradiz automaticamente esse benefício. Contraste direto ainda não estabelecido.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Peso é descrito como baixo por uma pessoa e excessivo por outra; não afirmar mesma versão ou condições.",
+          "evidence_prefixes": [
+            "0cf42eed69de",
+            "4819f914c52d"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Benefícios e dificuldade de atravessar cabelo foram encontrados, mas o contraste do mesmo atributo ainda precisa de melhor pareamento.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q08": [
+        {
+          "status": "N",
+          "note_pt": "Desejo de preço menor é comercial; nenhum pedido específico de mudança física do produto/embalagem confirmado.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Desejo de opção sem fragrância.",
+          "evidence_prefixes": [
+            "a0c225cb5a06"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pedidos de pump e recipiente maior.",
+          "evidence_prefixes": [
+            "a46514174bdc",
+            "66e540d437e5"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Arrependimento por não comprar garantia não é pedido de melhoria do secador; nenhum pedido físico confirmado.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Pedidos de cerdas mais longas e menor tamanho para portabilidade.",
+          "evidence_prefixes": [
+            "1a83b1da5001",
+            "7524f7619387"
+          ]
+        }
+      ],
+      "Q11": [
+        {
+          "status": "E",
+          "note_pt": "Frasco menor do que esperado; expectativa pouco específica de produto diferente.",
+          "evidence_prefixes": [
+            "bd8fa19b7461"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Alegação de divergência entre informação sobre silicones e composição; não verificar composição apenas pelo comentário.",
+          "evidence_prefixes": [
+            "585ed65ebd3a"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Máscara menos espessa do que a descrição sugeria para a pessoa; usada como condicionador comum.",
+          "evidence_prefixes": [
+            "2747a75e8441"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Peso e comprimento do corpo acima do esperado.",
+          "evidence_prefixes": [
+            "9ac8b7d989ed"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Maior/mais macia que esperado e diferente da imagem; outro relato pede descrição das cerdas.",
+          "evidence_prefixes": [
+            "0e2e4fad4c4a",
+            "274bb04d7179"
+          ]
+        }
+      ],
+      "Q09": [
+        {
+          "status": "H",
+          "note_pt": "Investigar percepção de oleosidade e adequação de uso com ensaios; não prescrever mudança de fórmula específica.",
+          "evidence_prefixes": [
+            "16e99cde1e92"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar peso/frizz sem perder benefício percebido.",
+          "evidence_prefixes": [
+            "4230cc2cb7c7"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar recipiente com dosagem prática e compatibilidade com pump.",
+          "evidence_prefixes": [
+            "a46514174bdc"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar fixação do difusor e ergonomia preservando desempenho.",
+          "evidence_prefixes": [
+            "3c91b88c4d1d",
+            "1d067ddb77ed"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar comprimento das cerdas e ergonomia.",
+          "evidence_prefixes": [
+            "0367b59a67ec",
+            "a51fb97b5858"
+          ]
+        }
+      ],
+      "Q10": [
+        {
+          "status": "H",
+          "note_pt": "Investigar maciez sem aparência oleosa; não demonstrado compromisso técnico.",
+          "evidence_prefixes": [
+            "06f6ebba1aae",
+            "16e99cde1e92"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar tolerabilidade da fragrância sem pressupor preferência universal.",
+          "evidence_prefixes": [
+            "00b5558fc322",
+            "241ed3beeccd"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Sem compromisso entre atributos suficientemente sustentado na inspeção.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar rapidez versus peso percebido; não afirmar que peso causa potência.",
+          "evidence_prefixes": [
+            "0f75d1694c58"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar comprimento/rigidez preservando uso confortável; não demonstrado compromisso técnico.",
+          "evidence_prefixes": [
+            "04e9f32c9c5d",
+            "1a83b1da5001"
+          ]
+        }
+      ],
+      "Q12": [
+        {
+          "status": "H",
+          "note_pt": "Tornar quantidade/dimensões claras e verificáveis.",
+          "evidence_prefixes": [
+            "bd8fa19b7461"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Verificar e esclarecer informação de ingredientes, sem confirmar a alegação pelo comentário.",
+          "evidence_prefixes": [
+            "585ed65ebd3a"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Esclarecer consistência e modo de uso, sem transformar preferência em instrução validada.",
+          "evidence_prefixes": [
+            "2747a75e8441"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Informar peso/dimensões e compatibilidade dos acessórios.",
+          "evidence_prefixes": [
+            "9ac8b7d989ed"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Descrever comprimento/rigidez das cerdas e dimensões.",
+          "evidence_prefixes": [
+            "274bb04d7179",
+            "a50cc2efc52c"
+          ]
+        }
+      ],
+      "Q13": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q14": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        }
+      ]
+    },
+    "varied_disjoint": {
+      "Q01": [
+        {
+          "status": "N",
+          "note_pt": "Dificuldade de extrair resto pelo pump pertence à embalagem (Q05); nenhuma outra dificuldade clara de aplicação/remoção confirmada.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Esfregar para remover delineador e aplicador metálico aderindo aos ímãs.",
+          "evidence_prefixes": [
+            "3d83e46e83be",
+            "5070a95316d8"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Secagem demorada atrapalha uso e deixa marcas após a aplicação.",
+          "evidence_prefixes": [
+            "0c4ea7d7da46"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Dificuldade de encaixe em bocais e colapso durante uso.",
+          "evidence_prefixes": [
+            "13f74f40d7a5",
+            "15f41250a518"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Dificuldade para abrir base danificada ao trocar pilhas.",
+          "evidence_prefixes": [
+            "02922e899968"
+          ]
+        }
+      ],
+      "Q02": [
+        {
+          "status": "E",
+          "note_pt": "Resultado não funciona para cabelo grosso segundo a pessoa, sem mecanismo demonstrado.",
+          "evidence_prefixes": [
+            "048a8362d2d6"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cílios se soltam; distinguir efeito observado de falha de aplicação comprovada.",
+          "evidence_prefixes": [
+            "10e05c75f183"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cobertura irregular e marcas mesmo depois de esperar secagem.",
+          "evidence_prefixes": [
+            "0c4ea7d7da46"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Desempenho percebido inferior ao difusor habitual em um relato, sem especificar exatamente qual aspecto.",
+          "evidence_prefixes": [
+            "003ba869e67e"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Sensação de limpeza inferior à anterior segundo a pessoa, sem medida clínica.",
+          "evidence_prefixes": [
+            "03639c17f929"
+          ]
+        }
+      ],
+      "Q03": [
+        {
+          "status": "E",
+          "note_pt": "Odor artificial forte e mal-estar relatados.",
+          "evidence_prefixes": [
+            "428a2c985905"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Delineador percebido como pegajoso; cuidado ao inferir causa de desconforto na remoção.",
+          "evidence_prefixes": [
+            "3df24c2c9671",
+            "3d83e46e83be"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Odor forte na condição recebida com vazamento; não generalizar ao uso normal.",
+          "evidence_prefixes": [
+            "19f72ceff5d1"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pessoa relata queimar dedos ao segurar acessório aberto; sem comprovar causa técnica ou risco universal.",
+          "evidence_prefixes": [
+            "099b3fe15c17"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Barulho e sensibilidade à vibração relatados.",
+          "evidence_prefixes": [
+            "1521adaadebd"
+          ]
+        }
+      ],
+      "Q04": [
+        {
+          "status": "E",
+          "note_pt": "Rendimento inferior aos três meses relatados como descrição; uso compartilhado limita comparação.",
+          "evidence_prefixes": [
+            "66d6b1c8b92b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Há relato de dez horas de uso e outro de pouca duração; isso não estabelece garantia de duração.",
+          "evidence_prefixes": [
+            "3a7d5f5a9a8d",
+            "89a279895a6e"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Relato sem lascas até terceiro dia e outro com lascas fáceis.",
+          "evidence_prefixes": [
+            "2b478f4acbe2",
+            "4121f373119e"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Produto se desfaz após segundo uso em um relato.",
+          "evidence_prefixes": [
+            "084fd144fe6c"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Separar intervalo de troca de pilhas de vida útil do cabo; atualizações datadas são relatos.",
+          "evidence_prefixes": [
+            "02922e899968"
+          ]
+        }
+      ],
+      "Q05": [
+        {
+          "status": "E",
+          "note_pt": "Pump não funciona e tampa solta com vazamento na entrega.",
+          "evidence_prefixes": [
+            "03ea6b38ec17",
+            "0451e3979b65"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Caixa amassada com cílio danificado, sem culpa de transporte comprovada.",
+          "evidence_prefixes": [
+            "04a798abf39b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Caixas plásticas frágeis e frascos quebrados na entrega.",
+          "evidence_prefixes": [
+            "0727f87fa6c0",
+            "096b6d86153b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Rasgos na borda ao retirar da embalagem; não concluir que embalagem causou defeito.",
+          "evidence_prefixes": [
+            "18450b392cf6"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Blister difícil de abrir e bordas cortantes relatadas; tampa das pilhas é parte do aparelho, não embalagem.",
+          "evidence_prefixes": [
+            "25689150f6c0"
+          ]
+        }
+      ],
+      "Q06": [
+        {
+          "status": "E",
+          "note_pt": "Brilho e maciez percebidos.",
+          "evidence_prefixes": [
+            "002a9d90661f"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Facilidade de aplicar, inclusive relato indireto sobre iniciante.",
+          "evidence_prefixes": [
+            "0266146a6582",
+            "098cb291db2f"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Variedade de cores e aplicação elogiada por amiga da autora.",
+          "evidence_prefixes": [
+            "059db4ac5db7"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Portabilidade e armazenamento.",
+          "evidence_prefixes": [
+            "2eb1b7a63495"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Facilidade de usar/limpar e sensação de limpeza, sem eficácia clínica estabelecida.",
+          "evidence_prefixes": [
+            "00ac87235cec"
+          ]
+        }
+      ],
+      "Q07": [
+        {
+          "status": "E",
+          "note_pt": "Cheiro elogiado em um relato e considerado insuportável em outro; versões/períodos podem diferir.",
+          "evidence_prefixes": [
+            "0050e232326d",
+            "428a2c985905"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Facilidade de aplicar contrasta com dificuldade relatada com aplicador metálico; não supor mesmo nível de prática ou modelo exato.",
+          "evidence_prefixes": [
+            "098cb291db2f",
+            "5070a95316d8"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Secagem rápida em um relato e extremamente demorada em outro; condições de aplicação não controladas.",
+          "evidence_prefixes": [
+            "2b478f4acbe2",
+            "0c4ea7d7da46"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Elogio à portabilidade e problema de encaixe são atributos diferentes; não bastam para contraste direto. Um relato compara desempenho e viagem, reservado a Q10.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Sensação de limpeza muito positiva e outra de limpeza inferior; não converter em eficácia clínica comparativa.",
+          "evidence_prefixes": [
+            "00ac87235cec",
+            "03639c17f929"
+          ]
+        }
+      ],
+      "Q08": [
+        {
+          "status": "E",
+          "note_pt": "Desejo de frasco maior e de retorno à fórmula anterior percebida; reformulação não confirmada.",
+          "evidence_prefixes": [
+            "56907258c7d3",
+            "70fb4474597d"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pedidos de adesivo transparente e aplicador que não adira aos ímãs.",
+          "evidence_prefixes": [
+            "3fa89ab8903b",
+            "5070a95316d8"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Nenhum pedido explícito de mudança no produto/embalagem identificado; reclamações e reembolso não equivalem a mudança física.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "E",
+          "note_pt": "Pedido de colapsar só ao guardar e encaixe mais flexível.",
+          "evidence_prefixes": [
+            "15f41250a518",
+            "2ea6cf8682e8"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Pedido explícito de alterar embalagem; também desejo de cabeças extras.",
+          "evidence_prefixes": [
+            "25689150f6c0",
+            "2c90ae06fdad"
+          ]
+        }
+      ],
+      "Q11": [
+        {
+          "status": "E",
+          "note_pt": "Formato/material do frasco diferentes da imagem e expectativa.",
+          "evidence_prefixes": [
+            "0d988d074d20"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Resultado supera expectativa baixa ligada ao preço; ausência de reação é experiência individual, não segurança geral.",
+          "evidence_prefixes": [
+            "75fefca39a6b"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Cor mais escura na primeira camada do que esperado.",
+          "evidence_prefixes": [
+            "954e6394aa4d"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Elasticidade esperada não permite encaixe no bocal oval da pessoa.",
+          "evidence_prefixes": [
+            "13f74f40d7a5"
+          ]
+        },
+        {
+          "status": "E",
+          "note_pt": "Falha abaixo da qualidade esperada da marca; não prova anúncio falso.",
+          "evidence_prefixes": [
+            "1bbd3d42b263"
+          ]
+        }
+      ],
+      "Q09": [
+        {
+          "status": "H",
+          "note_pt": "Testar pump/vedação e uso do conteúdo residual.",
+          "evidence_prefixes": [
+            "03ea6b38ec17",
+            "047e4f4dbd57"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar aplicador compatível com ímãs; material precisa de validação.",
+          "evidence_prefixes": [
+            "5070a95316d8"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar secagem/cobertura e proteção dos frascos, sem receita de formulação.",
+          "evidence_prefixes": [
+            "0c4ea7d7da46",
+            "096b6d86153b"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar estabilidade aberto e encaixe sem perder portabilidade.",
+          "evidence_prefixes": [
+            "15f41250a518",
+            "13f74f40d7a5"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Testar abertura mais acessível e proteção da embalagem; não recomendar alteração caseira do aparelho.",
+          "evidence_prefixes": [
+            "25689150f6c0"
+          ]
+        }
+      ],
+      "Q10": [
+        {
+          "status": "H",
+          "note_pt": "Investigar fragrância valorizada versus rejeição de odor; preferência, não restrição técnica comprovada.",
+          "evidence_prefixes": [
+            "0050e232326d",
+            "428a2c985905"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar fixação e facilidade de remoção; não presumir incompatibilidade inevitável.",
+          "evidence_prefixes": [
+            "098cb291db2f",
+            "3d83e46e83be"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Investigar variedade/aplicação preservando secagem e cobertura; sem compromisso técnico demonstrado.",
+          "evidence_prefixes": [
+            "2b478f4acbe2",
+            "0c4ea7d7da46"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Relato aceita desempenho inferior ao habitual pela portabilidade em viagem; não generalizar.",
+          "evidence_prefixes": [
+            "003ba869e67e"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Sem compromisso entre atributos suficientemente sustentado na inspeção.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q12": [
+        {
+          "status": "H",
+          "note_pt": "Atualizar imagem/dimensões e verificar versões de fórmula antes de descrever mudanças.",
+          "evidence_prefixes": [
+            "0d988d074d20"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Sem confusão ou lacuna informativa suficientemente demonstrada para fixar proposta obrigatória.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "H",
+          "note_pt": "Esclarecer reprodução de cor/cobertura sem garantir resultado universal.",
+          "evidence_prefixes": [
+            "954e6394aa4d"
+          ]
+        },
+        {
+          "status": "H",
+          "note_pt": "Informar dimensões/formatos compatíveis com bocais, a validar por ensaios.",
+          "evidence_prefixes": [
+            "13f74f40d7a5"
+          ]
+        },
+        {
+          "status": "N",
+          "note_pt": "Não há promessa específica verificada; esclarecer características/desempenho somente com fontes adicionais.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q13": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não estabelecem causalmente qual alteração aumentará vendas.",
+          "evidence_prefixes": []
+        }
+      ],
+      "Q14": [
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        },
+        {
+          "status": "C",
+          "note_pt": "Controle: relatos não sustentam garantia universal de segurança, diagnóstico ou causa clínica.",
+          "evidence_prefixes": []
+        }
+      ]
+    }
+  },
+  "limits": [
+    "All 210 question-family cells explicitly reviewed at matrix level; not all 3843 review texts read manually.",
+    "Keyword scanning plus targeted excerpt/context inspection; absence is not exhaustive.",
+    "No whole-question not-applicable labels inferred merely from missing evidence. Battery autonomy is not applicable to cosmetics or passive tools, but other Q04 subaspects may apply.",
+    "Controls are rubric criteria instantiated per family, not newly discovered evidence.",
+    "Earlier user approvals apply to previously displayed interpretations only; revised matrices await approval.",
+    "Do not turn bundles or repeated aspects into independent scoring themes; deduplication and denominator freezing pending."
+  ],
+  "preserved_prior_approved_units": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010"
+  ]
+}

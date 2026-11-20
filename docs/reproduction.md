@@ -107,7 +107,7 @@ As métricas humanas ficam ausentes até o preenchimento. A precisão de IDs de 
 
 ## Git local e revisão
 
-Commits pequenos por entrega. A identidade dos commits é genérica, sem nome/email pessoal. Nenhum remote deve ser configurado, e nenhum push deve ser executado antes da revisão da usuária. Antes de criar o GitHub privado, conferir arquivos rastreados e ausência de corpus, respostas, modelos, tokens e dados acadêmicos pessoais. A matrícula e nomes permanecem em branco no README.
+Commits pequenos por entrega coerente, conforme AGENTS.md; não criar um commit por aprovação ou rodada da conversa. O mapa de marcos está em docs/development-history.md. A identidade dos commits é genérica, sem nome/email pessoal. Nenhum remote deve ser configurado, e nenhum push deve ser executado antes da revisão da usuária. Antes de criar o GitHub privado, conferir arquivos rastreados e ausência de corpus, respostas, modelos, tokens e dados acadêmicos pessoais. A matrícula e nomes permanecem em branco no README.
 
 ## Corpora do estudo alinhado
 
@@ -125,3 +125,7 @@ O build acima é integração no desenvolvimento, sem hiperparâmetros finais. P
 ## Revisão direcionada concluída
 
 A versão atual é indicada por configs/corpus-current.json. Ver docs/final-corpus-qa.md para gerar a revisão a partir do snapshot inicial, com exclusões, redação de assinatura e reconstrução dos subconjuntos. Usar os corpora de data/processed/study-v2-qa-final em novos builds. Os caminhos study-v1 anteriores documentam a preparação histórica.
+
+## Preparação da rubrica por unidades
+
+Depois da aprovação dos três pacotes revisados, executar scripts/prepare_scoring_reference.py com --output apontando para um novo diretório. O comando gera unidades e disponibilidade de apoios conhecidos nos subconjuntos, sem respostas de modelos ou notas humanas. Ver docs/scoring-rubric.md e configs/scoring-current.draft.json. O avaliador legado por contagens pertence ao piloto e não substitui esta anotação por unidade.

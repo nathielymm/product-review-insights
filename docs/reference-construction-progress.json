@@ -1,0 +1,57 @@
+{
+  "status": "partial_reference_construction_ten_user_approved",
+  "question_id": "Q01",
+  "cohort_id": "compact_mascaras",
+  "corpus_sha256": "3f079922dd194865cb06d4b8223b00b11f1b508d397108364a804675b1b9d08e",
+  "question_file_sha256": "8e9c4bf4a45e5d6e09cbf8b7702ebf2bba12db2cffc1d8f9f9c74170a7845054",
+  "candidate_selection": {
+    "primary_regex": "remov|wash|take.{0,12}off|hard.{0,12}off|brush|wand|appl|coat|dry",
+    "secondary_regex": "difficult|hard|clump|mess|awkward|too (big|large|small|long)|not easy|takes|time|fine lashes",
+    "ordering": "stable review ID within each family",
+    "first_inspection_per_family": 8
+  },
+  "primary_reviews_scanned": 547,
+  "keyword_candidates": 241,
+  "first_inspection_records": 40,
+  "limits": [
+    "Candidate matching is not relevance annotation.",
+    "First inspection includes positive and irrelevant matches.",
+    "Not all candidates read; keyword-negative corpus still needs systematic inspection.",
+    "Family-aspect units may share a global theme; do not count as five distinct global themes.",
+    "No method outputs, retrieval rankings or clusters used to select reference evidence."
+  ],
+  "next_steps": [
+    "Inspect remaining candidates and deterministic keyword-negative samples across all families.",
+    "Record absent, ambiguous and positive cases.",
+    "Approve and deduplicate reference units before freezing any denominator.",
+    "Verify evidence availability separately for every sensitivity corpus."
+  ],
+  "batch_id": "REF001",
+  "proposed_units": 10,
+  "approved_units": 10,
+  "raw_text_versioned": false,
+  "denominator_frozen": false,
+  "pending_units": 0,
+  "approved_unit_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010"
+  ],
+  "batch_ids": [
+    "REF001",
+    "REF002"
+  ],
+  "private_packet_hashes": {
+    "block-001.private.json": "255133515a9545075308390aaf6628c125d3bd4eab5e35e442f8d07d400e7755",
+    "block-002.private.json": "cf50a6bf542691c5471d1b812c87b785e87583de03d1bc82e8ed28b486581a7e"
+  },
+  "current_reference_sha256": "d1842c0262fa16d6356b0332de1c641846155c923788ac7b05fd1f6824bbdfa4",
+  "second_block_distinct_records_inspected": 31
+}
