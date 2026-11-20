@@ -1,4 +1,6 @@
-# Interface local — avaliação por produto v2
+# Interface com os insumos experimentais
+
+Para instalar e usar a ferramenta sem arquivos privados, consulte [installation.md](installation.md). Os passos abaixo usam os índices originais e a opção `--frozen`.
 
 A interface usa os três produtos da v2: escova GranNaturals (613 avaliações), shampoo Pure Body Naturals Argan (473) e máscara Bold Lash (123). A consulta ocorre em um índice individual, com quatro agrupamentos internos ao produto, sem consulta conjunta a famílias ou reconstrução de índices.
 
@@ -13,7 +15,7 @@ OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NO_CLOUD=1 OLLAMA_MODELS="$PWD/artifacts/olla
 Se esse serviço já estiver ativo, utilize-o. Em outro terminal:
 
 ```sh
-HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python scripts/serve_demo.py
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python scripts/serve_demo.py --frozen
 ```
 
 Abra http://127.0.0.1:8501. Outra porta pode ser escolhida com `--port 8503`; encerre com Ctrl+C. O servidor só escuta em loopback. Não há instalação de Streamlit ou nova dependência de interface.

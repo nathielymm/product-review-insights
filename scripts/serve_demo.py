@@ -1,6 +1,7 @@
 """Local v2 demonstration; experimental artifacts are read only."""
 import argparse
 import json
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from product_review_insights.demo_v2 import Demo, DemoInputError
@@ -70,8 +71,16 @@ def make_handler(demo):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8501)
+    parser.add_argument('--frozen', action='store_true', help='Use the original experimental assets instead of the downloadable application.')
     args = parser.parse_args()
-    server = ThreadingHTTPServer(('127.0.0.1', args.port), make_handler(Demo()))
+    os.environ.setdefault('OMP_NUM_THREADS', '1')
+    os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
+    from product_review_insights.local_app import application
+    try:
+        demo = Demo() if args.frozen else application()
+    except (ValueError, FileNotFoundError) as error:
+        parser.exit(1, str(error)+'\n')
+    server = ThreadingHTTPServer(('127.0.0.1', args.port), make_handler(demo))
     print(f'Demonstração local: http://127.0.0.1:{args.port} — Ctrl+C para encerrar.', flush=True)
     try:
         server.serve_forever()

@@ -1,0 +1,19 @@
+{
+  "schema": "local_app_recipe_v1",
+  "dataset": {
+    "repository": "McAuley-Lab/Amazon-Reviews-2023",
+    "revision": "2b6d039ed471f2ba5fd2acb718bf33b0a7e5598e",
+    "filename": "raw/review_categories/All_Beauty.jsonl",
+    "sha256": "36ca7c48440a8247b2dca0174d095238422b506a8a80c114dca722b7715f1c94",
+    "bytes": 326611506
+  },
+  "encoder": {
+    "repository": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "model": "gemma3:4b",
+  "max_reviews_per_product": 1000,
+  "min_words": 5,
+  "language": "en",
+  "language_seed": 42
+}

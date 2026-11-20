@@ -2,6 +2,8 @@
 
 Este guia descreve a avaliação por produto e a interface atuais.
 
+Para usar a ferramenta a partir de um clone, sem arquivos privados, siga o [guia de instalação](installation.md). Ele baixa dados públicos e prepara novos índices em `artifacts/local-app/`. Este documento trata da reprodução do experimento e de suas métricas, cujos insumos e hashes permanecem preservados.
+
 ## Ambiente
 
 O ambiente registrado usa Python 3.12.14 no macOS arm64. O projeto declara Python >=3.11, mas isso não certifica o lock em todas as versões/arquiteturas. Em uma instalação nova:

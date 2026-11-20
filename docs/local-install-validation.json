@@ -1,0 +1,155 @@
+{
+  "schema": "local_install_validation_v1",
+  "status": "independent_environment_verified",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.14"
+  },
+  "installation": "New isolated venv installed from pyproject; no experimental corpora, indices, annotations or runs copied.",
+  "dependencies": {
+    "numpy": "2.5.5",
+    "scikit-learn": "1.9.1",
+    "faiss-cpu": "1.16.0",
+    "sentence-transformers": "6.3.0",
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "langdetect": "1.0.9"
+  },
+  "dataset": {
+    "repository": "McAuley-Lab/Amazon-Reviews-2023",
+    "revision": "2b6d039ed471f2ba5fd2acb718bf33b0a7e5598e",
+    "filename": "raw/review_categories/All_Beauty.jsonl",
+    "sha256": "36ca7c48440a8247b2dca0174d095238422b506a8a80c114dca722b7715f1c94",
+    "bytes": 326611506
+  },
+  "encoder": {
+    "repository": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "products": [
+    {
+      "product_id": "B00R1TAN7I",
+      "reviews": 1000,
+      "chunks": 1003
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "reviews": 745,
+      "chunks": 801
+    },
+    {
+      "product_id": "B01557EHW4",
+      "reviews": 196,
+      "chunks": 199
+    }
+  ],
+  "tests_passed_original_environment": 85,
+  "tests_passed_independent_environment": 85,
+  "predefined_live_queries": [
+    {
+      "product": "B00R1TAN7I",
+      "method": "traditional",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 8,
+        "products": 1
+      },
+      "seconds": 19.41
+    },
+    {
+      "product": "B00R1TAN7I",
+      "method": "thematic",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 4,
+        "products": 1
+      },
+      "seconds": 8.15
+    },
+    {
+      "product": "B012Q9NGE4",
+      "method": "traditional",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 6,
+        "products": 1
+      },
+      "seconds": 11.75
+    },
+    {
+      "product": "B012Q9NGE4",
+      "method": "thematic",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 6,
+        "products": 1
+      },
+      "seconds": 6.26
+    },
+    {
+      "product": "B01557EHW4",
+      "method": "traditional",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 8,
+        "products": 1
+      },
+      "seconds": 13.14
+    },
+    {
+      "product": "B01557EHW4",
+      "method": "thematic",
+      "language": "pt-BR",
+      "format_valid": true,
+      "cut": false,
+      "sources": 8,
+      "cited_scope": {
+        "reviews": 8,
+        "products": 1
+      },
+      "seconds": 11.9
+    }
+  ],
+  "browser_response_and_sources_verified": true,
+  "second_setup_reused_verified_assets": true,
+  "ollama": {
+    "runtime": "0.40.11",
+    "model": "gemma3:4b",
+    "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+    "service": "Existing local service; no private experimental data supplied to the clean application."
+  },
+  "frozen_inputs_unchanged": 73,
+  "frozen_metrics_unchanged": true,
+  "limits": [
+    "Windows/Linux instructions not executed.",
+    "Absent-model automatic pull covered by a simulated API test; live tests reused an installed Gemma model.",
+    "Live checks verify integration, not semantic quality or replication of the published metrics."
+  ],
+  "free_live_query": {
+    "query_mode": "free",
+    "presentation_language": "pt-BR",
+    "format_valid": true,
+    "cut": false,
+    "cited_scope": {
+      "reviews": 5,
+      "products": 1
+    },
+    "seconds": 15.333026459004031
+  }
+}
