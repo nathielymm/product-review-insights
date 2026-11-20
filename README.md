@@ -11,18 +11,18 @@ Trabalho apresentado ao curso [Inteligência Artificial Generativa e LLM — PUC
 
 ### 1. Introdução
 
-Este trabalho investiga como avaliações de consumidores podem apoiar a identificação de oportunidades de melhoria em produtos. Compara duas formas de selecionar evidências para um modelo de linguagem: similaridade com a pergunta e diversidade temática dentro de um mesmo produto.
+Este trabalho investiga como avaliações de consumidores podem apoiar a identificação de oportunidades de melhoria em produtos. Compara duas formas de selecionar evidências para um modelo de linguagem: similaridade com a pergunta e diversidade temática dentro de um mesmo produto, seguindo o princípio de RAG (Lewis et al., 2020).
 
-O estudo utiliza 1.209 avaliações do arquivo fornecido como Amazon Reviews 2023 All_Beauty, distribuídas entre escova GranNaturals (613), shampoo Pure Body Naturals Argan (473) e máscara Bold Lash (123). Cada produto é analisado separadamente, preservando as condições e comparações presentes nos relatos.
+O estudo utiliza 1.209 avaliações do arquivo fornecido como Amazon Reviews 2023 All_Beauty (Hou et al., 2024), distribuídas entre escova GranNaturals (613), shampoo Pure Body Naturals Argan (473) e máscara Bold Lash (123). Cada produto é analisado separadamente, preservando as condições e comparações presentes nos relatos.
 
 ### 2. Modelagem
 
-O sistema usa embeddings MiniLM, índice FAISS e quatro agrupamentos MiniBatchKMeans por produto. Para cada pergunta, cinco buscas por aspectos formam um ranking comum, deduplicado por avaliação:
+O sistema usa embeddings do modelo `all-MiniLM-L6-v2`, do Sentence Transformers (Reimers; Gurevych, 2019), índice FAISS (Johnson; Douze; Jégou, 2017) e quatro agrupamentos MiniBatchKMeans por produto (Sculley, 2010). Para cada pergunta, cinco buscas por aspectos são combinadas por Reciprocal Rank Fusion (Cormack; Clarke; Büttcher, 2009), formando um ranking comum, deduplicado por avaliação:
 
 - RAG tradicional: seleciona as primeiras oito avaliações do ranking.
 - RAG temático: seleciona representantes dos agrupamentos disponíveis e completa as oito posições pelo mesmo ranking.
 
-Ambos usam Gemma 3 4B local via Ollama, com os mesmos parâmetros de geração. As respostas são geradas em inglês e traduzidas para português apenas na apresentação, mantendo as fontes acessíveis.
+Ambos usam Gemma 3 4B (Gemma Team, 2025) local via Ollama, com os mesmos parâmetros de geração. As respostas são geradas em inglês e traduzidas para português apenas na apresentação, mantendo as fontes acessíveis.
 
 A avaliação compreende seis perguntas por produto, 36 respostas principais e 24 repetições diagnósticas separadas. A rubrica considera cobertura, fidelidade, suporte das citações, propostas de melhoria e limites das inferências comerciais. Foram registrados tempos de execução e tokens. A anotação assistida teve revisão humana das interpretações de 12 respostas, sem avaliação independente.
 
@@ -77,6 +77,16 @@ Consulte os [resultados detalhados e denominadores](docs/product-evaluation.v2-r
 A diversidade temática ampliou a cobertura média, mas não assegurou maior fidelidade. A identificação de oportunidades exige preservar o vínculo entre cada achado, sua fonte e as condições relatadas. As sugestões produzidas são hipóteses de melhoria, sem comprovação de causalidade ou impacto em vendas.
 
 As conclusões se restringem aos três produtos, à referência parcial e à anotação assistida com revisão humana parcial. Os agrupamentos são exploratórios, a equivalência das traduções não foi integralmente certificada e a procedência exata do Parquet experimental em relação à fonte oficial permanece uma limitação. Os custos medidos abrangem tempo e tokens, sem medição de CPU, memória, energia ou custo monetário. Avaliação independente e ampliação das referências são caminhos para aprofundar os resultados.
+
+### Referências
+
+- LEWIS et al. (2020). [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401).
+- REIMERS; GUREVYCH (2019). [Sentence-BERT](https://aclanthology.org/D19-1410/). Encoder utilizado: [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
+- JOHNSON; DOUZE; JÉGOU (2017). [Billion-scale similarity search with GPUs — FAISS](https://arxiv.org/abs/1702.08734).
+- SCULLEY (2010). [Web-Scale K-Means Clustering](https://doi.org/10.1145/1772690.1772862).
+- CORMACK; CLARKE; BÜTTCHER (2009). [Reciprocal Rank Fusion](https://doi.org/10.1145/1571941.1572114).
+- GEMMA TEAM (2025). [Gemma 3 Technical Report](https://arxiv.org/abs/2503.19786).
+- HOU et al. (2024). [Bridging Language and Items for Retrieval and Recommendation — Amazon Reviews 2023](https://arxiv.org/abs/2403.03952).
 
 ---
 
