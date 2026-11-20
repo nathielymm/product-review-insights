@@ -1,0 +1,461 @@
+{
+  "schema": "product_evaluation_v2_generation_summary",
+  "status": "frozen_generation_complete_semantic_annotation_pending",
+  "freeze_sha256": "18efe49f76180476b04be3c3ff97647838394bbf2845c02f6b7ae9a74100e19a",
+  "configuration_sha256": "bcb02b01e44f1be48ab32d26e813707f5db0f19816f27bf85a3e2893a1601763",
+  "english_records": 60,
+  "primary_English": 36,
+  "diagnostic_English": 24,
+  "presentation_records": 36,
+  "primary_groups": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "method": "traditional",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    },
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "method": "thematic",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "method": "traditional",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "method": "thematic",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "method": "traditional",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "method": "thematic",
+      "scheduled_primary": 6,
+      "english_format_valid": 6,
+      "retrieval_errors": 0,
+      "generation_errors": 0,
+      "english_cut": 0,
+      "translation_attempted": 6,
+      "translation_valid": 6,
+      "translation_cut": 0
+    }
+  ],
+  "all_English_format_valid": 60,
+  "all_English_cut": 0,
+  "all_English_execution_errors": 0,
+  "presentation_valid": 36,
+  "presentation_execution_errors": 0,
+  "presentation_cut": 0,
+  "English_preserved_after_presentation": true,
+  "previous_files_preserved": 77,
+  "frozen_inputs_verified": 73,
+  "output_hashes": {
+    "English": "e3d0e9845354fbcca1842cdb03ccc88b90cbdd49974a01e9f2aee3126a14e7ce",
+    "presentation": "8c5a90454362eef0e28bc6083f467c29061b95a0f0a36ab5457327e6e0b1333c",
+    "technical_probes": "e7762d625855260cefa21ec4d4dddba761c9d80bef77330adcefd43f82d7eaca"
+  },
+  "resources": {
+    "groups": [
+      {
+        "phase": "primary",
+        "method": "traditional",
+        "scheduled": 18,
+        "retrieval": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 0.007842353996238671,
+          "min_seconds": 0.006363708002027124,
+          "max_seconds": 0.014743332983925939
+        },
+        "generation_with_guards": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 5.915037625498371,
+          "min_seconds": 3.9757673330022953,
+          "max_seconds": 7.786958374985261
+        },
+        "attempt_total": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 6.1074539164837915,
+          "min_seconds": 3.983701166987885,
+          "max_seconds": 8.64486987501732
+        },
+        "client_index_load": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 0.0,
+          "min_seconds": 0.0,
+          "max_seconds": 2.738710625009844
+        },
+        "model_calls": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 5.914816520511522,
+          "min_seconds": 3.975593040988315,
+          "max_seconds": 7.786755167006049
+        },
+        "retrieval_failures": 0,
+        "generation_errors": 0,
+        "format_failures": 0,
+        "cut_answers": 0,
+        "prompt_eval_count": {
+          "sum_known": 26775,
+          "measured": 18,
+          "missing": 0
+        },
+        "eval_count": {
+          "sum_known": 7345,
+          "measured": 18,
+          "missing": 0
+        },
+        "presentation": {
+          "records": 18,
+          "valid": 18,
+          "attempted": 18,
+          "attempted_total_with_guards": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 8.480249187006848,
+            "min_seconds": 5.104986040998483,
+            "max_seconds": 11.366715000011027
+          },
+          "total_including_budget_guards": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 8.480249187006848,
+            "min_seconds": 5.104986040998483,
+            "max_seconds": 11.366715000011027
+          },
+          "actual_model_calls": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 7.039022832992487,
+            "min_seconds": 5.06756758299889,
+            "max_seconds": 9.679002999997465
+          },
+          "prompt_eval_count": {
+            "sum_known": 8752,
+            "measured": 18,
+            "missing": 0
+          },
+          "eval_count": {
+            "sum_known": 7511,
+            "measured": 18,
+            "missing": 0
+          }
+        }
+      },
+      {
+        "phase": "primary",
+        "method": "thematic",
+        "scheduled": 18,
+        "retrieval": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 0.007114167005056515,
+          "min_seconds": 0.005757625011028722,
+          "max_seconds": 0.008952250005677342
+        },
+        "generation_with_guards": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 5.462458561989479,
+          "min_seconds": 3.4857205000007525,
+          "max_seconds": 7.513319083984243
+        },
+        "attempt_total": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 5.470563479495468,
+          "min_seconds": 3.492362791002961,
+          "max_seconds": 7.520478041988099
+        },
+        "client_index_load": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 0.0,
+          "min_seconds": 0.0,
+          "max_seconds": 0.032263291999697685
+        },
+        "model_calls": {
+          "measured": 18,
+          "missing": 0,
+          "median_seconds": 5.4622777914919425,
+          "min_seconds": 3.485544666997157,
+          "max_seconds": 7.512862250005128
+        },
+        "retrieval_failures": 0,
+        "generation_errors": 0,
+        "format_failures": 0,
+        "cut_answers": 0,
+        "prompt_eval_count": {
+          "sum_known": 27118,
+          "measured": 18,
+          "missing": 0
+        },
+        "eval_count": {
+          "sum_known": 6846,
+          "measured": 18,
+          "missing": 0
+        },
+        "presentation": {
+          "records": 18,
+          "valid": 18,
+          "attempted": 18,
+          "attempted_total_with_guards": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 8.008017312502488,
+            "min_seconds": 4.210807708994253,
+            "max_seconds": 11.045546832989203
+          },
+          "total_including_budget_guards": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 8.008017312502488,
+            "min_seconds": 4.210807708994253,
+            "max_seconds": 11.045546832989203
+          },
+          "actual_model_calls": {
+            "measured": 18,
+            "missing": 0,
+            "median_seconds": 6.635409020993393,
+            "min_seconds": 4.210595750017092,
+            "max_seconds": 9.619001625018427
+          },
+          "prompt_eval_count": {
+            "sum_known": 8356,
+            "measured": 18,
+            "missing": 0
+          },
+          "eval_count": {
+            "sum_known": 6963,
+            "measured": 18,
+            "missing": 0
+          }
+        }
+      },
+      {
+        "phase": "stability",
+        "method": "traditional",
+        "scheduled": 12,
+        "retrieval": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 0.010767978994408622,
+          "min_seconds": 0.007262375002028421,
+          "max_seconds": 0.013058540993370116
+        },
+        "generation_with_guards": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.3154868124984205,
+          "min_seconds": 3.620860333001474,
+          "max_seconds": 7.9621537500061095
+        },
+        "attempt_total": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.326494583001477,
+          "min_seconds": 3.629855500010308,
+          "max_seconds": 7.9748520420107525
+        },
+        "client_index_load": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 0.0,
+          "min_seconds": 0.0,
+          "max_seconds": 0.0
+        },
+        "model_calls": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.315241125004832,
+          "min_seconds": 3.6206502920249477,
+          "max_seconds": 7.9618707499757875
+        },
+        "retrieval_failures": 0,
+        "generation_errors": 0,
+        "format_failures": 0,
+        "cut_answers": 0,
+        "prompt_eval_count": {
+          "sum_known": 17726,
+          "measured": 12,
+          "missing": 0
+        },
+        "eval_count": {
+          "sum_known": 4584,
+          "measured": 12,
+          "missing": 0
+        }
+      },
+      {
+        "phase": "stability",
+        "method": "thematic",
+        "scheduled": 12,
+        "retrieval": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 0.010264249998726882,
+          "min_seconds": 0.00664649999816902,
+          "max_seconds": 0.01659850002033636
+        },
+        "generation_with_guards": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.287950916492264,
+          "min_seconds": 3.82596066701808,
+          "max_seconds": 7.8665472920110915
+        },
+        "attempt_total": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.296860625501722,
+          "min_seconds": 3.8328097499907017,
+          "max_seconds": 7.87591133400565
+        },
+        "client_index_load": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 0.0,
+          "min_seconds": 0.0,
+          "max_seconds": 0.0
+        },
+        "model_calls": {
+          "measured": 12,
+          "missing": 0,
+          "median_seconds": 5.287703874491854,
+          "min_seconds": 3.825760458013974,
+          "max_seconds": 7.86631258300622
+        },
+        "retrieval_failures": 0,
+        "generation_errors": 0,
+        "format_failures": 0,
+        "cut_answers": 0,
+        "prompt_eval_count": {
+          "sum_known": 18016,
+          "measured": 12,
+          "missing": 0
+        },
+        "eval_count": {
+          "sum_known": 4364,
+          "measured": 12,
+          "missing": 0
+        }
+      }
+    ],
+    "technical_probe_costs_are_separate": true,
+    "no_cpu_memory_energy_or_monetary_estimates": true
+  },
+  "technical_probes": {
+    "role": "technical_checks_not_quality_answers",
+    "calls": 31,
+    "total_measured_wall_seconds": 44.526320292963646,
+    "timing_missing": 0,
+    "prompt_eval_count": {
+      "sum_known": 14783,
+      "measured": 31,
+      "missing": 0
+    },
+    "eval_count": {
+      "sum_known": 31,
+      "measured": 31,
+      "missing": 0
+    }
+  },
+  "stability": {
+    "role": "diagnostic_not_independent_quality_cases",
+    "groups": [
+      {
+        "method": "traditional",
+        "repetition": 2,
+        "scheduled": 6,
+        "comparable_outputs": 6,
+        "identical_original_English": 4,
+        "changed_outputs_requiring_separate_review": 2,
+        "same_context_in_order": 6,
+        "missing_or_failed_not_counted_as_identical": 0
+      },
+      {
+        "method": "traditional",
+        "repetition": 3,
+        "scheduled": 6,
+        "comparable_outputs": 6,
+        "identical_original_English": 3,
+        "changed_outputs_requiring_separate_review": 3,
+        "same_context_in_order": 6,
+        "missing_or_failed_not_counted_as_identical": 0
+      },
+      {
+        "method": "thematic",
+        "repetition": 2,
+        "scheduled": 6,
+        "comparable_outputs": 6,
+        "identical_original_English": 5,
+        "changed_outputs_requiring_separate_review": 1,
+        "same_context_in_order": 6,
+        "missing_or_failed_not_counted_as_identical": 0
+      },
+      {
+        "method": "thematic",
+        "repetition": 3,
+        "scheduled": 6,
+        "comparable_outputs": 6,
+        "identical_original_English": 6,
+        "changed_outputs_requiring_separate_review": 0,
+        "same_context_in_order": 6,
+        "missing_or_failed_not_counted_as_identical": 0
+      }
+    ]
+  },
+  "semantic_scores_calculated": false,
+  "limitations": "Format/cut/execution checks and identical output counts are not fidelity, depth or improvement-effectiveness results. All attempts preserved; no retries/repair or choosing the best response."
+}
