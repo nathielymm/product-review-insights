@@ -2,10 +2,12 @@
 
 Comparação entre RAG tradicional e RAG enriquecido por análise temática.
 
-#### Aluna:
-#### Orientador(a):
+#### Aluna: Nathiely Laiane Moraes Macedo
+#### Orientador(a): Leonardo Alfredo Forero Mendonza
 
-Pós-graduação em [Inteligência Artificial Generativa e LLM — PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/).
+Trabalho apresentado ao curso [Inteligência Artificial Generativa e LLM — PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "PROJETO LLM".
+
+[Link para o código](https://github.com/nathielymm/product-review-insights). 
 
 ### 1. Introdução
 
@@ -78,7 +80,7 @@ As conclusões se restringem aos três produtos, à referência parcial e à ano
 
 ---
 
-Matrícula:
+Matrícula: 252.100.329
 
 Pontifícia Universidade Católica do Rio de Janeiro
 
