@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insights de produtos · RAG local</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#23332f;background:#f3f6f3}*{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:48px auto;padding:0 24px}header p{color:#52685f;line-height:1.6}.tag{font-size:12px;letter-spacing:.12em;color:#34634c}h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.04em;margin:12px 0}section,form{background:white;border:1px solid #dce5de;border-radius:16px;padding:24px;margin:20px 0}.options{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}select,textarea,button{font:inherit}select,textarea{width:100%;padding:12px;border:1px solid #bacbc0;border-radius:8px;background:white;color:inherit}textarea{min-height:115px;resize:vertical;margin-bottom:12px}button{background:#24593f;border:0;border-radius:8px;color:white;padding:12px 20px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}select:focus,textarea:focus,button:focus,a:focus{outline:3px solid #8ebca0;outline-offset:3px}.hint{font-size:13px;color:#5a6c63;line-height:1.6}.answer{white-space:pre-wrap;line-height:1.75;overflow-wrap:anywhere}a{color:#24593f}details{border-top:1px solid #dce5de;padding:16px 0}summary{cursor:pointer;line-height:1.6}details p{white-space:pre-wrap;line-height:1.65}.notice{background:#fff4d7;padding:14px;border-radius:8px}#status{min-height:24px;margin-top:12px}h2{font-size:21px}footer{font-size:13px;color:#5a6c63;padding-bottom:32px}@media(max-width:600px){main{margin-top:28px;padding:0 16px}.options{grid-template-columns:1fr}form,section{padding:18px}}
+.product-card{border:1px solid #dce5de;border-radius:12px;padding:20px;margin:16px 0}.product-card h3{font-size:18px;margin:0 0 6px}.product-code{font-size:12px;color:#64756c;margin:0 0 16px}.finding+.finding{border-top:1px solid #e5ebe6;margin-top:18px;padding-top:18px}.finding-block{padding:12px 14px;border-radius:8px;margin:8px 0;background:#f5f7f5}.finding-block.suggestion{background:#edf6ef;border-left:3px solid #4a805b}.finding-block.observation{border-left:3px solid #c59a52}.finding-block.verification{background:#f1f4f8}.finding-label{display:block;font-size:12px;font-weight:650;color:#52645a;margin-bottom:6px}.finding-block p,.limits p{margin:0;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}.citations{display:flex;gap:8px;margin:10px 0;font-size:13px}.limits{border-top:1px solid #dce5de;padding-top:16px;margin-top:20px}.limits h3{font-size:15px;color:#52645a}
+</style>
+<main>
+<header><span class="tag">PRODUCT REVIEW INSIGHTS</span><h1>O que as avaliações revelam?</h1><p>Explore avaliações de consumidores e identifique oportunidades de melhoria em produtos.</p></header>
+<form id="ask"><div class="options"><div><label for="cohort">Conjunto de produtos</label><select id="cohort" required><option value="compact_mascaras">Máscaras de cílios</option><option value="intermediate_hair_disjoint">Cuidados e ferramentas para cabelo</option><option value="varied_disjoint">Produtos de funções variadas</option></select></div><div><label for="method">Método de recuperação</label><select id="method"><option value="traditional">RAG tradicional · similaridade</option><option value="thematic">RAG temático · diversidade de grupos</option></select></div></div>
+<p class="hint">Tradicional: busca comentários semelhantes à pergunta. Temático: inclui comentários de diferentes grupos temáticos.</p><label for="product">Produto</label><select id="product" disabled><option value="">Carregando produtos…</option></select><p class="hint">Escolha um produto para aprofundar a análise ou consulte o conjunto inteiro.</p><label for="question">Sua pergunta</label><textarea id="question" maxlength="2000" required placeholder="Quais problemas de aplicação aparecem nos relatos e que melhorias poderiam ser investigadas?"></textarea><button id="submit" type="submit">Consultar avaliações</button><div id="status" role="status" aria-live="polite"></div></form>
+<div id="result" hidden><section aria-labelledby="answer-title"><h2 id="answer-title">Resposta</h2><p id="context" class="hint"></p><p id="scope" class="hint" hidden></p><p id="warning" class="notice" hidden></p><div id="answer"></div><p id="timing" class="hint"></p></section><section><h2>Fontes</h2><p class="hint">Comentários originais em inglês. Clique nas referências da resposta ou abra os trechos abaixo.</p><div id="sources"></div></section></div>
+
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let catalog={};
+function updateProducts(){const select=$('product');select.replaceChildren();const all=document.createElement('option');all.value='';all.textContent='Todos os produtos do conjunto';select.append(all);for(const p of catalog[$('cohort').value]||[]){const option=document.createElement('option');option.value=p.id;option.textContent=p.name;select.append(option);}select.disabled=false;}
+$('cohort').addEventListener('change',updateProducts);
+fetch('/api/options').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{catalog=data.products;updateProducts();}).catch(()=>{$('product').replaceChildren(new Option('Não foi possível carregar os produtos',''));$('status').textContent='Atualize a página para carregar os produtos.';});
+$('ask').addEventListener('submit',async event=>{
+ event.preventDefault();if(!$('question').value.trim()){ $('status').textContent='Escreva uma pergunta.';return; }
+ $('submit').disabled=true;$('result').hidden=true;$('status').textContent='Consultando avaliações…';
+ const cohort=$('cohort').value,method=$('method').value,question=$('question').value,product_id=$('product').value;
+ const caption=$('cohort').selectedOptions[0].text+' · '+$('product').selectedOptions[0].text+' · '+$('method').selectedOptions[0].text;
+ try{
+ const response=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,cohort,method,product_id})});
+ const data=await response.json();if(!response.ok)throw new Error(data.error);
+ $('context').textContent=caption+' — '+question;
+ $('scope').hidden=!data.cited_scope;
+ if(data.cited_scope){const {reviews,products}=data.cited_scope;$('scope').textContent=reviews?'Resposta baseada em '+reviews+' '+(reviews===1?'avaliação':'avaliações')+' de '+products+' '+(products===1?'produto':'produtos')+'.':'A resposta não cita avaliações.';}
+
+ $('sources').replaceChildren();const ids=new Set();
+ for(const source of data.evidence){ids.add(source.citation_id);const detail=document.createElement('details');detail.id='source-'+source.citation_id;const summary=document.createElement('summary');summary.textContent=source.citation_id+' · '+source.product_label+' · '+source.group_alias+' ('+source.product_id+')';const text=document.createElement('p');text.textContent=source.text;detail.append(summary,text);$('sources').append(detail);}
+ if(!data.evidence.length)$('sources').textContent='Nenhuma fonte encontrada.';
+ $('answer').replaceChildren();$('answer').className='';
+ const cite=(parent,id)=>{if(!ids.has(id))return;const link=document.createElement('a');link.href='#source-'+id;link.textContent='['+id+']';link.onclick=()=>{$('source-'+id).open=true;};parent.append(link);};
+ const block=(parent,label,text,kind)=>{if(!text)return;const box=document.createElement('div');box.className='finding-block '+kind;const title=document.createElement('span');title.className='finding-label';title.textContent=label;const body=document.createElement('p');body.textContent=text;box.append(title,body);parent.append(box);};
+ if(data.products?.length){
+  for(const product of data.products){
+   const card=document.createElement('article');card.className='product-card';const title=document.createElement('h3');title.textContent=product.name;const code=document.createElement('p');code.className='product-code';code.textContent=product.group+' · '+product.product_id;card.append(title,code);
+   for(const finding of product.findings){const row=document.createElement('div');row.className='finding';block(row,'Relatos e problemas',finding.observation,'observation');const refs=document.createElement('div');refs.className='citations';for(const id of finding.citations)cite(refs,id);row.append(refs);block(row,'Sugestão de melhoria',finding.proposal,'suggestion');block(row,'O que verificar',finding.uncertainty,'verification');card.append(row);}
+   $('answer').append(card);
+  }
+  if(data.limits){const limits=document.createElement('div');limits.className='limits';const title=document.createElement('h3');title.textContent='Limites das evidências';const text=document.createElement('p');text.textContent=data.limits;limits.append(title,text);$('answer').append(limits);}
+ }else{
+  $('answer').className='answer';for(const part of data.answer.split(/(\[E\d+\])/g)){const id=part.slice(1,-1);if(/^\[E\d+\]$/.test(part)&&ids.has(id))cite($('answer'),id);else $('answer').append(document.createTextNode(part));}
+ }
+ $('warning').hidden=!(data.cut||data.format_valid===false);$('warning').textContent=data.cut?'A resposta atingiu o limite de geração e pode estar incompleta.':'A resposta veio fora do formato esperado.';
+ $('timing').textContent='Tempo de resposta: '+data.seconds.toFixed(1)+' s';$('result').hidden=false;$('status').textContent='Consulta concluída.';
+ }catch(error){$('status').textContent=error.message||'Não foi possível concluir a consulta.';}finally{$('submit').disabled=false;}
+});
+</script>
+</html>

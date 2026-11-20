@@ -10,6 +10,7 @@ Projeto: `product-review-insights`.
 Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial Generativa e LLM da PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/).
 
 - [Código](src/product_review_insights)
+- [Interface demonstrativa local: como executar](docs/local-demo.md)
 - [Progresso por entregas](docs/development-history.md)
 - [Critérios e preparação da avaliação](docs/scoring-rubric.md)
 - [Avaliação integrada e congelamento](docs/evaluation-freeze.md)

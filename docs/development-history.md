@@ -73,3 +73,31 @@ Foram executados os 27 cenários, sem seleção posterior de sementes, com 756 t
 ## Discussão e conclusões integradas
 
 Os achados principais e de sensibilidade foram incorporados ao resumo, à discussão e às conclusões do README, mantendo a estrutura acadêmica em quatro seções. O texto ampliado em docs/discussion-and-conclusions.v1.md distingue fidelidade, cobertura e utilidade das propostas e preserva as limitações de referência, anotação, amostragem, procedência e recursos. As métricas e o congelamento foram preservados, sem nova execução ou publicação. A redação está preparada para revisão acadêmica.
+
+## Interface demonstrativa local
+
+Foi adicionada uma interface de pergunta, seleção de método, resposta e fontes sobre o pipeline existente, com seleção dos três conjuntos principais. O serviço é restrito ao loopback e não grava consultas nem altera experimentos. Testes verificam validação das entradas, seleção do método, exposição somente das evidências incluídas e liberação após falha. A suíte passou com 59 testes, e os dois métodos foram conferidos no navegador com geração real local, incluindo abertura de fonte citada. O ambiente e os arquivos experimentais congelados foram preservados. Instruções em docs/local-demo.md.
+
+## Respostas em português na demonstração
+
+A interface passou a usar um contrato próprio de geração em português brasileiro, mantendo fontes originais em inglês, identificadores e validação de citações. O código e os prompts experimentais congelados foram preservados. Uma consulta real confirmou o idioma e oito fontes no contexto; isso não constitui validação semântica da resposta. A suíte passou com 60 testes, incluindo isolamento do prompt e preservação das fontes.
+
+## Identificação descritiva dos produtos na interface
+
+As 15 famílias passaram a ser apresentadas por tipo e nome descritivo do mapeamento existente, mantendo códigos e grupos como referências secundárias. Os rótulos são exclusivos da apresentação, sem alterar prompt, busca ou experimentos. A interface explicita a ausência de confirmação de versão/fórmula. A suíte passou com 61 testes; a cobertura inclui as 15 famílias e a preservação dos identificadores e do conteúdo enviado ao modelo.
+
+## Simplificação dos textos da interface
+
+Foram removidos o rótulo de demonstração local, o rodapé explicativo e orientações repetitivas. A explicação dos métodos e os estados de consulta foram simplificados, mantendo fontes acessíveis e avisos de falha ou resposta incompleta. Mudança apenas de apresentação, sem nova geração ou alteração experimental.
+
+## Respostas organizadas por produto
+
+A apresentação passou a usar cartões por família com relatos, fontes, sugestões e pontos de verificação separados, preservando campos e citações do modelo. Saídas fora do formato mantêm o texto original. A suíte passou com 62 testes, incluindo o transporte dos achados sem reescrita. Nenhum prompt ou experimento congelado foi alterado.
+
+## Abrangência das fontes citadas
+
+Foi adicionado um resumo de avaliações únicas e produtos efetivamente citados, deduplicando trechos da mesma avaliação e excluindo fontes não citadas. Saídas sem estrutura confiável não exibem contagem presumida. A suíte passou com 63 testes; experimentos e prompts foram preservados.
+
+## Consulta individual por família na interface
+
+Foi adicionado um seletor por produto com opções vinculadas ao conjunto. A busca individual restringe os vetores candidatos antes do ranking, utilizando um índice somente em memória e os agrupamentos existentes. Permanecem a consulta geral, os dois métodos e o orçamento de oito trechos. A suíte passou com 65 testes, incluindo exclusão de outras famílias antes do ranking e rejeição de seleção incompatível. Duas consultas reais, uma por método, retornaram oito fontes exclusivamente da família selecionada e formato válido. A extensão não altera experimentos nem estabelece ganho de profundidade sem avaliação adicional.
