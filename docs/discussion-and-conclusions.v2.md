@@ -1,6 +1,6 @@
 # Discussão e conclusões do TCC — avaliação por produto
 
-Texto para revisão acadêmica, fundamentado nos [resultados da v2](product-evaluation.v2-results.md) e nos [agregados reproduzíveis](product-evaluation.v2-results.json). O escopo é a comparação dos três produtos sob a configuração congelada em `configs/evaluation-freeze.v2.json`. Os resultados de outros desenhos experimentais permanecem preservados em seus arquivos e não foram incorporados aos denominadores desta análise.
+A discussão analisa a comparação entre os dois métodos nos três produtos, com base nos [resultados da avaliação](product-evaluation.v2-results.md) e nos [agregados reproduzíveis](product-evaluation.v2-results.json).
 
 ## Discussão
 
