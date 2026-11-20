@@ -1,0 +1,548 @@
+{
+  "status": "candidate_pending_review_not_frozen",
+  "order_seed": 20261119,
+  "policy": "Pairs adjacent; alternate which method goes first. All English calls precede translations. First-call/cold-load effects recorded, no warmup or choose-best retry.",
+  "english_attempts": [
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q4",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 1
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q4",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 2
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q6",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 3
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q6",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 4
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q6",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 5
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q6",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 6
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q3",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 7
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q3",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 8
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q2",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 9
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q2",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 10
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q3",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 11
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q3",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 12
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 13
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 14
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 15
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 16
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q3",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 17
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q3",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 18
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q6",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 19
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q6",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 20
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q2",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 21
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q2",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 22
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q4",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 23
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q4",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 24
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 25
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 26
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 27
+    },
+    {
+      "phase": "primary",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 28
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q2",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 29
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q2",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 30
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 31
+    },
+    {
+      "phase": "primary",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 32
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 33
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 34
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q4",
+      "method": "thematic",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 35
+    },
+    {
+      "phase": "primary",
+      "product_id": "B01557EHW4",
+      "question_id": "Q4",
+      "method": "traditional",
+      "repetition": 1,
+      "translate_for_presentation": true,
+      "attempt_order": 36
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 37
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 38
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 39
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 40
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 41
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 42
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 43
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 44
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 45
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 46
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 47
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 2,
+      "translate_for_presentation": false,
+      "attempt_order": 48
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 49
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 50
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 51
+    },
+    {
+      "phase": "stability",
+      "product_id": "B012Q9NGE4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 52
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 53
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 54
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 55
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 56
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 57
+    },
+    {
+      "phase": "stability",
+      "product_id": "B01557EHW4",
+      "question_id": "Q5",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 58
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "traditional",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 59
+    },
+    {
+      "phase": "stability",
+      "product_id": "B00R1TAN7I",
+      "question_id": "Q1",
+      "method": "thematic",
+      "repetition": 3,
+      "translate_for_presentation": false,
+      "attempt_order": 60
+    }
+  ],
+  "presentation_phase": "After all English attempts, at most one translation for each structurally valid primary answer in primary order; failures preserved, not repaired."
+}

@@ -1,0 +1,47 @@
+{
+  "status": "technical_checks_and_implementation_complete_not_frozen",
+  "configuration_user_approved": true,
+  "runtime_version": "0.40.11",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "english_contexts_checked": 36,
+  "min_input_tokens": 1215,
+  "max_input_tokens": 1791,
+  "reserved_output_tokens": 1536,
+  "max_input_plus_output_reserve": 3327,
+  "final_window_tokens": 8192,
+  "final_window_sanity_input_tokens": 1791,
+  "technical_one_token_calls": 37,
+  "technical_generated_tokens": 37,
+  "technical_resources": {
+    "role": "technical_checks_not_quality_answers",
+    "calls": 37,
+    "total_measured_wall_seconds": 28.53688745503314,
+    "timing_missing": 0,
+    "prompt_eval_count": {
+      "sum_known": 55684,
+      "measured": 37,
+      "missing": 0
+    },
+    "eval_count": {
+      "sum_known": 37,
+      "measured": 37,
+      "missing": 0
+    }
+  },
+  "reviewed_source_roundtrips_verified": 60,
+  "approved_reference_target_support_links": 109,
+  "clusters_inspected": 12,
+  "cluster_representatives_inspected": 36,
+  "clusters_are_exclusive_validated_themes": false,
+  "calibration_factual_examples": 5,
+  "calibration_proposal_examples": 1,
+  "calibration_is_independent_assessment": false,
+  "automated_tests_passed": 119,
+  "final_v2_English_answers": 0,
+  "presentation_translations": 0,
+  "v2_metrics_calculated_on_final_answers": false,
+  "experiment_frozen": false,
+  "final_run_directory_created": false,
+  "translation_token_checks": "Future translation inputs are checked at runtime with separate one-token probes, never used as quality answers. Technical resources are recorded separately.",
+  "preservation": "Prior generations, references, rubric meaning, denominators and original English generator unchanged."
+}

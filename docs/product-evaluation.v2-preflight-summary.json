@@ -1,0 +1,49 @@
+{
+  "status": "offline_context_checks_passed_not_token_budget_certification",
+  "role": "configuration_dry_run_no_LLM_generation",
+  "contexts": 36,
+  "source_checks": [
+    {
+      "product_id": "B00R1TAN7I",
+      "all_corpus_reviews_indexed": true,
+      "all_20_reference_witnesses_indexed": true,
+      "foreign_products": 0,
+      "encoder_weight_matches": true
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "all_corpus_reviews_indexed": true,
+      "all_20_reference_witnesses_indexed": true,
+      "foreign_products": 0,
+      "encoder_weight_matches": true
+    },
+    {
+      "product_id": "B01557EHW4",
+      "all_corpus_reviews_indexed": true,
+      "all_20_reference_witnesses_indexed": true,
+      "foreign_products": 0,
+      "encoder_weight_matches": true
+    }
+  ],
+  "min_included_reviews": 8,
+  "max_included_reviews": 8,
+  "min_candidate_reviews": 23,
+  "max_candidate_reviews": 54,
+  "max_evidence_context_chars": 5262,
+  "max_full_serialized_payload_chars": 9027,
+  "character_pack_drops": 0,
+  "same_common_candidate_pool_verified": true,
+  "paired_contexts_identical_in_order": 5,
+  "full_Gemma_token_count_checked": false,
+  "live_runtime_checked": false,
+  "English_generations": 0,
+  "translations": 0,
+  "experiment_frozen": false,
+  "paired_contexts_same_review_set": 7,
+  "paired_shared_review_counts": {
+    "6": 4,
+    "7": 7,
+    "8": 7
+  },
+  "reviewed_reference_witnesses_split_across_chunks": 0
+}

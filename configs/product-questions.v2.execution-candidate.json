@@ -1,0 +1,590 @@
+{
+  "schema": "product_questions_execution_candidate_v2",
+  "status": "candidate_pending_review_not_frozen",
+  "source_proposal_sha256": "c4279c99e53276bf8873e7b182b982cd7a86699e1424796181db6a946eb2ec7e",
+  "query_policy": "Five manually specified English aspect queries per product-question, equally weighted and identical for both methods. Derived from question wording, not gold source examples. Q5 and Q6 share broad aspect queries but are independent calls.",
+  "products": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "question_text_pt_previously_approved": true,
+      "english_equivalents_and_queries_status": "candidate_pending_configuration_review",
+      "questions": [
+        {
+          "id": "Q1",
+          "question_pt": "Que dificuldades para alcançar as camadas internas do cabelo são relatadas com esta escova? Que ajustes nas cerdas poderiam ser investigados, considerando os tipos de cabelo e as experiências favoráveis descritas?",
+          "generation_question_en": "What difficulties reaching the inner layers of hair are reported with this brush? What changes to the bristles could be investigated, considering the hair types and favorable experiences described?",
+          "retrieval_query_en": "What difficulties reaching the inner layers of hair are reported with this brush? What changes to the bristles could be investigated, considering the hair types and favorable experiences described?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about bristle reach into inner hair layers."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about bristle length and shape during brushing."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about bristle firmness and flexibility during brushing."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair characteristics and explicit brushing conditions."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about favorable and unfavorable bristle application experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q2",
+          "question_pt": "Como os relatos sobre estática, volume e acabamento do cabelo divergem? Que melhorias poderiam ser investigadas preservando os benefícios de brilho e controle da oleosidade mencionados?",
+          "generation_question_en": "How do reports about static, volume and hair finish differ? What improvements could be investigated while preserving the reported benefits of shine and oil control?",
+          "retrieval_query_en": "How do reports about static, volume and hair finish differ? What improvements could be investigated while preserving the reported benefits of shine and oil control?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair static after brushing."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair volume and finish after brushing."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair shine and oil control experiences."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about explicit hair characteristics and brushing conditions."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about contrasting favorable and unfavorable hair finish experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q3",
+          "question_pt": "Que dificuldades de pegada são associadas ao tamanho, à largura e ao formato da escova? Que mudanças ergonômicas poderiam ser investigadas sem presumir que o mesmo tamanho seja inadequado para todas as pessoas?",
+          "generation_question_en": "What grip difficulties are associated with the size, width and shape of the brush? What ergonomic changes could be investigated without assuming that the same size is unsuitable for everyone?",
+          "retrieval_query_en": "What grip difficulties are associated with the size, width and shape of the brush? What ergonomic changes could be investigated without assuming that the same size is unsuitable for everyone?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush handle grip and comfort."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush size width and shape during use."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hand fit and handling experiences."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about valued grip and handling qualities."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about contrasting experiences with brush dimensions."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q4",
+          "question_pt": "Como o odor da escova afetou a experiência de uso e o que aconteceu nas tentativas de reduzi-lo? Que verificações ou melhorias seriam pertinentes, sem deduzir a composição química pelo cheiro?",
+          "generation_question_en": "How did the brush odor affect the experience of use, and what happened when people tried to reduce it? What checks or improvements would be relevant, without inferring chemical composition from smell?",
+          "retrieval_query_en": "How did the brush odor affect the experience of use, and what happened when people tried to reduce it? What checks or improvements would be relevant, without inferring chemical composition from smell?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush odor and effect on use."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about attempts to reduce brush odor."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about odor changes after care attempts."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about favorable and unfavorable odor experiences."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about reported uncertainty about odor source."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q5",
+          "question_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial.",
+          "generation_question_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "retrieval_query_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about bristle reach and application problems."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair finish static shine and oil control."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush grip size and ergonomics."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush odor and care experiences."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "improvement_prioritization",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q6",
+          "question_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões.",
+          "generation_question_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "retrieval_query_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about bristle reach and application problems."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about hair finish static shine and oil control."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush grip size and ergonomics."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about brush odor and care experiences."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with GranNaturals hair brush about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": false,
+          "task_role": "sales_control",
+          "q6_retrieval_note": "Uses the same product-aspect queries as Q5; independent source retrieval, no previous generated answer as input."
+        }
+      ]
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "question_text_pt_previously_approved": true,
+      "english_equivalents_and_queries_status": "candidate_pending_configuration_review",
+      "questions": [
+        {
+          "id": "Q1",
+          "question_pt": "Em quais experiências o shampoo é descrito como limpando sem ressecar e em quais aparecem ressecamento ou oleosidade após a lavagem? Que melhorias de desempenho ou orientação de uso poderiam ser investigadas, considerando apenas as condições relatadas?",
+          "generation_question_en": "Which experiences describe the shampoo as cleaning without drying out the hair, and which report dryness or oiliness after washing? What performance or usage-guidance improvements could be investigated, considering only the reported conditions?",
+          "retrieval_query_en": "Which experiences describe the shampoo as cleaning without drying out the hair, and which report dryness or oiliness after washing? What performance or usage-guidance improvements could be investigated, considering only the reported conditions?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about hair cleaning experience after shampooing."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about hair dryness and moisturizing perceptions."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about hair oiliness and time after washing."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported hair characteristics and washing routine."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about favorable and unfavorable cleaning and softness experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q2",
+          "question_pt": "Que dificuldades são relatadas para retirar e dosar o shampoo, incluindo funcionamento da válvula e aproveitamento do conteúdo? Que melhorias na embalagem poderiam ser investigadas sem confundir preferência de dosagem com defeito confirmado?",
+          "generation_question_en": "What difficulties are reported when dispensing and dosing the shampoo, including pump operation and getting the remaining contents out? What packaging improvements could be investigated without confusing dosing preferences with confirmed defects?",
+          "retrieval_query_en": "What difficulties are reported when dispensing and dosing the shampoo, including pump operation and getting the remaining contents out? What packaging improvements could be investigated without confusing dosing preferences with confirmed defects?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo pump operation and reliability."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo amount dispensed per pump."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about getting remaining shampoo out of bottle."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about ease of dispensing and packaging handling."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about favorable and unfavorable dosing and packaging experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q3",
+          "question_pt": "Que diferenças entre compras são relatadas na consistência, quantidade e apresentação do shampoo? Que oportunidades existem para melhorar a consistência da entrega e a comunicação de mudanças, distinguindo observações de suspeitas de diluição ou reformulação?",
+          "generation_question_en": "What differences between purchases are reported in the consistency, quantity and presentation of the shampoo? What opportunities are there to improve consistency across purchases and communication of changes, distinguishing observations from suspicions of dilution or reformulation?",
+          "retrieval_query_en": "What differences between purchases are reported in the consistency, quantity and presentation of the shampoo? What opportunities are there to improve consistency across purchases and communication of changes, distinguishing observations from suspicions of dilution or reformulation?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo consistency differences between purchases."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo quantity and bottle presentation changes."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported differences in ingredients between purchases."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported performance differences between purchases."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about expectations and communication of shampoo changes."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q4",
+          "question_pt": "Que aspectos da fragrância agradam e quais dificultam o uso? Que melhorias de produto ou de informação poderiam ser investigadas, preservando as preferências divergentes e sem inferir ingredientes ou segurança pelo cheiro?",
+          "generation_question_en": "Which aspects of the fragrance are liked, and which make use difficult? What product or information improvements could be investigated while preserving differing preferences and without inferring ingredients or safety from smell?",
+          "retrieval_query_en": "Which aspects of the fragrance are liked, and which make use difficult? What product or information improvements could be investigated while preserving differing preferences and without inferring ingredients or safety from smell?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo fragrance preferences."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about fragrance intensity and effect on use."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about liked and disliked shampoo scents."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about fragrance expectations and product information."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported uncertainty about fragrance composition."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q5",
+          "question_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial.",
+          "generation_question_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "retrieval_query_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about cleaning dryness oiliness and softness."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo dispensing dosing and packaging."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about consistency and presentation between purchases."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about fragrance preferences and experience."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "improvement_prioritization",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q6",
+          "question_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões.",
+          "generation_question_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "retrieval_query_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about cleaning dryness oiliness and softness."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about shampoo dispensing dosing and packaging."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about consistency and presentation between purchases."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about fragrance preferences and experience."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Pure Body Naturals argan shampoo about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": false,
+          "task_role": "sales_control",
+          "q6_retrieval_note": "Uses the same product-aspect queries as Q5; independent source retrieval, no previous generated answer as input."
+        }
+      ]
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "question_text_pt_previously_approved": true,
+      "english_equivalents_and_queries_status": "candidate_pending_configuration_review",
+      "questions": [
+        {
+          "id": "Q1",
+          "question_pt": "Que dificuldades de aplicação são associadas ao tamanho, ao formato ou à mudança do aplicador? Que ajustes poderiam ser investigados, distinguindo o que é atribuído ao aplicador do que não pode ser separado da fórmula?",
+          "generation_question_en": "What application difficulties are associated with the size, shape or change of the applicator? What adjustments could be investigated, distinguishing what is attributed to the applicator from what cannot be separated from the formula?",
+          "retrieval_query_en": "What application difficulties are associated with the size, shape or change of the applicator? What adjustments could be investigated, distinguishing what is attributed to the applicator from what cannot be separated from the formula?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara applicator size and application difficulties."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara applicator shape changes between purchases."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about lash separation and clumping during application."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about applicator and formula contributions to application."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about favorable and unfavorable applicator experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q2",
+          "question_pt": "Em quais relatos o efeito de alongamento, volume ou definição atende às expectativas e em quais é comparado desfavoravelmente a máscaras mais baratas? Que melhorias de desempenho ou comunicação de valor poderiam ser investigadas?",
+          "generation_question_en": "In which reports do lengthening, volume or definition meet expectations, and in which are they compared unfavorably with cheaper mascaras? What performance or value-communication improvements could be investigated?",
+          "retrieval_query_en": "In which reports do lengthening, volume or definition meet expectations, and in which are they compared unfavorably with cheaper mascaras? What performance or value-communication improvements could be investigated?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara lash lengthening experiences."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara lash volume and definition experiences."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about visible result and repeated applications."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about comparisons with cheaper mascaras and perceived value."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about favorable and unfavorable visual performance experiences."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q3",
+          "question_pt": "Como os relatos sobre duração, manchas ou descamação e facilidade de remoção se contrastam? Que melhorias poderiam ser investigadas para equilibrar permanência e remoção, sem presumir que todas as pessoas usaram a mesma versão ou rotina?",
+          "generation_question_en": "How do reports about wear duration, smudging or flaking and ease of removal contrast? What improvements could be investigated to balance wear and removal, without assuming that everyone used the same version or routine?",
+          "retrieval_query_en": "How do reports about wear duration, smudging or flaking and ease of removal contrast? What improvements could be investigated to balance wear and removal, without assuming that everyone used the same version or routine?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara wear duration."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara smudging during wear."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara flaking during wear."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about ease and difficulty of mascara removal."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about contrasting wear and removal experiences with reported routines."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q4",
+          "question_pt": "Que problemas são relatados na condição da máscara ao abrir a embalagem e na sua conservação durante o uso? Que verificações ou melhorias poderiam ser investigadas, distinguindo unidades secas ou vazias, formação de grumos e falhas físicas, sem presumir uma causa comum?",
+          "generation_question_en": "What problems are reported with the condition of the mascara when first opening the package and with its preservation during use? What checks or improvements could be investigated, distinguishing dry or empty units, clumps and physical failures without assuming a common cause?",
+          "retrieval_query_en": "What problems are reported with the condition of the mascara when first opening the package and with its preservation during use? What checks or improvements could be investigated, distinguishing dry or empty units, clumps and physical failures without assuming a common cause?",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about mascara condition when opening package."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about dry or empty mascara units."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about clumps and preservation during use."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about physical integrity of mascara packaging and applicator."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about reported timing and uncertainty about mascara unit condition."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "coverage_and_improvements",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q5",
+          "question_pt": "Considerando os aspectos analisados deste produto, selecione até duas oportunidades de melhoria para investigar primeiro. Justifique pela consequência relatada para o uso, pelo apoio das avaliações e pelas qualidades a preservar; indique o que precisaria ser testado, sem estimar retorno comercial.",
+          "generation_question_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "retrieval_query_en": "Considering the aspects analyzed for this product, select up to two improvement opportunities to investigate first. Justify the choice by the reported consequences for use, support from the reviews and valued qualities to preserve; indicate what would need testing, without estimating commercial returns.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about applicator and application experiences."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about lengthening volume definition and perceived value."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about wear smudging flaking and removal."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about condition preservation and physical integrity."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": true,
+          "task_role": "improvement_prioritization",
+          "q6_retrieval_note": null
+        },
+        {
+          "id": "Q6",
+          "question_pt": "Essas avaliações permitem afirmar qual das melhorias propostas aumentaria mais as vendas deste produto? Explique os limites da conclusão e que informações adicionais seriam necessárias, distinguindo hipóteses de previsões.",
+          "generation_question_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "retrieval_query_en": "Do these reviews allow us to determine which proposed improvement would increase this product's sales the most? Explain the limits of the conclusion and what additional information would be needed, distinguishing hypotheses from predictions.",
+          "aspects": [
+            {
+              "id": "A1",
+              "retrieval_query": "User review experiences with Bold Lash mascara about applicator and application experiences."
+            },
+            {
+              "id": "A2",
+              "retrieval_query": "User review experiences with Bold Lash mascara about lengthening volume definition and perceived value."
+            },
+            {
+              "id": "A3",
+              "retrieval_query": "User review experiences with Bold Lash mascara about wear smudging flaking and removal."
+            },
+            {
+              "id": "A4",
+              "retrieval_query": "User review experiences with Bold Lash mascara about condition preservation and physical integrity."
+            },
+            {
+              "id": "A5",
+              "retrieval_query": "User review experiences with Bold Lash mascara about reported problems and valued qualities to preserve."
+            }
+          ],
+          "proposals_requested": false,
+          "task_role": "sales_control",
+          "q6_retrieval_note": "Uses the same product-aspect queries as Q5; independent source retrieval, no previous generated answer as input."
+        }
+      ]
+    }
+  ]
+}

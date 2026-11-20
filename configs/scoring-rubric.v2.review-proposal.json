@@ -1,0 +1,244 @@
+{
+  "schema": "product_scoring_rubric_v2_final_review_proposal",
+  "status": "pending_user_review_not_frozen",
+  "experiment_frozen": false,
+  "prior_frozen_study_changed": false,
+  "reference_progress": "docs/product-reference-progress.v2.json",
+  "unit_manifest": {
+    "path": "results/scoring-proposal/v2-final-review/units.private.json",
+    "sha256": "4f48c46c134a14caaffded1d5de781d055445422d99ca81c7168e4dfe4a66f40",
+    "counts_by_product_question": [
+      {
+        "product_id": "B00R1TAN7I",
+        "label": "Escova GranNaturals",
+        "question_id": "Q1",
+        "content": 4,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B00R1TAN7I",
+        "label": "Escova GranNaturals",
+        "question_id": "Q2",
+        "content": 5,
+        "qualification": 4,
+        "contrast": 1
+      },
+      {
+        "product_id": "B00R1TAN7I",
+        "label": "Escova GranNaturals",
+        "question_id": "Q3",
+        "content": 3,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B00R1TAN7I",
+        "label": "Escova GranNaturals",
+        "question_id": "Q4",
+        "content": 4,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B012Q9NGE4",
+        "label": "Shampoo Pure Body Naturals Argan",
+        "question_id": "Q1",
+        "content": 5,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B012Q9NGE4",
+        "label": "Shampoo Pure Body Naturals Argan",
+        "question_id": "Q2",
+        "content": 5,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B012Q9NGE4",
+        "label": "Shampoo Pure Body Naturals Argan",
+        "question_id": "Q3",
+        "content": 6,
+        "qualification": 4,
+        "contrast": 1
+      },
+      {
+        "product_id": "B012Q9NGE4",
+        "label": "Shampoo Pure Body Naturals Argan",
+        "question_id": "Q4",
+        "content": 4,
+        "qualification": 2,
+        "contrast": 2
+      },
+      {
+        "product_id": "B01557EHW4",
+        "label": "Máscara de cílios Bold Lash",
+        "question_id": "Q1",
+        "content": 4,
+        "qualification": 3,
+        "contrast": 1
+      },
+      {
+        "product_id": "B01557EHW4",
+        "label": "Máscara de cílios Bold Lash",
+        "question_id": "Q2",
+        "content": 4,
+        "qualification": 3,
+        "contrast": 2
+      },
+      {
+        "product_id": "B01557EHW4",
+        "label": "Máscara de cílios Bold Lash",
+        "question_id": "Q3",
+        "content": 4,
+        "qualification": 3,
+        "contrast": 2
+      },
+      {
+        "product_id": "B01557EHW4",
+        "label": "Máscara de cílios Bold Lash",
+        "question_id": "Q4",
+        "content": 7,
+        "qualification": 4,
+        "contrast": 2
+      }
+    ],
+    "totals_per_method": {
+      "content": 55,
+      "qualification": 38,
+      "contrast": 16
+    },
+    "partial_reference": true,
+    "scoring_units_user_approved": false
+  },
+  "grid_proposal": {
+    "primary_products": 3,
+    "questions_per_product": 6,
+    "methods": [
+      "traditional",
+      "thematic"
+    ],
+    "primary_repetitions": 1,
+    "primary_attempts": 36,
+    "per_method": 18,
+    "content_cases_per_method": 12,
+    "proposal_cases_per_method": 15,
+    "control_cases_per_method": 3,
+    "extra_stability_attempts_proposed": 24,
+    "stability_not_pooled_with_primary": true,
+    "repetitions_not_frozen": true
+  },
+  "language": {
+    "semantic_evaluation": "original_English",
+    "translation": "presentation_only_separately_assessed_no_fact_repair",
+    "same_model_auditor": "excluded_as_certification"
+  },
+  "coverage": {
+    "scales": "Binary 1/0 per predeclared target; no 0.5 for vague mention. Full material meaning and attribution required.",
+    "content": "Q1-Q4 only. Same reference denominator for both methods, not limited to retrieved items. No expansion after observing winning method.",
+    "qualification": "Separately score explicit conditions/qualifications linked to the correct report; generic caveats do not count.",
+    "contrast": "Require both sides and their explicit relation; they may be within a single review. Distinct people/products/conditions preserved.",
+    "retrieval": "Score coverage in actual context sent after truncation; candidate-pool coverage optional and separate. Review ID alone is insufficient.",
+    "answer": "Only correctly supported, adequately cited reference points count. A true point with wrong/missing supporting citation receives no primary answer-coverage credit; context-grounded coverage without correct citation is separate diagnostic.",
+    "formulas": "For each axis: credited fixed targets / eligible fixed targets, per product-question. Never add three axes into one score.",
+    "conditional_diagnostic": "Correctly reproduced available targets / targets actually supported in sent context; null if zero. Not a substitute for fixed-denominator primary coverage.",
+    "empty_reference": "null with reason, not automatic zero; all proposed Q1-Q4 case denominators are currently nonempty.",
+    "new_evidence": "Can support existing fixed target after documented checking under same rule for both methods. New aspects outside matrix may receive fidelity/proposal credit but do not enlarge primary denominator; supplementary analysis only. Reference error corrections create a version and rescore both methods, preserving original results.",
+    "reference_unit_note": "One reference target may encode a material relation such as length without volume; all relation elements must hold. Factual claim atomization is a separate unit, not mechanically equal to reference targets or reviewed comments."
+  },
+  "factual_claims": {
+    "scope": "Product-specific factual assertions in Q1-Q5, including premises inside proposals/uncertainties/limits. Q6 scored separately; any false concrete premise also fails its source-use criterion.",
+    "unit": "One independently checkable material factual assertion with person/product/part/condition/certainty kept attached. Split compound sentences; deduplicate equivalent restatements within answer. Materially different qualifications are different assertions.",
+    "labels": [
+      "supported",
+      "contradicted",
+      "unsupported",
+      "pending"
+    ],
+    "partial_support": "Split separable facts; if a material qualification remains unsupported, entire atomic claim is not fully supported. No arbitrary half-credit.",
+    "context_fidelity": "Supported by actual sent context / all unique product factual claims. Report contradicted and unsupported fractions separately.",
+    "citation_support": "Claims fully supported by their own valid cited passages / all unique product factual claims, including uncited ones. Correct elsewhere in context does not repair wrong citation.",
+    "claim_free_answer": "Both fractions null, number_of_claims=0 disclosed; empty or purely abstaining answer never gets perfect fidelity. Missing required content/proposals still score zero by task rules.",
+    "pending": "No finalized rates until all claims in a case are labeled; do not silently drop pending claims or treat them as N/A.",
+    "hypothesis": "A clearly labeled proposal or possible mechanism is evaluated as hypothesis, not an asserted observed fact. A cause/remedy asserted as established enters factual scoring too.",
+    "error_tags": [
+      "wrong_person",
+      "wrong_product_or_version",
+      "wrong_part",
+      "condition_or_negation_changed",
+      "certainty_increased",
+      "unsupported_generalization",
+      "wrong_or_missing_citation"
+    ],
+    "severity": "Show errors by type; no severity weights or global quality score."
+  },
+  "proposals": {
+    "scope": "Q1-Q5: all 15 product-question cases per method, not Q5 alone.",
+    "unit": "Distinct improvement objective/problem, with variants of same action grouped; evaluate all expressed material actions. Q5 allows up to two objectives, including one; no obligatory pair.",
+    "criteria": [
+      "linked_to_supported_problem_with_source",
+      "clearly_labeled_as_investigation_not_proven_remedy",
+      "relevant_to_question",
+      "relevant_valued_quality_preserved_with_support",
+      "specific_validation_needed_identified"
+    ],
+    "scale": "true/false per proposal criterion. Generic investigate further without naming what to verify fails validation specificity. Pending annotation is not false/N/A.",
+    "per_answer": "If m>0 distinct objectives: for each criterion, passed objectives / m. If none: task score explicitly 0 for each requested criterion; per-proposal precision itself remains null with zero proposals. No fictitious proposal added to denominator.",
+    "primary_denominator": "15 task scores per criterion per method; average within product over Q1-Q5 then equal product macro.",
+    "extras": "Q5 adherence to up-to-two rule reported over 3 Q5 cases per method; keep and score all objectives if more than two, not just the best two. No-proposal response fails task fulfillment even though the numerical upper limit alone is respected.",
+    "nonunique_solutions": "Alternative supported opportunities accepted. No requirement to use examples from synthesis. Preserve uncertainty and do not demand sales proof for product improvement hypotheses."
+  },
+  "controls": {
+    "scope": "Q6 only, three product cases per method",
+    "criteria": [
+      "recognizes_insufficient_sales_evidence",
+      "distinguishes_investigation_priority_from_commercial_prediction",
+      "identifies_relevant_additional_information_or_validation",
+      "no_unsupported_numbers_majority_or_product_premises"
+    ],
+    "scale": "true/false per criterion; incomplete annotation pending. A bare cannot tell may satisfy first, not information/validation. A baseless causal guarantee also fails priority/prediction distinction.",
+    "denominator": "3 scheduled Q6 responses per criterion per method. Fully satisfactory controls additionally count all four satisfied / 3.",
+    "failure": "Missing/unreadable answer scores 0 in all four control criteria.",
+    "not_required": "No exact wording, fixed suggestion, sales figure, market priority or review citation for methodological limit. Product-specific facts still require correct sources."
+  },
+  "failures": {
+    "execution_denominator": "18 scheduled primary attempts per method; never successful answers only.",
+    "no_readable_answer": "0 for fixed coverage and requested proposal/control task scores; factual precision null, not 1. Log error and retain attempt.",
+    "readable_cut_or_bad_json": "Annotate readable original text and count only complete interpretable assertions/actions; no repair or extra generation. Missing reference targets remain 0. Record cut/schema failure separately.",
+    "unreviewable_fragment": "Record as incomplete fragment, not fabricated complete claim. Coverage credit 0 for fragment. Do not silently drop entire failed attempt.",
+    "translation_failure": "Does not erase or change English semantic scores; record presentation failure separately.",
+    "retrieval_without_generation": "If actual context was recorded, still score retrieval coverage even if generation fails. If retrieval itself fails and context is absent, task retrieval coverage is 0 with failure flag.",
+    "missing_annotation": "Blocks completed metric export; not treated as execution failure or removed from denominator."
+  },
+  "aggregation": {
+    "pairing": "Same product/question and primary repetition. Per-question paired differences then report products individually.",
+    "coverage_macro": "Average Q1-Q4 case percentages within product; average three product means with equal weights. Never pool across 1209 reviews or across claims as independent trials.",
+    "other_axes": "Proposals Q1-Q5, controls Q6 separately. Conditional fidelity means over answers with at least one factual claim plus fraction of claim-bearing/missing answers; disclose eligible n, no score inferred for missing.",
+    "statistics": "Descriptive case study; no causal effect of corpus size, no population generalization or inferential significance claim from three cases.",
+    "stability": "Extra Q1/Q5 repeats compare output identity and descriptive timing only; not new independent quality cases, not choose-best generations or pooled primary denominators. Changed outputs retained and reviewed separately.",
+    "overall_score": "None. Report separate coverage, fidelity, citations, proposals, controls and failure/resources."
+  },
+  "resources": {
+    "scope": "Wall time and Ollama input/output tokens only; no process/CPU/memory monitoring.",
+    "separation": "Preparation/index/clustering separate; retrieval, English generation and presentation translation separate. Translation extra calls/cost disclosed.",
+    "denominators": "Scheduled attempts and timed completed calls explicitly reported; absent timing not zero. Failed calls included if measurements available.",
+    "report": "Counts, median and range per question/method or timing subset; context length and unique review counts. No monetary estimate for local execution without measured tariff/energy."
+  },
+  "human_review_proposal": {
+    "primary_annotation": "Assistant with method labels hidden; not independent evaluation. Same-model auditor not accepted as ground truth.",
+    "sample": "6 paired cases (12 main answers), one pair per Q1-Q6, two pairs per product. Balanced assignment drawn with prespecified seed 20261119 and hidden method labels; do not select by score.",
+    "scope": "Review factual/proposal/control labels in sampled answers and references as needed; explicit user corrections propagate by rule to analogous cases for both methods, logged before method unblinding.",
+    "burden": "12 answers proposed, not review all generated statements or stability copies; ambiguous issues outside sample logged separately, no automatic expansion of user review workload.",
+    "limitation": "User knows source material; hiding labels is partial blinding, not independent human annotation or full-corpus validation."
+  },
+  "freeze_gate": [
+    "User review/approval of this rubric, scoring units and denominators",
+    "Check applicability and actual passages of references against final corpora/chunks",
+    "Calibrate annotation examples on Curly Co. development only, not tune scoring to final method results",
+    "Finalize English equivalents, grouping/retrieval parameters, context budgets, run schedule and repetitions",
+    "Implement and verify scoring/export checks before final run",
+    "Record immutable input/protocol hashes and obtain final freeze authorization"
+  ]
+}

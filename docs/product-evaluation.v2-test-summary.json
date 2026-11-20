@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "command": ".venv/bin/python -m pytest -q",
+  "passed": 119,
+  "new_v2_tests": 22,
+  "source": "Recorded from completed pytest output: 119 passed in 0.82s.",
+  "scope": "Mechanical/integration/synthetic scoring tests, not semantic truth or real final TCC results.",
+  "implementation_sha256": {
+    "src/product_review_insights/evaluation_v2.py": "3f2b118a38c1adecec5b6f9fe802515ed1af68b9baf579f71b0956e1e52c8840",
+    "src/product_review_insights/scoring_v2.py": "061a725244fe862652525708b727d33433edb448f45f9015cf452fe726c949c1",
+    "scripts/run_product_evaluation_v2.py": "b5edefc0dfcf54280b6f3daff79cda47c348c37994b672ee2896afecf1a2f084",
+    "scripts/score_product_evaluation_v2.py": "53b3b8b4d853f780be756f11a8547d1d06dadc2034f7c50033913ccd11abd017",
+    "tests/test_evaluation_v2.py": "3c0532f50b7475581f28fec594d3a1a024a6eb87b5f8274f6a31b311b690a813"
+  }
+}

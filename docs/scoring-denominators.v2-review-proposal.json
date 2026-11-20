@@ -1,0 +1,128 @@
+{
+  "status": "proposed_pending_user_review_not_frozen",
+  "counts_by_product_question": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "question_id": "Q1",
+      "content": 4,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "question_id": "Q2",
+      "content": 5,
+      "qualification": 4,
+      "contrast": 1
+    },
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "question_id": "Q3",
+      "content": 3,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "question_id": "Q4",
+      "content": 4,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "question_id": "Q1",
+      "content": 5,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "question_id": "Q2",
+      "content": 5,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "question_id": "Q3",
+      "content": 6,
+      "qualification": 4,
+      "contrast": 1
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "question_id": "Q4",
+      "content": 4,
+      "qualification": 2,
+      "contrast": 2
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "question_id": "Q1",
+      "content": 4,
+      "qualification": 3,
+      "contrast": 1
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "question_id": "Q2",
+      "content": 4,
+      "qualification": 3,
+      "contrast": 2
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "question_id": "Q3",
+      "content": 4,
+      "qualification": 3,
+      "contrast": 2
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "question_id": "Q4",
+      "content": 7,
+      "qualification": 4,
+      "contrast": 2
+    }
+  ],
+  "totals_per_method": {
+    "content": 55,
+    "qualification": 38,
+    "contrast": 16
+  },
+  "grid_proposal": {
+    "primary_products": 3,
+    "questions_per_product": 6,
+    "methods": [
+      "traditional",
+      "thematic"
+    ],
+    "primary_repetitions": 1,
+    "primary_attempts": 36,
+    "per_method": 18,
+    "content_cases_per_method": 12,
+    "proposal_cases_per_method": 15,
+    "control_cases_per_method": 3,
+    "extra_stability_attempts_proposed": 24,
+    "stability_not_pooled_with_primary": true,
+    "repetitions_not_frozen": true
+  },
+  "administrative_reference_items": 78,
+  "administrative_items_are_scoring_denominator": false,
+  "private_units_sha256": "4f48c46c134a14caaffded1d5de781d055445422d99ca81c7168e4dfe4a66f40",
+  "rubric_sha256": "f12b6024436ce44af4734b319a2e6c0c4e7c2c5261780cb10111bdd5eee2cba7",
+  "experiment_frozen": false
+}

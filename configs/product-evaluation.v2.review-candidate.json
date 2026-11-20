@@ -1,0 +1,227 @@
+{
+  "schema": "individual_product_evaluation_v2_execution_candidate",
+  "status": "prepared_for_configuration_review_not_frozen",
+  "experiment_frozen": false,
+  "final_generation_authorized": false,
+  "scoring_approved": true,
+  "products": [
+    {
+      "product_id": "B00R1TAN7I",
+      "label": "Escova GranNaturals",
+      "corpus": "data/processed/product-focused-draft/items/B00R1TAN7I/corpus.jsonl",
+      "corpus_sha256": "b578f733f1bdb29e5c7a063a9a4636cc164f1761e8d6ffeb0abb11a32ab99fb9",
+      "expected_reviews": 613,
+      "index": "artifacts/product-evaluation-v2/review-candidate/B00R1TAN7I",
+      "index_metadata_sha256": "f68b2ae62c94020aa1a34aaa54d173a36b00e5c5cc8c5f12c0abff3ae3ce81a1",
+      "chunks": 613,
+      "cluster_counts": [
+        28,
+        264,
+        97,
+        224
+      ],
+      "reference": "results/product-focused-references/v2-grannaturals-consolidated/reference.private.json",
+      "reference_sha256": "ad02f6f4fe7b6287c043dacaac05a0a67059d1df5d0346691499a9679530d1e4"
+    },
+    {
+      "product_id": "B012Q9NGE4",
+      "label": "Shampoo Pure Body Naturals Argan",
+      "corpus": "data/processed/product-focused-draft/items/B012Q9NGE4/corpus.jsonl",
+      "corpus_sha256": "0093d8bebacd0a69c4bf0f95ecb0d0f4b6b30c623911826e79f49a5531848b2e",
+      "expected_reviews": 473,
+      "index": "artifacts/product-evaluation-v2/review-candidate/B012Q9NGE4",
+      "index_metadata_sha256": "d8b1d7aaa499b5de1a16fc882409f5a76417a2ca13a700fd7b54f3d4fd196ff6",
+      "chunks": 474,
+      "cluster_counts": [
+        92,
+        175,
+        132,
+        75
+      ],
+      "reference": "results/product-focused-references/v2-pure-body-naturals-consolidated/reference.private.json",
+      "reference_sha256": "36f20848b12430d3cd3b0fc4c8e47675d866be9799960f8c44031e24ed422c78"
+    },
+    {
+      "product_id": "B01557EHW4",
+      "label": "Máscara de cílios Bold Lash",
+      "corpus": "data/processed/product-focused-draft/items/B01557EHW4/corpus.jsonl",
+      "corpus_sha256": "f77a6a3b3847b3c8c3df8bdb20e39ae2dda9dc400332a6459c20e2c0d56d6537",
+      "expected_reviews": 123,
+      "index": "artifacts/product-evaluation-v2/review-candidate/B01557EHW4",
+      "index_metadata_sha256": "2031a727e4e3f3145b69c8f2461c249fd94dee7c4edd224b0aa4f1c818f8b97a",
+      "chunks": 123,
+      "cluster_counts": [
+        17,
+        43,
+        37,
+        26
+      ],
+      "reference": "results/product-focused-references/v2-bold-lash-consolidated/reference.private.json",
+      "reference_sha256": "e83792712d683fec25615740d7e2ff2e3817ade53d7d8b10fee12b4109364581"
+    }
+  ],
+  "development_only_product": "B019GBG0IE",
+  "reference_is_partial": true,
+  "questions": {
+    "path": "configs/product-questions.v2.execution-candidate.json",
+    "sha256": "bee7714a10f7ce0b42d0bbe4be29248597bf17aaf50ba10c0f5b3ad2a20f8840"
+  },
+  "scoring": {
+    "path": "configs/scoring-rubric.v2.approved.json",
+    "sha256": "f52f7ef17c075b10c51ff2940317a3512b9d861d04052a36aa61530aa38982b4",
+    "units_path": "results/scoring-proposal/v2-approved/units.private.json",
+    "units_sha256": "f7a7d7b67bd775c8901d029ec35f2d7378014ecc2a4e6798bd8ef93297dfd53f",
+    "totals_per_method": {
+      "content": 55,
+      "qualification": 38,
+      "contrast": 16
+    }
+  },
+  "schedule": {
+    "path": "configs/product-run-schedule.v2.review-candidate.json",
+    "sha256": "7817569a94b1c1108b87f2a18183b6bae4fef0a0c3a1e81e516068526c740f59"
+  },
+  "generation": {
+    "function": "product_review_insights.generation.generate",
+    "config": {
+      "context_chars": 12000,
+      "num_ctx": 8192,
+      "num_predict": 1536,
+      "temperature": 0,
+      "seed": 42,
+      "ollama_model": "gemma3:4b",
+      "structured_output": true
+    },
+    "system_prompt_sha256": "e97ebdfc1125c85961882adad4d053463f2a2ddbf7acb3db8cc8185350a96a24",
+    "source_sha256": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+    "same_for_both_methods": true,
+    "policy": "Original English system, response contract and schema unchanged. Only per-product question/context vary. No copied quotes requested, no automatic same-model source auditor or factual repair."
+  },
+  "local_model": {
+    "name": "gemma3:4b",
+    "expected_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+    "expected_runtime_version": "0.40.11",
+    "manifest_path": "artifacts/ollama-models/manifests/registry.ollama.ai/library/gemma3/4b",
+    "manifest_sha256": "01e634c54b8d2dbc02b3804fa6165aa4952e19a4b9558fd51a2a496e51a252c1",
+    "cloud_allowed": false,
+    "live_runtime_verification": "pending_before_freeze_not_tested_by_this_offline_preparation"
+  },
+  "embedding_and_index": {
+    "encoder_snapshot": "artifacts/product-pilot/curly-v1/encoder",
+    "dimension": 384,
+    "encoder_weight_sha256": "1377e9af0ca0b016a9f2aa584d6fc71ab3ea6804fae21ef9fb1416e2944057ac",
+    "faiss": "IndexFlatIP on normalized vectors (cosine ranking)",
+    "chunking": "Original tokenizer-limited chunks using encoder max sequence length; no overlap; source review identity retained.",
+    "build_threads": 1,
+    "runtime_threads_candidate": 1,
+    "offline_build": true
+  },
+  "clustering": {
+    "algorithm": "MiniBatchKMeans",
+    "clusters_per_product": 4,
+    "seed": 42,
+    "n_init": 10,
+    "batch_size": 1024,
+    "role": "Exploratory local clusters, not optimal or independently validated themes. Vocabulary overlaps; never equate cluster IDs with scoring targets. No tuning from final RAG results."
+  },
+  "retrieval": {
+    "helper": "run_product_aspect_pilot.candidates_for",
+    "queries_per_question": 5,
+    "per_aspect_candidates": 16,
+    "rrf_constant": 60,
+    "deduplicate_reviews": true,
+    "max_total_candidates": 80,
+    "top_k": 8,
+    "traditional": "First eight unique reviews in common RRF ranking.",
+    "thematic": "First available representative per local cluster within same candidate pool, then fill remaining slots by common RRF ranking. No absent group forced.",
+    "tie_breaker": "descending RRF, ascending index row; stable select_hits order",
+    "context_policy": "Original pack_context: include whole chunks in selected order up to 12000 serialized evidence characters; skip entries that do not fit, no silent within-entry truncation. Both methods use same rule; effective number/characters recorded.",
+    "relevance_limit": "Common candidate pool bounds selection; no claim all candidates are relevant or all four groups appear."
+  },
+  "presentation": {
+    "function": "run_product_original_pilot.translate_presentation",
+    "model": "gemma3:4b",
+    "num_ctx": 8192,
+    "num_predict": 1536,
+    "temperature": 0,
+    "seed": 42,
+    "system_prompt_source_sha256": "46786f9d4a599e2e8504c1d1906b6e0c8a0ee393b91fbeb71ccad2297c232259",
+    "policy": "At most one translation per valid primary English structure, affecting observation/proposal/uncertainty/limits only. Keep English and citation/source identities immutable. No translation of sources or factual correction. No stability translations."
+  },
+  "grid": {
+    "primary": 36,
+    "primary_per_method": 18,
+    "primary_repetitions": 1,
+    "stability_extra": 24,
+    "stability_questions": [
+      "Q1",
+      "Q5"
+    ],
+    "stability_repetitions_total": 3,
+    "english_total": 60,
+    "presentation_calls_max": 36,
+    "llm_calls_max": 96,
+    "repetitions_status": "execution_candidate_for_user_review",
+    "no_retries_or_choose_best": true,
+    "stability_policy": "Descriptive output identity and time; excluded from primary quality denominators."
+  },
+  "human_review": {
+    "pairs": 6,
+    "answers": 12,
+    "selection_plan": "results/product-evaluation-v2/configuration-review/human-review-selection.private.json",
+    "selection_sha256": "d402bbf9ed8cc63c8b303002a34737af92cd1c8b1b40d7c9fd1ad92623468908",
+    "seed": 20261119,
+    "method_labels_hidden": true,
+    "independent_assessment": false,
+    "full_corpus_validation": false
+  },
+  "resources": {
+    "measure": "Wall times and Ollama input/output tokens only",
+    "separate_phases": [
+      "preparation",
+      "retrieval",
+      "English generation",
+      "presentation translation"
+    ],
+    "no_process_or_memory_monitoring": true,
+    "missing_is_not_zero": true
+  },
+  "input_provenance": {
+    "src/product_review_insights/generation.py": "cca1aa7e7cdcb7c0bdb858b2d64b2ab136390e2bddc4b2a4aaf006c4d22e9f80",
+    "src/product_review_insights/retrieval.py": "a2c30db085e1b8ab5ae365880786db06ff9103229b01c36d8152981dfb3fc05b",
+    "scripts/run_product_aspect_pilot.py": "3a4ea695ea15f425284f6ccb16c05c89d014a2d6652dd8c36dc99dbc69e98b2e",
+    "scripts/run_product_original_pilot.py": "46786f9d4a599e2e8504c1d1906b6e0c8a0ee393b91fbeb71ccad2297c232259"
+  },
+  "library_versions": {
+    "numpy": "2.5.4",
+    "faiss-cpu": "1.15.1",
+    "scikit-learn": "1.9.1",
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.20.2",
+    "torch": "2.14.1"
+  },
+  "pre_freeze_checks": {
+    "corpus_identity_counts_hashes": "verified",
+    "reference_and_approved_unit_hashes": "verified_reference_witness_ids_indexed_semantic_chunk_applicability_still_to_check",
+    "local_indices_and_chunks": "prepared",
+    "retrieval_context_probe": "verified_offline_36_contexts_no_generation",
+    "local_clusters_semantic_review": "pending_exploratory_not_certified",
+    "full_Gemma_prompt_token_budget_including_schema_and_output_reserve": "pending_not_guaranteed_by_character_limit",
+    "runtime_model_live_verification": "pending",
+    "annotation_calibration_on_Curly_Co": "pending",
+    "v2_runner_and_scoring_export_implementation": "pending_required_before_final_execution",
+    "user_configuration_review": "pending",
+    "freeze_authorization": "not_requested_or_granted_here"
+  },
+  "output_policy": {
+    "results_root": "results/product-evaluation-v2/final-run",
+    "must_not_exist_before_execution": true,
+    "preserve_all_old_studies": true,
+    "private_reviews_annotations_artifacts_ignored": true,
+    "remote_creation_or_push_authorized": false
+  },
+  "preflight_summary": {
+    "path": "docs/product-evaluation.v2-preflight-summary.json",
+    "sha256": "33d13670802046c0dec6fabaa8d36c6702f9e2c1e2cd3f9fa51b7288ac7e2761"
+  }
+}
