@@ -23,12 +23,14 @@ def select_hits(ranked, clusters, k, thematic=False):
 
 
 def build(corpus_path, output, config):
+    from .study import load_corpus_manifest
+    documents = read_corpus(corpus_path)
+    corpus_manifest = load_corpus_manifest(corpus_path, documents)
     import faiss
     import numpy as np
     from sklearn.cluster import MiniBatchKMeans
     from sentence_transformers import SentenceTransformer
     started = time.perf_counter()
-    documents = read_corpus(corpus_path)
     if len(documents) < config["clusters"] or config["clusters"] < 2:
         raise ValueError("Need 2 <= clusters <= document count")
     model = SentenceTransformer(config["embedding_model"], device="cpu")
@@ -76,10 +78,14 @@ def build(corpus_path, output, config):
                 "build_seconds": time.perf_counter() - started,
                 "index_sha256": digest_file(output / "index.faiss"),
                 "chunks_sha256": digest_file(output / "chunks.jsonl"),
+                "clusters_sha256": digest_file(output / "clusters.npy"),
                 "encoder_files_sha256": {str(p.relative_to(output / "encoder")): digest_file(p)
                     for p in sorted((output / "encoder").rglob("*")) if p.is_file()},
                 "encoder_commit": getattr(model[0].auto_model.config, "_commit_hash", None),
                 "cluster_counts": np.bincount(labels).tolist()}
+    if corpus_manifest:
+        metadata["study"] = corpus_manifest["study"]
+        metadata["corpus_manifest"] = corpus_manifest
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2))
     return metadata
 
@@ -91,12 +97,18 @@ class Retriever:
         from sentence_transformers import SentenceTransformer
         self.path = Path(path)
         self.metadata = json.loads((self.path / "metadata.json").read_text())
+        for filename, key in [("index.faiss", "index_sha256"), ("chunks.jsonl", "chunks_sha256"), ("clusters.npy", "clusters_sha256")]:
+            if key in self.metadata and digest_file(self.path / filename) != self.metadata[key]:
+                raise ValueError(f"Index artifact checksum mismatch: {filename}")
         self.config = self.metadata["config"]
         self.documents = read_corpus(self.path / "chunks.jsonl")
         self.index = faiss.read_index(str(self.path / "index.faiss"))
         self.clusters = np.load(self.path / "clusters.npy", allow_pickle=False)
         if self.index.ntotal != len(self.documents) or len(self.clusters) != len(self.documents):
             raise ValueError("Index, documents and clusters are inconsistent")
+        if self.metadata.get("study"):
+            from .study import validate_scoped_chunks
+            validate_scoped_chunks(self.documents, self.metadata["corpus_manifest"])
         self.model = SentenceTransformer(str(self.path / "encoder"), device="cpu", local_files_only=True)
 
     def search(self, question, thematic=False):

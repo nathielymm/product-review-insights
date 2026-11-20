@@ -26,7 +26,7 @@ HF_HOME=artifacts/huggingface .venv/bin/product-review-insights build
 
 A primeira indexação baixa o encoder. As seguintes podem usar o cache com HF_HUB_OFFLINE=1. O encoder exato é salvo em artifacts/pilot/encoder; as consultas carregam apenas esse snapshot local. metadata.json registra hashes do corpus, índice, trechos e arquivos do encoder. Preserve esses arquivos localmente para reproduzir a execução. Não indexar dados não revisados como se estivessem anonimizados.
 
-As pastas de build/preparação podem ser sobrescritas; use destinos novos com --output para preservar experimentos anteriores. Execuções e exportações cegas exigem diretórios novos, evitando sobrescrita acidental.
+A preparação antiga do piloto e os builds podem sobrescrever destinos; prepare-study exige destino novo. use destinos novos com --output para preservar experimentos anteriores. Execuções e exportações cegas exigem diretórios novos, evitando sobrescrita acidental.
 
 ## Ollama e Gemma
 
@@ -56,7 +56,7 @@ Em outro computador, instalar o Ollama pelo site oficial e usar `ollama serve`/`
 
 Não interpretar a execução de desenvolvimento como avaliação final. Revisar o arquivo questions.eval.draft.json, preparar a referência humana, congelar o benchmark e copiar para questions.eval.json antes da execução final. Não incluir citações ou textos reais no Git para facilitar a reprodução; forneça manifestos agregados e instruções de acesso à fonte.
 
-O rascunho atual tem 16 perguntas e pressupõe produto/recorte definido. Não executá-lo diretamente no índice global: o runner ainda não aplica scope_required como filtro. Ver docs/product-scopes.md antes de construir os corpora de avaliação.
+O rascunho atual tem 16 perguntas e pressupõe produto/recorte definido. Não executá-lo diretamente no índice global: o runner exige --cohort e rejeita índices globais ou de outro conjunto. Ver docs/product-scopes.md antes de construir os corpora de avaliação.
 
 Para reproduzir a exploração dos recortes, sem consultar os modelos ou usar respostas de avaliação:
 
@@ -108,3 +108,20 @@ As métricas humanas ficam ausentes até o preenchimento. A precisão de IDs de 
 ## Git local e revisão
 
 Commits pequenos por entrega. A identidade dos commits é genérica, sem nome/email pessoal. Nenhum remote deve ser configurado, e nenhum push deve ser executado antes da revisão da usuária. Antes de criar o GitHub privado, conferir arquivos rastreados e ausência de corpus, respostas, modelos, tokens e dados acadêmicos pessoais. A matrícula e nomes permanecem em branco no README.
+
+## Corpora do estudo alinhado
+
+Depois de reproduzir os pools de diversidade e reservar a auditoria, executar:
+
+```sh
+.venv/bin/product-review-insights prepare-study
+.venv/bin/product-review-insights build --corpus data/processed/study-v1/development/development_disjoint/corpus.jsonl --output artifacts/study-v1/development-check --config configs/study-development-smoke.json
+```
+
+A configuração ativa é configs/study-scope.json. A preparação verifica hashes dos arquivos privados e falha se divergirem; a reprodução exata requer os mesmos arquivos locais. Os 40 corpora e manifestos ficam em data/processed/study-v1, fora do Git. Não reutilizar o destino existente: alterações após revisão exigem novo snapshot. Ver docs/study-preparation-summary.json.
+
+O build acima é integração no desenvolvimento, sem hiperparâmetros finais. Para execução futura de perguntas de avaliação, construir um índice por corpus com a configuração congelada e passar --index e --cohort correspondente ao comando run. Nunca usar o índice development-check como índice de avaliação. O rascunho das perguntas e a referência ainda precisam ser fechados.
+
+## Revisão direcionada concluída
+
+A versão atual é indicada por configs/corpus-current.json. Ver docs/final-corpus-qa.md para gerar a revisão a partir do snapshot inicial, com exclusões, redação de assinatura e reconstrução dos subconjuntos. Usar os corpora de data/processed/study-v2-qa-final em novos builds. Os caminhos study-v1 anteriores documentam a preparação histórica.

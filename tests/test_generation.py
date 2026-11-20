@@ -37,3 +37,11 @@ def test_no_evidence_abstains_without_calling_model(monkeypatch):
 def test_cloud_model_rejected():
     with pytest.raises(ValueError, match="Cloud models"):
         generation.generate("Question", [], {"ollama_model": "some-model:cloud"})
+
+
+def test_evidence_keeps_family_identity_without_inheriting_catalog_claims():
+    text, included = generation.pack_context([{"id": "r", "text": "Reported experience", "product_id": "family",
+        "functional_class": "mascara", "official_title": "Unverified waterproof version"}], 500)
+    block = json.loads(text)
+    assert block["product_group"] == "family" and block["functional_class"] == "mascara"
+    assert "waterproof" not in text

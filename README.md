@@ -16,6 +16,7 @@ Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial
 - [Mapeamento exploratório de categorias](docs/category-map.md)
 - [Candidatos a três condições de variedade](docs/diversity-candidates.md)
 - [Revisão proposta de temas e consistência](docs/theme-consistency-review.md)
+- [Recorte alinhado e corpora preparados](docs/study-preparation.md)
 
 ### Resumo
 
@@ -27,11 +28,9 @@ Avaliações de consumidores podem apoiar a identificação de elogios, reclama�
 
 O conjunto de dados utilizado é declarado como Amazon Reviews 2023, categoria All_Beauty, do McAuley Lab. O arquivo fornecido contém 701.528 registros e esquema compatível com avaliações. A correspondência exata com o arquivo oficial ainda exige verificação de procedência. O recorte de avaliações limita a generalização dos resultados e a inferência de participação de mercado.
 
-O catálogo oficial de All_Beauty foi obtido e cruzado com todos os 112.496 IDs com avaliações válidas. Como as subcategorias do catálogo estão vazias, regras explícitas nos títulos permitem comparar grupos candidatos de produtos. O recorte final continua em aberto, agora com foco em vários produtos de uma categoria; a classificação é exploratória e requer revisão de variantes, idiomas e consistência.
+O recorte alinhado contém três estudos de caso com cinco famílias cada: máscaras de cílios (547 avaliações), cuidados e ferramentas para cabelo (1.405) e funções de diferentes áreas (1.891). A análise principal utiliza as 3.843 avaliações elegíveis. A análise secundária usa 20, 40 e 60 avaliações por família, com três sementes. Desenvolvimento utiliza cinco famílias separadas, com 625 avaliações. Ver [recorte e preparação](docs/study-preparation.md).
 
-O desenho em discussão passou a considerar três condições: produtos com uma função semelhante, funções diferentes de uma mesma rotina e funções de áreas diferentes. A exploração em docs/diversity-candidates.md compara candidatos com cinco IDs e amostras de tamanho igual. Há gradação de dispersão semântica geral, mas os níveis de diversidade temática ainda não foram validados. As condições e os corpora finais permanecem em aberto; com um conjunto por condição, a comparação deve ser apresentada como estudos de caso, sem atribuir diferenças somente à variedade.
-
-A revisão inicial de 90 comentários pelo assistente propõe dez temas amplos compartilhados pelos três candidatos. Ela também identifica ambiguidade de versões/ofertas e três grupos parent_asin com mais de um ASIN de item nas avaliações válidas. Isso reforça a necessidade de definir família funcional versus SKU e validar os temas com a usuária antes de fechar o recorte. Essa revisão não é uma anotação humana independente nem uma referência final de avaliação.
+As famílias operacionais não representam necessariamente versões idênticas. A revisão direcionada foi concluída: 20 comentários foram revisados pela usuária, cobrindo as 15 famílias; três registros exclusivamente sobre uso em animais foram excluídos e uma assinatura residual foi removida. Isso não constitui validação humana completa nem referência final. Ver [revisão dos dados](docs/final-corpus-qa.md) e configs/corpus-current.json. Um conjunto por condição permite estudos de caso e não isola causalmente o efeito da variedade.
 
 ### 2. Modelagem
 
@@ -43,11 +42,11 @@ As avaliações são segmentadas no limite do encoder MiniLM, convertidas em emb
 
 O método tradicional seleciona os primeiros k resultados por similaridade. O temático seleciona primeiro um resultado por grupo dentro do mesmo conjunto de candidatos e completa as vagas por similaridade. Ambos utilizam o mesmo Gemma 3 4B, encoder, corpus, prompt, limite de contexto e parâmetros de geração. O enriquecimento atua na seleção das evidências, sem inserir resumos gerados adicionais.
 
-Configuração inicial: 10 mil avaliações, seed 42, 30 grupos, 80 candidatos e até 8 trechos. Esses valores são de desenvolvimento e devem ser congelados antes do teste final. As respostas devem citar IDs de evidência e se abster quando o contexto for insuficiente.
+Os parâmetros finais serão escolhidos no desenvolvimento e congelados antes da avaliação. Cada comparação exige índice e corpus específicos do conjunto, verificados por hashes e identidades. As respostas devem citar evidências, atribuir observações às famílias corretas e se abster quando o contexto for insuficiente.
 
 ### 3. Resultados
 
-A auditoria inicial encontrou 720 registros sem texto e 9.445 duplicatas segundo a regra adotada, resultando em 691.363 avaliações válidas e únicas. Foi gerada uma amostra determinística de 10 mil registros. Essas contagens descrevem a preparação dos dados, não a qualidade do RAG.
+A auditoria inicial encontrou 720 registros sem texto e 9.445 duplicatas segundo a regra adotada, resultando em 691.363 avaliações válidas e únicas. A amostra histórica de 10 mil registros pertence ao piloto global; os corpora do estudo somam 3.843 avaliações principais. Passaram 31 testes e uma integração real de recuperação no conjunto separado de desenvolvimento. Essas contagens descrevem a preparação dos dados, não a qualidade do RAG.
 
 Não há, por enquanto, resultados de avaliação humana de cobertura ou fidelidade. As métricas permanecerão ausentes até a anotação. Testes de software e testes de integração não serão apresentados como evidência de qualidade dos insights.
 

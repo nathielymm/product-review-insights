@@ -1,0 +1,193 @@
+{
+  "scope_version": "proposal_v1",
+  "status": "superseded_by_configs/study-scope.json",
+  "decision_basis": "User requested final scope resolution. Proposed using data feasibility, prior audits and disjoint families; no final RAG quality results used.",
+  "research_question_pt": "Como o RAG tradicional e o RAG enriquecido por agrupamento temático se comparam na geração de oportunidades de melhoria fundamentadas em avaliações, em três estudos de caso com heterogeneidade funcional diferente?",
+  "study_design": "three comparative case studies; one cohort per condition; not a causal estimate of heterogeneity",
+  "analysis_unit": {
+    "operational_family": "parent_asin review group with compatible functional class",
+    "item_lineage_required": true,
+    "exact_sku_or_formula_claims_without_mapping": false,
+    "parent_groups_are_not_independent_manufacturers": true
+  },
+  "cohorts": [
+    {
+      "id": "compact_mascaras",
+      "condition": "compact",
+      "label_pt": "Função semelhante: máscaras para cílios",
+      "families": [
+        {
+          "parent_asin": "B0B7L451Z9",
+          "functional_label": "mascara",
+          "eligible_after_audit_exclusion": 145
+        },
+        {
+          "parent_asin": "B08TCBP8HV",
+          "functional_label": "mascara",
+          "eligible_after_audit_exclusion": 119
+        },
+        {
+          "parent_asin": "B01557EHW4",
+          "functional_label": "mascara",
+          "eligible_after_audit_exclusion": 123
+        },
+        {
+          "parent_asin": "B0BC3MQD29",
+          "functional_label": "mascara",
+          "eligible_after_audit_exclusion": 91
+        },
+        {
+          "parent_asin": "B07M5HB65T",
+          "functional_label": "mascara",
+          "eligible_after_audit_exclusion": 69
+        }
+      ],
+      "planned_reviews": 250,
+      "minimum_available_per_family": 69,
+      "available_after_audit_exclusion": 547
+    },
+    {
+      "id": "intermediate_hair_disjoint",
+      "condition": "intermediate",
+      "label_pt": "Funções diferentes de uma rotina capilar",
+      "families": [
+        {
+          "parent_asin": "B0CDNZ7F2V",
+          "functional_label": "shampoo",
+          "eligible_after_audit_exclusion": 103
+        },
+        {
+          "parent_asin": "B01DD1NOZU",
+          "functional_label": "conditioner",
+          "eligible_after_audit_exclusion": 233
+        },
+        {
+          "parent_asin": "B0BV1FPZY6",
+          "functional_label": "hair_mask",
+          "eligible_after_audit_exclusion": 352
+        },
+        {
+          "parent_asin": "B01M1IEADO",
+          "functional_label": "hair_dryer",
+          "eligible_after_audit_exclusion": 105
+        },
+        {
+          "parent_asin": "B00R1TAN7I",
+          "functional_label": "hair_brush",
+          "eligible_after_audit_exclusion": 615
+        }
+      ],
+      "planned_reviews": 250,
+      "minimum_available_per_family": 103,
+      "available_after_audit_exclusion": 1408
+    },
+    {
+      "id": "varied_disjoint",
+      "condition": "varied",
+      "label_pt": "Funções de áreas diferentes de cuidado pessoal",
+      "families": [
+        {
+          "parent_asin": "B012Q9NGE4",
+          "functional_label": "shampoo",
+          "eligible_after_audit_exclusion": 473
+        },
+        {
+          "parent_asin": "B08BZNW9NK",
+          "functional_label": "magnetic_lashes",
+          "eligible_after_audit_exclusion": 128
+        },
+        {
+          "parent_asin": "B01LBESKBO",
+          "functional_label": "nail_polish",
+          "eligible_after_audit_exclusion": 89
+        },
+        {
+          "parent_asin": "B019GBG0IE",
+          "functional_label": "diffuser",
+          "eligible_after_audit_exclusion": 804
+        },
+        {
+          "parent_asin": "B000FEIOHW",
+          "functional_label": "toothbrush",
+          "eligible_after_audit_exclusion": 397
+        }
+      ],
+      "planned_reviews": 250,
+      "minimum_available_per_family": 89,
+      "available_after_audit_exclusion": 1891
+    }
+  ],
+  "sampling": {
+    "planned_reviews_per_family": 50,
+    "planned_reviews_per_cohort": 250,
+    "planned_total_reviews": 750,
+    "seed": 20261108,
+    "selection": "ascending sha256(seed:parent_asin:review_identity), fixed quota per family",
+    "english_detector": "langdetect==1.0.9",
+    "language_detector_seed": 0,
+    "english_score_threshold": 0.9,
+    "language_score_is_calibrated_probability": false,
+    "min_words": 20,
+    "max_words": 200,
+    "translate_reviews": false,
+    "rating_balancing": false,
+    "duplicate_policy": "existing parent_asin + normalized redacted text identity; canonical minimum rating on conflict; report conflicts, do not interpret canonical rating distribution as unchanged raw distribution",
+    "temporal_filter": "no extra date cutoff; retain timestamps and describe historical coverage",
+    "audit_review_exclusion_file": "results/theme-review/sample.private.json",
+    "audit_review_exclusion_sha256": "b7e9ba960ce08abdc8cdb9bb66f9241a7a077095ece00f5f37de5a54825f6555",
+    "audit_reviews_excluded": 90,
+    "size_rationale": "feasible equal product contribution and manageable qualitative reference; not a power or saturation calculation"
+  },
+  "development": {
+    "parent_asins": [
+      "B07G19ZXWB",
+      "B00NQ2CCOQ",
+      "B09P3ZMV55",
+      "B086H4C8QB",
+      "B09XBSDCXP"
+    ],
+    "overlap_with_evaluation_families": false,
+    "note": "Use separate families for further prompt/clustering/hyperparameter development; prior global pilot remains exploratory history."
+  },
+  "quality_policy": {
+    "generic_reviews": "retain if otherwise eligible; mark limited specificity",
+    "version_unclear": "retain at family level with lineage/uncertainty; do not attribute current catalog claims to all historical items",
+    "explicit_incompatible_product_type": "independent review before exclusion; record reason",
+    "free_product_or_incentive": "flag transparently; do not automatically exclude or infer fraud",
+    "medical_or_safety_claims": "retain as attributed reports, never established efficacy or safety",
+    "logistics_vs_product": "code separately; do not infer manufacturer responsibility from delivery complaints alone",
+    "privacy": "retain no user_id/images; heuristic redaction plus manual residual-PII review before freezing corpus"
+  },
+  "freeze_boundary": {
+    "proposed_to_fix": [
+      "three named cohorts",
+      "15 parent_asin families",
+      "functional family unit and item lineage",
+      "50 reviews per family",
+      "inclusion, exclusion and sampling rules"
+    ],
+    "still_to_complete": [
+      "user alignment with this proposal",
+      "corpus QA and lineage-preserving preparation",
+      "final sample hashes",
+      "question applicability and benchmark freeze",
+      "independent reference/annotation",
+      "scoped retrieval and runtime checks",
+      "development-only hyperparameter selection",
+      "paired experiments"
+    ]
+  },
+  "sources": {
+    "reviews_sha256": "b40ae565f1073e0b4960e2f424fe0c82f3d270b7c4d00bc9272ddd6a8b7411d7",
+    "metadata_sha256": "14815cf1312a0d847364866e6876c8c73738993469067242870774c372c04387",
+    "eligible_pool_sha256": "2244da8c15c0f6dce44266e55979dbab357004494339ec2f69883d8fecfb22b8",
+    "diversity_config_sha256": "6b8985a6cb446dc651dfb2f972a695096e4ba54004b4af01c6268efb40262022"
+  },
+  "validation_limits": {
+    "user_reviewed_interpretations": 5,
+    "assistant_audit_reviews": 90,
+    "all_90_human_validated": false,
+    "three_increasing_theme_counts_established": false,
+    "hypothesis_of_thematic_rag_superiority_assumed": false
+  }
+}

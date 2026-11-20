@@ -15,7 +15,7 @@ from .generation import api, generate, SYSTEM
 from .retrieval import Retriever
 
 
-def run(index_path, questions_path, destination, repetitions=3):
+def run(index_path, questions_path, destination, repetitions=3, cohort=None):
     import psutil
     if repetitions < 1:
         raise ValueError("repetitions must be positive")
@@ -23,6 +23,9 @@ def run(index_path, questions_path, destination, repetitions=3):
     ids = [q["id"] for q in questions]
     if not questions or len(set(ids)) != len(ids):
         raise ValueError("Need nonempty questions with unique IDs")
+    from .study import validate_index_scope
+    index_metadata = json.loads((Path(index_path) / "metadata.json").read_text())
+    study_scope = validate_index_scope(index_metadata, cohort, any(q.get("scope_required", False) for q in questions))
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=False)
     retriever = Retriever(index_path)
@@ -30,6 +33,7 @@ def run(index_path, questions_path, destination, repetitions=3):
     info = api("/api/show", {"model": config["ollama_model"]})
     tags = api("/api/tags")
     metadata = {"config": config, "index_metadata": retriever.metadata,
+                "study": study_scope,
                 "questions_sha256": digest_file(questions_path), "repetitions": repetitions,
                 "platform": platform.platform(), "python": platform.python_version(),
                 "thread_environment": {k: os.environ.get(k) for k in ["OMP_NUM_THREADS", "TOKENIZERS_PARALLELISM"]},
@@ -76,6 +80,7 @@ def run(index_path, questions_path, destination, repetitions=3):
                     result = generate(question["question"], hits, config)
                     recent = observations[sample_start:]
                     row = {"question_id": question["id"], "question": question["question"],
+                           "study": study_scope,
                            "method": method, "repeat": repeat, **result,
                            "retrieval_seconds": retrieval_seconds,
                            "generation_seconds": time.perf_counter() - begin - retrieval_seconds,
@@ -108,7 +113,8 @@ def blind(run_path, destination, seed=42):
         blind_rows.append({"annotation_id": identifier, "question_id": row["question_id"],
                            "question": row["question"], "answer": row["answer"],
                            "evidence": [{"id": h["id"], "citation_id": h.get("citation_id", h["id"]),
-                                         "text": h["text"]} for h in row["evidence"]]})
+                                         "text": h["text"], **({"product_id": h["product_id"]} if "product_id" in h else {}),
+                                         **({"functional_class": h["functional_class"]} if "functional_class" in h else {})} for h in row["evidence"]]})
     (destination / "blind.json").write_text(json.dumps(blind_rows, indent=2))
     (destination / "key.private.json").write_text(json.dumps(key, indent=2))
     with (destination / "annotations.csv").open("w") as stream:

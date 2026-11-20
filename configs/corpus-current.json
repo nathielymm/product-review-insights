@@ -1,0 +1,16 @@
+{
+  "snapshot": "data/processed/study-v2-qa-final",
+  "scope_design": "configs/study-scope.json",
+  "qa_decisions": "configs/corpus-qa-decisions.json",
+  "qa_summary": "docs/final-corpus-qa-summary.json",
+  "status": "targeted_qa_completed_benchmark_pending",
+  "primary_counts": {
+    "compact_mascaras": 547,
+    "intermediate_hair_disjoint": 1405,
+    "varied_disjoint": 1891
+  },
+  "primary_reviews": 3843,
+  "previous_snapshot_preserved": "data/processed/study-v1",
+  "requires_new_indexes": true,
+  "final_evaluation_authorized_by_this_file": false
+}
