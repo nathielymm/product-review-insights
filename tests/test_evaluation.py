@@ -1,7 +1,7 @@
 import pytest
 
-from social_listening.experiments import human_metrics
-from social_listening.experiments import paired_bootstrap, evaluate, blind
+from product_review_insights.experiments import human_metrics
+from product_review_insights.experiments import paired_bootstrap, evaluate, blind
 import csv
 import json
 

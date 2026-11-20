@@ -14,6 +14,7 @@ idna==3.20
 iniconfig==2.3.1
 Jinja2==3.1.6
 joblib==1.6.0
+langdetect==1.0.9
 markdown-it-py==4.2.0
 MarkupSafe==3.0.4
 mdurl==0.1.2
@@ -36,6 +37,7 @@ scipy==1.18.1
 sentence-transformers==6.2.0
 setuptools==84.2.1
 shellingham==1.5.4
+six==1.17.0
 sympy==1.14.0
 threadpoolctl==3.7.0
 tokenizers==0.23.3

@@ -1,0 +1,5024 @@
+{
+  "status": "exploratory_not_rag_evaluation_not_frozen",
+  "source_sha256": "b40ae565f1073e0b4960e2f424fe0c82f3d270b7c4d00bc9272ddd6a8b7411d7",
+  "config_sha256": "6b8985a6cb446dc651dfb2f972a695096e4ba54004b4af01c6268efb40262022",
+  "config": {
+    "status": "exploratory_candidates_not_selected_or_frozen",
+    "reviews_per_product": 30,
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "min_words": 20,
+    "max_words": 200,
+    "english_probability_threshold": 0.9,
+    "language_detector_seed": 0,
+    "embedding_max_tokens": 200,
+    "cluster_counts": [
+      8,
+      12,
+      16
+    ],
+    "encoder_path": "artifacts/pilot/encoder",
+    "candidates": [
+      {
+        "id": "compact_brush_kits",
+        "hypothesis": "compact",
+        "label_pt": "Cinco kits de pincéis, sem repetir pares de cor identificados",
+        "product_ids": [
+          "B07G19ZXWB",
+          "B07DSDBTST",
+          "B005V3AV5U",
+          "B00V5YFCVM",
+          "B01CZNI0KG"
+        ],
+        "catalog_consistency_note": "Initial review inspection of B005V3AV5U includes sample/eyeshadow experiences inconsistent with a brush-only scope; investigate before selection."
+      },
+      {
+        "id": "compact_mascaras",
+        "hypothesis": "compact",
+        "label_pt": "Cinco máscaras para cílios",
+        "product_ids": [
+          "B0B7L451Z9",
+          "B08TCBP8HV",
+          "B01557EHW4",
+          "B0BC3MQD29",
+          "B07M5HB65T"
+        ]
+      },
+      {
+        "id": "intermediate_deodorants",
+        "hypothesis": "intermediate",
+        "label_pt": "Cinco desodorantes com marcas/formatos diferentes",
+        "product_ids": [
+          "B00NQ2CCOQ",
+          "B00V8ZCT1Y",
+          "B01G45RD9U",
+          "B07CT88DYS",
+          "B07HZ4CW7F"
+        ]
+      },
+      {
+        "id": "intermediate_hair_routine",
+        "hypothesis": "intermediate",
+        "label_pt": "Cinco tipos de produto de uma rotina capilar",
+        "product_ids": [
+          "B012Q9NGE4",
+          "B01DD1NOZU",
+          "B0BV1FPZY6",
+          "B019GBG0IE",
+          "B00R1TAN7I"
+        ]
+      },
+      {
+        "id": "varied_cross_category_a",
+        "hypothesis": "varied",
+        "label_pt": "Shampoo, máscara para cílios, esmaltes, difusor e escova dental",
+        "product_ids": [
+          "B012Q9NGE4",
+          "B01557EHW4",
+          "B01LBESKBO",
+          "B019GBG0IE",
+          "B000FEIOHW"
+        ]
+      },
+      {
+        "id": "varied_cross_category_b",
+        "hypothesis": "varied",
+        "label_pt": "Máscara para cílios, condicionador, desodorante, cílios magnéticos e esmalte",
+        "product_ids": [
+          "B07M5HB65T",
+          "B086H4C8QB",
+          "B09XBSDCXP",
+          "B08BZNW9NK",
+          "B09P3ZMV55"
+        ]
+      },
+      {
+        "id": "varied_disjoint",
+        "hypothesis": "varied",
+        "label_pt": "Shampoo, cílios magnéticos, esmaltes, difusor e escova dental; sem IDs compartilhados com máscaras para cílios ou desodorantes candidatos",
+        "product_ids": [
+          "B012Q9NGE4",
+          "B08BZNW9NK",
+          "B01LBESKBO",
+          "B019GBG0IE",
+          "B000FEIOHW"
+        ],
+        "selection_note": "Added to remove product overlap with compact_mascaras and intermediate_deodorants; not selected using RAG performance."
+      },
+      {
+        "id": "intermediate_hair_disjoint",
+        "hypothesis": "intermediate",
+        "label_pt": "Rotina capilar: shampoo, leave-in, máscara, secador com difusor e escova",
+        "product_ids": [
+          "B0CDNZ7F2V",
+          "B01DD1NOZU",
+          "B0BV1FPZY6",
+          "B01M1IEADO",
+          "B00R1TAN7I"
+        ],
+        "selection_note": "Constructed to avoid product overlap with compact_mascaras and varied_disjoint. Catalog title distinguishes dryer-with-diffuser from a standalone diffuser."
+      }
+    ],
+    "product_descriptors": {
+      "B07G19ZXWB": {
+        "domain": "makeup",
+        "function": "brush_kit",
+        "format": "synthetic_brush_kit",
+        "family": "emax_17_piece"
+      },
+      "B07DSDBTST": {
+        "domain": "makeup",
+        "function": "brush_kit",
+        "format": "synthetic_brush_kit",
+        "family": "vander_32_piece"
+      },
+      "B005V3AV5U": {
+        "domain": "makeup",
+        "function": "brush_kit",
+        "format": "synthetic_brush_kit",
+        "family": "generic_10_piece"
+      },
+      "B00V5YFCVM": {
+        "domain": "makeup",
+        "function": "brush_kit",
+        "format": "brush_kit_material_unconfirmed",
+        "family": "soobest_set"
+      },
+      "B01CZNI0KG": {
+        "domain": "makeup",
+        "function": "brush_kit",
+        "format": "natural_hair_brush_kit",
+        "family": "imoocare_24_piece"
+      },
+      "B0B7L451Z9": {
+        "domain": "makeup",
+        "function": "mascara",
+        "format": "waterproof_mascara",
+        "family": "essence_i_love_extreme"
+      },
+      "B08TCBP8HV": {
+        "domain": "makeup",
+        "function": "mascara",
+        "format": "mascara",
+        "family": "essence_lash_princess"
+      },
+      "B01557EHW4": {
+        "domain": "makeup",
+        "function": "mascara",
+        "format": "water_resistant_mascara",
+        "family": "bold_lash"
+      },
+      "B0BC3MQD29": {
+        "domain": "makeup",
+        "function": "mascara",
+        "format": "waterproof_mascara",
+        "family": "too_faced_better_than_sex"
+      },
+      "B07M5HB65T": {
+        "domain": "makeup",
+        "function": "mascara",
+        "format": "fiber_mascara",
+        "family": "lash_ease_fiber"
+      },
+      "B00NQ2CCOQ": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "format_unconfirmed",
+        "family": "nivea_fresh_pure"
+      },
+      "B00V8ZCT1Y": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "jar_paste",
+        "family": "primal_pit_paste"
+      },
+      "B01G45RD9U": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "roll_on",
+        "family": "fresh_kidz"
+      },
+      "B07CT88DYS": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "tube",
+        "family": "beauty_by_earth"
+      },
+      "B07HZ4CW7F": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "aerosol",
+        "family": "soft_and_dri"
+      },
+      "B012Q9NGE4": {
+        "domain": "hair_care",
+        "function": "shampoo",
+        "format": "bottled_shampoo",
+        "family": "pure_body_naturals_argan"
+      },
+      "B01DD1NOZU": {
+        "domain": "hair_care",
+        "function": "conditioner",
+        "format": "leave_in_conditioner",
+        "family": "carols_daughter_almond"
+      },
+      "B0BV1FPZY6": {
+        "domain": "hair_care",
+        "function": "hair_mask",
+        "format": "conditioning_mask",
+        "family": "sauce_guacamole"
+      },
+      "B019GBG0IE": {
+        "domain": "hair_care",
+        "function": "diffuser",
+        "format": "collapsible_diffuser",
+        "family": "curly_co_diffuser"
+      },
+      "B00R1TAN7I": {
+        "domain": "hair_care",
+        "function": "hair_brush",
+        "format": "boar_bristle_brush",
+        "family": "grannaturals_brush"
+      },
+      "B01LBESKBO": {
+        "domain": "nail_care",
+        "function": "nail_polish",
+        "format": "multi_color_polish_set",
+        "family": "cosmetic_art_30"
+      },
+      "B000FEIOHW": {
+        "domain": "oral_care",
+        "function": "toothbrush",
+        "format": "battery_toothbrush",
+        "family": "sonicare_hx3351"
+      },
+      "B086H4C8QB": {
+        "domain": "hair_care",
+        "function": "conditioner",
+        "format": "bottled_conditioner",
+        "family": "biosilk_hydrating"
+      },
+      "B09XBSDCXP": {
+        "domain": "body_care",
+        "function": "deodorant",
+        "format": "solid_stick",
+        "family": "lume_solid_stick"
+      },
+      "B08BZNW9NK": {
+        "domain": "makeup",
+        "function": "magnetic_lashes",
+        "format": "magnetic_lash_eyeliner_kit",
+        "family": "veshely_magnetic"
+      },
+      "B09P3ZMV55": {
+        "domain": "nail_care",
+        "function": "nail_polish",
+        "format": "color_polish",
+        "family": "orly_electric_escape"
+      },
+      "B0CDNZ7F2V": {
+        "domain": "hair_care",
+        "function": "shampoo",
+        "format": "bottled_shampoo",
+        "family": "okay_castor_shampoo"
+      },
+      "B01M1IEADO": {
+        "domain": "hair_care",
+        "function": "hair_dryer",
+        "format": "dryer_with_diffuser_attachment",
+        "family": "warmlife_dryer"
+      }
+    },
+    "descriptor_warning": "Manual title/catalog coding, not official taxonomy. Family identity and some formats remain provisional. Equal family counts are not evidence of independent manufacturers.",
+    "sensitivity_sampling": {
+      "length_matched": {
+        "field": "length",
+        "quotas": {
+          "20_39": 20,
+          "40_79": 8,
+          "80_200": 2
+        },
+        "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+      },
+      "rating_matched": {
+        "field": "rating",
+        "quotas": {
+          "low": 4,
+          "high": 21
+        },
+        "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+      }
+    },
+    "candidate_triple_for_review": [
+      "compact_mascaras",
+      "intermediate_deodorants",
+      "varied_disjoint"
+    ],
+    "candidate_triples_for_review": [
+      [
+        "compact_mascaras",
+        "intermediate_deodorants",
+        "varied_disjoint"
+      ],
+      [
+        "compact_mascaras",
+        "intermediate_hair_disjoint",
+        "varied_disjoint"
+      ]
+    ]
+  },
+  "analysis_code_sha256": "fefeae3aa22fc42cbc8b70f4b37a2f4aafcc285574075761bf642fca98c43b57",
+  "langdetect_version": "1.0.9",
+  "requirements_sha256": "ac831b483340d806254fee82d0d15d44ccb0c54b0b4b932b4663b3e7614574ea",
+  "product_profiles": {
+    "B000FEIOHW": {
+      "valid_unique_reviews": 501,
+      "word_range_reviews": 403,
+      "language_top_labels": {
+        "en": 403
+      },
+      "eligible_reviews": 403,
+      "eligible_ratings": {
+        "5": 236,
+        "1": 61,
+        "3": 29,
+        "4": 57,
+        "2": 20
+      },
+      "eligible_length_bins": {
+        "80_200": 141,
+        "40_79": 124,
+        "20_39": 138
+      }
+    },
+    "B005V3AV5U": {
+      "valid_unique_reviews": 154,
+      "word_range_reviews": 100,
+      "language_top_labels": {
+        "en": 100
+      },
+      "eligible_reviews": 100,
+      "eligible_ratings": {
+        "4": 18,
+        "5": 47,
+        "3": 19,
+        "1": 9,
+        "2": 7
+      },
+      "eligible_length_bins": {
+        "80_200": 22,
+        "20_39": 47,
+        "40_79": 31
+      }
+    },
+    "B00NQ2CCOQ": {
+      "valid_unique_reviews": 223,
+      "word_range_reviews": 117,
+      "language_top_labels": {
+        "en": 117
+      },
+      "eligible_reviews": 117,
+      "eligible_ratings": {
+        "1": 18,
+        "2": 10,
+        "4": 20,
+        "5": 59,
+        "3": 10
+      },
+      "eligible_length_bins": {
+        "20_39": 47,
+        "40_79": 44,
+        "80_200": 26
+      }
+    },
+    "B00R1TAN7I": {
+      "valid_unique_reviews": 1332,
+      "word_range_reviews": 621,
+      "language_top_labels": {
+        "en": 621
+      },
+      "eligible_reviews": 621,
+      "eligible_ratings": {
+        "5": 296,
+        "4": 112,
+        "3": 79,
+        "1": 79,
+        "2": 55
+      },
+      "eligible_length_bins": {
+        "20_39": 338,
+        "40_79": 219,
+        "80_200": 64
+      }
+    },
+    "B00V5YFCVM": {
+      "valid_unique_reviews": 111,
+      "word_range_reviews": 71,
+      "language_top_labels": {
+        "en": 71
+      },
+      "eligible_reviews": 71,
+      "eligible_ratings": {
+        "5": 47,
+        "4": 13,
+        "3": 5,
+        "2": 4,
+        "1": 2
+      },
+      "eligible_length_bins": {
+        "20_39": 28,
+        "40_79": 25,
+        "80_200": 18
+      }
+    },
+    "B00V8ZCT1Y": {
+      "valid_unique_reviews": 175,
+      "word_range_reviews": 113,
+      "language_top_labels": {
+        "en": 113
+      },
+      "eligible_reviews": 113,
+      "eligible_ratings": {
+        "5": 73,
+        "2": 6,
+        "1": 9,
+        "4": 16,
+        "3": 9
+      },
+      "eligible_length_bins": {
+        "40_79": 36,
+        "80_200": 26,
+        "20_39": 51
+      }
+    },
+    "B012Q9NGE4": {
+      "valid_unique_reviews": 838,
+      "word_range_reviews": 479,
+      "language_top_labels": {
+        "en": 479
+      },
+      "eligible_reviews": 479,
+      "eligible_ratings": {
+        "5": 264,
+        "2": 35,
+        "1": 62,
+        "4": 82,
+        "3": 36
+      },
+      "eligible_length_bins": {
+        "20_39": 166,
+        "80_200": 155,
+        "40_79": 158
+      }
+    },
+    "B01557EHW4": {
+      "valid_unique_reviews": 209,
+      "word_range_reviews": 129,
+      "language_top_labels": {
+        "en": 129
+      },
+      "eligible_reviews": 129,
+      "eligible_ratings": {
+        "1": 26,
+        "2": 11,
+        "3": 17,
+        "5": 52,
+        "4": 23
+      },
+      "eligible_length_bins": {
+        "20_39": 56,
+        "40_79": 41,
+        "80_200": 32
+      }
+    },
+    "B019GBG0IE": {
+      "valid_unique_reviews": 1313,
+      "word_range_reviews": 814,
+      "language_top_labels": {
+        "en": 811,
+        "es": 3
+      },
+      "eligible_reviews": 810,
+      "eligible_ratings": {
+        "4": 126,
+        "5": 319,
+        "2": 102,
+        "3": 125,
+        "1": 138
+      },
+      "eligible_length_bins": {
+        "40_79": 330,
+        "20_39": 336,
+        "80_200": 144
+      }
+    },
+    "B01CZNI0KG": {
+      "valid_unique_reviews": 100,
+      "word_range_reviews": 51,
+      "language_top_labels": {
+        "en": 51
+      },
+      "eligible_reviews": 51,
+      "eligible_ratings": {
+        "4": 7,
+        "5": 33,
+        "2": 2,
+        "1": 2,
+        "3": 7
+      },
+      "eligible_length_bins": {
+        "40_79": 20,
+        "80_200": 2,
+        "20_39": 29
+      }
+    },
+    "B01DD1NOZU": {
+      "valid_unique_reviews": 440,
+      "word_range_reviews": 239,
+      "language_top_labels": {
+        "en": 239
+      },
+      "eligible_reviews": 239,
+      "eligible_ratings": {
+        "4": 29,
+        "2": 24,
+        "5": 99,
+        "1": 55,
+        "3": 32
+      },
+      "eligible_length_bins": {
+        "40_79": 80,
+        "80_200": 47,
+        "20_39": 112
+      }
+    },
+    "B01G45RD9U": {
+      "valid_unique_reviews": 146,
+      "word_range_reviews": 68,
+      "language_top_labels": {
+        "en": 68
+      },
+      "eligible_reviews": 68,
+      "eligible_ratings": {
+        "1": 10,
+        "5": 45,
+        "4": 7,
+        "2": 1,
+        "3": 5
+      },
+      "eligible_length_bins": {
+        "20_39": 42,
+        "40_79": 20,
+        "80_200": 6
+      }
+    },
+    "B01LBESKBO": {
+      "valid_unique_reviews": 186,
+      "word_range_reviews": 95,
+      "language_top_labels": {
+        "en": 95
+      },
+      "eligible_reviews": 95,
+      "eligible_ratings": {
+        "5": 49,
+        "4": 19,
+        "1": 18,
+        "2": 9
+      },
+      "eligible_length_bins": {
+        "80_200": 19,
+        "20_39": 41,
+        "40_79": 35
+      }
+    },
+    "B01M1IEADO": {
+      "valid_unique_reviews": 223,
+      "word_range_reviews": 111,
+      "language_top_labels": {
+        "en": 111
+      },
+      "eligible_reviews": 111,
+      "eligible_ratings": {
+        "2": 9,
+        "5": 61,
+        "4": 11,
+        "1": 28,
+        "3": 2
+      },
+      "eligible_length_bins": {
+        "20_39": 57,
+        "40_79": 39,
+        "80_200": 15
+      }
+    },
+    "B07CT88DYS": {
+      "valid_unique_reviews": 136,
+      "word_range_reviews": 93,
+      "language_top_labels": {
+        "en": 92,
+        "es": 1
+      },
+      "eligible_reviews": 92,
+      "eligible_ratings": {
+        "5": 53,
+        "4": 12,
+        "2": 11,
+        "3": 7,
+        "1": 9
+      },
+      "eligible_length_bins": {
+        "40_79": 44,
+        "20_39": 30,
+        "80_200": 18
+      }
+    },
+    "B07DSDBTST": {
+      "valid_unique_reviews": 158,
+      "word_range_reviews": 44,
+      "language_top_labels": {
+        "en": 44
+      },
+      "eligible_reviews": 44,
+      "eligible_ratings": {
+        "5": 14,
+        "1": 8,
+        "4": 11,
+        "3": 7,
+        "2": 4
+      },
+      "eligible_length_bins": {
+        "20_39": 29,
+        "40_79": 12,
+        "80_200": 3
+      }
+    },
+    "B07G19ZXWB": {
+      "valid_unique_reviews": 538,
+      "word_range_reviews": 132,
+      "language_top_labels": {
+        "en": 127,
+        "es": 5
+      },
+      "eligible_reviews": 127,
+      "eligible_ratings": {
+        "5": 71,
+        "2": 4,
+        "4": 33,
+        "3": 12,
+        "1": 7
+      },
+      "eligible_length_bins": {
+        "20_39": 77,
+        "40_79": 36,
+        "80_200": 14
+      }
+    },
+    "B07HZ4CW7F": {
+      "valid_unique_reviews": 115,
+      "word_range_reviews": 44,
+      "language_top_labels": {
+        "en": 44
+      },
+      "eligible_reviews": 44,
+      "eligible_ratings": {
+        "3": 1,
+        "5": 38,
+        "1": 3,
+        "2": 2
+      },
+      "eligible_length_bins": {
+        "80_200": 4,
+        "20_39": 23,
+        "40_79": 17
+      }
+    },
+    "B07M5HB65T": {
+      "valid_unique_reviews": 183,
+      "word_range_reviews": 75,
+      "language_top_labels": {
+        "en": 75
+      },
+      "eligible_reviews": 75,
+      "eligible_ratings": {
+        "5": 24,
+        "1": 33,
+        "3": 3,
+        "2": 11,
+        "4": 4
+      },
+      "eligible_length_bins": {
+        "20_39": 52,
+        "40_79": 18,
+        "80_200": 5
+      }
+    },
+    "B086H4C8QB": {
+      "valid_unique_reviews": 196,
+      "word_range_reviews": 73,
+      "language_top_labels": {
+        "en": 72,
+        "es": 1
+      },
+      "eligible_reviews": 72,
+      "eligible_ratings": {
+        "5": 44,
+        "1": 14,
+        "3": 5,
+        "4": 4,
+        "2": 5
+      },
+      "eligible_length_bins": {
+        "40_79": 29,
+        "20_39": 37,
+        "80_200": 6
+      }
+    },
+    "B08BZNW9NK": {
+      "valid_unique_reviews": 295,
+      "word_range_reviews": 134,
+      "language_top_labels": {
+        "en": 134
+      },
+      "eligible_reviews": 134,
+      "eligible_ratings": {
+        "5": 87,
+        "2": 7,
+        "4": 21,
+        "3": 12,
+        "1": 7
+      },
+      "eligible_length_bins": {
+        "20_39": 74,
+        "40_79": 44,
+        "80_200": 16
+      }
+    },
+    "B08TCBP8HV": {
+      "valid_unique_reviews": 265,
+      "word_range_reviews": 125,
+      "language_top_labels": {
+        "en": 125
+      },
+      "eligible_reviews": 125,
+      "eligible_ratings": {
+        "5": 93,
+        "4": 10,
+        "3": 6,
+        "1": 10,
+        "2": 6
+      },
+      "eligible_length_bins": {
+        "20_39": 79,
+        "80_200": 8,
+        "40_79": 38
+      }
+    },
+    "B09P3ZMV55": {
+      "valid_unique_reviews": 158,
+      "word_range_reviews": 74,
+      "language_top_labels": {
+        "en": 74
+      },
+      "eligible_reviews": 74,
+      "eligible_ratings": {
+        "5": 47,
+        "2": 12,
+        "1": 7,
+        "4": 4,
+        "3": 4
+      },
+      "eligible_length_bins": {
+        "20_39": 38,
+        "40_79": 31,
+        "80_200": 5
+      }
+    },
+    "B09XBSDCXP": {
+      "valid_unique_reviews": 358,
+      "word_range_reviews": 237,
+      "language_top_labels": {
+        "en": 237
+      },
+      "eligible_reviews": 235,
+      "eligible_ratings": {
+        "5": 112,
+        "3": 33,
+        "1": 56,
+        "4": 17,
+        "2": 17
+      },
+      "eligible_length_bins": {
+        "80_200": 47,
+        "20_39": 101,
+        "40_79": 87
+      }
+    },
+    "B0B7L451Z9": {
+      "valid_unique_reviews": 293,
+      "word_range_reviews": 155,
+      "language_top_labels": {
+        "en": 152,
+        "es": 3
+      },
+      "eligible_reviews": 151,
+      "eligible_ratings": {
+        "3": 23,
+        "5": 69,
+        "1": 26,
+        "4": 15,
+        "2": 18
+      },
+      "eligible_length_bins": {
+        "20_39": 87,
+        "40_79": 50,
+        "80_200": 14
+      }
+    },
+    "B0BC3MQD29": {
+      "valid_unique_reviews": 195,
+      "word_range_reviews": 97,
+      "language_top_labels": {
+        "en": 97
+      },
+      "eligible_reviews": 97,
+      "eligible_ratings": {
+        "5": 45,
+        "2": 10,
+        "1": 26,
+        "3": 10,
+        "4": 6
+      },
+      "eligible_length_bins": {
+        "20_39": 49,
+        "40_79": 39,
+        "80_200": 9
+      }
+    },
+    "B0BV1FPZY6": {
+      "valid_unique_reviews": 598,
+      "word_range_reviews": 362,
+      "language_top_labels": {
+        "en": 359,
+        "es": 3
+      },
+      "eligible_reviews": 358,
+      "eligible_ratings": {
+        "5": 304,
+        "3": 11,
+        "1": 15,
+        "4": 23,
+        "2": 5
+      },
+      "eligible_length_bins": {
+        "80_200": 71,
+        "20_39": 152,
+        "40_79": 135
+      }
+    },
+    "B0CDNZ7F2V": {
+      "valid_unique_reviews": 278,
+      "word_range_reviews": 111,
+      "language_top_labels": {
+        "en": 109,
+        "es": 2
+      },
+      "eligible_reviews": 109,
+      "eligible_ratings": {
+        "2": 5,
+        "5": 77,
+        "4": 14,
+        "1": 10,
+        "3": 3
+      },
+      "eligible_length_bins": {
+        "20_39": 56,
+        "40_79": 36,
+        "80_200": 17
+      }
+    }
+  },
+  "candidate_overlap": [
+    {
+      "a": "compact_brush_kits",
+      "b": "compact_mascaras",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "intermediate_deodorants",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "intermediate_hair_routine",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "varied_cross_category_a",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "varied_cross_category_b",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "varied_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_brush_kits",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "intermediate_deodorants",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "intermediate_hair_routine",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "varied_cross_category_a",
+      "shared_products": 1
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "varied_cross_category_b",
+      "shared_products": 1
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "varied_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_deodorants",
+      "b": "intermediate_hair_routine",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_deodorants",
+      "b": "varied_cross_category_a",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_deodorants",
+      "b": "varied_cross_category_b",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_deodorants",
+      "b": "varied_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_deodorants",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_hair_routine",
+      "b": "varied_cross_category_a",
+      "shared_products": 2
+    },
+    {
+      "a": "intermediate_hair_routine",
+      "b": "varied_cross_category_b",
+      "shared_products": 0
+    },
+    {
+      "a": "intermediate_hair_routine",
+      "b": "varied_disjoint",
+      "shared_products": 2
+    },
+    {
+      "a": "intermediate_hair_routine",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 3
+    },
+    {
+      "a": "varied_cross_category_a",
+      "b": "varied_cross_category_b",
+      "shared_products": 0
+    },
+    {
+      "a": "varied_cross_category_a",
+      "b": "varied_disjoint",
+      "shared_products": 4
+    },
+    {
+      "a": "varied_cross_category_a",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "varied_cross_category_b",
+      "b": "varied_disjoint",
+      "shared_products": 1
+    },
+    {
+      "a": "varied_cross_category_b",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    },
+    {
+      "a": "varied_disjoint",
+      "b": "intermediate_hair_disjoint",
+      "shared_products": 0
+    }
+  ],
+  "candidates": [
+    {
+      "id": "compact_brush_kits",
+      "hypothesis": "compact",
+      "label_pt": "Cinco kits de pincéis, sem repetir pares de cor identificados",
+      "product_ids": [
+        "B07G19ZXWB",
+        "B07DSDBTST",
+        "B005V3AV5U",
+        "B00V5YFCVM",
+        "B01CZNI0KG"
+      ],
+      "catalog_consistency_note": "Initial review inspection of B005V3AV5U includes sample/eyeshadow experiences inconsistent with a brush-only scope; investigate before selection.",
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 393,
+      "minimum_product_pool": 44,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 1,
+      "unique_functions": 1,
+      "unique_coded_formats": 3,
+      "unknown_coded_formats": 1,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 3,
+      "products_missing_brand_attribute": 2,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.5707449316978455,
+          "min": 0.5576503276824951,
+          "max": 0.5790231823921204
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.16432949900627136,
+          "min": 0.1582835614681244,
+          "max": 0.1712743490934372
+        },
+        "within_product_distance": {
+          "mean": 0.5207442927360535,
+          "min": 0.5042147636413574,
+          "max": 0.5314742743968963
+        },
+        "mean_words": {
+          "mean": 50.702666666666666,
+          "min": 48.973333333333336,
+          "max": 54.026666666666664
+        },
+        "median_words": {
+          "mean": 38.1,
+          "min": 37.0,
+          "max": 40.5
+        },
+        "embedding_truncated_share": {
+          "mean": 0.02,
+          "min": 0.013333333333333334,
+          "max": 0.02666666666666667
+        },
+        "low_rating_share": {
+          "mean": 0.13333333333333333,
+          "min": 0.12,
+          "max": 0.16
+        },
+        "middle_rating_share": {
+          "mean": 0.112,
+          "min": 0.07333333333333333,
+          "max": 0.14
+        },
+        "high_rating_share": {
+          "mean": 0.7546666666666666,
+          "min": 0.7,
+          "max": 0.8066666666666666
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.3897234633140105,
+          "min": 0.35720232133154767,
+          "max": 0.40341261782203136
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.3186347412800791,
+          "min": 0.2850938378787686,
+          "max": 0.34515420476564795
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.3075409037762952,
+          "min": 0.27020854590324517,
+          "max": 0.3287572144404394
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.5797513365745545,
+              "min": 0.5664522647857666,
+              "max": 0.5917803645133972
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.16943117678165437,
+              "min": 0.1609502136707306,
+              "max": 0.17712177336215973
+            },
+            "within_product_distance": {
+              "mean": 0.5293005812168121,
+              "min": 0.5170065104961395,
+              "max": 0.5409616470336914
+            },
+            "mean_words": {
+              "mean": 41.16,
+              "min": 40.3,
+              "max": 42.21333333333333
+            },
+            "median_words": {
+              "mean": 32.5,
+              "min": 31.0,
+              "max": 33.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.006666666666666667,
+              "min": 0.006666666666666667,
+              "max": 0.006666666666666667
+            },
+            "low_rating_share": {
+              "mean": 0.12533333333333332,
+              "min": 0.10666666666666667,
+              "max": 0.16666666666666666
+            },
+            "middle_rating_share": {
+              "mean": 0.10933333333333334,
+              "min": 0.06666666666666667,
+              "max": 0.14666666666666667
+            },
+            "high_rating_share": {
+              "mean": 0.7653333333333333,
+              "min": 0.6866666666666666,
+              "max": 0.8266666666666667
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.4078141804202987,
+              "min": 0.37594284543133816,
+              "max": 0.4328589579938542
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.3287579851836535,
+              "min": 0.2978044026537811,
+              "max": 0.3557966849692799
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.32706431808822184,
+              "min": 0.3008680501510507,
+              "max": 0.3492342964357862
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.58396315574646,
+              "between_product_centroid_distance": 0.1609502136707306,
+              "within_product_distance": 0.5388767898082734,
+              "mean_words": 40.3,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.13333333333333333,
+              "middle_rating_share": 0.12666666666666668,
+              "high_rating_share": 0.74,
+              "semantic_cluster_entropy_k8": 0.41162188993929244,
+              "semantic_cluster_entropy_k12": 0.34701410925234527,
+              "semantic_cluster_entropy_k16": 0.3455590353109813
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5664522647857666,
+              "between_product_centroid_distance": 0.16129523515701294,
+              "within_product_distance": 0.5170065104961395,
+              "mean_words": 41.17333333333333,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.11333333333333333,
+              "middle_rating_share": 0.1,
+              "high_rating_share": 0.7866666666666666,
+              "semantic_cluster_entropy_k8": 0.4068698838128422,
+              "semantic_cluster_entropy_k12": 0.3360847339414086,
+              "semantic_cluster_entropy_k16": 0.3008680501510507
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5917803645133972,
+              "between_product_centroid_distance": 0.1708819568157196,
+              "within_product_distance": 0.5409616470336914,
+              "mean_words": 40.95333333333333,
+              "median_words": 31.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.10666666666666667,
+              "middle_rating_share": 0.06666666666666667,
+              "high_rating_share": 0.8266666666666667,
+              "semantic_cluster_entropy_k8": 0.4328589579938542,
+              "semantic_cluster_entropy_k12": 0.3557966849692799,
+              "semantic_cluster_entropy_k16": 0.3492342964357862
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5818409323692322,
+              "between_product_centroid_distance": 0.17712177336215973,
+              "within_product_distance": 0.5291771113872528,
+              "mean_words": 42.21333333333333,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.10666666666666667,
+              "middle_rating_share": 0.10666666666666667,
+              "high_rating_share": 0.7866666666666666,
+              "semantic_cluster_entropy_k8": 0.37594284543133816,
+              "semantic_cluster_entropy_k12": 0.3070899951014527,
+              "semantic_cluster_entropy_k16": 0.33065559305586373
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5747199654579163,
+              "between_product_centroid_distance": 0.17690670490264893,
+              "within_product_distance": 0.5204808473587036,
+              "mean_words": 41.16,
+              "median_words": 32.5,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.16666666666666666,
+              "middle_rating_share": 0.14666666666666667,
+              "high_rating_share": 0.6866666666666666,
+              "semantic_cluster_entropy_k8": 0.41177732492416647,
+              "semantic_cluster_entropy_k12": 0.2978044026537811,
+              "semantic_cluster_entropy_k16": 0.3090046154874273
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.5788941621780396,
+              "min": 0.5660005807876587,
+              "max": 0.5916575789451599
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.1708348959684372,
+              "min": 0.1576942652463913,
+              "max": 0.18197140097618103
+            },
+            "within_product_distance": {
+              "mean": 0.5298825812339782,
+              "min": 0.5116492629051208,
+              "max": 0.5465429604053498
+            },
+            "mean_words": {
+              "mean": 48.5024,
+              "min": 46.944,
+              "max": 50.952
+            },
+            "median_words": {
+              "mean": 36.4,
+              "min": 34.0,
+              "max": 39.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0128,
+              "min": 0.0,
+              "max": 0.024
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.40626427233170725,
+              "min": 0.39033534539636344,
+              "max": 0.4353967348167216
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.3359242678034767,
+              "min": 0.3052811282176345,
+              "max": 0.3563563597366457
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.33096880297949854,
+              "min": 0.30103247121641596,
+              "max": 0.36429607741628395
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5916575789451599,
+              "between_product_centroid_distance": 0.16823267936706543,
+              "within_product_distance": 0.5465429604053498,
+              "mean_words": 46.944,
+              "median_words": 34.0,
+              "embedding_truncated_share": 0.024,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.4353967348167216,
+              "semantic_cluster_entropy_k12": 0.3434899103800221,
+              "semantic_cluster_entropy_k16": 0.36429607741628395
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5698899030685425,
+              "between_product_centroid_distance": 0.1576942652463913,
+              "within_product_distance": 0.5256725728511811,
+              "mean_words": 47.168,
+              "median_words": 37.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.3912236000202883,
+              "semantic_cluster_entropy_k12": 0.34656622734385645,
+              "semantic_cluster_entropy_k16": 0.30649182033234873
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5856736302375793,
+              "between_product_centroid_distance": 0.18197140097618103,
+              "within_product_distance": 0.5304410457611084,
+              "mean_words": 48.792,
+              "median_words": 36.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.4155982909427135,
+              "semantic_cluster_entropy_k12": 0.3563563597366457,
+              "semantic_cluster_entropy_k16": 0.3423375279276739
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5812491178512573,
+              "between_product_centroid_distance": 0.1678871363401413,
+              "within_product_distance": 0.5351070642471314,
+              "mean_words": 48.656,
+              "median_words": 36.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.39033534539636344,
+              "semantic_cluster_entropy_k12": 0.32792771333922477,
+              "semantic_cluster_entropy_k16": 0.3406861180047703
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5660005807876587,
+              "between_product_centroid_distance": 0.17838899791240692,
+              "within_product_distance": 0.5116492629051208,
+              "mean_words": 50.952,
+              "median_words": 39.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.3987673904824494,
+              "semantic_cluster_entropy_k12": 0.3052811282176345,
+              "semantic_cluster_entropy_k16": 0.30103247121641596
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "compact_mascaras",
+      "hypothesis": "compact",
+      "label_pt": "Cinco máscaras para cílios",
+      "product_ids": [
+        "B0B7L451Z9",
+        "B08TCBP8HV",
+        "B01557EHW4",
+        "B0BC3MQD29",
+        "B07M5HB65T"
+      ],
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 577,
+      "minimum_product_pool": 75,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 1,
+      "unique_functions": 1,
+      "unique_coded_formats": 4,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 3,
+      "products_missing_brand_attribute": 2,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.5487980246543884,
+          "min": 0.520963191986084,
+          "max": 0.5645468831062317
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.06359651982784272,
+          "min": 0.05666197091341019,
+          "max": 0.07213637977838516
+        },
+        "within_product_distance": {
+          "mean": 0.5376929306983949,
+          "min": 0.5106333434581757,
+          "max": 0.5505477368831635
+        },
+        "mean_words": {
+          "mean": 46.68533333333333,
+          "min": 43.52,
+          "max": 50.58
+        },
+        "median_words": {
+          "mean": 37.2,
+          "min": 34.0,
+          "max": 41.5
+        },
+        "embedding_truncated_share": {
+          "mean": 0.002666666666666667,
+          "min": 0.0,
+          "max": 0.006666666666666667
+        },
+        "low_rating_share": {
+          "mean": 0.34400000000000003,
+          "min": 0.32666666666666666,
+          "max": 0.36
+        },
+        "middle_rating_share": {
+          "mean": 0.08933333333333333,
+          "min": 0.07333333333333333,
+          "max": 0.12
+        },
+        "high_rating_share": {
+          "mean": 0.5666666666666667,
+          "min": 0.5533333333333333,
+          "max": 0.58
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.3315239091796903,
+          "min": 0.2696916446126062,
+          "max": 0.36830621906648714
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.5911314165916697,
+          "min": 0.5395127973411153,
+          "max": 0.6245244539776691
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.3721067374343716,
+          "min": 0.32509875566185614,
+          "max": 0.427837209325442
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.5633146166801453,
+              "min": 0.5486462712287903,
+              "max": 0.572757363319397
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.0669271133840084,
+              "min": 0.05904487892985344,
+              "max": 0.0750335231423378
+            },
+            "within_product_distance": {
+              "mean": 0.5517057633399963,
+              "min": 0.5388547062873841,
+              "max": 0.5636833190917969
+            },
+            "mean_words": {
+              "mean": 40.477333333333334,
+              "min": 39.96,
+              "max": 41.18666666666667
+            },
+            "median_words": {
+              "mean": 32.1,
+              "min": 31.5,
+              "max": 33.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0013333333333333335,
+              "min": 0.0,
+              "max": 0.006666666666666667
+            },
+            "low_rating_share": {
+              "mean": 0.3373333333333333,
+              "min": 0.32,
+              "max": 0.3466666666666667
+            },
+            "middle_rating_share": {
+              "mean": 0.08666666666666667,
+              "min": 0.07333333333333333,
+              "max": 0.10666666666666667
+            },
+            "high_rating_share": {
+              "mean": 0.576,
+              "min": 0.5466666666666666,
+              "max": 0.6066666666666667
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.3755907223251515,
+              "min": 0.3451360671832566,
+              "max": 0.42105547058697024
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.6144792991089865,
+              "min": 0.6010978274161953,
+              "max": 0.6428628534014538
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.4063312674800116,
+              "min": 0.36710924870245687,
+              "max": 0.45191719037039835
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5486462712287903,
+              "between_product_centroid_distance": 0.05904487892985344,
+              "within_product_distance": 0.5388547062873841,
+              "mean_words": 40.373333333333335,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.32,
+              "middle_rating_share": 0.07333333333333333,
+              "high_rating_share": 0.6066666666666667,
+              "semantic_cluster_entropy_k8": 0.3451360671832566,
+              "semantic_cluster_entropy_k12": 0.6071946550570014,
+              "semantic_cluster_entropy_k16": 0.4123167036157368
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.572757363319397,
+              "between_product_centroid_distance": 0.06404236704111099,
+              "within_product_distance": 0.5636833190917969,
+              "mean_words": 40.473333333333336,
+              "median_words": 32.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.3466666666666667,
+              "middle_rating_share": 0.07333333333333333,
+              "high_rating_share": 0.58,
+              "semantic_cluster_entropy_k8": 0.42105547058697024,
+              "semantic_cluster_entropy_k12": 0.6428628534014538,
+              "semantic_cluster_entropy_k16": 0.45191719037039835
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5602934956550598,
+              "between_product_centroid_distance": 0.06749333441257477,
+              "within_product_distance": 0.5478797674179077,
+              "mean_words": 39.96,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.3466666666666667,
+              "middle_rating_share": 0.10666666666666667,
+              "high_rating_share": 0.5466666666666666,
+              "semantic_cluster_entropy_k8": 0.3750443844929591,
+              "semantic_cluster_entropy_k12": 0.6010978274161953,
+              "semantic_cluster_entropy_k16": 0.4117874381232317
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5708954334259033,
+              "between_product_centroid_distance": 0.06902146339416504,
+              "within_product_distance": 0.5590392053127289,
+              "mean_words": 41.18666666666667,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.32666666666666666,
+              "middle_rating_share": 0.1,
+              "high_rating_share": 0.5733333333333334,
+              "semantic_cluster_entropy_k8": 0.37327831919121135,
+              "semantic_cluster_entropy_k12": 0.6057754625536907,
+              "semantic_cluster_entropy_k16": 0.38852575658823413
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.5639805197715759,
+              "between_product_centroid_distance": 0.0750335231423378,
+              "within_product_distance": 0.5490718185901642,
+              "mean_words": 40.39333333333333,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.3466666666666667,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.5733333333333334,
+              "semantic_cluster_entropy_k8": 0.36343937017136013,
+              "semantic_cluster_entropy_k12": 0.615465697116591,
+              "semantic_cluster_entropy_k16": 0.36710924870245687
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.5238691806793213,
+              "min": 0.5032894015312195,
+              "max": 0.5403730869293213
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.0641461431980133,
+              "min": 0.05566857010126114,
+              "max": 0.07074584066867828
+            },
+            "within_product_distance": {
+              "mean": 0.5136844563484192,
+              "min": 0.4947119474411011,
+              "max": 0.5308612167835236
+            },
+            "mean_words": {
+              "mean": 46.3792,
+              "min": 43.072,
+              "max": 48.224
+            },
+            "median_words": {
+              "mean": 35.4,
+              "min": 33.0,
+              "max": 39.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0032,
+              "min": 0.0,
+              "max": 0.008
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.2751328983664121,
+              "min": 0.22207929147641428,
+              "max": 0.32651747178746143
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.5697860009212771,
+              "min": 0.5278886807779631,
+              "max": 0.5984425446231052
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.37157195725159314,
+              "min": 0.3349883466320513,
+              "max": 0.41309386704944046
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5049577951431274,
+              "between_product_centroid_distance": 0.058022357523441315,
+              "within_product_distance": 0.495619523525238,
+              "mean_words": 46.76,
+              "median_words": 39.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.23608810086804732,
+              "semantic_cluster_entropy_k12": 0.5700721165224856,
+              "semantic_cluster_entropy_k16": 0.3665047334334185
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5337655544281006,
+              "between_product_centroid_distance": 0.07003070414066315,
+              "within_product_distance": 0.5219696342945099,
+              "mean_words": 46.76,
+              "median_words": 35.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.29168347655370425,
+              "semantic_cluster_entropy_k12": 0.581684795322188,
+              "semantic_cluster_entropy_k16": 0.41309386704944046
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5032894015312195,
+              "between_product_centroid_distance": 0.05566857010126114,
+              "within_product_distance": 0.4947119474411011,
+              "mean_words": 48.224,
+              "median_words": 36.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.22207929147641428,
+              "semantic_cluster_entropy_k12": 0.5278886807779631,
+              "semantic_cluster_entropy_k16": 0.3349883466320513
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5403730869293213,
+              "between_product_centroid_distance": 0.06626324355602264,
+              "within_product_distance": 0.5308612167835236,
+              "mean_words": 47.08,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.2992961511464332,
+              "semantic_cluster_entropy_k12": 0.5708418673606437,
+              "semantic_cluster_entropy_k16": 0.3695048740728254
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5369600653648376,
+              "between_product_centroid_distance": 0.07074584066867828,
+              "within_product_distance": 0.5252599596977234,
+              "mean_words": 43.072,
+              "median_words": 34.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.32651747178746143,
+              "semantic_cluster_entropy_k12": 0.5984425446231052,
+              "semantic_cluster_entropy_k16": 0.37376796507023013
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "intermediate_deodorants",
+      "hypothesis": "intermediate",
+      "label_pt": "Cinco desodorantes com marcas/formatos diferentes",
+      "product_ids": [
+        "B00NQ2CCOQ",
+        "B00V8ZCT1Y",
+        "B01G45RD9U",
+        "B07CT88DYS",
+        "B07HZ4CW7F"
+      ],
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 434,
+      "minimum_product_pool": 44,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 1,
+      "unique_functions": 1,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 1,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 5,
+      "products_missing_brand_attribute": 0,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.5998378992080688,
+          "min": 0.5863547921180725,
+          "max": 0.6121386289596558
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.17412217259407042,
+          "min": 0.15924808382987976,
+          "max": 0.18853352963924408
+        },
+        "within_product_distance": {
+          "mean": 0.5475882875919342,
+          "min": 0.5321101665496826,
+          "max": 0.5582875788211823
+        },
+        "mean_words": {
+          "mean": 53.02133333333333,
+          "min": 50.86666666666667,
+          "max": 54.553333333333335
+        },
+        "median_words": {
+          "mean": 42.5,
+          "min": 41.5,
+          "max": 44.0
+        },
+        "embedding_truncated_share": {
+          "mean": 0.024,
+          "min": 0.013333333333333334,
+          "max": 0.03333333333333333
+        },
+        "low_rating_share": {
+          "mean": 0.15733333333333333,
+          "min": 0.13333333333333333,
+          "max": 0.18666666666666668
+        },
+        "middle_rating_share": {
+          "mean": 0.07200000000000001,
+          "min": 0.05333333333333334,
+          "max": 0.1
+        },
+        "high_rating_share": {
+          "mean": 0.7706666666666667,
+          "min": 0.74,
+          "max": 0.8066666666666666
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.48185239413472186,
+          "min": 0.4563837876433718,
+          "max": 0.5003263411033273
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.3765562715060542,
+          "min": 0.3631535313407148,
+          "max": 0.38661730418092716
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.430946234804065,
+          "min": 0.41795538577772007,
+          "max": 0.4575089549467399
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.6262349247932434,
+              "min": 0.6187037229537964,
+              "max": 0.6363400816917419
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.17715089321136473,
+              "min": 0.1662202626466751,
+              "max": 0.18736648559570312
+            },
+            "within_product_distance": {
+              "mean": 0.5783615398406983,
+              "min": 0.5715753197669983,
+              "max": 0.5857897996902466
+            },
+            "mean_words": {
+              "mean": 40.93866666666667,
+              "min": 38.973333333333336,
+              "max": 41.98
+            },
+            "median_words": {
+              "mean": 32.4,
+              "min": 31.5,
+              "max": 33.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.009333333333333334,
+              "min": 0.0,
+              "max": 0.013333333333333334
+            },
+            "low_rating_share": {
+              "mean": 0.152,
+              "min": 0.12,
+              "max": 0.18666666666666668
+            },
+            "middle_rating_share": {
+              "mean": 0.06266666666666666,
+              "min": 0.04666666666666667,
+              "max": 0.08
+            },
+            "high_rating_share": {
+              "mean": 0.7853333333333333,
+              "min": 0.7533333333333333,
+              "max": 0.8
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.5279179790440681,
+              "min": 0.49014083717403545,
+              "max": 0.5462883489506711
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.4056191946496902,
+              "min": 0.38972646911626807,
+              "max": 0.41964143538812937
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.4519747398467115,
+              "min": 0.425736366463881,
+              "max": 0.4675007615326884
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6292620301246643,
+              "between_product_centroid_distance": 0.18602508306503296,
+              "within_product_distance": 0.5791151046752929,
+              "mean_words": 41.98,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.18666666666666668,
+              "middle_rating_share": 0.06,
+              "high_rating_share": 0.7533333333333333,
+              "semantic_cluster_entropy_k8": 0.5343561052324073,
+              "semantic_cluster_entropy_k12": 0.4174635061224659,
+              "semantic_cluster_entropy_k16": 0.4539634281307911
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6273646950721741,
+              "between_product_centroid_distance": 0.1752348095178604,
+              "within_product_distance": 0.581088387966156,
+              "mean_words": 40.733333333333334,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.15333333333333332,
+              "middle_rating_share": 0.04666666666666667,
+              "high_rating_share": 0.8,
+              "semantic_cluster_entropy_k8": 0.5306394506673434,
+              "semantic_cluster_entropy_k12": 0.4051197305972696,
+              "semantic_cluster_entropy_k16": 0.4498591782632135
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6363400816917419,
+              "between_product_centroid_distance": 0.18736648559570312,
+              "within_product_distance": 0.5857897996902466,
+              "mean_words": 38.973333333333336,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.06,
+              "high_rating_share": 0.78,
+              "semantic_cluster_entropy_k8": 0.5462883489506711,
+              "semantic_cluster_entropy_k12": 0.3961448320243181,
+              "semantic_cluster_entropy_k16": 0.4675007615326884
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6187037229537964,
+              "between_product_centroid_distance": 0.1662202626466751,
+              "within_product_distance": 0.5742390871047973,
+              "mean_words": 41.49333333333333,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.14,
+              "middle_rating_share": 0.06666666666666667,
+              "high_rating_share": 0.7933333333333333,
+              "semantic_cluster_entropy_k8": 0.49014083717403545,
+              "semantic_cluster_entropy_k12": 0.38972646911626807,
+              "semantic_cluster_entropy_k16": 0.425736366463881
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6195040941238403,
+              "between_product_centroid_distance": 0.17090782523155212,
+              "within_product_distance": 0.5715753197669983,
+              "mean_words": 41.513333333333335,
+              "median_words": 32.5,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.12,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.8,
+              "semantic_cluster_entropy_k8": 0.5381651531958834,
+              "semantic_cluster_entropy_k12": 0.41964143538812937,
+              "semantic_cluster_entropy_k16": 0.46281396484298337
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.5892185688018798,
+              "min": 0.5737956166267395,
+              "max": 0.6082720160484314
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.18139838874340058,
+              "min": 0.16489337384700775,
+              "max": 0.19658537209033966
+            },
+            "within_product_distance": {
+              "mean": 0.5339666366577148,
+              "min": 0.5151315927505493,
+              "max": 0.5531793296337127
+            },
+            "mean_words": {
+              "mean": 53.3936,
+              "min": 50.728,
+              "max": 56.784
+            },
+            "median_words": {
+              "mean": 43.0,
+              "min": 42.0,
+              "max": 44.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.027200000000000002,
+              "min": 0.016,
+              "max": 0.04
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.45809276838146656,
+              "min": 0.4357269516990095,
+              "max": 0.5115015170810009
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.37089452870665246,
+              "min": 0.35447235469965627,
+              "max": 0.38540338371384514
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.42521061239071145,
+              "min": 0.3992385743068784,
+              "max": 0.4645357157083614
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5886662602424622,
+              "between_product_centroid_distance": 0.17819593846797943,
+              "within_product_distance": 0.5362521111965179,
+              "mean_words": 53.432,
+              "median_words": 42.0,
+              "embedding_truncated_share": 0.032,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.437335038558172,
+              "semantic_cluster_entropy_k12": 0.38540338371384514,
+              "semantic_cluster_entropy_k16": 0.42622307049109487
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5929992198944092,
+              "between_product_centroid_distance": 0.19658537209033966,
+              "within_product_distance": 0.5324152886867524,
+              "mean_words": 52.6,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.024,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.45762371359594767,
+              "semantic_cluster_entropy_k12": 0.35447235469965627,
+              "semantic_cluster_entropy_k16": 0.41411544371674475
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6082720160484314,
+              "between_product_centroid_distance": 0.18560323119163513,
+              "within_product_distance": 0.5531793296337127,
+              "mean_words": 50.728,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5115015170810009,
+              "semantic_cluster_entropy_k12": 0.37371736196084754,
+              "semantic_cluster_entropy_k16": 0.4645357157083614
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5823597311973572,
+              "between_product_centroid_distance": 0.16489337384700775,
+              "within_product_distance": 0.5328548610210418,
+              "mean_words": 53.424,
+              "median_words": 44.0,
+              "embedding_truncated_share": 0.024,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.4357269516990095,
+              "semantic_cluster_entropy_k12": 0.3592185131803932,
+              "semantic_cluster_entropy_k16": 0.42194025773047783
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.5737956166267395,
+              "between_product_centroid_distance": 0.1817140281200409,
+              "within_product_distance": 0.5151315927505493,
+              "mean_words": 56.784,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.04,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.44827662097320276,
+              "semantic_cluster_entropy_k12": 0.3816610299785201,
+              "semantic_cluster_entropy_k16": 0.3992385743068784
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "intermediate_hair_routine",
+      "hypothesis": "intermediate",
+      "label_pt": "Cinco tipos de produto de uma rotina capilar",
+      "product_ids": [
+        "B012Q9NGE4",
+        "B01DD1NOZU",
+        "B0BV1FPZY6",
+        "B019GBG0IE",
+        "B00R1TAN7I"
+      ],
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 2507,
+      "minimum_product_pool": 239,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 1,
+      "unique_functions": 5,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 5,
+      "products_missing_brand_attribute": 0,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.6546583890914917,
+          "min": 0.6443073749542236,
+          "max": 0.6609790325164795
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.33021423816680906,
+          "min": 0.30721476674079895,
+          "max": 0.3483622670173645
+        },
+        "within_product_distance": {
+          "mean": 0.5438022875785827,
+          "min": 0.527943778038025,
+          "max": 0.5556930541992188
+        },
+        "mean_words": {
+          "mean": 56.168,
+          "min": 54.60666666666667,
+          "max": 58.593333333333334
+        },
+        "median_words": {
+          "mean": 45.0,
+          "min": 40.0,
+          "max": 50.5
+        },
+        "embedding_truncated_share": {
+          "mean": 0.02,
+          "min": 0.006666666666666667,
+          "max": 0.04
+        },
+        "low_rating_share": {
+          "mean": 0.22266666666666665,
+          "min": 0.16666666666666666,
+          "max": 0.2733333333333333
+        },
+        "middle_rating_share": {
+          "mean": 0.10266666666666667,
+          "min": 0.06666666666666667,
+          "max": 0.12666666666666668
+        },
+        "high_rating_share": {
+          "mean": 0.6746666666666666,
+          "min": 0.6133333333333333,
+          "max": 0.72
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.5437003713997033,
+          "min": 0.511577677342959,
+          "max": 0.572149578794635
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.410971826778464,
+          "min": 0.36424455085435936,
+          "max": 0.45478085358812204
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.6274491466177582,
+          "min": 0.6203429263496802,
+          "max": 0.6424783002493341
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.6672452688217163,
+              "min": 0.656901478767395,
+              "max": 0.6791060566902161
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.3266390860080719,
+              "min": 0.3014627993106842,
+              "max": 0.35178399085998535
+            },
+            "within_product_distance": {
+              "mean": 0.5634713220596314,
+              "min": 0.5471837401390076,
+              "max": 0.5862241148948669
+            },
+            "mean_words": {
+              "mean": 41.2,
+              "min": 40.22666666666667,
+              "max": 41.88
+            },
+            "median_words": {
+              "mean": 32.4,
+              "min": 31.0,
+              "max": 33.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.005333333333333334,
+              "min": 0.0,
+              "max": 0.013333333333333334
+            },
+            "low_rating_share": {
+              "mean": 0.24933333333333332,
+              "min": 0.19333333333333333,
+              "max": 0.32
+            },
+            "middle_rating_share": {
+              "mean": 0.08533333333333334,
+              "min": 0.05333333333333334,
+              "max": 0.10666666666666667
+            },
+            "high_rating_share": {
+              "mean": 0.6653333333333333,
+              "min": 0.5733333333333334,
+              "max": 0.7133333333333334
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.5703932323771095,
+              "min": 0.5418832800926027,
+              "max": 0.6263605374371075
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.4376698090502945,
+              "min": 0.40003317841213665,
+              "max": 0.48077947845085145
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.6494989168624515,
+              "min": 0.6297634404723692,
+              "max": 0.6729170578122631
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6683112382888794,
+              "between_product_centroid_distance": 0.3296193778514862,
+              "within_product_distance": 0.5634688615798951,
+              "mean_words": 41.88,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.22666666666666666,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.6933333333333334,
+              "semantic_cluster_entropy_k8": 0.5418832800926027,
+              "semantic_cluster_entropy_k12": 0.42885615599985105,
+              "semantic_cluster_entropy_k16": 0.6425240794346384
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6575513482093811,
+              "between_product_centroid_distance": 0.3171559274196625,
+              "within_product_distance": 0.5550391912460327,
+              "mean_words": 41.61333333333334,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.30666666666666664,
+              "middle_rating_share": 0.05333333333333334,
+              "high_rating_share": 0.64,
+              "semantic_cluster_entropy_k8": 0.5429364284420636,
+              "semantic_cluster_entropy_k12": 0.41628695312693353,
+              "semantic_cluster_entropy_k16": 0.6297634404723692
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.67435622215271,
+              "between_product_centroid_distance": 0.3014627993106842,
+              "within_product_distance": 0.5862241148948669,
+              "mean_words": 40.22666666666667,
+              "median_words": 31.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.32,
+              "middle_rating_share": 0.10666666666666667,
+              "high_rating_share": 0.5733333333333334,
+              "semantic_cluster_entropy_k8": 0.6263605374371075,
+              "semantic_cluster_entropy_k12": 0.46239327926169993,
+              "semantic_cluster_entropy_k16": 0.6729170578122631
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.656901478767395,
+              "between_product_centroid_distance": 0.33317333459854126,
+              "within_product_distance": 0.5471837401390076,
+              "mean_words": 40.95333333333333,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.19333333333333333,
+              "middle_rating_share": 0.1,
+              "high_rating_share": 0.7066666666666667,
+              "semantic_cluster_entropy_k8": 0.5443751389860062,
+              "semantic_cluster_entropy_k12": 0.40003317841213665,
+              "semantic_cluster_entropy_k16": 0.6460585732466435
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6791060566902161,
+              "between_product_centroid_distance": 0.35178399085998535,
+              "within_product_distance": 0.5654407024383545,
+              "mean_words": 41.32666666666667,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.2,
+              "middle_rating_share": 0.08666666666666667,
+              "high_rating_share": 0.7133333333333334,
+              "semantic_cluster_entropy_k8": 0.5964107769277676,
+              "semantic_cluster_entropy_k12": 0.48077947845085145,
+              "semantic_cluster_entropy_k16": 0.6562314333463437
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.6411171555519104,
+              "min": 0.633016049861908,
+              "max": 0.6473247408866882
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.32352166175842284,
+              "min": 0.3091575503349304,
+              "max": 0.3314739167690277
+            },
+            "within_product_distance": {
+              "mean": 0.5296377193927765,
+              "min": 0.5183743476867676,
+              "max": 0.5443993747234345
+            },
+            "mean_words": {
+              "mean": 56.144,
+              "min": 53.68,
+              "max": 58.328
+            },
+            "median_words": {
+              "mean": 43.0,
+              "min": 40.0,
+              "max": 46.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0208,
+              "min": 0.008,
+              "max": 0.048
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.5436290435531049,
+              "min": 0.5017214808455205,
+              "max": 0.5867089284287744
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.4190486928277957,
+              "min": 0.3823086548666677,
+              "max": 0.4509450431550617
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.6206774635406935,
+              "min": 0.5975871951592273,
+              "max": 0.6418464137072588
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6473247408866882,
+              "between_product_centroid_distance": 0.3091575503349304,
+              "within_product_distance": 0.5443993747234345,
+              "mean_words": 55.112,
+              "median_words": 40.0,
+              "embedding_truncated_share": 0.048,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5458427255896272,
+              "semantic_cluster_entropy_k12": 0.4509450431550617,
+              "semantic_cluster_entropy_k16": 0.6111997261622663
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6392616629600525,
+              "between_product_centroid_distance": 0.3314739167690277,
+              "within_product_distance": 0.5236727714538574,
+              "mean_words": 53.68,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5017214808455205,
+              "semantic_cluster_entropy_k12": 0.38956118217620495,
+              "semantic_cluster_entropy_k16": 0.5975871951592273
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6393417119979858,
+              "between_product_centroid_distance": 0.3243785500526428,
+              "within_product_distance": 0.5266191720962524,
+              "mean_words": 57.432,
+              "median_words": 46.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5867089284287744,
+              "semantic_cluster_entropy_k12": 0.4297783111203774,
+              "semantic_cluster_entropy_k16": 0.6418464137072588
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.633016049861908,
+              "between_product_centroid_distance": 0.3269991874694824,
+              "within_product_distance": 0.5183743476867676,
+              "mean_words": 58.328,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5294492426667756,
+              "semantic_cluster_entropy_k12": 0.3823086548666677,
+              "semantic_cluster_entropy_k16": 0.6227563491588344
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6466416120529175,
+              "between_product_centroid_distance": 0.3255991041660309,
+              "within_product_distance": 0.5351229310035706,
+              "mean_words": 56.168,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5544228402348268,
+              "semantic_cluster_entropy_k12": 0.4426502728206668,
+              "semantic_cluster_entropy_k16": 0.6299976335158809
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "varied_cross_category_a",
+      "hypothesis": "varied",
+      "label_pt": "Shampoo, máscara para cílios, esmaltes, difusor e escova dental",
+      "product_ids": [
+        "B012Q9NGE4",
+        "B01557EHW4",
+        "B01LBESKBO",
+        "B019GBG0IE",
+        "B000FEIOHW"
+      ],
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 1916,
+      "minimum_product_pool": 95,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 4,
+      "unique_functions": 5,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 4,
+      "products_missing_brand_attribute": 1,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.7900398254394532,
+          "min": 0.7846918702125549,
+          "max": 0.7999337315559387
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.6475922346115113,
+          "min": 0.6305691003799438,
+          "max": 0.6650994420051575
+        },
+        "within_product_distance": {
+          "mean": 0.5742037534713745,
+          "min": 0.566862678527832,
+          "max": 0.5828685462474823
+        },
+        "mean_words": {
+          "mean": 59.473333333333336,
+          "min": 52.233333333333334,
+          "max": 63.7
+        },
+        "median_words": {
+          "mean": 45.7,
+          "min": 40.0,
+          "max": 53.0
+        },
+        "embedding_truncated_share": {
+          "mean": 0.034666666666666665,
+          "min": 0.02,
+          "max": 0.05333333333333334
+        },
+        "low_rating_share": {
+          "mean": 0.244,
+          "min": 0.20666666666666667,
+          "max": 0.2733333333333333
+        },
+        "middle_rating_share": {
+          "mean": 0.09466666666666668,
+          "min": 0.05333333333333334,
+          "max": 0.14666666666666667
+        },
+        "high_rating_share": {
+          "mean": 0.6613333333333333,
+          "min": 0.6333333333333333,
+          "max": 0.7
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.8174309836833737,
+          "min": 0.7956452786453512,
+          "max": 0.8400636706354531
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.7525056641196469,
+          "min": 0.7353879190479862,
+          "max": 0.7641309689198659
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.7684344537257368,
+          "min": 0.7439558878347601,
+          "max": 0.7918368646875206
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.800587248802185,
+              "min": 0.7954404354095459,
+              "max": 0.8054521679878235
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.633211863040924,
+              "min": 0.6206644773483276,
+              "max": 0.6478956937789917
+            },
+            "within_product_distance": {
+              "mean": 0.60711261510849,
+              "min": 0.6032973647117614,
+              "max": 0.613759458065033
+            },
+            "mean_words": {
+              "mean": 41.15866666666667,
+              "min": 40.5,
+              "max": 42.24
+            },
+            "median_words": {
+              "mean": 32.0,
+              "min": 31.5,
+              "max": 33.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.010666666666666668,
+              "min": 0.0,
+              "max": 0.02
+            },
+            "low_rating_share": {
+              "mean": 0.2826666666666667,
+              "min": 0.23333333333333334,
+              "max": 0.3466666666666667
+            },
+            "middle_rating_share": {
+              "mean": 0.07866666666666666,
+              "min": 0.05333333333333334,
+              "max": 0.10666666666666667
+            },
+            "high_rating_share": {
+              "mean": 0.6386666666666666,
+              "min": 0.58,
+              "max": 0.7
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.8270896200789587,
+              "min": 0.7948088484462962,
+              "max": 0.8571456164085255
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.7823540583761179,
+              "min": 0.7682689622021664,
+              "max": 0.7965591257608312
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.804767831178913,
+              "min": 0.7920076121902703,
+              "max": 0.834254699417664
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8054521679878235,
+              "between_product_centroid_distance": 0.6478956937789917,
+              "within_product_distance": 0.6067026615142822,
+              "mean_words": 42.24,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.02,
+              "low_rating_share": 0.24666666666666667,
+              "middle_rating_share": 0.05333333333333334,
+              "high_rating_share": 0.7,
+              "semantic_cluster_entropy_k8": 0.8571456164085255,
+              "semantic_cluster_entropy_k12": 0.7682689622021664,
+              "semantic_cluster_entropy_k16": 0.7976143780884043
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7954404354095459,
+              "between_product_centroid_distance": 0.6241899728775024,
+              "within_product_distance": 0.6032973647117614,
+              "mean_words": 41.29333333333334,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.3,
+              "middle_rating_share": 0.08666666666666667,
+              "high_rating_share": 0.6133333333333333,
+              "semantic_cluster_entropy_k8": 0.8218973877018558,
+              "semantic_cluster_entropy_k12": 0.7965591257608312,
+              "semantic_cluster_entropy_k16": 0.8068164009645592
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7997673749923706,
+              "between_product_centroid_distance": 0.6206644773483276,
+              "within_product_distance": 0.613759458065033,
+              "mean_words": 40.63333333333333,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.3466666666666667,
+              "middle_rating_share": 0.07333333333333333,
+              "high_rating_share": 0.58,
+              "semantic_cluster_entropy_k8": 0.8305727485112887,
+              "semantic_cluster_entropy_k12": 0.7845335553205284,
+              "semantic_cluster_entropy_k16": 0.834254699417664
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7970805168151855,
+              "between_product_centroid_distance": 0.6268929839134216,
+              "within_product_distance": 0.6034964323043823,
+              "mean_words": 41.126666666666665,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.23333333333333334,
+              "middle_rating_share": 0.10666666666666667,
+              "high_rating_share": 0.66,
+              "semantic_cluster_entropy_k8": 0.8310234993268273,
+              "semantic_cluster_entropy_k12": 0.7781201251389589,
+              "semantic_cluster_entropy_k16": 0.7920076121902703
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8051957488059998,
+              "between_product_centroid_distance": 0.646416187286377,
+              "within_product_distance": 0.608307158946991,
+              "mean_words": 40.5,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.2866666666666667,
+              "middle_rating_share": 0.07333333333333333,
+              "high_rating_share": 0.64,
+              "semantic_cluster_entropy_k8": 0.7948088484462962,
+              "semantic_cluster_entropy_k12": 0.784288523458105,
+              "semantic_cluster_entropy_k16": 0.7931460652336676
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.7816049456596375,
+              "min": 0.7743985056877136,
+              "max": 0.7907285094261169
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.6540263652801513,
+              "min": 0.641891598701477,
+              "max": 0.6638185381889343
+            },
+            "within_product_distance": {
+              "mean": 0.5528731167316437,
+              "min": 0.5349947452545166,
+              "max": 0.5649489343166352
+            },
+            "mean_words": {
+              "mean": 61.0912,
+              "min": 53.024,
+              "max": 67.808
+            },
+            "median_words": {
+              "mean": 47.2,
+              "min": 39.0,
+              "max": 58.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0352,
+              "min": 0.016,
+              "max": 0.048
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.8222202663511963,
+              "min": 0.7988856396104006,
+              "max": 0.8503405841091483
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.753759678066766,
+              "min": 0.7457191398108853,
+              "max": 0.76144915674595
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.7678554832121218,
+              "min": 0.7450997994360851,
+              "max": 0.7799267871559216
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7805728912353516,
+              "between_product_centroid_distance": 0.641891598701477,
+              "within_product_distance": 0.5606292665004731,
+              "mean_words": 61.056,
+              "median_words": 45.0,
+              "embedding_truncated_share": 0.048,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8503405841091483,
+              "semantic_cluster_entropy_k12": 0.7457191398108853,
+              "semantic_cluster_entropy_k16": 0.7639669715013211
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7842377424240112,
+              "between_product_centroid_distance": 0.6634286642074585,
+              "within_product_distance": 0.5509270668029785,
+              "mean_words": 60.656,
+              "median_words": 47.0,
+              "embedding_truncated_share": 0.032,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8199419173263519,
+              "semantic_cluster_entropy_k12": 0.7548516155155347,
+              "semantic_cluster_entropy_k16": 0.7796194100154626
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7743985056877136,
+              "between_product_centroid_distance": 0.6574395895004272,
+              "within_product_distance": 0.5349947452545166,
+              "mean_words": 67.808,
+              "median_words": 58.0,
+              "embedding_truncated_share": 0.032,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8269643989940921,
+              "semantic_cluster_entropy_k12": 0.7571750541698352,
+              "semantic_cluster_entropy_k16": 0.7799267871559216
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7780870795249939,
+              "between_product_centroid_distance": 0.6435534358024597,
+              "within_product_distance": 0.5528655707836151,
+              "mean_words": 62.912,
+              "median_words": 47.0,
+              "embedding_truncated_share": 0.048,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8149687917159886,
+              "semantic_cluster_entropy_k12": 0.749603424091625,
+              "semantic_cluster_entropy_k16": 0.7450997994360851
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7907285094261169,
+              "between_product_centroid_distance": 0.6638185381889343,
+              "within_product_distance": 0.5649489343166352,
+              "mean_words": 53.024,
+              "median_words": 39.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.7988856396104006,
+              "semantic_cluster_entropy_k12": 0.76144915674595,
+              "semantic_cluster_entropy_k16": 0.7706644479518188
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "varied_cross_category_b",
+      "hypothesis": "varied",
+      "label_pt": "Máscara para cílios, condicionador, desodorante, cílios magnéticos e esmalte",
+      "product_ids": [
+        "B07M5HB65T",
+        "B086H4C8QB",
+        "B09XBSDCXP",
+        "B08BZNW9NK",
+        "B09P3ZMV55"
+      ],
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 590,
+      "minimum_product_pool": 72,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 4,
+      "unique_functions": 5,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 4,
+      "products_missing_brand_attribute": 1,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.7339010596275329,
+          "min": 0.7188718914985657,
+          "max": 0.7461796402931213
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.5051439881324769,
+          "min": 0.48755937814712524,
+          "max": 0.5270398259162903
+        },
+        "within_product_distance": {
+          "mean": 0.5640713012218476,
+          "min": 0.5441771447658539,
+          "max": 0.5725005745887757
+        },
+        "mean_words": {
+          "mean": 47.94,
+          "min": 46.6,
+          "max": 49.18
+        },
+        "median_words": {
+          "mean": 38.9,
+          "min": 37.5,
+          "max": 42.0
+        },
+        "embedding_truncated_share": {
+          "mean": 0.010666666666666668,
+          "min": 0.006666666666666667,
+          "max": 0.02
+        },
+        "low_rating_share": {
+          "mean": 0.31333333333333335,
+          "min": 0.25333333333333335,
+          "max": 0.37333333333333335
+        },
+        "middle_rating_share": {
+          "mean": 0.08,
+          "min": 0.04666666666666667,
+          "max": 0.12666666666666668
+        },
+        "high_rating_share": {
+          "mean": 0.6066666666666667,
+          "min": 0.58,
+          "max": 0.62
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.7127624664819247,
+          "min": 0.6922016648716315,
+          "max": 0.7342564410061775
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.8436340964546,
+          "min": 0.8189149370425036,
+          "max": 0.8561756533479294
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.7477252481269097,
+          "min": 0.7266366377811532,
+          "max": 0.7760738576264935
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.7363282322883606,
+              "min": 0.7192583084106445,
+              "max": 0.7512125372886658
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.49248128533363345,
+              "min": 0.4766926169395447,
+              "max": 0.5122211575508118
+            },
+            "within_product_distance": {
+              "mean": 0.5760715162754059,
+              "min": 0.5569057166576385,
+              "max": 0.5900370478630066
+            },
+            "mean_words": {
+              "mean": 40.913333333333334,
+              "min": 40.58,
+              "max": 41.43333333333333
+            },
+            "median_words": {
+              "mean": 33.8,
+              "min": 33.0,
+              "max": 35.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.005333333333333334,
+              "min": 0.0,
+              "max": 0.013333333333333334
+            },
+            "low_rating_share": {
+              "mean": 0.296,
+              "min": 0.26666666666666666,
+              "max": 0.34
+            },
+            "middle_rating_share": {
+              "mean": 0.07466666666666667,
+              "min": 0.04666666666666667,
+              "max": 0.1
+            },
+            "high_rating_share": {
+              "mean": 0.6293333333333333,
+              "min": 0.6133333333333333,
+              "max": 0.6666666666666666
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.7162124343174037,
+              "min": 0.6955340496346677,
+              "max": 0.75032139657943
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.8466406248231473,
+              "min": 0.8281896449225816,
+              "max": 0.87752963713608
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.7558994599527851,
+              "min": 0.7393622342978426,
+              "max": 0.794979363627137
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7192583084106445,
+              "between_product_centroid_distance": 0.4766926169395447,
+              "within_product_distance": 0.5569057166576385,
+              "mean_words": 40.58,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.34,
+              "middle_rating_share": 0.04666666666666667,
+              "high_rating_share": 0.6133333333333333,
+              "semantic_cluster_entropy_k8": 0.6955340496346677,
+              "semantic_cluster_entropy_k12": 0.8376835940483245,
+              "semantic_cluster_entropy_k16": 0.7423239955949485
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7402865290641785,
+              "between_product_centroid_distance": 0.4985949993133545,
+              "within_product_distance": 0.5788640558719635,
+              "mean_words": 40.67333333333333,
+              "median_words": 34.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.30666666666666664,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.6133333333333333,
+              "semantic_cluster_entropy_k8": 0.7250607714614179,
+              "semantic_cluster_entropy_k12": 0.850241883674646,
+              "semantic_cluster_entropy_k16": 0.761016477042555
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7512125372886658,
+              "between_product_centroid_distance": 0.5122211575508118,
+              "within_product_distance": 0.5900370478630066,
+              "mean_words": 41.153333333333336,
+              "median_words": 34.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.26666666666666666,
+              "middle_rating_share": 0.06666666666666667,
+              "high_rating_share": 0.6666666666666666,
+              "semantic_cluster_entropy_k8": 0.75032139657943,
+              "semantic_cluster_entropy_k12": 0.87752963713608,
+              "semantic_cluster_entropy_k16": 0.794979363627137
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7396597266197205,
+              "between_product_centroid_distance": 0.4977754056453705,
+              "within_product_distance": 0.5791080474853516,
+              "mean_words": 40.72666666666667,
+              "median_words": 35.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.28,
+              "middle_rating_share": 0.1,
+              "high_rating_share": 0.62,
+              "semantic_cluster_entropy_k8": 0.6998449601875363,
+              "semantic_cluster_entropy_k12": 0.8281896449225816,
+              "semantic_cluster_entropy_k16": 0.7393622342978426
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.7312240600585938,
+              "between_product_centroid_distance": 0.4771222472190857,
+              "within_product_distance": 0.5754427134990692,
+              "mean_words": 41.43333333333333,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.2866666666666667,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.6333333333333333,
+              "semantic_cluster_entropy_k8": 0.7103009937239666,
+              "semantic_cluster_entropy_k12": 0.8395583643341041,
+              "semantic_cluster_entropy_k16": 0.7418152292014419
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.7214316725730896,
+              "min": 0.7084505558013916,
+              "max": 0.7330166697502136
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.5147971928119659,
+              "min": 0.48688212037086487,
+              "max": 0.5326772332191467
+            },
+            "within_product_distance": {
+              "mean": 0.5396882569789887,
+              "min": 0.5311094999313355,
+              "max": 0.5512778341770173
+            },
+            "mean_words": {
+              "mean": 47.4512,
+              "min": 44.12,
+              "max": 49.664
+            },
+            "median_words": {
+              "mean": 37.2,
+              "min": 35.0,
+              "max": 38.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.009600000000000001,
+              "min": 0.0,
+              "max": 0.024
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.6992426809109158,
+              "min": 0.6826168419680465,
+              "max": 0.7087109380891494
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.836630795769428,
+              "min": 0.824748486088556,
+              "max": 0.8523648648816844
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.76571702917687,
+              "min": 0.7544979906303697,
+              "max": 0.7804949926249328
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7216641902923584,
+              "between_product_centroid_distance": 0.5209619402885437,
+              "within_product_distance": 0.5367626249790192,
+              "mean_words": 44.12,
+              "median_words": 35.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.6985568971265528,
+              "semantic_cluster_entropy_k12": 0.834757978370099,
+              "semantic_cluster_entropy_k16": 0.7659944790211465
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7235944867134094,
+              "between_product_centroid_distance": 0.5326772332191467,
+              "within_product_distance": 0.5311094999313355,
+              "mean_words": 49.664,
+              "median_words": 38.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.7087109380891494,
+              "semantic_cluster_entropy_k12": 0.8292877952145827,
+              "semantic_cluster_entropy_k16": 0.7707877315938985
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7330166697502136,
+              "between_product_centroid_distance": 0.5271397233009338,
+              "within_product_distance": 0.5512778341770173,
+              "mean_words": 49.112,
+              "median_words": 38.0,
+              "embedding_truncated_share": 0.024,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.7078840486853272,
+              "semantic_cluster_entropy_k12": 0.8523648648816844,
+              "semantic_cluster_entropy_k16": 0.7804949926249328
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.720432460308075,
+              "between_product_centroid_distance": 0.5063249468803406,
+              "within_product_distance": 0.542897230386734,
+              "mean_words": 46.112,
+              "median_words": 38.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.6984446786855033,
+              "semantic_cluster_entropy_k12": 0.824748486088556,
+              "semantic_cluster_entropy_k16": 0.7568099520140027
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7084505558013916,
+              "between_product_centroid_distance": 0.48688212037086487,
+              "within_product_distance": 0.5363940954208374,
+              "mean_words": 48.248,
+              "median_words": 37.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.6826168419680465,
+              "semantic_cluster_entropy_k12": 0.8419948542922177,
+              "semantic_cluster_entropy_k16": 0.7544979906303697
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "varied_disjoint",
+      "hypothesis": "varied",
+      "label_pt": "Shampoo, cílios magnéticos, esmaltes, difusor e escova dental; sem IDs compartilhados com máscaras para cílios ou desodorantes candidatos",
+      "product_ids": [
+        "B012Q9NGE4",
+        "B08BZNW9NK",
+        "B01LBESKBO",
+        "B019GBG0IE",
+        "B000FEIOHW"
+      ],
+      "selection_note": "Added to remove product overlap with compact_mascaras and intermediate_deodorants; not selected using RAG performance.",
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 1921,
+      "minimum_product_pool": 95,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 4,
+      "unique_functions": 5,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 4,
+      "products_missing_brand_attribute": 1,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.8004238367080688,
+          "min": 0.7919746041297913,
+          "max": 0.8080596327781677
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.6870447993278503,
+          "min": 0.6668122410774231,
+          "max": 0.7097678184509277
+        },
+        "within_product_distance": {
+          "mean": 0.5641909635066986,
+          "min": 0.5564828395843506,
+          "max": 0.5740625262260437
+        },
+        "mean_words": {
+          "mean": 57.25066666666667,
+          "min": 53.43333333333333,
+          "max": 59.24666666666667
+        },
+        "median_words": {
+          "mean": 43.3,
+          "min": 40.5,
+          "max": 47.0
+        },
+        "embedding_truncated_share": {
+          "mean": 0.034666666666666665,
+          "min": 0.02,
+          "max": 0.05333333333333334
+        },
+        "low_rating_share": {
+          "mean": 0.20266666666666666,
+          "min": 0.18,
+          "max": 0.22666666666666666
+        },
+        "middle_rating_share": {
+          "mean": 0.08,
+          "min": 0.06,
+          "max": 0.11333333333333333
+        },
+        "high_rating_share": {
+          "mean": 0.7173333333333334,
+          "min": 0.6866666666666666,
+          "max": 0.7533333333333333
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.8217057990153568,
+          "min": 0.8090066109529839,
+          "max": 0.8590874601809427
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.7003791355599998,
+          "min": 0.68303549404338,
+          "max": 0.7185928619871106
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.7689494038916105,
+          "min": 0.7476188522023469,
+          "max": 0.788292566585305
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.8089749813079834,
+              "min": 0.8058679103851318,
+              "max": 0.8149519562721252
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.6759223341941833,
+              "min": 0.6640642285346985,
+              "max": 0.6824403405189514
+            },
+            "within_product_distance": {
+              "mean": 0.5922242748737335,
+              "min": 0.5808264076709747,
+              "max": 0.6146270513534546
+            },
+            "mean_words": {
+              "mean": 40.80133333333333,
+              "min": 39.98,
+              "max": 41.78
+            },
+            "median_words": {
+              "mean": 32.5,
+              "min": 31.5,
+              "max": 33.5
+            },
+            "embedding_truncated_share": {
+              "mean": 0.010666666666666668,
+              "min": 0.0,
+              "max": 0.02
+            },
+            "low_rating_share": {
+              "mean": 0.23600000000000002,
+              "min": 0.20666666666666667,
+              "max": 0.2733333333333333
+            },
+            "middle_rating_share": {
+              "mean": 0.06533333333333334,
+              "min": 0.05333333333333334,
+              "max": 0.08
+            },
+            "high_rating_share": {
+              "mean": 0.6986666666666667,
+              "min": 0.6666666666666666,
+              "max": 0.7266666666666667
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.8280510216865766,
+              "min": 0.8086966625717307,
+              "max": 0.8556741347171066
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.7246219172125739,
+              "min": 0.7086285976100055,
+              "max": 0.7400951258737124
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.8012916897999726,
+              "min": 0.7847566052358761,
+              "max": 0.819912578072045
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8081917762756348,
+              "between_product_centroid_distance": 0.6782704591751099,
+              "within_product_distance": 0.5872536122798919,
+              "mean_words": 41.78,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.02,
+              "low_rating_share": 0.21333333333333335,
+              "middle_rating_share": 0.06,
+              "high_rating_share": 0.7266666666666667,
+              "semantic_cluster_entropy_k8": 0.8334929509374414,
+              "semantic_cluster_entropy_k12": 0.7105572273733421,
+              "semantic_cluster_entropy_k16": 0.7880985348474931
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8058679103851318,
+              "between_product_centroid_distance": 0.6824403405189514,
+              "within_product_distance": 0.5808264076709747,
+              "mean_words": 41.013333333333335,
+              "median_words": 33.5,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.25333333333333335,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.6666666666666666,
+              "semantic_cluster_entropy_k8": 0.8192983667280314,
+              "semantic_cluster_entropy_k12": 0.7283528508797183,
+              "semantic_cluster_entropy_k16": 0.8144206591531161
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8149519562721252,
+              "between_product_centroid_distance": 0.6640642285346985,
+              "within_product_distance": 0.6146270513534546,
+              "mean_words": 39.98,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.2733333333333333,
+              "middle_rating_share": 0.05333333333333334,
+              "high_rating_share": 0.6733333333333333,
+              "semantic_cluster_entropy_k8": 0.8556741347171066,
+              "semantic_cluster_entropy_k12": 0.7354757843260907,
+              "semantic_cluster_entropy_k16": 0.819912578072045
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8059884309768677,
+              "between_product_centroid_distance": 0.679619312286377,
+              "within_product_distance": 0.5831442832946777,
+              "mean_words": 40.666666666666664,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.20666666666666667,
+              "middle_rating_share": 0.08,
+              "high_rating_share": 0.7133333333333334,
+              "semantic_cluster_entropy_k8": 0.8230929934785729,
+              "semantic_cluster_entropy_k12": 0.7086285976100055,
+              "semantic_cluster_entropy_k16": 0.7847566052358761
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.8098748326301575,
+              "between_product_centroid_distance": 0.67521733045578,
+              "within_product_distance": 0.5952700197696685,
+              "mean_words": 40.56666666666667,
+              "median_words": 32.5,
+              "embedding_truncated_share": 0.013333333333333334,
+              "low_rating_share": 0.23333333333333334,
+              "middle_rating_share": 0.05333333333333334,
+              "high_rating_share": 0.7133333333333334,
+              "semantic_cluster_entropy_k8": 0.8086966625717307,
+              "semantic_cluster_entropy_k12": 0.7400951258737124,
+              "semantic_cluster_entropy_k16": 0.7992700716913326
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.792405366897583,
+              "min": 0.7854804396629333,
+              "max": 0.7982568144798279
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.6841981530189514,
+              "min": 0.67412930727005,
+              "max": 0.700556755065918
+            },
+            "within_product_distance": {
+              "mean": 0.5503740990161896,
+              "min": 0.5349136173725129,
+              "max": 0.5587925136089325
+            },
+            "mean_words": {
+              "mean": 58.3152,
+              "min": 54.352,
+              "max": 63.056
+            },
+            "median_words": {
+              "mean": 44.0,
+              "min": 40.0,
+              "max": 52.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.0352,
+              "min": 0.016,
+              "max": 0.048
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.8233687359290673,
+              "min": 0.804541910562585,
+              "max": 0.8557468507235163
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.7048861552135147,
+              "min": 0.6856004316078029,
+              "max": 0.7191391421264485
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.7641987353165837,
+              "min": 0.7175657981225515,
+              "max": 0.7831472066736116
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7903906106948853,
+              "between_product_centroid_distance": 0.67412930727005,
+              "within_product_distance": 0.553304272890091,
+              "mean_words": 57.728,
+              "median_words": 41.0,
+              "embedding_truncated_share": 0.048,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8152026723621517,
+              "semantic_cluster_entropy_k12": 0.7024054494698811,
+              "semantic_cluster_entropy_k16": 0.7649047054053388
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7982568144798279,
+              "between_product_centroid_distance": 0.700556755065918,
+              "within_product_distance": 0.5496866464614868,
+              "mean_words": 56.44,
+              "median_words": 43.0,
+              "embedding_truncated_share": 0.032,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8250276639062868,
+              "semantic_cluster_entropy_k12": 0.7042823044119115,
+              "semantic_cluster_entropy_k16": 0.7815941301504092
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7947384715080261,
+              "between_product_centroid_distance": 0.6848215460777283,
+              "within_product_distance": 0.5551734447479248,
+              "mean_words": 63.056,
+              "median_words": 52.0,
+              "embedding_truncated_share": 0.032,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8557468507235163,
+              "semantic_cluster_entropy_k12": 0.7191391421264485,
+              "semantic_cluster_entropy_k16": 0.7831472066736116
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7854804396629333,
+              "between_product_centroid_distance": 0.6847323179244995,
+              "within_product_distance": 0.5349136173725129,
+              "mean_words": 60.0,
+              "median_words": 44.0,
+              "embedding_truncated_share": 0.048,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.8163245820907968,
+              "semantic_cluster_entropy_k12": 0.6856004316078029,
+              "semantic_cluster_entropy_k16": 0.7175657981225515
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.7931604981422424,
+              "between_product_centroid_distance": 0.6767508387565613,
+              "within_product_distance": 0.5587925136089325,
+              "mean_words": 54.352,
+              "median_words": 40.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.804541910562585,
+              "semantic_cluster_entropy_k12": 0.7130034484515295,
+              "semantic_cluster_entropy_k16": 0.7737818362310069
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "intermediate_hair_disjoint",
+      "hypothesis": "intermediate",
+      "label_pt": "Rotina capilar: shampoo, leave-in, máscara, secador com difusor e escova",
+      "product_ids": [
+        "B0CDNZ7F2V",
+        "B01DD1NOZU",
+        "B0BV1FPZY6",
+        "B01M1IEADO",
+        "B00R1TAN7I"
+      ],
+      "selection_note": "Constructed to avoid product overlap with compact_mascaras and varied_disjoint. Catalog title distinguishes dryer-with-diffuser from a standalone diffuser.",
+      "status": "eligible_for_exploratory_comparison",
+      "eligible_pool_reviews": 1438,
+      "minimum_product_pool": 109,
+      "products": 5,
+      "reviews_per_sample": 150,
+      "unique_domains": 1,
+      "unique_functions": 5,
+      "unique_coded_formats": 5,
+      "unknown_coded_formats": 0,
+      "distinct_provisional_families": 5,
+      "known_catalog_brands": 4,
+      "products_missing_brand_attribute": 1,
+      "measurements": {
+        "sample_size": {
+          "mean": 150,
+          "min": 150,
+          "max": 150
+        },
+        "mean_pairwise_cosine_distance": {
+          "mean": 0.6455473899841309,
+          "min": 0.6330130100250244,
+          "max": 0.6563689112663269
+        },
+        "between_product_centroid_distance": {
+          "mean": 0.2983018636703491,
+          "min": 0.28587618470191956,
+          "max": 0.3092900514602661
+        },
+        "within_product_distance": {
+          "mean": 0.5474159502983093,
+          "min": 0.5350792527198791,
+          "max": 0.5586260080337524
+        },
+        "mean_words": {
+          "mean": 49.99466666666667,
+          "min": 47.12,
+          "max": 51.50666666666667
+        },
+        "median_words": {
+          "mean": 40.5,
+          "min": 38.5,
+          "max": 44.0
+        },
+        "embedding_truncated_share": {
+          "mean": 0.006666666666666667,
+          "min": 0.0,
+          "max": 0.013333333333333334
+        },
+        "low_rating_share": {
+          "mean": 0.21466666666666667,
+          "min": 0.17333333333333334,
+          "max": 0.28
+        },
+        "middle_rating_share": {
+          "mean": 0.05733333333333333,
+          "min": 0.04666666666666667,
+          "max": 0.06
+        },
+        "high_rating_share": {
+          "mean": 0.728,
+          "min": 0.6733333333333333,
+          "max": 0.7666666666666667
+        },
+        "semantic_cluster_entropy_k8": {
+          "mean": 0.5514926501069873,
+          "min": 0.5410987494649543,
+          "max": 0.5592571999347407
+        },
+        "semantic_cluster_entropy_k12": {
+          "mean": 0.43508242499229877,
+          "min": 0.4102347494524772,
+          "max": 0.4635453218752128
+        },
+        "semantic_cluster_entropy_k16": {
+          "mean": 0.6447163447356652,
+          "min": 0.6368289950777369,
+          "max": 0.6506064271409981
+        }
+      },
+      "sensitivity": {
+        "length_matched": {
+          "sampling": {
+            "field": "length",
+            "quotas": {
+              "20_39": 20,
+              "40_79": 8,
+              "80_200": 2
+            },
+            "note": "30 per product; common feasible length-bin quotas based on pool capacities"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 150,
+              "min": 150,
+              "max": 150
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.6529702305793762,
+              "min": 0.6364703178405762,
+              "max": 0.6645181775093079
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.29703329205513,
+              "min": 0.28233519196510315,
+              "max": 0.3070203959941864
+            },
+            "within_product_distance": {
+              "mean": 0.5577526593208313,
+              "min": 0.5430545926094055,
+              "max": 0.5702974557876587
+            },
+            "mean_words": {
+              "mean": 40.43866666666666,
+              "min": 39.35333333333333,
+              "max": 41.68
+            },
+            "median_words": {
+              "mean": 32.0,
+              "min": 30.0,
+              "max": 33.5
+            },
+            "embedding_truncated_share": {
+              "mean": 0.002666666666666667,
+              "min": 0.0,
+              "max": 0.006666666666666667
+            },
+            "low_rating_share": {
+              "mean": 0.216,
+              "min": 0.18,
+              "max": 0.3
+            },
+            "middle_rating_share": {
+              "mean": 0.048,
+              "min": 0.02666666666666667,
+              "max": 0.06666666666666667
+            },
+            "high_rating_share": {
+              "mean": 0.736,
+              "min": 0.6733333333333333,
+              "max": 0.7733333333333333
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.5724162542486325,
+              "min": 0.5307129095242527,
+              "max": 0.6182840370824774
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.4519444091130173,
+              "min": 0.43295528137289174,
+              "max": 0.4681323747688533
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.6617659230249795,
+              "min": 0.6566670302688005,
+              "max": 0.6678126831049024
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6557281017303467,
+              "between_product_centroid_distance": 0.3070203959941864,
+              "within_product_distance": 0.5561076402664185,
+              "mean_words": 41.026666666666664,
+              "median_words": 33.5,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.18,
+              "middle_rating_share": 0.04666666666666667,
+              "high_rating_share": 0.7733333333333333,
+              "semantic_cluster_entropy_k8": 0.5685563665534762,
+              "semantic_cluster_entropy_k12": 0.43439517132997224,
+              "semantic_cluster_entropy_k16": 0.6574501606582679
+            },
+            {
+              "seed": 23,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6645181775093079,
+              "between_product_centroid_distance": 0.3054581880569458,
+              "within_product_distance": 0.5702974557876587,
+              "mean_words": 40.38666666666666,
+              "median_words": 31.5,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.3,
+              "middle_rating_share": 0.02666666666666667,
+              "high_rating_share": 0.6733333333333333,
+              "semantic_cluster_entropy_k8": 0.5401414901790365,
+              "semantic_cluster_entropy_k12": 0.45709540495855,
+              "semantic_cluster_entropy_k16": 0.6566670302688005
+            },
+            {
+              "seed": 37,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6521002054214478,
+              "between_product_centroid_distance": 0.28233519196510315,
+              "within_product_distance": 0.5636753559112548,
+              "mean_words": 39.35333333333333,
+              "median_words": 30.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.22666666666666666,
+              "middle_rating_share": 0.06666666666666667,
+              "high_rating_share": 0.7066666666666667,
+              "semantic_cluster_entropy_k8": 0.6182840370824774,
+              "semantic_cluster_entropy_k12": 0.4681323747688533,
+              "semantic_cluster_entropy_k16": 0.6627172359497876
+            },
+            {
+              "seed": 53,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6364703178405762,
+              "between_product_centroid_distance": 0.2863530218601227,
+              "within_product_distance": 0.5430545926094055,
+              "mean_words": 39.74666666666667,
+              "median_words": 33.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.18,
+              "middle_rating_share": 0.06,
+              "high_rating_share": 0.76,
+              "semantic_cluster_entropy_k8": 0.5307129095242527,
+              "semantic_cluster_entropy_k12": 0.43295528137289174,
+              "semantic_cluster_entropy_k16": 0.6678126831049024
+            },
+            {
+              "seed": 71,
+              "sample_size": 150,
+              "mean_pairwise_cosine_distance": 0.6560343503952026,
+              "between_product_centroid_distance": 0.303999662399292,
+              "within_product_distance": 0.5556282520294189,
+              "mean_words": 41.68,
+              "median_words": 32.0,
+              "embedding_truncated_share": 0.006666666666666667,
+              "low_rating_share": 0.19333333333333333,
+              "middle_rating_share": 0.04,
+              "high_rating_share": 0.7666666666666667,
+              "semantic_cluster_entropy_k8": 0.6043864679039197,
+              "semantic_cluster_entropy_k12": 0.4671438131348194,
+              "semantic_cluster_entropy_k16": 0.6641825051431393
+            }
+          ]
+        },
+        "rating_matched": {
+          "sampling": {
+            "field": "rating",
+            "quotas": {
+              "low": 4,
+              "high": 21
+            },
+            "note": "25 per product; common feasible rating mix, excluding 3-star reviews; sensitivity only, not representative sampling"
+          },
+          "measurements": {
+            "sample_size": {
+              "mean": 125,
+              "min": 125,
+              "max": 125
+            },
+            "mean_pairwise_cosine_distance": {
+              "mean": 0.637187385559082,
+              "min": 0.6286929249763489,
+              "max": 0.6542609333992004
+            },
+            "between_product_centroid_distance": {
+              "mean": 0.2956156194210052,
+              "min": 0.2829453945159912,
+              "max": 0.31545358896255493
+            },
+            "within_product_distance": {
+              "mean": 0.5388380455970764,
+              "min": 0.5339086651802063,
+              "max": 0.5509872794151306
+            },
+            "mean_words": {
+              "mean": 49.9488,
+              "min": 46.4,
+              "max": 52.528
+            },
+            "median_words": {
+              "mean": 39.2,
+              "min": 38.0,
+              "max": 40.0
+            },
+            "embedding_truncated_share": {
+              "mean": 0.008,
+              "min": 0.0,
+              "max": 0.016
+            },
+            "low_rating_share": {
+              "mean": 0.16,
+              "min": 0.16,
+              "max": 0.16
+            },
+            "middle_rating_share": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0
+            },
+            "high_rating_share": {
+              "mean": 0.84,
+              "min": 0.84,
+              "max": 0.84
+            },
+            "semantic_cluster_entropy_k8": {
+              "mean": 0.5582386003175699,
+              "min": 0.5036253145879909,
+              "max": 0.5907630995916273
+            },
+            "semantic_cluster_entropy_k12": {
+              "mean": 0.42928143100790866,
+              "min": 0.3916134982902151,
+              "max": 0.47038237632363644
+            },
+            "semantic_cluster_entropy_k16": {
+              "mean": 0.6388073779852073,
+              "min": 0.6144888749188183,
+              "max": 0.6524693504824879
+            }
+          },
+          "by_seed": [
+            {
+              "seed": 11,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6542609333992004,
+              "between_product_centroid_distance": 0.31545358896255493,
+              "within_product_distance": 0.5509872794151306,
+              "mean_words": 50.92,
+              "median_words": 39.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5874376146551036,
+              "semantic_cluster_entropy_k12": 0.47038237632363644,
+              "semantic_cluster_entropy_k16": 0.6282786358900714
+            },
+            {
+              "seed": 23,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6357414722442627,
+              "between_product_centroid_distance": 0.30255937576293945,
+              "within_product_distance": 0.5339086651802063,
+              "mean_words": 48.624,
+              "median_words": 39.0,
+              "embedding_truncated_share": 0.008,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5036253145879909,
+              "semantic_cluster_entropy_k12": 0.3916134982902151,
+              "semantic_cluster_entropy_k16": 0.6144888749188183
+            },
+            {
+              "seed": 37,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6314444541931152,
+              "between_product_centroid_distance": 0.2836467921733856,
+              "within_product_distance": 0.5369642615318299,
+              "mean_words": 46.4,
+              "median_words": 38.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5907630995916273,
+              "semantic_cluster_entropy_k12": 0.4428184833556256,
+              "semantic_cluster_entropy_k16": 0.6507357877885235
+            },
+            {
+              "seed": 53,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6286929249763489,
+              "between_product_centroid_distance": 0.2829453945159912,
+              "within_product_distance": 0.5361221611499787,
+              "mean_words": 51.272,
+              "median_words": 40.0,
+              "embedding_truncated_share": 0.0,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5340992773947429,
+              "semantic_cluster_entropy_k12": 0.4113732653070073,
+              "semantic_cluster_entropy_k16": 0.6524693504824879
+            },
+            {
+              "seed": 71,
+              "sample_size": 125,
+              "mean_pairwise_cosine_distance": 0.6357971429824829,
+              "between_product_centroid_distance": 0.29347294569015503,
+              "within_product_distance": 0.5362078607082367,
+              "mean_words": 52.528,
+              "median_words": 40.0,
+              "embedding_truncated_share": 0.016,
+              "low_rating_share": 0.16,
+              "middle_rating_share": 0.0,
+              "high_rating_share": 0.84,
+              "semantic_cluster_entropy_k8": 0.5752676953583845,
+              "semantic_cluster_entropy_k12": 0.430219531763059,
+              "semantic_cluster_entropy_k16": 0.648064240846135
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "encoded_reviews": 5144,
+  "reviews_truncated_for_embedding": 101,
+  "pool_sha256": "2244da8c15c0f6dce44266e55979dbab357004494339ec2f69883d8fecfb22b8",
+  "metadata_source_sha256": "14815cf1312a0d847364866e6876c8c73738993469067242870774c372c04387",
+  "encoder_files_sha256": {
+    "1_Pooling/config.json": "4fef0a7e8c8ee36e74c0fad89bab60ade72324442d43f559ea219bb7c2580710",
+    "2_Normalize/config.json": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524",
+    "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+    "config.json": "4211b854bf56ed77810b39844dc7aeac9a25495cfa62772cac3fedbcc25ab57e",
+    "config_sentence_transformers.json": "2d78529e4343fa25587c60de56278156ac587e4b7325f1a156ed907f2e209cea",
+    "model.safetensors": "1377e9af0ca0b016a9f2aa584d6fc71ab3ea6804fae21ef9fb1416e2944057ac",
+    "modules.json": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd",
+    "sentence_bert_config.json": "3084164002c0bca01b0259c5327123803fce32e660a57feb93184ffead186fc8",
+    "tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+    "tokenizer_config.json": "ca1351472562eea0a898d6b5d0d2817b024dbf604ea1faff415f73f676092ee2"
+  },
+  "measurements_by_seed": {
+    "compact_brush_kits": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5790231823921204,
+        "between_product_centroid_distance": 0.16278861463069916,
+        "within_product_distance": 0.5314742743968963,
+        "mean_words": 50.46666666666667,
+        "median_words": 39.0,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.12666666666666668,
+        "middle_rating_share": 0.14,
+        "high_rating_share": 0.7333333333333333,
+        "semantic_cluster_entropy_k8": 0.4001302871972895,
+        "semantic_cluster_entropy_k12": 0.3209545405569303,
+        "semantic_cluster_entropy_k16": 0.3287572144404394
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5754192471504211,
+        "between_product_centroid_distance": 0.1613883078098297,
+        "within_product_distance": 0.5276005506515503,
+        "mean_words": 48.973333333333336,
+        "median_words": 37.0,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.12666666666666668,
+        "middle_rating_share": 0.1,
+        "high_rating_share": 0.7733333333333333,
+        "semantic_cluster_entropy_k8": 0.3913971503093007,
+        "semantic_cluster_entropy_k12": 0.34515420476564795,
+        "semantic_cluster_entropy_k16": 0.3008680501510507
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5746771097183228,
+        "between_product_centroid_distance": 0.1712743490934372,
+        "within_product_distance": 0.5206978261470795,
+        "mean_words": 50.2,
+        "median_words": 37.0,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.12,
+        "middle_rating_share": 0.07333333333333333,
+        "high_rating_share": 0.8066666666666666,
+        "semantic_cluster_entropy_k8": 0.40341261782203136,
+        "semantic_cluster_entropy_k12": 0.34251183304345817,
+        "semantic_cluster_entropy_k16": 0.31390421136699653
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5669547915458679,
+        "between_product_centroid_distance": 0.1582835614681244,
+        "within_product_distance": 0.5197340488433838,
+        "mean_words": 49.846666666666664,
+        "median_words": 37.0,
+        "embedding_truncated_share": 0.02,
+        "low_rating_share": 0.13333333333333333,
+        "middle_rating_share": 0.10666666666666667,
+        "high_rating_share": 0.76,
+        "semantic_cluster_entropy_k8": 0.35720232133154767,
+        "semantic_cluster_entropy_k12": 0.2994592901555907,
+        "semantic_cluster_entropy_k16": 0.32396649701974417
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5576503276824951,
+        "between_product_centroid_distance": 0.16791266202926636,
+        "within_product_distance": 0.5042147636413574,
+        "mean_words": 54.026666666666664,
+        "median_words": 40.5,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.16,
+        "middle_rating_share": 0.14,
+        "high_rating_share": 0.7,
+        "semantic_cluster_entropy_k8": 0.39647493990988325,
+        "semantic_cluster_entropy_k12": 0.2850938378787686,
+        "semantic_cluster_entropy_k16": 0.27020854590324517
+      }
+    ],
+    "compact_mascaras": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.540412962436676,
+        "between_product_centroid_distance": 0.05679997801780701,
+        "within_product_distance": 0.5313269674777985,
+        "mean_words": 46.08,
+        "median_words": 39.0,
+        "embedding_truncated_share": 0.0,
+        "low_rating_share": 0.3466666666666667,
+        "middle_rating_share": 0.07333333333333333,
+        "high_rating_share": 0.58,
+        "semantic_cluster_entropy_k8": 0.3251262025408414,
+        "semantic_cluster_entropy_k12": 0.5919780500880794,
+        "semantic_cluster_entropy_k16": 0.38849349621137674
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5585728883743286,
+        "between_product_centroid_distance": 0.06212419271469116,
+        "within_product_distance": 0.5495906352996827,
+        "mean_words": 44.75333333333333,
+        "median_words": 35.5,
+        "embedding_truncated_share": 0.0,
+        "low_rating_share": 0.3466666666666667,
+        "middle_rating_share": 0.08,
+        "high_rating_share": 0.5733333333333334,
+        "semantic_cluster_entropy_k8": 0.36830621906648714,
+        "semantic_cluster_entropy_k12": 0.6245244539776691,
+        "semantic_cluster_entropy_k16": 0.427837209325442
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.520963191986084,
+        "between_product_centroid_distance": 0.05666197091341019,
+        "within_product_distance": 0.5106333434581757,
+        "mean_words": 50.58,
+        "median_words": 41.5,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.32666666666666666,
+        "middle_rating_share": 0.12,
+        "high_rating_share": 0.5533333333333333,
+        "semantic_cluster_entropy_k8": 0.2696916446126062,
+        "semantic_cluster_entropy_k12": 0.5395127973411153,
+        "semantic_cluster_entropy_k16": 0.32509875566185614
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5594941973686218,
+        "between_product_centroid_distance": 0.07026007771492004,
+        "within_product_distance": 0.5463659703731537,
+        "mean_words": 48.49333333333333,
+        "median_words": 36.0,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.34,
+        "middle_rating_share": 0.09333333333333334,
+        "high_rating_share": 0.5666666666666667,
+        "semantic_cluster_entropy_k8": 0.32895731644692555,
+        "semantic_cluster_entropy_k12": 0.5813504324375979,
+        "semantic_cluster_entropy_k16": 0.3557105763531689
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5645468831062317,
+        "between_product_centroid_distance": 0.07213637977838516,
+        "within_product_distance": 0.5505477368831635,
+        "mean_words": 43.52,
+        "median_words": 34.0,
+        "embedding_truncated_share": 0.0,
+        "low_rating_share": 0.36,
+        "middle_rating_share": 0.08,
+        "high_rating_share": 0.56,
+        "semantic_cluster_entropy_k8": 0.36553816323159133,
+        "semantic_cluster_entropy_k12": 0.6182913491138865,
+        "semantic_cluster_entropy_k16": 0.36339364962001436
+      }
+    ],
+    "intermediate_deodorants": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6052506566047668,
+        "between_product_centroid_distance": 0.16866107285022736,
+        "within_product_distance": 0.5575330913066864,
+        "mean_words": 52.806666666666665,
+        "median_words": 42.0,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.18666666666666668,
+        "middle_rating_share": 0.07333333333333333,
+        "high_rating_share": 0.74,
+        "semantic_cluster_entropy_k8": 0.48326719603691315,
+        "semantic_cluster_entropy_k12": 0.38661730418092716,
+        "semantic_cluster_entropy_k16": 0.42061848906248556
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6070151925086975,
+        "between_product_centroid_distance": 0.18853352963924408,
+        "within_product_distance": 0.5504457235336304,
+        "mean_words": 52.733333333333334,
+        "median_words": 41.5,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.16666666666666666,
+        "middle_rating_share": 0.05333333333333334,
+        "high_rating_share": 0.78,
+        "semantic_cluster_entropy_k8": 0.47884800715654385,
+        "semantic_cluster_entropy_k12": 0.3805050664224359,
+        "semantic_cluster_entropy_k16": 0.4366570917054815
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6121386289596558,
+        "between_product_centroid_distance": 0.1818174570798874,
+        "within_product_distance": 0.5582875788211823,
+        "mean_words": 50.86666666666667,
+        "median_words": 43.0,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.16,
+        "middle_rating_share": 0.08,
+        "high_rating_share": 0.76,
+        "semantic_cluster_entropy_k8": 0.5003263411033273,
+        "semantic_cluster_entropy_k12": 0.36882831811388844,
+        "semantic_cluster_entropy_k16": 0.4575089549467399
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5884302258491516,
+        "between_product_centroid_distance": 0.15924808382987976,
+        "within_product_distance": 0.5395648777484894,
+        "mean_words": 54.14666666666667,
+        "median_words": 44.0,
+        "embedding_truncated_share": 0.02,
+        "low_rating_share": 0.14,
+        "middle_rating_share": 0.05333333333333334,
+        "high_rating_share": 0.8066666666666666,
+        "semantic_cluster_entropy_k8": 0.4563837876433718,
+        "semantic_cluster_entropy_k12": 0.3631535313407148,
+        "semantic_cluster_entropy_k16": 0.41795538577772007
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.5863547921180725,
+        "between_product_centroid_distance": 0.1723507195711136,
+        "within_product_distance": 0.5321101665496826,
+        "mean_words": 54.553333333333335,
+        "median_words": 42.0,
+        "embedding_truncated_share": 0.03333333333333333,
+        "low_rating_share": 0.13333333333333333,
+        "middle_rating_share": 0.1,
+        "high_rating_share": 0.7666666666666667,
+        "semantic_cluster_entropy_k8": 0.4904366387334532,
+        "semantic_cluster_entropy_k12": 0.3836771374723047,
+        "semantic_cluster_entropy_k16": 0.42199125252789815
+      }
+    ],
+    "intermediate_hair_routine": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6542935371398926,
+        "between_product_centroid_distance": 0.318028062582016,
+        "within_product_distance": 0.548725962638855,
+        "mean_words": 54.60666666666667,
+        "median_words": 40.0,
+        "embedding_truncated_share": 0.04,
+        "low_rating_share": 0.22666666666666666,
+        "middle_rating_share": 0.09333333333333334,
+        "high_rating_share": 0.68,
+        "semantic_cluster_entropy_k8": 0.511577677342959,
+        "semantic_cluster_entropy_k12": 0.42962029491994536,
+        "semantic_cluster_entropy_k16": 0.6245145134188405
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6609790325164795,
+        "between_product_centroid_distance": 0.3483622670173645,
+        "within_product_distance": 0.5434728801250458,
+        "mean_words": 57.026666666666664,
+        "median_words": 50.5,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.2733333333333333,
+        "middle_rating_share": 0.06666666666666667,
+        "high_rating_share": 0.66,
+        "semantic_cluster_entropy_k8": 0.5510604334144074,
+        "semantic_cluster_entropy_k12": 0.4011567597424552,
+        "semantic_cluster_entropy_k16": 0.6212821166879128
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6539134979248047,
+        "between_product_centroid_distance": 0.30721476674079895,
+        "within_product_distance": 0.5556930541992188,
+        "mean_words": 54.733333333333334,
+        "median_words": 45.0,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.2733333333333333,
+        "middle_rating_share": 0.11333333333333333,
+        "high_rating_share": 0.6133333333333333,
+        "semantic_cluster_entropy_k8": 0.572149578794635,
+        "semantic_cluster_entropy_k12": 0.40505667478743795,
+        "semantic_cluster_entropy_k16": 0.6424783002493341
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6443073749542236,
+        "between_product_centroid_distance": 0.33510205149650574,
+        "within_product_distance": 0.527943778038025,
+        "mean_words": 58.593333333333334,
+        "median_words": 44.5,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.17333333333333334,
+        "middle_rating_share": 0.12666666666666668,
+        "high_rating_share": 0.7,
+        "semantic_cluster_entropy_k8": 0.5443751389860062,
+        "semantic_cluster_entropy_k12": 0.36424455085435936,
+        "semantic_cluster_entropy_k16": 0.6203429263496802
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6597985029220581,
+        "between_product_centroid_distance": 0.34236404299736023,
+        "within_product_distance": 0.5431757628917694,
+        "mean_words": 55.88,
+        "median_words": 45.0,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.16666666666666666,
+        "middle_rating_share": 0.11333333333333333,
+        "high_rating_share": 0.72,
+        "semantic_cluster_entropy_k8": 0.539339028460509,
+        "semantic_cluster_entropy_k12": 0.45478085358812204,
+        "semantic_cluster_entropy_k16": 0.6286278763830236
+      }
+    ],
+    "varied_cross_category_a": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7871590256690979,
+        "between_product_centroid_distance": 0.6305691003799438,
+        "within_product_distance": 0.579555070400238,
+        "mean_words": 60.6,
+        "median_words": 44.5,
+        "embedding_truncated_share": 0.04666666666666667,
+        "low_rating_share": 0.24666666666666667,
+        "middle_rating_share": 0.05333333333333334,
+        "high_rating_share": 0.7,
+        "semantic_cluster_entropy_k8": 0.8400636706354531,
+        "semantic_cluster_entropy_k12": 0.7492534561384536,
+        "semantic_cluster_entropy_k16": 0.7658536810609698
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.792208194732666,
+        "between_product_centroid_distance": 0.6587272882461548,
+        "within_product_distance": 0.5710953414440155,
+        "mean_words": 60.053333333333335,
+        "median_words": 47.0,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.25333333333333335,
+        "middle_rating_share": 0.1,
+        "high_rating_share": 0.6466666666666666,
+        "semantic_cluster_entropy_k8": 0.8146197614790648,
+        "semantic_cluster_entropy_k12": 0.7641309689198659,
+        "semantic_cluster_entropy_k16": 0.778379261583285
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7846918702125549,
+        "between_product_centroid_distance": 0.6430588960647583,
+        "within_product_distance": 0.566862678527832,
+        "mean_words": 63.7,
+        "median_words": 53.0,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.2733333333333333,
+        "middle_rating_share": 0.09333333333333334,
+        "high_rating_share": 0.6333333333333333,
+        "semantic_cluster_entropy_k8": 0.8276029959474501,
+        "semantic_cluster_entropy_k12": 0.760308378788866,
+        "semantic_cluster_entropy_k16": 0.7918368646875206
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7862063050270081,
+        "between_product_centroid_distance": 0.6405064463615417,
+        "within_product_distance": 0.5706371307373047,
+        "mean_words": 60.78,
+        "median_words": 44.0,
+        "embedding_truncated_share": 0.05333333333333334,
+        "low_rating_share": 0.20666666666666667,
+        "middle_rating_share": 0.14666666666666667,
+        "high_rating_share": 0.6466666666666666,
+        "semantic_cluster_entropy_k8": 0.8092232117095494,
+        "semantic_cluster_entropy_k12": 0.7353879190479862,
+        "semantic_cluster_entropy_k16": 0.7439558878347601
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7999337315559387,
+        "between_product_centroid_distance": 0.6650994420051575,
+        "within_product_distance": 0.5828685462474823,
+        "mean_words": 52.233333333333334,
+        "median_words": 40.0,
+        "embedding_truncated_share": 0.02,
+        "low_rating_share": 0.24,
+        "middle_rating_share": 0.08,
+        "high_rating_share": 0.68,
+        "semantic_cluster_entropy_k8": 0.7956452786453512,
+        "semantic_cluster_entropy_k12": 0.7534475977030628,
+        "semantic_cluster_entropy_k16": 0.7621465734621488
+      }
+    ],
+    "varied_cross_category_b": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7188718914985657,
+        "between_product_centroid_distance": 0.49643850326538086,
+        "within_product_distance": 0.5441771447658539,
+        "mean_words": 46.82,
+        "median_words": 37.5,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.37333333333333335,
+        "middle_rating_share": 0.04666666666666667,
+        "high_rating_share": 0.58,
+        "semantic_cluster_entropy_k8": 0.6922016648716315,
+        "semantic_cluster_entropy_k12": 0.8189149370425036,
+        "semantic_cluster_entropy_k16": 0.7266366377811532
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7352912425994873,
+        "between_product_centroid_distance": 0.5142861604690552,
+        "within_product_distance": 0.5609434962272644,
+        "mean_words": 48.666666666666664,
+        "median_words": 39.0,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.32666666666666666,
+        "middle_rating_share": 0.06666666666666667,
+        "high_rating_share": 0.6066666666666667,
+        "semantic_cluster_entropy_k8": 0.7271874886801237,
+        "semantic_cluster_entropy_k12": 0.850990638370302,
+        "semantic_cluster_entropy_k16": 0.7503116449869548
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7461796402931213,
+        "between_product_centroid_distance": 0.5270398259162903,
+        "within_product_distance": 0.5717888951301575,
+        "mean_words": 49.18,
+        "median_words": 42.0,
+        "embedding_truncated_share": 0.02,
+        "low_rating_share": 0.31333333333333335,
+        "middle_rating_share": 0.07333333333333333,
+        "high_rating_share": 0.6133333333333333,
+        "semantic_cluster_entropy_k8": 0.7342564410061775,
+        "semantic_cluster_entropy_k12": 0.8561756533479294,
+        "semantic_cluster_entropy_k16": 0.7760738576264935
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7366292476654053,
+        "between_product_centroid_distance": 0.5003960728645325,
+        "within_product_distance": 0.5725005745887757,
+        "mean_words": 46.6,
+        "median_words": 38.0,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.25333333333333335,
+        "middle_rating_share": 0.12666666666666668,
+        "high_rating_share": 0.62,
+        "semantic_cluster_entropy_k8": 0.6998657441277242,
+        "semantic_cluster_entropy_k12": 0.8428924341888578,
+        "semantic_cluster_entropy_k16": 0.7445221367130407
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7325332760810852,
+        "between_product_centroid_distance": 0.48755937814712524,
+        "within_product_distance": 0.5709463953971863,
+        "mean_words": 48.43333333333333,
+        "median_words": 38.0,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.3,
+        "middle_rating_share": 0.08666666666666667,
+        "high_rating_share": 0.6133333333333333,
+        "semantic_cluster_entropy_k8": 0.7103009937239666,
+        "semantic_cluster_entropy_k12": 0.8491968193234068,
+        "semantic_cluster_entropy_k16": 0.7410819635269063
+      }
+    ],
+    "varied_disjoint": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7919746041297913,
+        "between_product_centroid_distance": 0.6668122410774231,
+        "within_product_distance": 0.5589443147182465,
+        "mean_words": 58.88666666666666,
+        "median_words": 43.5,
+        "embedding_truncated_share": 0.04666666666666667,
+        "low_rating_share": 0.20666666666666667,
+        "middle_rating_share": 0.06666666666666667,
+        "high_rating_share": 0.7266666666666667,
+        "semantic_cluster_entropy_k8": 0.8090066109529839,
+        "semantic_cluster_entropy_k12": 0.6875943625642142,
+        "semantic_cluster_entropy_k16": 0.767111826897909
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.8080596327781677,
+        "between_product_centroid_distance": 0.7097678184509277,
+        "within_product_distance": 0.563329941034317,
+        "mean_words": 56.75333333333333,
+        "median_words": 42.5,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.22666666666666666,
+        "middle_rating_share": 0.08666666666666667,
+        "high_rating_share": 0.6866666666666666,
+        "semantic_cluster_entropy_k8": 0.8198724552312254,
+        "semantic_cluster_entropy_k12": 0.7079654191264333,
+        "semantic_cluster_entropy_k16": 0.7748410064892614
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.8028884530067444,
+        "between_product_centroid_distance": 0.6825345158576965,
+        "within_product_distance": 0.5740625262260437,
+        "mean_words": 59.24666666666667,
+        "median_words": 47.0,
+        "embedding_truncated_share": 0.02666666666666667,
+        "low_rating_share": 0.21333333333333335,
+        "middle_rating_share": 0.07333333333333333,
+        "high_rating_share": 0.7133333333333334,
+        "semantic_cluster_entropy_k8": 0.8590874601809427,
+        "semantic_cluster_entropy_k12": 0.7185928619871106,
+        "semantic_cluster_entropy_k16": 0.788292566585305
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.7956500053405762,
+        "between_product_centroid_distance": 0.6841369867324829,
+        "within_product_distance": 0.5564828395843506,
+        "mean_words": 57.93333333333333,
+        "median_words": 43.0,
+        "embedding_truncated_share": 0.05333333333333334,
+        "low_rating_share": 0.18,
+        "middle_rating_share": 0.11333333333333333,
+        "high_rating_share": 0.7066666666666667,
+        "semantic_cluster_entropy_k8": 0.8104086084887123,
+        "semantic_cluster_entropy_k12": 0.68303549404338,
+        "semantic_cluster_entropy_k16": 0.7476188522023469
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.8035464882850647,
+        "between_product_centroid_distance": 0.6919724345207214,
+        "within_product_distance": 0.5681351959705353,
+        "mean_words": 53.43333333333333,
+        "median_words": 40.5,
+        "embedding_truncated_share": 0.02,
+        "low_rating_share": 0.18666666666666668,
+        "middle_rating_share": 0.06,
+        "high_rating_share": 0.7533333333333333,
+        "semantic_cluster_entropy_k8": 0.8101538602229197,
+        "semantic_cluster_entropy_k12": 0.7047075400788605,
+        "semantic_cluster_entropy_k16": 0.76688276728323
+      }
+    ],
+    "intermediate_hair_disjoint": [
+      {
+        "seed": 11,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6488000154495239,
+        "between_product_centroid_distance": 0.3092900514602661,
+        "within_product_distance": 0.5457372665405273,
+        "mean_words": 49.95333333333333,
+        "median_words": 39.5,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.18666666666666668,
+        "middle_rating_share": 0.06,
+        "high_rating_share": 0.7533333333333333,
+        "semantic_cluster_entropy_k8": 0.5500241327638602,
+        "semantic_cluster_entropy_k12": 0.44822085174044896,
+        "semantic_cluster_entropy_k16": 0.6410902715375227
+      },
+      {
+        "seed": 23,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6563689112663269,
+        "between_product_centroid_distance": 0.3065599799156189,
+        "within_product_distance": 0.5586260080337524,
+        "mean_words": 50.67333333333333,
+        "median_words": 44.0,
+        "embedding_truncated_share": 0.006666666666666667,
+        "low_rating_share": 0.28,
+        "middle_rating_share": 0.04666666666666667,
+        "high_rating_share": 0.6733333333333333,
+        "semantic_cluster_entropy_k8": 0.5410987494649543,
+        "semantic_cluster_entropy_k12": 0.4234275857288172,
+        "semantic_cluster_entropy_k16": 0.64773126818646
+      },
+      {
+        "seed": 37,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6404387950897217,
+        "between_product_centroid_distance": 0.28587618470191956,
+        "within_product_distance": 0.5469591379165649,
+        "mean_words": 47.12,
+        "median_words": 39.0,
+        "embedding_truncated_share": 0.0,
+        "low_rating_share": 0.23333333333333334,
+        "middle_rating_share": 0.06,
+        "high_rating_share": 0.7066666666666667,
+        "semantic_cluster_entropy_k8": 0.5592571999347407,
+        "semantic_cluster_entropy_k12": 0.4299836161645378,
+        "semantic_cluster_entropy_k16": 0.6368289950777369
+      },
+      {
+        "seed": 53,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6330130100250244,
+        "between_product_centroid_distance": 0.2929994761943817,
+        "within_product_distance": 0.5350792527198791,
+        "mean_words": 51.50666666666667,
+        "median_words": 41.5,
+        "embedding_truncated_share": 0.0,
+        "low_rating_share": 0.17333333333333334,
+        "middle_rating_share": 0.06,
+        "high_rating_share": 0.7666666666666667,
+        "semantic_cluster_entropy_k8": 0.5482031436021596,
+        "semantic_cluster_entropy_k12": 0.4102347494524772,
+        "semantic_cluster_entropy_k16": 0.6473247617356079
+      },
+      {
+        "seed": 71,
+        "sample_size": 150,
+        "mean_pairwise_cosine_distance": 0.6491162180900574,
+        "between_product_centroid_distance": 0.2967836260795593,
+        "within_product_distance": 0.5506780862808227,
+        "mean_words": 50.72,
+        "median_words": 38.5,
+        "embedding_truncated_share": 0.013333333333333334,
+        "low_rating_share": 0.2,
+        "middle_rating_share": 0.06,
+        "high_rating_share": 0.74,
+        "semantic_cluster_entropy_k8": 0.5588800247692218,
+        "semantic_cluster_entropy_k12": 0.4635453218752128,
+        "semantic_cluster_entropy_k16": 0.6506064271409981
+      }
+    ]
+  },
+  "warning": "Cosine dispersion and cluster entropy are proxies, not validated thematic diversity. Seed ranges are not confidence intervals. Language scores are detector scores, not calibrated probabilities.",
+  "software_tests_passed": 22
+}

@@ -1,7 +1,7 @@
 import json
 import pytest
 
-from social_listening import generation
+from product_review_insights import generation
 
 
 def test_context_budget_does_not_truncate_or_fabricate_evidence():

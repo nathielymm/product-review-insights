@@ -4,7 +4,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import pytest
 
-from social_listening.data import prepare, read_corpus, redact
+from product_review_insights.data import prepare, read_corpus, redact
 
 
 def test_ingestion_is_order_independent_and_excludes_private_fields(tmp_path):

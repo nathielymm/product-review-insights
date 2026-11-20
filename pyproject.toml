@@ -3,16 +3,17 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ai-social-listening-analyst"
+name = "product-review-insights"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = ["pyarrow", "numpy", "scikit-learn", "faiss-cpu", "sentence-transformers", "psutil"]
 
 [project.optional-dependencies]
 dev = ["pytest"]
+analysis = ["langdetect==1.0.9"]
 
 [project.scripts]
-social-listening = "social_listening.cli:main"
+product-review-insights = "product_review_insights.cli:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

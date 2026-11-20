@@ -1,0 +1,16 @@
+{
+  "version": "subgroups_v1_title_based_not_frozen",
+  "min_reviews_per_product": 100,
+  "min_reviews_ge_20_words": 30,
+  "groups": [
+    {"id":"mascaras","label_pt":"Máscaras para cílios","parent_category":"mascara"},
+    {"id":"makeup_brush_sets","label_pt":"Kits de pincéis de maquiagem","parent_category":"makeup_brush","include":"\\b(?:[2-9]|[1-9][0-9]+)\\s*(?:pcs?|pieces?)\\b|\\b(?:brush(?:es)? set|brush(?:es)? kit|set of)\\b"},
+    {"id":"traditional_nail_color","label_pt":"Esmaltes de cor sem indicação de gel, magnético ou base/top coat","parent_category":"nail_polish","exclude":"\\b(gel(?: nail)? polish|gel collection|magnetic|cat eye|base.*coat|top.*coat)\\b"},
+    {"id":"deodorants","label_pt":"Desodorantes (formatos variados)","parent_category":"deodorant"},
+    {"id":"magnetic_lashes","label_pt":"Cílios magnéticos e kits com delineador","parent_category":"magnetic_eyelashes"},
+    {"id":"shampoos","label_pt":"Shampoos (inclui barras)","parent_category":"shampoo"},
+    {"id":"non_bar_shampoos","label_pt":"Shampoos sem indicação de barra no título","parent_category":"shampoo","exclude":"\\b(bar|solid)\\b"},
+    {"id":"conditioners","label_pt":"Condicionadores (enxágue, leave-in e barra)","parent_category":"conditioner"},
+    {"id":"hair_diffusers","label_pt":"Difusores para secador","parent_category":"hair_diffuser"}
+  ]
+}

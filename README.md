@@ -1,4 +1,6 @@
-# AI Social Listening Analyst
+# Identificação de oportunidades de melhoria em produtos: comparação entre RAG tradicional e RAG enriquecido por análise temática
+
+Projeto: `product-review-insights`.
 
 #### Aluna:
 #### Orientador(a):
@@ -7,10 +9,13 @@
 
 Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial Generativa e LLM da PUC-Rio](https://ica.ele.puc-rio.br/cursos/ia-generativa-large-language-models/).
 
-- [Código](src/social_listening)
+- [Código](src/product_review_insights)
 - [Protocolo experimental](docs/protocol.md)
 - [Reprodução local](docs/reproduction.md)
 - [Auditoria dos dados](docs/data-audit.json)
+- [Mapeamento exploratório de categorias](docs/category-map.md)
+- [Candidatos a três condições de variedade](docs/diversity-candidates.md)
+- [Revisão proposta de temas e consistência](docs/theme-consistency-review.md)
 
 ### Resumo
 
@@ -20,7 +25,13 @@ Este trabalho investiga a geração de insights sobre consumidores a partir de a
 
 Avaliações de consumidores podem apoiar a identificação de elogios, reclamações e oportunidades de melhoria. A recuperação por similaridade pode concentrar o contexto em evidências redundantes. Investiga-se se uma seleção diversificada por temas aumenta a cobertura sem comprometer a fidelidade aos comentários.
 
-O conjunto de dados utilizado é declarado como Amazon Reviews 2023, categoria All_Beauty, do McAuley Lab. O arquivo fornecido contém 701.528 registros e esquema compatível com avaliações. A correspondência exata com o arquivo oficial ainda exige verificação de procedência. A análise de avaliações não representa toda a escuta social nem permite inferir participação de mercado.
+O conjunto de dados utilizado é declarado como Amazon Reviews 2023, categoria All_Beauty, do McAuley Lab. O arquivo fornecido contém 701.528 registros e esquema compatível com avaliações. A correspondência exata com o arquivo oficial ainda exige verificação de procedência. O recorte de avaliações limita a generalização dos resultados e a inferência de participação de mercado.
+
+O catálogo oficial de All_Beauty foi obtido e cruzado com todos os 112.496 IDs com avaliações válidas. Como as subcategorias do catálogo estão vazias, regras explícitas nos títulos permitem comparar grupos candidatos de produtos. O recorte final continua em aberto, agora com foco em vários produtos de uma categoria; a classificação é exploratória e requer revisão de variantes, idiomas e consistência.
+
+O desenho em discussão passou a considerar três condições: produtos com uma função semelhante, funções diferentes de uma mesma rotina e funções de áreas diferentes. A exploração em docs/diversity-candidates.md compara candidatos com cinco IDs e amostras de tamanho igual. Há gradação de dispersão semântica geral, mas os níveis de diversidade temática ainda não foram validados. As condições e os corpora finais permanecem em aberto; com um conjunto por condição, a comparação deve ser apresentada como estudos de caso, sem atribuir diferenças somente à variedade.
+
+A revisão inicial de 90 comentários pelo assistente propõe dez temas amplos compartilhados pelos três candidatos. Ela também identifica ambiguidade de versões/ofertas e três grupos parent_asin com mais de um ASIN de item nas avaliações válidas. Isso reforça a necessidade de definir família funcional versus SKU e validar os temas com a usuária antes de fechar o recorte. Essa revisão não é uma anotação humana independente nem uma referência final de avaliação.
 
 ### 2. Modelagem
 

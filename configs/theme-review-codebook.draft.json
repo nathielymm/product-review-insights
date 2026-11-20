@@ -1,0 +1,33 @@
+{
+  "status": "assistant_proposed_codebook_pending_user_and_independent_validation",
+  "unit": "one review; multiple themes allowed; a theme mention is not automatically a complaint or improvement request",
+  "themes": [
+    {"id":"T01","label_pt":"Desempenho e resultado percebido","definition":"Explicit reported result, effectiveness or lack of result. Generic praise alone does not establish a specific benefit."},
+    {"id":"T02","label_pt":"Uso, aplicação, remoção e encaixe","definition":"Ease/effort of application, removal, handling, control placement, dispensing or physical fit. Record product-specific aspect separately."},
+    {"id":"T03","label_pt":"Duração, estabilidade e confiabilidade","definition":"Wear/smudge/flake/adhesion, stability during use, useful life or device failure. These are different aspects under one broad parent theme."},
+    {"id":"T04","label_pt":"Embalagem, integridade e entrega","definition":"Protection, container/closure, transport damage, receipt condition or completeness. Pure appearance belongs to T05; price/quantity belongs to T08."},
+    {"id":"T05","label_pt":"Características sensoriais e aparência","definition":"Explicit smell, texture, color, sound or physical appearance. Lash volume/length and cleaning outcomes belong primarily to T01."},
+    {"id":"T06","label_pt":"Conforto ou desconforto relatado","definition":"Subjective discomfort or absence of it, such as itching or vibration sensitivity. Never code clinical causality or safety as established."},
+    {"id":"T07","label_pt":"Informação e expectativas explícitas","definition":"Explicit comparison with description, claimed feature, instruction, photo or an identifiable expectation; not generic disappointment alone."},
+    {"id":"T08","label_pt":"Preço, quantidade e custo de uso","definition":"Explicit perceived value, price, quantity or cost of consumables. Not measured commercial impact."},
+    {"id":"T09","label_pt":"Contexto, preferências e adequação pessoal","definition":"Explicit context such as humidity, travel, hair type, routine or stated preference. Do not infer demographics, segments or causality."},
+    {"id":"T10","label_pt":"Continuidade da compra e atendimento","definition":"Explicit repurchase/discontinuation intention, return, warranty or support. Record those different aspects separately."}
+  ],
+  "consistency": {
+    "compatible":"Review explicitly describes the expected product class or a diagnostic feature; does not prove exact SKU/version.",
+    "generic":"No incompatible statement, but review is too nonspecific to confirm product class independently.",
+    "variant_unclear":"Review reports a version, bundle, label or appearance discrepancy; not proof of unrelated product.",
+    "incompatible_type":"Explicitly describes a different product type; requires independent review before exclusion."
+  },
+  "explicit_request_types": ["none", "product_or_packaging", "commercial_or_service"],
+  "request_interpretation": "product_or_packaging includes an explicit suggestion or desired attribute, even a preference for an alternative product; it does not necessarily mean a formal request to the manufacturer. Commercial price/support requests are separate. Neither type establishes prioritization or feasibility.",
+  "coding_rules": [
+    "Code the text rather than infer sentiment from star rating.",
+    "A comparison with another brand is not proof of a catalog mismatch.",
+    "Mentions of free products or alleged incentives are source-quality flags, not proof of fraud.",
+    "Keep explicit requests separate from analyst proposals inferred from problems.",
+    "Counts from a rating-stratified audit are sample descriptions, not population prevalence.",
+    "The assistant's coding is an initial proposal, not human annotation or the final RAG reference.",
+    "The same broad codebook applies to all three cohorts. Theme count depends on granularity and is not a validated diversity score."
+  ]
+}

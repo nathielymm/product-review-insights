@@ -20,8 +20,8 @@ O lock registra as versões instaladas neste desenvolvimento; não inclui hashes
 Guardar o Parquet localmente em data/raw/all_beauty.supplied.parquet, ou indicar outro caminho. Dados, textos processados, modelos e respostas são ignorados pelo Git.
 
 ```sh
-.venv/bin/social-listening prepare data/raw/all_beauty.supplied.parquet
-HF_HOME=artifacts/huggingface .venv/bin/social-listening build
+.venv/bin/product-review-insights prepare data/raw/all_beauty.supplied.parquet
+HF_HOME=artifacts/huggingface .venv/bin/product-review-insights build
 ```
 
 A primeira indexação baixa o encoder. As seguintes podem usar o cache com HF_HUB_OFFLINE=1. O encoder exato é salvo em artifacts/pilot/encoder; as consultas carregam apenas esse snapshot local. metadata.json registra hashes do corpus, índice, trechos e arquivos do encoder. Preserve esses arquivos localmente para reproduzir a execução. Não indexar dados não revisados como se estivessem anonimizados.
@@ -40,8 +40,8 @@ Em outro terminal, ainda na raiz:
 
 ```sh
 artifacts/ollama-runtime/Ollama.app/Contents/Resources/ollama pull gemma3:4b
-.venv/bin/social-listening query 'What complaints concern packaging?' --method traditional
-.venv/bin/social-listening query 'What complaints concern packaging?' --method thematic
+.venv/bin/product-review-insights query 'What complaints concern packaging?' --method traditional
+.venv/bin/product-review-insights query 'What complaints concern packaging?' --method thematic
 ```
 
 Em outro computador, instalar o Ollama pelo site oficial e usar `ollama serve`/`ollama pull`. O nome do modelo é uma tag mutável; preservar o digest registrado nas execuções e o modelo local. Nunca substituir por um modelo :cloud no experimento.
@@ -49,17 +49,58 @@ Em outro computador, instalar o Ollama pelo site oficial e usar `ollama serve`/`
 ## Desenvolvimento, benchmark e anotação
 
 ```sh
-.venv/bin/social-listening run --questions configs/questions.dev.json --output results/dev-001 --repetitions 3
-.venv/bin/social-listening summarize results/dev-001/runs.jsonl
-.venv/bin/social-listening blind results/dev-001/runs.jsonl --output results/dev-001-blind
+.venv/bin/product-review-insights run --questions configs/questions.dev.json --output results/dev-001 --repetitions 3
+.venv/bin/product-review-insights summarize results/dev-001/runs.jsonl
+.venv/bin/product-review-insights blind results/dev-001/runs.jsonl --output results/dev-001-blind
 ```
 
 Não interpretar a execução de desenvolvimento como avaliação final. Revisar o arquivo questions.eval.draft.json, preparar a referência humana, congelar o benchmark e copiar para questions.eval.json antes da execução final. Não incluir citações ou textos reais no Git para facilitar a reprodução; forneça manifestos agregados e instruções de acesso à fonte.
 
+O rascunho atual tem 16 perguntas e pressupõe produto/recorte definido. Não executá-lo diretamente no índice global: o runner ainda não aplica scope_required como filtro. Ver docs/product-scopes.md antes de construir os corpora de avaliação.
+
+Para reproduzir a exploração dos recortes, sem consultar os modelos ou usar respostas de avaliação:
+
+```sh
+.venv/bin/python scripts/profile_products.py data/raw/all_beauty.supplied.parquet
+```
+
+O script conta avaliações válidas e únicas por parent_asin, lista os 40 produtos com mais avaliações e seleciona até oito exemplos por nota por produto usando hash determinístico. summary.json e examples.private.json ficam em results/product-profile, fora do Git. Os exemplos são de inspeção qualitativa e não estimam a prevalência dos temas. Nenhum identificador de usuário é lido. A distribuição de notas é apenas um sinal de diversidade de experiências, não uma classificação de sentimento.
+
+Para reproduzir o mapeamento de categorias, baixar o catálogo oficial na revisão registrada, mantendo-o fora do Git:
+
+```sh
+curl -fL 'https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/2b6d039ed471f2ba5fd2acb718bf33b0a7e5598e/raw_meta_All_Beauty/full-00000-of-00001.parquet' -o data/raw/meta_all_beauty.parquet
+.venv/bin/python scripts/map_categories.py
+.venv/bin/python scripts/shortlist_categories.py
+```
+
+O SHA-256 esperado do catálogo é 14815cf1312a0d847364866e6876c8c73738993469067242870774c372c04387. Conferir o hash antes de comparar com docs/category-map-summary.json. As regras produzem uma classificação exploratória por título, pois as subcategorias oficiais estão vazias. Os dados detalhados ficam em results/category-map; os grupos candidatos de configs/category-cohorts.draft.json ainda não foram selecionados nem aplicados aos índices.
+
+Para explorar as três condições de variedade, usando os arquivos locais e o encoder já salvo:
+
+```sh
+.venv/bin/python -m pip install -r requirements.lock.txt
+.venv/bin/python scripts/explore_diversity.py
+```
+
+O extra analysis do pyproject inclui langdetect 1.0.9; o lock registra esse pacote e six. O script identifica inglês com seed fixa e score mínimo 0,90, limpa HTML e restringe o tamanho dos textos a 20–200 palavras. Toda a detecção e codificação ocorre localmente. Não confundir o score do detector com garantia de idioma. O cache com --reuse-pools só é reutilizado se fonte, critérios/código de preparação, versão do detector e hashes dos arquivos coincidirem.
+
+A configuração de candidatos fica em configs/diversity-candidates.draft.json. O script salva comentários, embeddings e IDs das amostras em results/diversity-exploration, fora do Git. O resumo agregado e a leitura dos indicadores estão em docs/diversity-exploration-summary.json e docs/diversity-candidates.md. Nenhuma resposta do Gemma é gerada nessa etapa. Não usar a exploração como avaliação final dos RAGs; condições, perguntas, unidade de comparação e validação temática ainda precisam ser fechadas.
+
+Para preparar a revisão qualitativa dos três conjuntos prioritários:
+
+```sh
+.venv/bin/python scripts/prepare_theme_review.py
+# Ler os arquivos privados, revisar e registrar a codificação local.
+.venv/bin/python scripts/summarize_theme_review.py
+```
+
+O primeiro script gera seis comentários por grupo de produto e recupera os ASINs dos itens na fonte. O segundo exige a codificação existente em results/theme-review/assistant-coding.private.json, verifica os hashes e a identidade de cada registro e agrega os resultados. Não gera rótulos ausentes. Essa codificação foi proposta pelo assistente e requer revisão da usuária; não é referência humana independente. Os textos e rótulos por comentário ficam fora do Git, portanto reproduzir a agregação exata requer os arquivos privados locais. O resumo público e as limitações estão em docs/theme-consistency-summary.json e docs/theme-consistency-review.md.
+
 Preencher annotations.csv conforme docs/protocol.md e guardar notas por afirmação/tema. Entregar à revisora apenas blind.json e annotations.csv; key.private.json revela os métodos.
 
 ```sh
-.venv/bin/social-listening evaluate results/dev-001/runs.jsonl --annotations results/dev-001-blind/annotations.csv --key results/dev-001-blind/key.private.json
+.venv/bin/product-review-insights evaluate results/dev-001/runs.jsonl --annotations results/dev-001-blind/annotations.csv --key results/dev-001-blind/key.private.json
 ```
 
 As métricas humanas ficam ausentes até o preenchimento. A precisão de IDs de citações não substitui revisão da evidência. Para medir a partida fria, descarregar o modelo via Ollama e executar uma medição separada; o runner principal faz aquecimento e registra load_duration em cada resposta.

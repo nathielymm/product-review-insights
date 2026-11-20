@@ -1,0 +1,187 @@
+{
+  "version": "title_rules_v2_accessory_and_kit_review",
+  "policy": "Match official catalog title only. No match or multiple matches remain unresolved. Rules are not official subcategories.",
+  "rules": [
+    {
+      "id": "shampoo",
+      "label_pt": "Shampoos",
+      "include": "\\bshampoo\\b",
+      "exclude": "\\b(dry shampoo|shampoo brush|shampoo bowl|shampoo cap|empty|dispenser|pump only|beard|travel bottles?|refillable|cosmetic tube)\\b"
+    },
+    {
+      "id": "dry_shampoo",
+      "label_pt": "Shampoos a seco",
+      "include": "\\bdry shampoo\\b"
+    },
+    {
+      "id": "conditioner",
+      "label_pt": "Condicionadores",
+      "include": "\\bconditioner\\b",
+      "exclude": "\\b(air conditioner|water conditioner|dispenser|empty|beard|mustache|moustache)\\b"
+    },
+    {
+      "id": "hair_mask",
+      "label_pt": "Máscaras capilares",
+      "include": "\\b(hair mask|conditioning mask|hair masque)\\b"
+    },
+    {
+      "id": "hair_oil_serum",
+      "label_pt": "Óleos e séruns capilares",
+      "include": "\\b(hair oil|hair serum|hair growth oil|hair treatment oil)\\b"
+    },
+    {
+      "id": "hair_color",
+      "label_pt": "Coloração e retoque de cabelos",
+      "include": "\\b(hair colou?r|hair dye|root touch.?up|henna|tint kit)\\b",
+      "exclude": "\\b(shampoo|conditioner|brush|bowl)\\b"
+    },
+    {
+      "id": "hair_brush_comb",
+      "label_pt": "Escovas e pentes para cabelo",
+      "include": "\\b(hair brush|hairbrush|detangling brush|comb|boar bristle)\\b",
+      "exclude": "\\b(hot air|curling|electric|beard|mustache|moustache)\\b"
+    },
+    {
+      "id": "hair_dryer",
+      "label_pt": "Secadores de cabelo",
+      "include": "\\b(hair dryer|blow dryer|hairdryer)\\b",
+      "exclude": "\\b(diffuser|holder|stand|attachment|nozzle|bonnet|cap)\\b"
+    },
+    {
+      "id": "hair_diffuser",
+      "label_pt": "Difusores para secador",
+      "include": "\\b(hair diffuser|diffuser.*hair|diffuser.*dryer)\\b"
+    },
+    {
+      "id": "hair_straightener",
+      "label_pt": "Pranchas e alisadores",
+      "include": "\\b(flat iron|hair straightener|straightening iron)\\b",
+      "exclude": "\\b(holder|case|mat only)\\b"
+    },
+    {
+      "id": "curling_tool",
+      "label_pt": "Modeladores e escovas térmicas",
+      "include": "\\b(curling iron|curling wand|curling brush|hot air brush)\\b",
+      "exclude": "\\b(holder|case|mat only)\\b"
+    },
+    {
+      "id": "spray_bottle",
+      "label_pt": "Borrifadores",
+      "include": "\\b(spray bottle|mist bottle|misting bottle|bottle.*spray|bottle.*mist)\\b"
+    },
+    {
+      "id": "nail_polish",
+      "label_pt": "Esmaltes",
+      "include": "\\b(nail polish|nail lacquer|gel polish)\\b",
+      "exclude": "\\b(remover|removal|dryer|lamp|display|holder|rack|organizer|storage|stencil)\\b"
+    },
+    {
+      "id": "nail_tools",
+      "label_pt": "Lixas, brocas e instrumentos para unhas",
+      "include": "\\b(nail drill|nail file|emery board|cuticle nipper|nail clipper)\\b"
+    },
+    {
+      "id": "artificial_nails",
+      "label_pt": "Unhas artificiais e polygel",
+      "include": "\\b(false nails|press.on nails|nail tips|polygel|poly gel)\\b"
+    },
+    {
+      "id": "makeup_brush",
+      "label_pt": "Pincéis de maquiagem",
+      "include": "\\b(makeup brush|make up brush|foundation brush|eyeshadow brush|blush brush)\\b",
+      "exclude": "\\b(brush tree|brush holder|drying tower|cleaning mat|brush cleaner|cleaner and dryer)\\b"
+    },
+    {
+      "id": "mascara",
+      "label_pt": "Máscaras para cílios",
+      "include": "\\bmascara\\b",
+      "exclude": "\\b(brush|wand|applicator|remover)\\b"
+    },
+    {
+      "id": "eyeliner",
+      "label_pt": "Delineadores",
+      "include": "\\b(eyeliner|eye liner)\\b",
+      "exclude": "\\b(brush|remover|magnetic|eyelashes?|false lashes|silicone|silicon|eyeshadow stamp)\\b"
+    },
+    {
+      "id": "lip_color",
+      "label_pt": "Batons e cor para lábios",
+      "include": "\\b(lipstick|lip gloss|lip tint|lip stain)\\b",
+      "exclude": "\\b(holder|organizer|container|empty)\\b"
+    },
+    {
+      "id": "foundation_concealer",
+      "label_pt": "Bases e corretivos",
+      "include": "\\b(foundation|concealer)\\b",
+      "exclude": "\\b(brush|sponge|applicator|holder)\\b"
+    },
+    {
+      "id": "face_cleanser",
+      "label_pt": "Limpadores faciais",
+      "include": "\\b(face wash|facial cleanser|face cleanser|cleansing gel|cleansing foam)\\b",
+      "exclude": "\\b(brush|device)\\b"
+    },
+    {
+      "id": "skin_moisturizer",
+      "label_pt": "Cremes e loções para pele",
+      "include": "\\b(face cream|facial cream|body lotion|hand cream|skin moisturizer|facial moisturizer|face moisturizer|body cream)\\b"
+    },
+    {
+      "id": "face_serum",
+      "label_pt": "Séruns faciais",
+      "include": "\\b(facial serum|face serum|vitamin c serum|hyaluronic acid serum)\\b"
+    },
+    {
+      "id": "face_mask",
+      "label_pt": "Máscaras faciais cosméticas",
+      "include": "\\b(face mask|facial mask|clay mask|sheet mask)\\b",
+      "exclude": "\\b(disposable|surgical|respirator|n95|kn95|3.ply)\\b"
+    },
+    {
+      "id": "sunscreen",
+      "label_pt": "Protetores solares",
+      "include": "\\b(sunscreen|sunblock|sun block)\\b"
+    },
+    {
+      "id": "fragrance",
+      "label_pt": "Perfumes e fragrâncias",
+      "include": "\\b(perfume|cologne|eau de parfum|eau de toilette|body mist)\\b",
+      "exclude": "\\b(empty|atomizer|refillable bottle)\\b"
+    },
+    {
+      "id": "body_cleanser",
+      "label_pt": "Sabonetes e produtos para banho",
+      "include": "\\b(body wash|shower gel|bath bomb|bar soap)\\b"
+    },
+    {
+      "id": "lip_balm",
+      "label_pt": "Bálsamos labiais",
+      "include": "\\blip balm\\b"
+    },
+    {
+      "id": "deodorant",
+      "label_pt": "Desodorantes",
+      "include": "\\b(deodorant|antiperspirant)\\b"
+    },
+    {
+      "id": "grooming_devices",
+      "label_pt": "Aparelhos e acessórios de barbear/aparar",
+      "include": "\\b(razor|shaver|beard trimmer|hair clipper)\\b"
+    },
+    {
+      "id": "hair_accessories",
+      "label_pt": "Acessórios para cabelo",
+      "include": "\\b(shower cap|hair clip|headband|hair tie|hair scarf|head wrap|scrunchie|bonnet|hair pin)\\b"
+    },
+    {
+      "id": "oral_care",
+      "label_pt": "Higiene bucal",
+      "include": "\\b(toothbrush|dental floss|mouthwash)\\b"
+    },
+    {
+      "id": "magnetic_eyelashes",
+      "label_pt": "Cílios magnéticos e kits com delineador",
+      "include": "\\b(magnetic.*(?:eyelash|lashes)|(?:eyelash|lashes).*magnetic)\\b"
+    }
+  ]
+}

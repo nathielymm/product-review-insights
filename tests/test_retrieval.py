@@ -2,7 +2,7 @@ import faiss
 import numpy as np
 import pytest
 
-from social_listening.retrieval import select_hits
+from product_review_insights.retrieval import select_hits
 
 
 def test_diversity_preserves_similarity_order_within_each_theme():

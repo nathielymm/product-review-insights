@@ -1,0 +1,24 @@
+{
+  "status": "user_agreed_on_examples_generalization_still_draft",
+  "base_codebook_sha256": "bf3d6376e033cd1e78ba29981858f30919518a1638e11f6244b03d33810fa9f7",
+  "broad_theme_count_unchanged": 10,
+  "subthemes": [
+    {
+      "id": "T04_SUSTAINABILITY",
+      "parent_theme": "T04",
+      "label_pt": "Material e sustentabilidade da embalagem",
+      "definition": "Expressed preference or suggestion about packaging material/environmental impact. Attribute the reasoning to the reviewer; do not treat claims about toxicity or environmental superiority as established.",
+      "example_audit_id": "Q055"
+    },
+    {
+      "id": "T03_AUTONOMY",
+      "parent_theme": "T03",
+      "label_pt": "Autonomia de pilhas/bateria",
+      "definition": "Reported time or frequency of replacing/recharging energy sources. Does not mean device failure or useful life.",
+      "example_audit_id": "Q086",
+      "related_theme": "T08",
+      "related_aspect": "Recurring cost of consumables, when explicitly described."
+    }
+  ],
+  "application_policy": "Keep original codebook and original coding snapshot. These refinements are not automatically applied to the other 85 reviews; review before final annotation."
+}

@@ -1,0 +1,342 @@
+{
+  "status": "assistant_review_pending_user_validation_not_gold_reference",
+  "reviews_inspected": 90,
+  "products_inspected": 15,
+  "reviewer": "assistant",
+  "independent_human_validation_completed": false,
+  "sample_sha256": "b7e9ba960ce08abdc8cdb9bb66f9241a7a077095ece00f5f37de5a54825f6555",
+  "coding_sha256": "1885d27b4ce69fb5c80e91b98d301f4b751b29673c24139726ff43aafc873162",
+  "codebook_sha256": "bf3d6376e033cd1e78ba29981858f30919518a1638e11f6244b03d33810fa9f7",
+  "sampling": "six reviews per product, rating-stratified with deterministic fill for shortages; not population-representative",
+  "cohorts": [
+    {
+      "cohort": "compact_mascaras",
+      "reviews_inspected": 30,
+      "products_inspected": 5,
+      "broad_themes_observed": 10,
+      "theme_review_counts": {
+        "T01": 21,
+        "T02": 15,
+        "T03": 13,
+        "T04": 2,
+        "T05": 6,
+        "T06": 7,
+        "T07": 10,
+        "T08": 12,
+        "T09": 12,
+        "T10": 8
+      },
+      "theme_product_counts": {
+        "T01": 5,
+        "T02": 5,
+        "T03": 5,
+        "T04": 1,
+        "T05": 4,
+        "T06": 5,
+        "T07": 3,
+        "T08": 4,
+        "T09": 5,
+        "T10": 4
+      },
+      "consistency_counts": {
+        "compatible": 27,
+        "generic": 1,
+        "variant_unclear": 2
+      },
+      "flag_counts": {
+        "adverse_experience_report": 5,
+        "bundle_or_version_mismatch": 2
+      },
+      "explicit_request_types": {
+        "none": 28,
+        "product_or_packaging": 1,
+        "commercial_or_service": 1
+      },
+      "sample_rating_counts": {
+        "1": 9,
+        "2": 1,
+        "3": 10,
+        "5": 10
+      },
+      "products_with_multiple_item_asins_in_valid_raw_reviews": 2,
+      "products": [
+        {
+          "product_id": "B0B7L451Z9",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 2,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B08TCBP8HV",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B01557EHW4",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B0BC3MQD29",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 3,
+          "consistency_counts": {
+            "generic": 1,
+            "variant_unclear": 2,
+            "compatible": 3
+          }
+        },
+        {
+          "product_id": "B07M5HB65T",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        }
+      ]
+    },
+    {
+      "cohort": "intermediate_hair_disjoint",
+      "reviews_inspected": 30,
+      "products_inspected": 5,
+      "broad_themes_observed": 10,
+      "theme_review_counts": {
+        "T01": 25,
+        "T02": 9,
+        "T03": 3,
+        "T04": 1,
+        "T05": 19,
+        "T06": 4,
+        "T07": 13,
+        "T08": 7,
+        "T09": 16,
+        "T10": 8
+      },
+      "theme_product_counts": {
+        "T01": 5,
+        "T02": 3,
+        "T03": 2,
+        "T04": 1,
+        "T05": 5,
+        "T06": 4,
+        "T07": 5,
+        "T08": 5,
+        "T09": 4,
+        "T10": 4
+      },
+      "consistency_counts": {
+        "generic": 4,
+        "compatible": 26
+      },
+      "flag_counts": {
+        "adverse_experience_report": 2,
+        "unverified_health_or_safety_claim": 5,
+        "ingredient_or_identity_uncertainty": 1,
+        "use_mode_unclear": 1,
+        "free_sample_disclosure": 1,
+        "sample_trial_mention": 1
+      },
+      "explicit_request_types": {
+        "none": 27,
+        "commercial_or_service": 1,
+        "product_or_packaging": 2
+      },
+      "sample_rating_counts": {
+        "1": 6,
+        "2": 4,
+        "3": 10,
+        "4": 2,
+        "5": 8
+      },
+      "products_with_multiple_item_asins_in_valid_raw_reviews": 1,
+      "products": [
+        {
+          "product_id": "B0CDNZ7F2V",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "generic": 3,
+            "compatible": 3
+          }
+        },
+        {
+          "product_id": "B01DD1NOZU",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 2,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B0BV1FPZY6",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B01M1IEADO",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B00R1TAN7I",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "generic": 1,
+            "compatible": 5
+          }
+        }
+      ]
+    },
+    {
+      "cohort": "varied_disjoint",
+      "reviews_inspected": 30,
+      "products_inspected": 5,
+      "broad_themes_observed": 10,
+      "theme_review_counts": {
+        "T01": 20,
+        "T02": 13,
+        "T03": 12,
+        "T04": 4,
+        "T05": 14,
+        "T06": 3,
+        "T07": 8,
+        "T08": 7,
+        "T09": 20,
+        "T10": 7
+      },
+      "theme_product_counts": {
+        "T01": 5,
+        "T02": 5,
+        "T03": 4,
+        "T04": 2,
+        "T05": 5,
+        "T06": 3,
+        "T07": 5,
+        "T08": 4,
+        "T09": 5,
+        "T10": 3
+      },
+      "consistency_counts": {
+        "variant_unclear": 2,
+        "compatible": 28
+      },
+      "flag_counts": {
+        "historical_version_or_listing_change": 1,
+        "free_product_for_opinion_disclosure": 1,
+        "adverse_experience_report": 2,
+        "unverified_health_or_safety_claim": 2,
+        "incentive_for_positive_review_allegation": 1,
+        "subscription_expectation_unclear": 1,
+        "appearance_or_version_uncertainty": 1,
+        "free_product_mention": 1
+      },
+      "explicit_request_types": {
+        "none": 28,
+        "product_or_packaging": 2
+      },
+      "sample_rating_counts": {
+        "1": 8,
+        "2": 3,
+        "3": 8,
+        "5": 11
+      },
+      "products_with_multiple_item_asins_in_valid_raw_reviews": 0,
+      "products": [
+        {
+          "product_id": "B012Q9NGE4",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "variant_unclear": 1,
+            "compatible": 5
+          }
+        },
+        {
+          "product_id": "B08BZNW9NK",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B01LBESKBO",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        },
+        {
+          "product_id": "B019GBG0IE",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "variant_unclear": 1,
+            "compatible": 5
+          }
+        },
+        {
+          "product_id": "B000FEIOHW",
+          "inspected": 6,
+          "item_asins_in_valid_raw_reviews": 1,
+          "consistency_counts": {
+            "compatible": 6
+          }
+        }
+      ]
+    }
+  ],
+  "broad_theme_overlap": [
+    {
+      "a": "compact_mascaras",
+      "b": "intermediate_hair_disjoint",
+      "shared_broad_themes": 10,
+      "theme_set_jaccard": 1.0
+    },
+    {
+      "a": "compact_mascaras",
+      "b": "varied_disjoint",
+      "shared_broad_themes": 10,
+      "theme_set_jaccard": 1.0
+    },
+    {
+      "a": "intermediate_hair_disjoint",
+      "b": "varied_disjoint",
+      "shared_broad_themes": 10,
+      "theme_set_jaccard": 1.0
+    }
+  ],
+  "warning": "Counts are descriptive for the inspected sample and depend on coding granularity. No RAG scores, clinical conclusions, fraud findings or corpus-wide consistency guarantees.",
+  "sampling_manifest": {
+    "sampling": "up to 2 low, 2 middle and 2 high ratings per product; deterministic fill for shortages",
+    "seed": 101,
+    "status": "assistant_qualitative_review_pending_user_validation",
+    "pool_sha256": "2244da8c15c0f6dce44266e55979dbab357004494339ec2f69883d8fecfb22b8",
+    "review_source_sha256": "b40ae565f1073e0b4960e2f424fe0c82f3d270b7c4d00bc9272ddd6a8b7411d7",
+    "metadata_source_sha256": "14815cf1312a0d847364866e6876c8c73738993469067242870774c372c04387",
+    "shortlist_sha256": "f8d007393ccd37c482a5b48300bcd6f51b76b40e33b5fc110369343964b0a4c1",
+    "sample_sha256": "b7e9ba960ce08abdc8cdb9bb66f9241a7a077095ece00f5f37de5a54825f6555",
+    "reviews": 90,
+    "products": 15
+  },
+  "software_tests_passed": 25,
+  "unique_item_asins_in_valid_raw_reviews_of_15_parent_groups": 19,
+  "sample_contains_raw_text_in_versioned_summary": false
+}
