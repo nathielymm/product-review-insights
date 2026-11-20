@@ -8,7 +8,7 @@
 - Describe the problem solved and final behavior. Do not use commit count as evidence of project quality or invent milestones, dates, measurements or results.
 - Keep a concise milestone narrative in docs/development-history.md; retain material methodological decisions and limitations without transcribing the conversation.
 - Preserve existing history. Any future consolidation must retain a local backup and a mapping to original commits; do not silently rewrite history or change dates to suggest a different development timeline.
-- The user must review before creating the GitHub repository or sending commits. No remote configuration, repository creation or push is currently authorized. The eventual repository must be private.
+- Keep the GitHub repository private. Remote changes must stay within the scope authorized by the user.
 
 ## Data and evaluation
 

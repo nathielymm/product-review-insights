@@ -26,6 +26,6 @@ Os testes mecânicos não certificam fidelidade das respostas nem das traduçõe
 
 ## Guias e pendências restantes
 
-[local-demo.md](local-demo.md) apresenta o fluxo atual. [reproduction.md](reproduction.md) distingue uso da interface, recálculo com anotações locais e reconstrução a partir da fonte; [reproduction.legacy.md](reproduction.legacy.md) preserva os comandos históricos. Não foi certificada instalação em ambiente limpo ou reconstrução integral desde outro Parquet, e os arquivos privados necessários não acompanham o Git/ZIP.
+[local-demo.md](local-demo.md) apresenta o fluxo atual. [reproduction.md](reproduction.md) distingue uso da interface, recálculo com anotações locais e reconstrução a partir da fonte. Não foi certificada instalação em ambiente limpo ou reconstrução integral desde outro Parquet, e os arquivos privados necessários não acompanham o Git/ZIP.
 
-Os itens de integração e guias da [revisão de coerência](final-coherence-review.v2.md) foram atendidos nesse escopo. Permanecem o fechamento bibliográfico e acadêmico, a procedência do Parquet e as limitações de validação já identificadas. A etapa não recalcula qualidade, não modifica resultados congelados e não cria/envia repositório remoto.
+Os itens de integração e guias foram atendidos nesse escopo. Permanecem o fechamento bibliográfico e acadêmico, a procedência do Parquet e as limitações de validação já identificadas. A integração não recalcula qualidade nem modifica resultados congelados.

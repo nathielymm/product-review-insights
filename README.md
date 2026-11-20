@@ -20,7 +20,7 @@ Trabalho em desenvolvimento para a pós-graduação em [Inteligência Artificial
 - [Reprodução local da v2](docs/reproduction.md)
 - [Verificação da interface v2](docs/demo-v2-alignment.md)
 - [Auditoria dos dados](docs/data-audit.json)
-- [Progresso por entregas e histórico preservado](docs/development-history.md)
+- [Estrutura do projeto](docs/structure.md)
 
 ### Resumo
 

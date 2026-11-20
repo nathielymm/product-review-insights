@@ -1,4 +1,4 @@
-> Critério revisado: mudanças de fórmula ou versão não excluem produtos. As contagens desta auditoria foram preservadas; as decisões de espera por homogeneidade foram substituídas em [product-scope-revised.md](product-scope-revised.md).
+> Critério atual: mudanças de fórmula ou versão não excluem produtos. A unidade de análise é o produto identificado no corpus, preservando nas interpretações as comparações e condições de cada relato. As contagens desta auditoria foram mantidas; as decisões de espera por homogeneidade apresentadas abaixo não constituem o critério de seleção atual.
 
 # Auditoria de identidade para análise de um produto por vez
 

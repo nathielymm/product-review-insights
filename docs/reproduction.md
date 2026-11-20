@@ -1,6 +1,6 @@
 # Reprodução local — v2 por produto
 
-Este é o guia corrente da v2. As instruções de pilotos e avaliações por conjuntos permanecem em [reproduction.legacy.md](reproduction.legacy.md), identificadas como históricas.
+Este guia descreve a avaliação por produto e a interface atuais.
 
 ## Ambiente
 
@@ -85,4 +85,4 @@ A suíte local e o recálculo agregado foram verificados no ambiente existente. 
 
 ## Entrega e Git
 
-Dados acadêmicos permanecem em branco até serem fornecidos. Não versionar dados brutos, segredos, modelos, respostas ou anotações individuais. A criação do GitHub privado e o envio dependem da revisão e autorização da usuária. Registre commits por entrega coerente; o progresso está em [development-history.md](development-history.md).
+Dados acadêmicos permanecem em branco até serem fornecidos. O repositório no GitHub é privado. Não versionar dados brutos, segredos, modelos, respostas ou anotações individuais. Consulte a [estrutura do projeto](structure.md) para identificar os arquivos da versão atual.

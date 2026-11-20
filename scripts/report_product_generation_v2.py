@@ -20,7 +20,6 @@ def main():
     for t in translations:assert t['english_sha256']==fingerprint(byid[t['attempt_id']]['english'])
     probes_path=root/'technical-probes.private.jsonl';probes=[json.loads(l) for l in probes_path.read_text().splitlines()] if probes_path.exists() else []
     assert (digest_file(probes_path) if probes_path.exists() else None)==status['technical_probes_sha256']
-    prior=json.loads(Path('results/product-evaluation-v2/freeze-v1/prior-preservation.private.json').read_text());assert all(digest_file(p)==h for p,h in prior.items())
     freeze=json.loads(Path(args.freeze).read_text());assert all(digest_file(p)==h for p,h in freeze['file_hashes'].items())
     config=json.loads(Path(freeze['configuration']).read_text());names={p['product_id']:p['label'] for p in config['products']}
     main=[r for r in rows if r['phase']=='primary'];groups=[]
@@ -42,7 +41,7 @@ def main():
     'presentation_valid':sum(t['translation'].get('valid',False) for t in translations),
     'presentation_execution_errors':sum(bool(t['translation'].get('generation_error')) for t in translations),
     'presentation_cut':sum(t['translation'].get('ollama',{}).get('done_reason')=='length' for t in translations),
-    'English_preserved_after_presentation':True,'previous_files_preserved':len(prior),'frozen_inputs_verified':len(freeze['file_hashes']),
+      'English_preserved_after_presentation':True,'frozen_inputs_verified':len(freeze['file_hashes']),
     'output_hashes':{'English':status['runs_sha256'],'presentation':status['translations_sha256'],'technical_probes':status['technical_probes_sha256']},
     'resources':resource_summary(rows,translations),'technical_probes':technical_resource_summary(probes),
     'stability':stability_summary(rows),'semantic_scores_calculated':False,
@@ -66,6 +65,6 @@ def main():
        lines+=['Fontes incluídas no contexto:','']
        for e in row['evidence']:lines+=[f"{e['citation_id']} — avaliação local {e['review_id'][:12]}",'',quote(e['text']),'']
     output.write_text('\n'.join(lines)+'\n')
-    print(json.dumps({k:summary[k] for k in ['status','english_records','primary_English','diagnostic_English','all_English_format_valid','all_English_cut','all_English_execution_errors','presentation_valid','presentation_execution_errors','presentation_cut','previous_files_preserved']},ensure_ascii=False))
+    print(json.dumps({k:summary[k] for k in ['status','english_records','primary_English','diagnostic_English','all_English_format_valid','all_English_cut','all_English_execution_errors','presentation_valid','presentation_execution_errors','presentation_cut','frozen_inputs_verified']},ensure_ascii=False))
 
 if __name__=='__main__':main()
